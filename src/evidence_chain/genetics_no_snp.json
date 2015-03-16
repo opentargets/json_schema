@@ -2,23 +2,36 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Genetics evidence chain - no SNP associated",
   "description": "CTTV genetics evidence chain where there is no SNP evidence",
-  "type": "array",
+  "type": "object",
   "version": "1.2",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/root.json"
     }
   ],
-  "items": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+  "properties": {
+    "type_of": {
+      "type": "string",
+      "default": "genetics_no_snp"
     },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+    "chain": {
+      "type": "array",
+      "items": [
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+        }
+      ],
+      "additionalItems": false
     }
-  ],
-  "additionalItems": false
+  },
+  "additionalProperties": false,
+  "required": [
+    "chain"
+  ]
 }

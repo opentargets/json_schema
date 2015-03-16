@@ -2,7 +2,13 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Expression evidence chain",
   "description": "CTTV expression evidence chain",
+  "version": "1.2",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/root.json"
+    }
+  ],
   "properties": {
     "type_of": {
       "type": "string",
@@ -10,12 +16,6 @@
     },
     "chain": {
       "type": "array",
-      "version": "1.2",
-      "allOf": [
-        {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/root.json"
-        }
-      ],
       "items": [
         {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
