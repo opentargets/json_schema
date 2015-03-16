@@ -8,6 +8,9 @@
     "about": {
       "description": "An array of bio-identifiers",
       "type": "array",
+      "items": {
+        "type": "string"
+      },
       "minItems": 1
     }
   },
