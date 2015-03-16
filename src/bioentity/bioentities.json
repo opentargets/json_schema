@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Bioentities",
+  "description": "A generic schema for an array of bioentities. Must be subclassed with additional properties to be meaningful.",
+  "type": "array",
+  "version": "1.2",
+  "items": {
+    "type": "string"
+  },
+  "minItems": 1
+}

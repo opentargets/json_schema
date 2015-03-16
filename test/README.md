@@ -1,4 +1,4 @@
-# Test - using remote schemas
+# Tests - validation of schemas with examples
 
 1. Install node.js
 2. Install [z-schema validator](https://github.com/zaggino/z-schema) as follows using node.js command prompt:

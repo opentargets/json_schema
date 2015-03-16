@@ -1,0 +1,1 @@
+z-schema ..\..\src\bioentity\target.json instance.json

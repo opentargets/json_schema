@@ -8,20 +8,13 @@
     "about": {
       "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/root.json"
-        },
-        {
-          "properties": {
-            "items": {
-              "description": "An array of ensembl or uniprot identifiers",
-              "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
-            }
-          },
-          "required": [
-            "items"
-          ]
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
         }
-      ]
+      ],
+      "items": {
+        "description": "An array of ensembl or uniprot identifiers",
+        "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
+      }
     },
     "target_type": {
       "type": "string",
