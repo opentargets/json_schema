@@ -1,31 +1,85 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "CTTV target",
-    "description": "CTTV target model. Target includes bioentities like proteins, genes, protein complexes etc.",
-    "type": "object",
-    "version": "1.2",
-    "properties": {
-        "about": {
-            "allOf": [
-                {
-                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/root.json"
-                },
-                {
-                    "properties": {
-                        "items": {
-                            "description": "An array of ensembl or uniprot identifiers",
-                            "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
-                        }
-                    },
-                    "required": [
-                        "items"
-                    ]
-                }
-            ]
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CTTV target",
+  "description": "CTTV target model. Target includes bioentities like proteins, genes, protein complexes etc.",
+  "type": "object",
+  "version": "1.2",
+  "properties": {
+    "about": {
+      "allOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/root.json"
+        },
+        {
+          "properties": {
+            "items": {
+              "description": "An array of ensembl or uniprot identifiers",
+              "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
+            }
+          },
+          "required": [
+            "items"
+          ]
         }
+      ]
     },
-    "required": [
-        "about"
-    ],
-    "additionalProperties": false
+    "target_type": {
+      "type": "string",
+      "enum": [
+        "http://identifiers.org/cttv.target/chimeric_protein",
+        "http://identifiers.org/cttv.target/gene",
+        "http://identifiers.org/cttv.target/gene_allele",
+        "http://identifiers.org/cttv.target/gene_evidence",
+        "http://identifiers.org/cttv.target/gene_in_LD_region",
+        "http://identifiers.org/cttv.target/gene_in_epigenetic_regulation_complex",
+        "http://identifiers.org/cttv.target/gene_variant",
+        "http://identifiers.org/cttv.target/pro_protein",
+        "http://identifiers.org/cttv.target/protein",
+        "http://identifiers.org/cttv.target/protein_complex",
+        "http://identifiers.org/cttv.target/protein_complex_group",
+        "http://identifiers.org/cttv.target/protein_complex_heteropolymer",
+        "http://identifiers.org/cttv.target/protein_complex_homopolymer",
+        "http://identifiers.org/cttv.target/protein_evidence",
+        "http://identifiers.org/cttv.target/protein_family",
+        "http://identifiers.org/cttv.target/protein_nucleic_acid_complex",
+        "http://identifiers.org/cttv.target/selectivity_group",
+        "http://identifiers.org/cttv.target/transcript",
+        "http://identifiers.org/cttv.target/transcript_evidence",
+        "http://identifiers.org/cttv.target/transcript_isoform",
+        "http://identifiers.org/cttv.target/protein_isoform"
+      ],
+      "description": "Type of target"
+    },
+    "activity": {
+      "type": "string",
+      "enum": [
+        "http://identifiers.org/cttv.activity/decreased_transcript_level",
+        "http://identifiers.org/cttv.activity/decreased_translational_product_level",
+        "http://identifiers.org/cttv.activity/drug_negative_modulator",
+        "http://identifiers.org/cttv.activity/drug_positive_modulator",
+        "http://identifiers.org/cttv.activity/gain_of_function",
+        "http://identifiers.org/cttv.activity/increased_transcript_level",
+        "http://identifiers.org/cttv.activity/increased_translational_product_level",
+        "http://identifiers.org/cttv.activity/loss_of_function",
+        "http://identifiers.org/cttv.activity/partial_loss_of_function",
+        "http://identifiers.org/cttv.activity/up_or_down",
+        "http://identifiers.org/cttv.activity/up",
+        "http://identifiers.org/cttv.activity/down",
+        "http://identifiers.org/cttv.activity/tolerated",
+        "http://identifiers.org/cttv.activity/predicted",
+        "http://identifiers.org/cttv.activity/damaging",
+        "http://identifiers.org/cttv.activity/damaging_to_target",
+        "http://identifiers.org/cttv.activity/predicted_tolerated",
+        "http://identifiers.org/cttv.activity/predicted_damaging",
+        "http://identifiers.org/cttv.activity/tolerated_by_target"
+      ],
+      "description": "Activity of target in disease context"
+    }
+  },
+  "required": [
+    "about",
+    "target_type",
+    "activity"
+  ],
+  "additionalProperties": false
 }

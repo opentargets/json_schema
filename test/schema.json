@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "canonical schema",
+  "type": "object",
+  "properties": {
+    "warehouseLocation": {
+      "description": "Coordinates of the warehouse with the product",
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/test/geo.json"
+    }
+  },
+  "required": [
+    "warehouseLocation"
+  ],
+  "additionalProperties": false
+}
