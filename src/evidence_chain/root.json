@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Evidence_Chain_Root",
+  "description": "A generic schema describing the valid objects in an evidence chain (an array). Must be subclassed with additional properties to be meaningful.",
+  "type": "array",
+  "version": "1.2",
+  "minItems": 3
+}
