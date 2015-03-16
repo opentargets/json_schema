@@ -25,22 +25,22 @@
       }
     },
     "evidence_chain": {
-    "description": "A valid CTTV evidence chain schema - please choose from one of the evidence chain schemas",
-      "anyOf": [
+    "description": "A valid CTTV evidence chain schema - please choose from one of the evidence chain schemas below",
+      "oneOf": [
         {
-          "$ref": "#/definitions/evidence_chain/drug"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/drug.json"
         },
         {
-          "$ref": "#/definitions/evidence_chain/expression"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/expression.json"
         },
         {
-          "$ref": "#/definitions/evidence_chain/genetics_no_snp"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/genetics_no_snp.json"
         },
         {
-          "$ref": "#/definitions/evidence_chain/genetics_via_snp"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/genetics_via_snp.json"
         },
         {
-          "$ref": "#/definitions/evidence_chain/phenotype"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/phenotype.json"
         }
       ]
     }
