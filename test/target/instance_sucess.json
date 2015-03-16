@@ -1,5 +1,5 @@
 {
-  "about": { "about": ["http://identifiers.org/ensembl/ENSG00000139618"] },
+  "about": ["http://identifiers.org/ensembl/ENSG00000139618"],
   "target_type" : "http://identifiers.org/cttv.target/gene",
   "activity" : "http://identifiers.org/cttv.activity/tolerated_by_target"
 }
