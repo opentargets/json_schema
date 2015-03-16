@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "CTTV target",
+    "description": "CTTV target model. Target includes bioentities like proteins, genes, protein complexes etc.",
+    "type": "object",
+    "version": "1.2",
+    "properties": {
+                
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Bioentity",
+    "description": "Root bioentity schema",
+    "type": "object",
+    "version": "1.2",
+    "properties": {
+                
+    }
+}
