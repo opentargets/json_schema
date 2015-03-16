@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CTTV disease",
+  "description": "CTTV disease. This uses the EFO ontology",
+  "type": "object",
+  "version": "1.2",
+  "properties": {
+    "about": {
+      "allOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
+        }
+      ],
+      "items": {
+        "description": "An array of 1 valid EFO ID",
+        "pattern": "^http://www.orpha.net/ORDO/Orphanet_[0-9]{4,}|http://purl.obolibrary.org/obo/DOID_[0-9]{4,}|http://www.ebi.ac.uk/efo/EFO_[0-9]{4,}|http://purl.obolibrary.org/obo/HP_[0-9]{4,}$"
+      },
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "biosamples": {
+      "description": "An array of tissue names",
+      "allOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
+        }
+      ]
+    }
+  },
+  "required": [
+    "about"
+  ],
+  "additionalProperties": false
+}
