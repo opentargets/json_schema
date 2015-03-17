@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "target_snp_evidence",
+  "description": "Evidence linking target to SNP",
+  "type": "object",
+  "version": "1.2",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
+    }
+  ],
+  "properties": {
+    "evidence_codes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "http://purl.obolibrary.org/obo/SO_0001537",
+          "http://purl.obolibrary.org/obo/SO_0001538",
+          "http://purl.obolibrary.org/obo/SO_0001546",
+          "http://purl.obolibrary.org/obo/SO_0001548",
+          "http://purl.obolibrary.org/obo/SO_0001549",
+          "http://purl.obolibrary.org/obo/SO_0001550",
+          "http://purl.obolibrary.org/obo/SO_0001551",
+          "http://purl.obolibrary.org/obo/SO_0001554",
+          "http://purl.obolibrary.org/obo/SO_0001589",
+          "http://purl.obolibrary.org/obo/SO_0001592",
+          "http://purl.obolibrary.org/obo/SO_0001593",
+          "http://purl.obolibrary.org/obo/SO_0001596",
+          "http://purl.obolibrary.org/obo/SO_0001598",
+          "http://purl.obolibrary.org/obo/SO_0001599",
+          "http://purl.obolibrary.org/obo/SO_0001601",
+          "http://purl.obolibrary.org/obo/SO_0001602",
+          "http://purl.obolibrary.org/obo/SO_0001603",
+          "http://purl.obolibrary.org/obo/SO_0001605",
+          "http://purl.obolibrary.org/obo/SO_0001606",
+          "http://purl.obolibrary.org/obo/SO_0001619",
+          "http://purl.obolibrary.org/obo/SO_0001820",
+          "http://purl.obolibrary.org/obo/SO_0001821",
+          "http://purl.obolibrary.org/obo/SO_0001822",
+          "http://purl.obolibrary.org/obo/SO_0001823",
+          "http://purl.obolibrary.org/obo/SO_0001825",
+          "http://purl.obolibrary.org/obo/SO_0001826",
+          "http://purl.obolibrary.org/obo/SO_0001889",
+          "http://purl.obolibrary.org/obo/SO_0001906",
+          "http://purl.obolibrary.org/obo/SO_0001907",
+          "http://purl.obolibrary.org/obo/SO_0001908",
+          "http://purl.obolibrary.org/obo/SO_0001909",
+          "http://purl.obolibrary.org/obo/SO_0001911",
+          "http://purl.obolibrary.org/obo/SO_0001912",
+          "http://purl.obolibrary.org/obo/SO_0001983",
+          "http://purl.obolibrary.org/obo/SO_0001987",
+          "http://purl.obolibrary.org/obo/SO_0001988",
+          "http://purl.obolibrary.org/obo/SO_0001990",
+          "http://purl.obolibrary.org/obo/SO_0001992",
+          "http://purl.obolibrary.org/obo/ECO_0000205"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

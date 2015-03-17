@@ -23,7 +23,11 @@
       "type": "array",
       "description": "An array of evidence codes",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": [
+          "http://purl.obolibrary.org/obo/ECO_0000205",
+          "http://purl.obolibrary.org/obo/ECO_0000053"
+        ]        
       },
       "minItems": 1
     },

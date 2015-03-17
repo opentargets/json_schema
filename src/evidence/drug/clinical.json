@@ -17,7 +17,7 @@
         "type": "string",
         "enum": [
             "http://identifiers.org/eco/drug_disease",
-            "http://identifiers.org/eco/ECO:0000205"
+            "http://purl.obolibrary.org/obo/ECO_0000205"
         ]
       }
     }

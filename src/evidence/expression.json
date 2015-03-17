@@ -19,7 +19,8 @@
           "http://purl.obolibrary.org/obo/ECO_0000356",
           "http://purl.obolibrary.org/obo/ECO_0000357",
           "http://purl.obolibrary.org/obo/ECO_0000358",
-          "http://purl.obolibrary.org/obo/ECO_0000359"
+          "http://purl.obolibrary.org/obo/ECO_0000359",
+          "http://purl.obolibrary.org/obo/ECO_0000205"
         ]
       }
     },
