@@ -13,7 +13,7 @@
       ],
       "items": {
         "description": "An array of drug identifiers",
-        "pattern": "^https://www.ebi.ac.uk/chembl/compound/inspect/CHEMBL[0-9]+$"
+        "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$"
       }
     },
     "molecule_name": {
@@ -36,7 +36,11 @@
     }
   },
   "required": [
-    "about"
+    "about",
+    "molecule_name",
+    "mechanism_of_action",
+    "target_class",
+    "action_type"
   ],
   "additionalProperties": false
 }

@@ -67,11 +67,11 @@
         "http://identifiers.org/cttv.activity/tolerated_by_target"
       ],
       "description": "Activity of target in disease context"
+    },
+    "target_name": {
+      "type": "string",
+      "description": "used by ChEMBL initially if they have a more canonical target name, optional"
     }
-  },
-  "target_name": {
-    "description": "used by ChEMBL initially if they have a more canonical target name, optional",
-    "type": "string"
   },
   "required": [
     "about",

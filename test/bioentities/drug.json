@@ -1,0 +1,12 @@
+{
+    "about": [
+        "http://identifiers.org/chembl.compound/CHEMBL6"
+    ],
+    "molecule_name": "Indomethacin",
+    "molecule_type": "Small molecule",
+    "mechanism_of_action": "Cyclooxygenase inhibitor",
+    "target_class": [
+        "Oxidoreductase"
+    ],
+    "action_type": "INHIBITOR"
+}
