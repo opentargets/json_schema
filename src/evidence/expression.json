@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "expression_evidence",
+  "description": "Expression evidence linking gene/protein to disease",
+  "type": "object",
+  "version": "1.2",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
+    }
+  ],
+  "properties": {
+    "comparison_name": {
+      "type": "string"
+    },
+    "log2_fold_change": {
+      "type": "number"
+    },
+    "experiment_overview": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "association_score",
+    "evidence_codes",
+    "provenance_type",
+    "is_associated",
+    "date_asserted",    
+    "comparison_name",
+    "log2_fold_change",
+    "experiment_overview"
+  ],
+  "additionalProperties": false
+}

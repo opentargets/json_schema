@@ -1,0 +1,207 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Evidence_Root",
+  "description": "Root schema for CTTV evidence",
+  "version": "1.2",
+  "type": "object",
+  "properties": {
+    "association_score": {
+      "type": "array",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/pvalue"
+        },
+        {
+          "$ref": "#/definitions/probability"
+        },
+        {
+          "$ref": "#/definitions/rank"
+        }
+      ]
+    },
+    "evidence_codes": {
+      "type": "array",
+      "description": "An array of evidence codes",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "provenance_type": {
+      "type": "array",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/expert"
+        },
+        {
+          "$ref": "#/definitions/literature"
+        },
+        {
+          "$ref": "#/definitions/database"
+        }
+      ]
+    },
+    "linkouts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "provide preferred hyperlink - 0=preferred, 1=next preferred, 2....",
+        "properties": {
+          "patternProperties": {
+            "^preferred_hyperlink_[0-9]+$": {
+              "type": "linkout"
+            }
+          }
+        }
+      }
+    },
+    "is_associated": {
+      "type": "boolean"
+    },
+    "date_asserted": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "association_score",
+    "evidence_codes",
+    "provenance_type",
+    "is_associated",
+    "date_asserted"
+  ],
+  "definitions": {
+    "pvalue": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "probability": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "rank": {
+      "type": "object",
+      "properties": {
+        "rank_position": {
+          "type": "number",
+          "minimum": 1
+        },
+        "sample_size": {
+          "type": "number",
+          "minimum": 1
+        },
+        "method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "expert": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "author": {
+          "type": "object",
+          "properties": {
+            "organization": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "status": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "literature": {
+      "type": "object",
+      "properties": {
+        "lit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "http://identifiers.org/pubmed/[0-9]+|http://identifiers.org/pmc/PMC[0-9]{4,}$",
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "database": {
+      "type": "object",
+      "properties": {
+        "dbxref": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Please provide the original DB name"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "linkout": {
+        "type": "object",
+        "properties": {
+          "nice_name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
