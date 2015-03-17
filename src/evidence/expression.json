@@ -10,6 +10,19 @@
     }
   ],
   "properties": {
+    "evidence_codes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "http://purl.obolibrary.org/obo/ECO_0000356",
+          "http://purl.obolibrary.org/obo/ECO_0000357",
+          "http://purl.obolibrary.org/obo/ECO_0000358",
+          "http://purl.obolibrary.org/obo/ECO_0000359"
+        ]
+      }
+    },
     "comparison_name": {
       "type": "string"
     },
@@ -25,7 +38,7 @@
     "evidence_codes",
     "provenance_type",
     "is_associated",
-    "date_asserted",    
+    "date_asserted",
     "comparison_name",
     "log2_fold_change",
     "experiment_overview"
