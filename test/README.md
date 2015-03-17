@@ -1,4 +1,4 @@
-# Tests - validation of individual schemas with examples
+# Test suite - validation of individual schemas and instances
 
 #### Requirements: node.js and z-schema validator
 

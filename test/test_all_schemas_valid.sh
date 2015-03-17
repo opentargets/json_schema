@@ -10,5 +10,5 @@ if [[ $? != 0 ]]; then
 fi
 
 for i in `find ../src/ -name "*.json"`;
-	do z-schema ${i};
+	do BNAME=`basename $i`;echo "TEST: $BNAME";z-schema $i;
 done
