@@ -1,5 +1,0 @@
-{
-  "about": ["not a valid URI"],
-  "target_type" : "http://identifiers.org/cttv.target/gene",
-  "activity" : "http://identifiers.org/cttv.activity/tolerated_by_target"
-}
