@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SNP",
+  "description": "CTTV SNP model",
+  "type": "object",
+  "version": "1.2",
+  "properties": {
+    "about": {
+      "allOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
+        }
+      ],
+      "items": {
+        "description": "An array of SNP identifiers - max length 1",
+        "pattern": "^http://identifiers.org/dbsnp/rs[0-9]+$"
+      },
+      "minItems": 1,
+      "maxItems": 1
+    }
+  },
+  "required": [
+    "about"
+  ],
+  "additionalProperties": false
+}

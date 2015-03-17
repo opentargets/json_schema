@@ -20,3 +20,12 @@ z-schema schema.json
 #Validate an instance against the schema:
 z-schema schema.json instance.json
 ```
+
+4. If you are using windows+cygwin and have installed the windows version of node.js (and prefer to use z-schema from a UNIX prompt):
+
+```bash
+#Add the following line to your .bashrc; this will setup the nodejs. ENV variables:
+alias nodejs_setup="/cygdrive/c/Program\ Files/nodejs/nodevars.bat;echo z-schema myschema.json instance.json"
+nodejs_setup
+
+```

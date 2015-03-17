@@ -29,9 +29,5 @@
       ],
       "additionalItems": false
     }
-  },
-  "additionalProperties": false,
-  "required": [
-    "chain"
-  ]
+  }
 }

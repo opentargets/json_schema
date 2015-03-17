@@ -41,6 +41,5 @@
       ],
       "additionalItems": false
     }
-  },
-  "additionalProperties": false
+  }
 }
