@@ -28,5 +28,10 @@
   "required": [
     "type_of",
     "chain"
-  ]
+  ],
+  "remote_schemas": {
+  	"bioentities": {
+  		"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
+  	}
+  }
 }
