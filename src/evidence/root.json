@@ -45,7 +45,7 @@
       "format": "date-time"
     }
   },
-  "additionalProperties": true,
+
   "patternProperties": {
     "^preferred_hyperlink_[1-9]$": {
       "$ref": "#/definitions/linkout"
