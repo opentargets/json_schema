@@ -154,6 +154,11 @@
     "expert": {
       "type": "object",
       "properties": {
+        "type": {
+          "enum": [
+            "expert"
+          ]
+        },
         "statement": {
           "type": "string"
         },
@@ -177,11 +182,20 @@
           "type": "boolean"
         }
       },
+      "required": [
+        "type",
+        "status"
+      ],
       "additionalProperties": false
     },
     "literature": {
       "type": "object",
       "properties": {
+        "type": {
+          "enum": [
+            "literature"
+          ]
+        },
         "lit_refs": {
           "type": "array",
           "items": {
@@ -192,11 +206,20 @@
           }
         }
       },
+      "required": [
+        "type",
+        "lit_refs"
+      ],
       "additionalProperties": false
     },
     "database": {
       "type": "object",
       "properties": {
+        "type": {
+          "enum": [
+            "database"
+          ]
+        },
         "dbxref": {
           "type": "object",
           "properties": {
@@ -213,7 +236,11 @@
               "type": "string"
             }
           },
-          "additionalProperties": false
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version"
+          ]
         },
         "id": {
           "type": "string"
@@ -223,19 +250,28 @@
         }
       },
       "additionalProperties": false,
-      "linkout": {
-        "type": "object",
-        "properties": {
-          "nice_name": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri"
-          }
+      "required": [
+        "type",
+        "id",
+        "version"
+      ]
+    },
+    "linkout": {
+      "type": "object",
+      "properties": {
+        "nice_name": {
+          "type": "string"
         },
-        "additionalProperties": false
-      }
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "nice_name",
+        "url"
+      ]
     }
   }
 }
