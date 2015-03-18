@@ -6,5 +6,5 @@
 ./test_z-schema.sh &&
 
 for i in `find ../src/ -name "*.json"`;
-	do BNAME=`basename $i`;echo "TEST: $BNAME";z-schema $i;
+	do echo "TEST: $i";z-schema $i;
 done

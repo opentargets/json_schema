@@ -7,17 +7,19 @@
   "properties": {
     "association_score": {
       "type": "array",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/pvalue"
-        },
-        {
-          "$ref": "#/definitions/probability"
-        },
-        {
-          "$ref": "#/definitions/rank"
-        }
-      ]
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/pvalue"
+          },
+          {
+            "$ref": "#/definitions/probability"
+          },
+          {
+            "$ref": "#/definitions/rank"
+          }
+        ]
+      }
     },
     "evidence_codes": {
       "type": "array",
@@ -33,17 +35,19 @@
     },
     "provenance_type": {
       "type": "array",
-      "anyOf": [
-        {
-          "$ref": "#/definitions/expert"
-        },
-        {
-          "$ref": "#/definitions/literature"
-        },
-        {
-          "$ref": "#/definitions/database"
-        }
-      ]
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/expert"
+          },
+          {
+            "$ref": "#/definitions/literature"
+          },
+          {
+            "$ref": "#/definitions/database"
+          }
+        ]
+      }
     },
     "linkouts": {
       "type": "array",
