@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./test_z-schema.sh &&
+z-schema ../src/evidence_chain/generic.json ./evidence_chain/generic.json
