@@ -45,12 +45,6 @@
       "format": "date-time"
     }
   },
-  "patternProperties": {
-    "^preferred_hyperlink_[1-9]$": {
-      "$ref": "#/definitions/linkout"
-    }
-  },
-
   "definitions": {
     "pvalue": {
       "type": "object",
