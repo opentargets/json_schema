@@ -31,12 +31,9 @@
       "additionalItems": false
     }
   },
-  "remote_schemas": {
-    "bioentities": {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
-    },
-    "evidence": {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
-    }
-  }
+  "remote_schemas": [
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout.json" }
+  ]
 }

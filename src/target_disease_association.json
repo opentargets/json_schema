@@ -44,7 +44,7 @@
         },
         {
           "description": "A generic target-evidence-disease model e.g. the first draft COSMIC data",
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/root.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/generic.json"
         }
       ]
     }
