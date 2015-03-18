@@ -21,18 +21,6 @@
         ]
       }
     },
-    "evidence_codes": {
-      "type": "array",
-      "description": "An array of evidence codes",
-      "items": {
-        "type": "string",
-        "enum": [
-          "http://purl.obolibrary.org/obo/ECO_0000205",
-          "http://purl.obolibrary.org/obo/ECO_0000053"
-        ]
-      },
-      "minItems": 1
-    },
     "provenance_type": {
       "type": "array",
       "items": {
@@ -63,13 +51,7 @@
       "$ref": "#/definitions/linkout"
     }
   },
-  "required": [
-    "association_score",
-    "evidence_codes",
-    "provenance_type",
-    "is_associated",
-    "date_asserted"
-  ],
+
   "definitions": {
     "pvalue": {
       "type": "object",
