@@ -49,20 +49,6 @@
         ]
       }
     },
-    "linkouts": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "description": "provide preferred hyperlink - 0=preferred, 1=next preferred, 2....",
-        "properties": {
-          "patternProperties": {
-            "^preferred_hyperlink_[0-9]+$": {
-              "type": "linkout"
-            }
-          }
-        }
-      }
-    },
     "is_associated": {
       "type": "boolean"
     },
@@ -72,6 +58,11 @@
     }
   },
   "additionalProperties": false,
+  "patternProperties": {
+    "^preferred_hyperlink_[1-9]$": {
+      "$ref": "#/definitions/linkout"
+    }
+  },
   "required": [
     "association_score",
     "evidence_codes",
