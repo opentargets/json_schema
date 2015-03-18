@@ -4,6 +4,10 @@
   "description": "Expression evidence linking gene/protein to disease",
   "type": "object",
   "version": "1.2",
+  
+  "properties" : {
+  
+  "expression_evidence" : {
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
@@ -47,4 +51,8 @@
       "additionalProperties": false
     }
   ]
+  
+  }
+  
+  }
 }
