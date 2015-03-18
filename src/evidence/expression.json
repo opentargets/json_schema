@@ -35,11 +35,7 @@
     }
   },
   "required": [
-    "association_score",
     "evidence_codes",
-    "provenance_type",
-    "is_associated",
-    "date_asserted",
     "comparison_name",
     "log2_fold_change",
     "experiment_overview"
