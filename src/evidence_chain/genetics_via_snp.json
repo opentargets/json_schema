@@ -10,9 +10,10 @@
     }
   ],
   "properties": {
-    "type_of": {
-      "type": "string",
-      "default": "genetics_via_snp"
+    "type": {
+      "enum": [
+        "genetics_via_snp_evidence_chain"
+      ]
     },
     "chain": {
       "type": "array",
@@ -37,11 +38,11 @@
     }
   },
   "remote_schemas": {
-  	"bioentities": {
-  		"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
-  	},
-  	"evidence": {
-  		"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
-  	}
+    "bioentities": {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
+    },
+    "evidence": {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json"
+    }
   }
 }

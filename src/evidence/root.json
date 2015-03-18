@@ -27,7 +27,7 @@
         "enum": [
           "http://purl.obolibrary.org/obo/ECO_0000205",
           "http://purl.obolibrary.org/obo/ECO_0000053"
-        ]        
+        ]
       },
       "minItems": 1
     },
@@ -79,6 +79,11 @@
     "pvalue": {
       "type": "object",
       "properties": {
+        "type": {
+          "enum": [
+            "pvalue"
+          ]
+        },
         "value": {
           "type": "number",
           "minimum": 0,
@@ -88,11 +93,21 @@
           "type": "string"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "value",
+        "method"
+      ]
     },
     "probability": {
       "type": "object",
       "properties": {
+        "type": {
+          "enum": [
+            "probability"
+          ]
+        },
         "value": {
           "type": "number",
           "minimum": 0,
@@ -102,11 +117,21 @@
           "type": "string"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "value",
+        "method"
+      ]
     },
     "rank": {
       "type": "object",
       "properties": {
+        "type": {
+          "enum": [
+            "rank"
+          ]
+        },
         "rank_position": {
           "type": "number",
           "minimum": 1
@@ -119,7 +144,12 @@
           "type": "string"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "value",
+        "method"
+      ]
     },
     "expert": {
       "type": "object",
