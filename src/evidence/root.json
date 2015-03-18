@@ -57,7 +57,7 @@
       "format": "date-time"
     }
   },
-  "additionalProperties": false,
+  "additionalProperties": true,
   "patternProperties": {
     "^preferred_hyperlink_[1-9]$": {
       "$ref": "#/definitions/linkout"

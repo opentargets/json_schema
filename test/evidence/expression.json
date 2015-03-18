@@ -1,0 +1,32 @@
+{
+    "association_score": [
+        {
+            "type": "pvalue",
+            "value": 0.0000418,
+            "method": "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
+        }
+    ],
+    "evidence_codes": [
+        "http://purl.obolibrary.org/obo/ECO_0000356"
+    ],
+    "provenance_type": [
+        {
+            "type": "database",
+            "version": "111111",
+            "id": "Expression_Atlas"
+        }
+    ],
+    "preferred_hyperlink_1": {
+        "url": "http://www.ebi.ac.uk/gxa/genes/ENSG00000127720",
+        "nice_name": "Baseline gene expression in Expression Atlas"
+    },
+    "preferred_hyperlink_2": {
+        "url": "http://www.ebi.ac.uk/gxa/genes/ENSG00000127720",
+        "nice_name": "Baseline gene expression in Expression Atlas"
+    },
+    "date_asserted": "2015-02-16T09:54:13Z",
+    "is_associated": true,
+    "comparison_name": "'osteosarcoma' vs 'normal'",
+    "log2_fold_change": -1.2,
+    "experiment_overview": "details about the osteosarcoma study"
+}
