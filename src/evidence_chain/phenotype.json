@@ -4,11 +4,6 @@
   "description": "Target-disease association via model organism phenotypes",
   "type": "object",
   "version": "1.2",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence_chain/generic.json"
-    }
-  ],
   "properties": {
     "type": {
       "enum": [
