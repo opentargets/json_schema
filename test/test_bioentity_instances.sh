@@ -5,6 +5,8 @@
 #Check that z-schema is installed
 ./test_z-schema.sh &&
 
+echo -e "TESTSUITE: BIOENTITIES\n"
+
 for i in `find ./bioentities/ -name "*.json"`;
 	do BNAME=`basename $i`;echo "TEST: $BNAME";z-schema ../src/bioentity/$BNAME $i;
 done
