@@ -17,6 +17,8 @@
 
 - [Click here](../src/target_disease_association.json) for the primary CTTV target-disease schema
 
+- [Click here](../test/target_disease_assoc/target_disease_association.json) for an example instance (very much made up!) that fits the primary schema
+
 - Please provide JSON instances validated against the above schema in **a single file** using 1 JSON instance per line e.g.
 ```
 { "target_disease_association_object_1" }
