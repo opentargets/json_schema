@@ -43,6 +43,7 @@ cd test
 
 ## View examples
 
+- [This](../examples/expression.json) is a validated RNA-expression example
 - The above test suite references [a few manually generated JSON instances](../test). 
 
 ## Python factory package
