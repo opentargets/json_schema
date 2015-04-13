@@ -19,7 +19,9 @@
         "type": "string",
         "enum": [
           "http://purl.obolibrary.org/obo/ECO_0000205",
-          "http://purl.obolibrary.org/obo/ECO_0000053"
+          "http://purl.obolibrary.org/obo/ECO_0000053",
+          "http://www.targetvalidation.org/evidence/literature_mining",
+          "http://purl.obolibrary.org/obo/ECO_0000204"          
         ]
       },
       "minItems": 1
