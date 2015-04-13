@@ -1,0 +1,111 @@
+{
+    "sourceID": "European Variation Archive",
+    "validated_against_schema_version": "1.2",
+    "unique_association_fields": {
+        "gene": "ENSG00000110395",
+        "clinvarAccession": "http://identifiers.org/clinvar.record/RCV000038347",
+        "phenotype": "http://identifiers.org/orphanet/648"
+    },
+    "evidence_chain": {
+        "type": "genetics_via_snp_evidence_chain",
+        "chain": [
+            {
+                "target_type": "http://identifiers.org/cttv.target/gene",
+                "activity": "http://identifiers.org/cttv.activity/predicted_damaging",
+                "about": [
+                    "http://identifiers.org/ensembl/ENSG00000110395"
+                ]
+            },
+            {
+                "association_score": [
+                    {
+                        "value": 0.77,
+                        "type": "probability",
+                        "method": "Probability of gene-SNP assignment by mapping software"
+                    }
+                ],
+                "provenance_type": [
+                    {
+                        "type": "database",
+                        "version": "0.1",
+                        "id": "EVA",
+                        "dbxref": {
+                            "version": "2014-09",
+                            "url": "http://identifiers.org/clinvar/RCV000038347",
+                            "id": "http://identifiers.org/clinvar"
+                        }
+                    },
+                    {
+                        "type": "expert",
+                        "statement": "Primary submitter of data",
+                        "status": true
+                    }
+                ],
+                "is_associated": true,
+                "date_asserted": "2014-05-20T00:00:00Z",
+                "evidence_codes": [
+                    "http://purl.obolibrary.org/obo/ECO_0000205",
+                    "http://identifiers.org/eco/cttv_mapping_pipeline"
+                ],
+                "functional_consequence": "http://purl.obolibrary.org/obo/SO_0001537",
+                "preferred_hyperlink_1": {
+                    "nice_name": "Further details in ClinVar database",
+                    "url": "http://www.ncbi.nlm.nih.gov/clinvar/RCV000038347"
+                }
+            },
+            {
+                "about": [
+                    "http://identifiers.org/dbsnp/rs397517077"
+                ]
+            },
+            {
+                "association_score": [
+                    {
+                        "value": 0.25,
+                        "type": "pvalue",
+                        "method": "ClinVar star score divided by 4.0"
+                    }
+                ],
+                "provenance_type": [
+                    {
+                        "type": "literature",
+                        "lit_refs": [
+                            "http://identifiers.org/pubmed/20301303",
+                            "http://identifiers.org/pubmed/20876176"
+                        ]
+                    },
+                    {
+                        "type": "database",
+                        "version": "0.1",
+                        "id": "EVA",
+                        "dbxref": {
+                            "version": "2014-09",
+                            "url": "http://identifiers.org/clinvar/RCV000038347",
+                            "id": "http://identifiers.org/clinvar"
+                        }
+                    },
+                    {
+                        "type": "expert",
+                        "statement": "Primary submitter of data",
+                        "status": true
+                    }
+                ],
+                "is_associated": true,
+                "date_asserted": "2014-05-20T00:00:00Z",
+                "evidence_codes": [
+                    "http://identifiers.org/eco/GWAS",
+                    "http://purl.obolibrary.org/obo/ECO_0000205"
+                ],
+                "preferred_hyperlink_1": {
+                    "nice_name": "Further details in ClinVar database",
+                    "url": "http://www.ncbi.nlm.nih.gov/clinvar/RCV000038347"
+                }
+            },
+            {
+                "about": [
+                    "http://www.orpha.net/ORDO/Orphanet_648"
+                ]
+            }
+        ]
+    }
+}
