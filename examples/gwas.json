@@ -95,11 +95,7 @@
                 "evidence_codes": [
                     "http://identifiers.org/eco/GWAS",
                     "http://purl.obolibrary.org/obo/ECO_0000205"
-                ],
-                "preferred_hyperlink_1": {
-                    "nice_name": "Further details in ClinVar database",
-                    "url": "http://www.ncbi.nlm.nih.gov/clinvar/RCV000038347"
-                }
+                ]
             },
             {
                 "about": [

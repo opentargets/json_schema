@@ -1,0 +1,107 @@
+{
+    "sourceID": "ChEMBL",
+    "validated_against_schema_version": "1.2",
+    "unique_association_fields": {
+        "chembl_targets": "http://identifiers.org/uniprot/P23219,http://identifiers.org/uniprot/P35354",
+        "chembl_molecules": "http://identifiers.org/chembl.compound/CHEMBL6",
+        "atc_classification": "http://identifiers.org/atc/M02AA23",
+        "efo_classification": "http://purl.obolibrary.org/obo/HP_0003326"
+    },
+    "evidence_chain": {
+        "type": "drug_evidence_chain",
+        "chain": [
+            {
+                "target_type": "http://identifiers.org/cttv.target/protein_family",
+                "target_name": "Cyclooxygenase",
+                "activity": "http://identifiers.org/cttv.activity/drug_negative_modulator",
+                "about": [
+                    "http://identifiers.org/uniprot/P23219",
+                    "http://identifiers.org/uniprot/P35354"
+                ]
+            },
+            {
+                "association_score": [
+                    {
+                        "value": 1,
+                        "type": "probability",
+                        "method": "Custom method for probability of mechanism of action association"
+                    }
+                ],
+                "provenance_type": [
+                    {
+                        "type": "literature",
+                        "lit_refs": [
+                            "http://identifiers.org/pubmed/20301303",
+                            "http://identifiers.org/pubmed/20876176"
+                        ]
+                    },
+                    {
+                        "type": "database",
+                        "version": "20",
+                        "id": "ChEMBL"
+                    },
+                    {
+                        "type": "expert",
+                        "status": true
+                    }
+                ],
+                "is_associated": true,
+                "date_asserted": "2014-05-20T00:00:00Z",
+                "evidence_codes": [
+                    "http://identifiers.org/eco/target_drug",
+                    "http://purl.obolibrary.org/obo/ECO_0000205"
+                ],
+                "preferred_hyperlink_1": {
+                    "nice_name": "ChEMBL molecule information",
+                    "url": "https://www.ebi.ac.uk/chembl/compound/inspect/CHEMBL2094253"
+                },
+                "preferred_hyperlink_2": {
+                    "nice_name": "ChEMBL target information",
+                    "url": "https://www.ebi.ac.uk/chembl/target/inspect/CHEMBL6"
+                }
+            },
+            {
+                "about": [
+                    "http://identifiers.org/chembl.compound/CHEMBL6"
+                ],
+                "molecule_name": "Indomethacin",
+                "mechanism_of_action": "Small molecule",
+                "target_class": [
+                    "Oxidoreductase"
+                ],
+                "action_type": "INHIBITOR"
+            },
+            {
+                "association_score": [
+                    {
+                        "value": 1,
+                        "type": "probability",
+                        "method": "Custom scoring method for assigning marketed drug to clinical indication"
+                    }
+                ],
+                "provenance_type": [
+                    {
+                        "type": "database",
+                        "version": "20",
+                        "id": "ChEMBL"
+                    },
+                    {
+                        "type": "expert",
+                        "status": true
+                    }
+                ],
+                "is_associated": true,
+                "date_asserted": "2014-05-20T00:00:00Z",
+                "evidence_codes": [
+                    "http://identifiers.org/eco/drug_disease",
+                    "http://purl.obolibrary.org/obo/ECO_0000205"
+                ]
+            },
+            {
+                "about": [
+                    "http://purl.obolibrary.org/obo/HP_0003326"
+                ]
+            }
+        ]
+    }
+}
