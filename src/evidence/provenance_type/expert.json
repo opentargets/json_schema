@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "expert": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "string"
+        },
+        "author": {
+          "type": "object",
+          "properties": {
+            "organization": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "status": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "expert"
+  ],
+  "additionalProperties": false
+}

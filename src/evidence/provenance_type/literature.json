@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "literature": {
+      "type": "object",
+      "properties": {
+        "lit_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$",
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "extracted_sentences": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minItems": 1
+          }
+        }
+      },
+      "required": [
+        "lit_refs"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "literature"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+      "rank": {
+        "type": "object",
+        "properties": {
+          "rank_position": {
+            "type": "number",
+            "minimum": 1
+          },
+          "sample_size": {
+            "type": "number",
+            "minimum": 1
+          },
+          "method": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "rank_position",
+          "sample_size",
+          "method"
+        ]
+      }
+    },
+    "required": [
+      "rank"
+    ],
+    "additionalProperties": false
+}
