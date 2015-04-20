@@ -42,9 +42,6 @@
   "additionalProperties": false,
   "import_remote_schemas": [
     {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json"
-    },
-    {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
     }    
   ]  

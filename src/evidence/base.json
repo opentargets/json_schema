@@ -16,13 +16,13 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "#/definitions/pvalue"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
         },
         {
-          "$ref": "#/definitions/probability"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
         },
         {
-          "$ref": "#/definitions/rank"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
         }
       ]
     },
@@ -31,256 +31,21 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "#/definitions/expert"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json"
           },
           {
-            "$ref": "#/definitions/literature"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json"
           },
           {
-            "$ref": "#/definitions/database"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json"
           }
         ]
       }
     }
   },
-    "definitions": {
-      "method": {
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string"
-          },
-          "reference": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "description"
-        ],
-        "additionalProperties": false
-      },
-      "pvalue": {
-        "type": "object",
-        "properties": {
-          "pvalue": {
-            "type": "object",
-            "properties": {
-              "value": {
-                "type": "number",
-                "minimum": 0,
-                "maximum": 1
-              },
-              "method": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "value",
-              "method"
-            ]
-          }
-        },
-        "required": [
-          "pvalue"
-        ],
-        "additionalProperties": false
-      },
-      "probability": {
-        "type": "object",
-        "properties": {
-          "probability": {
-            "type": "object",
-            "properties": {
-              "value": {
-                "type": "number",
-                "minimum": 0,
-                "maximum": 1
-              },
-              "method": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "value",
-              "method"
-            ]
-          }
-        },
-        "required": [
-          "probability"
-        ],
-        "additionalProperties": false
-      },
-      "rank": {
-        "type": "object",
-        "properties": {
-          "rank": {
-            "type": "object",
-            "properties": {
-              "rank_position": {
-                "type": "number",
-                "minimum": 1
-              },
-              "sample_size": {
-                "type": "number",
-                "minimum": 1
-              },
-              "method": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "rank_position",
-              "sample_size",
-              "method"
-            ]
-          }
-        },
-        "required": [
-          "rank"
-        ],
-        "additionalProperties": false
-      },
-      "expert": {
-        "type": "object",
-        "properties": {
-          "expert": {
-            "type": "object",
-            "properties": {
-              "statement": {
-                "type": "string"
-              },
-              "author": {
-                "type": "object",
-                "properties": {
-                  "organization": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string",
-                    "format": "email"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false
-              },
-              "status": {
-                "type": "boolean"
-              }
-            },
-            "required": [
-              "status"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "required": [
-          "expert"
-        ],
-        "additionalProperties": false
-      },
-      "literature": {
-        "type": "object",
-        "properties": {
-          "literature": {
-            "type": "object",
-            "properties": {
-              "lit_refs": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$",
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
-              },
-              "extracted_sentences": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minItems": 1
-                }
-              }
-            },
-            "required": [
-              "lit_refs"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "required": [
-          "literature"
-        ],
-        "additionalProperties": false
-      },
-      "database": {
-        "type": "object",
-        "properties": {
-          "database": {
-            "type": "object",
-            "properties": {
-              "dbxref": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "description": "Please provide the original DB name"
-                  },
-                  "url": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
-                  },
-                  "version": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false,
-                "required": [
-                  "id",
-                  "version"
-                ]
-              },
-              "id": {
-                "type": "string"
-              },
-              "version": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "id",
-              "version"
-            ]
-          }
-        },
-        "required": [
-          "database"
-        ],
-        "additionalProperties": false
-      },
-      "linkout": {
-        "type": "object",
-        "properties": {
-          "nice_name": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri"
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "nice_name",
-          "url"
-        ]
-      }
-    }
+  "import_remote_schemas": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    }    
+  ]   
   }
