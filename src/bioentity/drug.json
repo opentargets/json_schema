@@ -22,25 +22,12 @@
     "molecule_type": {
       "type": "string"
     },
-    "mechanism_of_action": {
-      "type": "string"
-    },
-    "target_class": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "action_type": {
-      "type": "string"
-    }
+
   },
   "required": [
     "id",
     "molecule_name",
-    "mechanism_of_action",
-    "target_class",
-    "action_type"
+    "molecule_type"
   ],
   "additionalProperties": false
 }

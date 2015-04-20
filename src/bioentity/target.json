@@ -71,6 +71,12 @@
     "target_name": {
       "type": "string",
       "description": "used by ChEMBL initially if they have a more canonical target name, optional"
+    },
+    "target_class": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": [

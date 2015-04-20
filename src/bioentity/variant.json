@@ -20,9 +20,9 @@
     
     "type": {
       "enum": [
-        "snp_single",
-        "snp_multiple",
-        "structural_variant"
+        "snp single",
+        "snp multiple",
+        "structural variant"
       ]
     }
     
