@@ -1,31 +1,32 @@
 {
-    "type": "object",
-    "properties": {
-      "rank": {
-        "type": "object",
-        "properties": {
-          "rank_position": {
-            "type": "number",
-            "minimum": 1
-          },
-          "sample_size": {
-            "type": "number",
-            "minimum": 1
-          },
-          "method": {
-            "type": "string"
-          }
+  "type": "object",
+  "properties": {
+    "rank": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "number",
+          "minimum": 1
         },
-        "additionalProperties": false,
-        "required": [
-          "rank_position",
-          "sample_size",
-          "method"
-        ]
-      }
-    },
-    "required": [
-      "rank"
-    ],
-    "additionalProperties": false
+        "sample_size": {
+          "type": "number",
+          "minimum": 1
+        },
+        "method": {
+          "type": "object",
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "position",
+        "sample_size",
+        "method"
+      ]
+    }
+  },
+  "required": [
+    "rank"
+  ],
+  "additionalProperties": false
 }
