@@ -1,29 +1,34 @@
 {
-    "type": "object",
-    "properties": {
-        "probability": {
-            "type": "object",
-            "properties": {
-                "value": {
-                    "type": "number",
-                    "minimum": 0,
-                    "maximum": 1
-                },
-                "method": {
-                    "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
-                }
-            },
-            "additionalProperties": false,
-            "required": [
-                "value",
-                "method"
-            ]
+  "type": "object",
+  "properties": {
+    "probability": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "method": {
+          "type": "object",
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
         }
-    },
-    "required": [
-        "probability",
+      },
+      "additionalProperties": false,
+      "required": [
+        "value",
         "method"
-    ],
-    "additionalProperties": false
+      ]
+    }
+  },
+  "required": [
+    "probability",
+    "method"
+  ],
+  "additionalProperties": false,
+  "import_remote_schemas": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json"
+    }
+  ]
 }
