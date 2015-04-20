@@ -1,25 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Evidence_Root",
-  "description": "Root schema for CTTV evidence",
+  "title": "Evidence_Base",
+  "description": "Base schema for CTTV evidence",
   "version": "1.2",
   "type": "object",
   "properties": {
+    "is_associated": {
+      "type": "boolean"
+    },
+    "date_asserted": {
+      "type": "string",
+      "format": "date-time"
+    },
     "association_score": {
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/definitions/pvalue"
-          },
-          {
-            "$ref": "#/definitions/probability"
-          },
-          {
-            "$ref": "#/definitions/rank"
-          }
-        ]
-      }
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/pvalue"
+        },
+        {
+          "$ref": "#/definitions/probability"
+        },
+        {
+          "$ref": "#/definitions/rank"
+        }
+      ]
     },
     "provenance_type": {
       "type": "array",
@@ -36,219 +41,246 @@
           }
         ]
       }
-    },
-    "is_associated": {
-      "type": "boolean"
-    },
-    "date_asserted": {
-      "type": "string",
-      "format": "date-time"
     }
   },
-  "definitions": {
-    "pvalue": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "enum": [
-            "pvalue"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1
-        },
-        "method": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "type",
-        "value",
-        "method"
-      ]
-    },
-    "probability": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "enum": [
-            "probability"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1
-        },
-        "method": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "type",
-        "value",
-        "method"
-      ]
-    },
-    "rank": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "enum": [
-            "rank"
-          ]
-        },
-        "rank_position": {
-          "type": "number",
-          "minimum": 1
-        },
-        "sample_size": {
-          "type": "number",
-          "minimum": 1
-        },
-        "method": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "type",
-        "value",
-        "method"
-      ]
-    },
-    "expert": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "enum": [
-            "expert"
-          ]
-        },
-        "statement": {
-          "type": "string"
-        },
-        "author": {
-          "type": "object",
-          "properties": {
-            "organization": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string",
-              "format": "email"
-            },
-            "name": {
-              "type": "string"
-            }
+    "definitions": {
+      "method": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
           },
-          "additionalProperties": false
-        },
-        "status": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "type",
-        "status"
-      ],
-      "additionalProperties": false
-    },
-    "literature": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "enum": [
-            "literature"
-          ]
-        },
-        "lit_refs": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "http://identifiers.org/pubmed/[0-9]+|http://identifiers.org/pmc/PMC[0-9]{4,}$",
-            "minItems": 1,
-            "uniqueItems": true
+          "reference": {
+            "type": "string"
           }
         },
-        "extracted_sentences": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minItems": 1
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "pvalue": {
+        "type": "object",
+        "properties": {
+          "pvalue": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "method": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "method"
+            ]
           }
-        }
-      },
-      "required": [
-        "type",
-        "lit_refs"
-      ],
-      "additionalProperties": false
-    },
-    "database": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "enum": [
-            "database"
-          ]
         },
-        "dbxref": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string",
-              "description": "Please provide the original DB name"
+        "required": [
+          "pvalue"
+        ],
+        "additionalProperties": false
+      },
+      "probability": {
+        "type": "object",
+        "properties": {
+          "probability": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "method": {
+                "type": "string"
+              }
             },
-            "url": {
-              "type": "string",
-              "format": "uri",
-              "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
+            "additionalProperties": false,
+            "required": [
+              "value",
+              "method"
+            ]
+          }
+        },
+        "required": [
+          "probability"
+        ],
+        "additionalProperties": false
+      },
+      "rank": {
+        "type": "object",
+        "properties": {
+          "rank": {
+            "type": "object",
+            "properties": {
+              "rank_position": {
+                "type": "number",
+                "minimum": 1
+              },
+              "sample_size": {
+                "type": "number",
+                "minimum": 1
+              },
+              "method": {
+                "type": "string"
+              }
             },
-            "version": {
-              "type": "string"
-            }
+            "additionalProperties": false,
+            "required": [
+              "rank_position",
+              "sample_size",
+              "method"
+            ]
+          }
+        },
+        "required": [
+          "rank"
+        ],
+        "additionalProperties": false
+      },
+      "expert": {
+        "type": "object",
+        "properties": {
+          "expert": {
+            "type": "object",
+            "properties": {
+              "statement": {
+                "type": "string"
+              },
+              "author": {
+                "type": "object",
+                "properties": {
+                  "organization": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "status": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "expert"
+        ],
+        "additionalProperties": false
+      },
+      "literature": {
+        "type": "object",
+        "properties": {
+          "literature": {
+            "type": "object",
+            "properties": {
+              "lit_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$",
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "extracted_sentences": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minItems": 1
+                }
+              }
+            },
+            "required": [
+              "lit_refs"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "literature"
+        ],
+        "additionalProperties": false
+      },
+      "database": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "object",
+            "properties": {
+              "dbxref": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Please provide the original DB name"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
+                  },
+                  "version": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "version"
+            ]
+          }
+        },
+        "required": [
+          "database"
+        ],
+        "additionalProperties": false
+      },
+      "linkout": {
+        "type": "object",
+        "properties": {
+          "nice_name": {
+            "type": "string"
           },
-          "additionalProperties": false,
-          "required": [
-            "id",
-            "version"
-          ]
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
         },
-        "id": {
-          "type": "string"
-        },
-        "version": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "type",
-        "id",
-        "version"
-      ]
-    },
-    "linkout": {
-      "type": "object",
-      "properties": {
-        "nice_name": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "nice_name",
-        "url"
-      ]
+        "additionalProperties": false,
+        "required": [
+          "nice_name",
+          "url"
+        ]
+      }
     }
   }
-}
