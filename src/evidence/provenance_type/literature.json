@@ -4,25 +4,34 @@
     "literature": {
       "type": "object",
       "properties": {
-        "lit_refs": {
+        "references": {
           "type": "array",
           "items": {
-            "type": "string",
-            "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
+              },
+              "score": {
+                "type": "object",
+                "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+              },
+              "mined_sentences": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minItems": 1
+                }
+              }
+            },
             "minItems": 1,
             "uniqueItems": true
-          }
-        },
-        "extracted_sentences": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minItems": 1
           }
         }
       },
       "required": [
-        "lit_refs"
+        "references"
       ],
       "additionalProperties": false
     }
@@ -30,5 +39,13 @@
   "required": [
     "literature"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "import_remote_schemas": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    }    
+  ]  
 }
