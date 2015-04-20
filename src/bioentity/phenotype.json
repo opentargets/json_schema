@@ -5,10 +5,10 @@
   "type": "object",
   "version": "1.2",
   "properties": {
-    "about": {
+    "id": {
       "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
         }
       ],
       "items": {
@@ -19,7 +19,7 @@
     }
   },
   "required": [
-    "about"
+    "id"
   ],
   "additionalProperties": false
 }

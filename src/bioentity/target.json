@@ -1,14 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "CTTV target",
-  "description": "CTTV target model. Target includes bioentities like proteins, genes, protein complexes etc.",
+  "description": "CTTV target model. Target includes base like proteins, genes, protein complexes etc.",
   "type": "object",
   "version": "1.2",
   "properties": {
-    "about": {
+    "id": {
       "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
         }
       ],
       "items": {
@@ -74,7 +74,7 @@
     }
   },
   "required": [
-    "about",
+    "id",
     "target_type",
     "activity"
   ],
