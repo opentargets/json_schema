@@ -16,12 +16,16 @@
         "additionalProperties": false,
         "required": [
           "value",
-          "method"
+          "method" : {
+          	"type": "object",
+          	"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+          }
         ]
       }
     },
     "required": [
-      "probability"
+      "probability",
+      "method"
     ],
     "additionalProperties": false
 }
