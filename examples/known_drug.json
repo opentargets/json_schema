@@ -30,7 +30,7 @@
             "http://identifiers.org/chembl.compound/CHEMBL6"
         ],
         "molecule_name": "Indomethacin",
-        "molecule_type" : "Small molecule"
+        "molecule_type": "Small molecule"
     },
     "evidence": {
         "target2drug": {
@@ -38,20 +38,22 @@
                 "probability": {
                     "value": 1,
                     "method": {
-                        "url" : "http://www.methodsdescribed.org/",
-                        "description" : "Custom method for probability of mechanism of action association"
+                        "url": "http://www.methodsdescribed.org/",
+                        "description": "Custom method for probability of mechanism of action association"
                     }
                 }
             },
             "provenance_type": {
-                "literature": [
-                    {
-                        "id": "http://identifiers.org/pubmed/20301303"
-                    },
-                    {
-                        "id": "http://identifiers.org/pubmed/20876176"
-                    }
-                ],
+                "literature": {
+                    "references": [
+                        {
+                            "id": "http://identifiers.org/pubmed/20301303"
+                        },
+                        {
+                            "id": "http://identifiers.org/pubmed/20876176"
+                        }
+                    ]
+                },
                 "database": {
                     "version": "20",
                     "id": "ChEMBL"
@@ -84,7 +86,7 @@
                 "probability": {
                     "value": 1,
                     "method": {
-                        "description" : "Custom scoring method for assigning marketed drug to clinical indication"
+                        "description": "Custom scoring method for assigning marketed drug to clinical indication"
                     }
                 }
             },

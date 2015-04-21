@@ -27,18 +27,16 @@
     },
     "evidence": {
         "gene2variant": {
-            "association_score": [
-                {
+            "association_score": {
+                "probability" : {
                     "value": 0.77,
-                    "type": "probability",
                     "method": {
                         "description": "Probability of gene-SNP assignment by mapping software"
                     }
                 }
-            ],
-            "provenance_type": [
-                {
-                    "database" : {
+            },
+            "provenance_type": {
+                "database": {
                     "version": "0.1",
                     "id": "EVA",
                     "dbxref": {
@@ -46,15 +44,12 @@
                         "url": "http://identifiers.org/clinvar/RCV000038347",
                         "id": "http://identifiers.org/clinvar"
                     }
-                    }
                 },
-                {
-                    "expert" : {
+                "expert": {
                     "statement": "Primary submitter of data",
                     "status": true
-                    }
                 }
-            ],
+            },
             "is_associated": true,
             "date_asserted": "2014-05-20T00:00:00Z",
             "evidence_codes": [
@@ -79,9 +74,9 @@
                     }
                 }
             },
-            "provenance_type": [
-                {
-                    "literature": [
+            "provenance_type": {
+                "literature": {
+                    "references": [
                         {
                             "id": "http://identifiers.org/pubmed/20301303"
                         },
@@ -90,24 +85,20 @@
                         }
                     ]
                 },
-                {
-                    "database": {
-                        "version": "0.1",
-                        "id": "EVA",
-                        "dbxref": {
-                            "version": "2014-09",
-                            "url": "http://identifiers.org/clinvar/RCV000038347",
-                            "id": "http://identifiers.org/clinvar"
-                        }
+                "database": {
+                    "version": "0.1",
+                    "id": "EVA",
+                    "dbxref": {
+                        "version": "2014-09",
+                        "url": "http://identifiers.org/clinvar/RCV000038347",
+                        "id": "http://identifiers.org/clinvar"
                     }
                 },
-                {
-                    "expert": {
-                        "statement": "Primary submitter of data",
-                        "status": true
-                    }
+                "expert": {
+                    "statement": "Primary submitter of data",
+                    "status": true
                 }
-            ],
+            },
             "is_associated": true,
             "date_asserted": "2014-05-20T00:00:00Z",
             "evidence_codes": [
