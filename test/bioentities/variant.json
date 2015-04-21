@@ -1,5 +1,6 @@
 {
-    "about": [
+    "id": [
         "http://identifiers.org/dbsnp/rs11010067"
-    ]
+    ],
+    "type" : "snp single"
 }

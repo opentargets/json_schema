@@ -16,10 +16,21 @@
         "pattern": "^http://purl.obolibrary.org/obo/HP_[0-9]{4,}||http://purl.obolibrary.org/obo/MP_[0-9]{4,}$"
       },
       "minItems": 1
+    },
+    "species": {
+      "type": "string",
+      "enum": [
+        "mouse",
+        "human",
+        "rat",
+        "zebrafish",
+        "dog"
+      ]
     }
   },
   "required": [
-    "id"
+    "id",
+    "species"
   ],
   "additionalProperties": false
 }
