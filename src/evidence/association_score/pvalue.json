@@ -22,8 +22,7 @@
         }
     },
     "required": [
-        "pvalue",
-        "method"
+        "pvalue"
     ],
   "additionalProperties": false
 }

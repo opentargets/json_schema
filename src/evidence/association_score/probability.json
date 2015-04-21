@@ -22,8 +22,7 @@
     }
   },
   "required": [
-    "probability",
-    "method"
+    "probability"
   ],
   "additionalProperties": false
 }
