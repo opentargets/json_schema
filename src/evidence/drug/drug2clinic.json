@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "drug_disease_clinical_evidence",
+  "description": "Evidence linking drug to disease in a clinical trial",
+  "type": "object",
+  "version": "1.2",
+  "properties": {
+    "allOf": {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+    },
+    "association_score": {},
+    "provenance_type": {},
+    "is_associated": {},
+    "date_asserted": {},
+    "evidence_codes": {
+      "type": "array",
+      "description": "An array of evidence codes",
+      "items": {
+        "type": "string",
+        "enum": [
+            "http://identifiers.org/eco/drug_disease",
+            "http://purl.obolibrary.org/obo/ECO_0000205"
+        ]
+      },
+      "minItems": 1
+    },
+    "urls": {
+      "type": "array",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+      }
+    }    
+  },
+
+  "required": [
+    "association_score",
+    "provenance_type",
+    "is_associated",
+    "date_asserted",
+    "evidence_codes"
+  ],
+  "additionalProperties": false,
+  "import_remote_schemas": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json"
+    }
+  ]
+}
