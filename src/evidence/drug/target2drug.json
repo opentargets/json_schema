@@ -7,40 +7,48 @@
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+    },
+    {
+      "properties": {
+        "allOf": {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+        },
+        "evidence_codes": {
+          "type": "array",
+          "description": "An array of evidence codes",
+          "items": {
+            "type": "string",
+            "enum": [
+              "http://identifiers.org/eco/target_drug",
+              "http://purl.obolibrary.org/obo/ECO_0000205"
+            ]
+          },
+          "minItems": 1
+        },
+        "mechanism_of_action": {
+          "type": "string"
+        },
+        "action_type": {
+          "type": "string"
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+          }
+        }
+      }
     }
   ],
   "properties": {
-    "allOf": {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
-    },
     "association_score": {},
     "provenance_type": {},
     "is_associated": {},
     "date_asserted": {},
-    "evidence_codes": {
-      "type": "array",
-      "description": "An array of evidence codes",
-      "items": {
-        "type": "string",
-        "enum": [
-          "http://identifiers.org/eco/target_drug",
-          "http://purl.obolibrary.org/obo/ECO_0000205"
-        ]
-      },
-      "minItems": 1
-    },
-    "mechanism_of_action": {
-      "type": "string"
-    },
-    "action_type": {
-      "type": "string"
-    },
-    "urls": {
-      "type": "array",
-      "items": {
-        "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
-      }
-    }
+    "evidence_codes": {},
+    "mechanism_of_action": {},
+    "action_type": {},
+    "urls": {}
   },
   "required": [
     "association_score",
