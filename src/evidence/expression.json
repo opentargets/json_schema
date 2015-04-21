@@ -4,44 +4,50 @@
   "description": "Expression evidence linking gene/protein to disease",
   "type": "object",
   "version": "1.2",
-  "properties": {
-    "allOf": {
+  "allOf": [
+    {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
     },
+    {
+      "properties": {
+        "comparison_name": {
+          "type": "string"
+        },
+        "log2_fold_change": {
+          "type": "number"
+        },
+        "experiment_overview": {
+          "type": "string"
+        },
+        "evidence_codes": {
+          "type": "array",
+          "description": "An array of evidence codes",
+          "items": {
+            "type": "string",
+            "enum": [
+              "http://purl.obolibrary.org/obo/ECO_0000356",
+              "http://purl.obolibrary.org/obo/ECO_0000357",
+              "http://purl.obolibrary.org/obo/ECO_0000358",
+              "http://purl.obolibrary.org/obo/ECO_0000359",
+              "http://purl.obolibrary.org/obo/ECO_0000205"
+            ]
+          },
+          "minItems": 1
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
     "association_score": {},
     "provenance_type": {},
     "is_associated": {},
-    "date_asserted": {},
-    "comparison_name": {
-      "type": "string"
-    },
-    "log2_fold_change": {
-      "type": "number"
-    },
-    "experiment_overview": {
-      "type": "string"
-    },
-    "evidence_codes": {
-      "type": "array",
-      "description": "An array of evidence codes",
-      "items": {
-        "type": "string",
-        "enum": [
-          "http://purl.obolibrary.org/obo/ECO_0000356",
-          "http://purl.obolibrary.org/obo/ECO_0000357",
-          "http://purl.obolibrary.org/obo/ECO_0000358",
-          "http://purl.obolibrary.org/obo/ECO_0000359",
-          "http://purl.obolibrary.org/obo/ECO_0000205"
-        ]
-      },
-      "minItems": 1
-    },
-    "urls": {
-           "type" : "array",
-           "items": {
-                   "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
-           }
-    }    
+    "date_asserted": {}
   },
   "required": [
     "association_score",
@@ -55,9 +61,17 @@
   ],
   "additionalProperties": false,
   "import_remote_schemas": [
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" }
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+    }
   ]
 }
