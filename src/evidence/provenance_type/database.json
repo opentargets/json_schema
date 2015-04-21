@@ -1,47 +1,38 @@
 {
-  "type": "object",
-  "properties": {
-    "database": {
-      "type": "object",
-      "properties": {
+    "type": "object",
+    "properties": {
         "dbxref": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string",
-              "description": "Please provide the original DB name"
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Please provide the original DB name"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
+                },
+                "version": {
+                    "type": "string"
+                }
             },
-            "url": {
-              "type": "string",
-              "format": "uri",
-              "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
-            },
-            "version": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "id",
-            "version"
-          ]
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "version"
+            ]
         },
         "id": {
-          "type": "string"
+            "type": "string"
         },
         "version": {
-          "type": "string"
+            "type": "string"
         }
-      },
-      "additionalProperties": false,
-      "required": [
+    },
+    "additionalProperties": false,
+    "required": [
         "id",
         "version"
-      ]
-    }
-  },
-  "required": [
-    "database"
-  ],
-  "additionalProperties": false
+    ]
 }

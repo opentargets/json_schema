@@ -1,40 +1,31 @@
 {
-  "type": "object",
-  "properties": {
-    "expert": {
-      "type": "object",
-      "properties": {
+    "type": "object",
+    "properties": {
         "statement": {
-          "type": "string"
+            "type": "string"
         },
         "author": {
-          "type": "object",
-          "properties": {
-            "organization": {
-              "type": "string"
+            "type": "object",
+            "properties": {
+                "organization": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "name": {
+                    "type": "string"
+                }
             },
-            "email": {
-              "type": "string",
-              "format": "email"
-            },
-            "name": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
+            "additionalProperties": false
         },
         "status": {
-          "type": "boolean"
+            "type": "boolean"
         }
-      },
-      "required": [
+    },
+    "required": [
         "status"
-      ],
-      "additionalProperties": false
-    }
-  },
-  "required": [
-    "expert"
-  ],
-  "additionalProperties": false
+    ],
+    "additionalProperties": false
 }

@@ -38,7 +38,7 @@
             ],
             "provenance_type": [
                 {
-                    "type": "database",
+                    "database" : {
                     "version": "0.1",
                     "id": "EVA",
                     "dbxref": {
@@ -46,11 +46,13 @@
                         "url": "http://identifiers.org/clinvar/RCV000038347",
                         "id": "http://identifiers.org/clinvar"
                     }
+                    }
                 },
                 {
-                    "type": "expert",
+                    "expert" : {
                     "statement": "Primary submitter of data",
                     "status": true
+                    }
                 }
             ],
             "is_associated": true,
@@ -60,10 +62,12 @@
                 "http://identifiers.org/eco/cttv_mapping_pipeline"
             ],
             "functional_consequence": "http://purl.obolibrary.org/obo/SO_0001537",
-            "preferred_hyperlink_1": {
-                "nice_name": "Further details in ClinVar database",
-                "url": "http://www.ncbi.nlm.nih.gov/clinvar/RCV000038347"
-            }
+            "urls": [
+                {
+                    "nice_name": "Further details in ClinVar database",
+                    "url": "http://www.ncbi.nlm.nih.gov/clinvar/RCV000038347"
+                }
+            ]
         },
         "variant2disease": {
             "association_score": {
@@ -77,26 +81,31 @@
             },
             "provenance_type": [
                 {
-                    "type": "literature",
-                    "lit_refs": [
-                        "http://identifiers.org/pubmed/20301303",
-                        "http://identifiers.org/pubmed/20876176"
+                    "literature": [
+                        {
+                            "id": "http://identifiers.org/pubmed/20301303"
+                        },
+                        {
+                            "id": "http://identifiers.org/pubmed/20876176"
+                        }
                     ]
                 },
                 {
-                    "type": "database",
-                    "version": "0.1",
-                    "id": "EVA",
-                    "dbxref": {
-                        "version": "2014-09",
-                        "url": "http://identifiers.org/clinvar/RCV000038347",
-                        "id": "http://identifiers.org/clinvar"
+                    "database": {
+                        "version": "0.1",
+                        "id": "EVA",
+                        "dbxref": {
+                            "version": "2014-09",
+                            "url": "http://identifiers.org/clinvar/RCV000038347",
+                            "id": "http://identifiers.org/clinvar"
+                        }
                     }
                 },
                 {
-                    "type": "expert",
-                    "statement": "Primary submitter of data",
-                    "status": true
+                    "expert": {
+                        "statement": "Primary submitter of data",
+                        "status": true
+                    }
                 }
             ],
             "is_associated": true,

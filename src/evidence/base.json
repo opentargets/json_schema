@@ -27,20 +27,13 @@
       ]
     },
     "provenance_type": {
-      "type": "array",
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json"
-          },
-          {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json"
-          },
-          {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json"
-          }
-        ]
-      }
+      "type": "object",
+      "properties" : {
+        "expert" : { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json" },
+        "literature" : { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json" },
+        "database" : { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json" }
+      },
+      "additionalProperties" : false
     }
   },
   "import_remote_schemas": [
