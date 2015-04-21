@@ -96,7 +96,6 @@
                     "id": "ChEMBL"
                 },
                 "expert": {
-                    "type": "expert",
                     "status": true
                 }
             },

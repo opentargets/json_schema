@@ -30,36 +30,38 @@
                 }
             },
             "provenance_type": {
-                "literature": [
-                    {
-                        "id": "http://identifiers.org/pubmed/18989535",
-                        "score": {
-                            "rank": {
-                                "position": 1,
-                                "sample_size": 200
-                            }
+                "literature": {
+                    "references": [
+                        {
+                            "id": "http://identifiers.org/pubmed/18989535",
+                            "score": {
+                                "rank": {
+                                    "position": 1,
+                                    "sample_size": 200
+                                }
+                            },
+                            "mined_sentences": [
+                                "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
+                                "example sentence 2",
+                                "example sentence 3"
+                            ]
                         },
-                        "mined_sentences": [
-                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
-			    "example sentence 2",
-			    "example sentence 3"
-                        ]
-                    },
-                    {
-                        "id": "http://europepmc.org/articles/PMC4363614",
-                        "score": {
-                            "rank": {
-                                "position": 2,
-                                "sample_size": 200
-                            }
-                        },
-                        "mined_sentences": [
-                            "In the normal control paradigm and AD control group, 7.5-month-old SAMR1 male mice and SAMP8 male mice were grabbed and bandaged while ",
-			    "example sentence 2",
-			    "example sentence 3"
-                        ]
-                    }		    
-                ]
+                        {
+                            "id": "http://europepmc.org/articles/PMC4363614",
+                            "score": {
+                                "rank": {
+                                    "position": 2,
+                                    "sample_size": 200
+                                }
+                            },
+                            "mined_sentences": [
+                                "In the normal control paradigm and AD control group, 7.5-month-old SAMR1 male mice and SAMP8 male mice were grabbed and bandaged while ",
+                                "example sentence 2",
+                                "example sentence 3"
+                            ]
+                        }
+                    ]
+                }
             },
             "is_associated": true,
             "date_asserted": "2014-05-20T00:00:00Z",

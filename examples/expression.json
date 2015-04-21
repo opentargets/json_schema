@@ -55,10 +55,9 @@
                 }
             },
             "provenance_type": {
-                "literature": {
+                "database": {
                     "id": "Expression_Atlas",
-                    "version": "NA",
-                    "type": "database"
+                    "version": "NA"
                 }
             }
         }
