@@ -7,7 +7,7 @@
   "properties": {
     "type": {
       "enum": [
-        "literature_evidence_string"
+        "expression_evidence_string"
       ]
     },    
     "allOf": {

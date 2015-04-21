@@ -1,65 +1,66 @@
 {
-  "sourceID": "Expression Atlas",
-  "validated_against_schema_version": "1.2",
-  "unique_association_fields": {
-    "study_id": "http://identifiers.org/gxa.expt/E-GEOD-14001",
-    "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
-    "geneID": "http://identifiers.org/ensembl/ENSG00000112984"
-  },  
-  "evidence_chain": {
+    "sourceID": "Expression Atlas",
+    "validated_against_schema_version": "1.2",
     "type": "expression_evidence_chain",
-    "chain": [
-      {
+    "unique_association_fields": {
+        "study_id": "http://identifiers.org/gxa.expt/E-GEOD-14001",
+        "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
+        "geneID": "http://identifiers.org/ensembl/ENSG00000112984"
+    },
+    "target": {
         "target_type": "http://identifiers.org/cttv.target/transcript",
         "activity": "http://identifiers.org/cttv.activity/decreased_transcript_level",
         "id": [
-          "http://identifiers.org/ensembl/ENSG00000112984"
+            "http://identifiers.org/ensembl/ENSG00000112984"
         ]
-      },
-      {
-        "is_associated": true,
-        "preferred_hyperlink_3": {
-          "nice_name": "ArrayExpress Experiment overview",
-          "url": "http://identifiers.org/arrayexpress/E-GEOD-14001"
-        },
-        "association_score": [
-          {
-            "value": 0.0168,
-            "type": "pvalue",
-            "method": "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
-          }
-        ],
-        "evidence_codes": [
-          "http://purl.obolibrary.org/obo/ECO_0000356"
-        ],
-        "log2_fold_change": -1.3,
-        "date_asserted": "2015-03-30T20:47:04Z",
-        "preferred_hyperlink_1": {
-          "url": "http://www.ebi.ac.uk/gxa/experiments/E-GEOD-14001?geneQuery=ENSG00000112984",
-          "nice_name": "Gene expression in Expression Atlas"
-        },
-        "preferred_hyperlink_2": {
-          "nice_name": "Baseline gene expression in Expression Atlas",
-          "url": "http://www.ebi.ac.uk/gxa/genes/ENSG00000112984"
-        },
-        "experiment_overview": "Transcription profiling of human LMP ovarian tumors and low-grade ovarian carcinomas to identify genes which dffer from  high-grade ovarian carcinomas - PAX2: a potential biomarker for low malignant potential ovarian tumors and low-grade serous ovarian carcinomas",
-        "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
-        "provenance_type": [
-          {
-            "id": "Expression_Atlas",
-            "version": "NA",
-            "type": "database"
-          }
-        ]
-      },
-      {
+    },
+    "disease": {
         "biosamples": [
-          "animal ovary"
+            "animal ovary"
         ],
         "id": [
-          "http://www.ebi.ac.uk/efo/EFO_0002917"
+            "http://www.ebi.ac.uk/efo/EFO_0002917"
         ]
-      }
-    ]
-  }
+    },
+    "evidence": {
+        "expression": {
+            "is_associated": true,
+            "urls": [
+                {
+                    "url": "http://www.ebi.ac.uk/gxa/experiments/E-GEOD-14001?geneQuery=ENSG00000112984",
+                    "nice_name": "Gene expression in Expression Atlas"
+                },
+                {
+                    "nice_name": "Baseline gene expression in Expression Atlas",
+                    "url": "http://www.ebi.ac.uk/gxa/genes/ENSG00000112984"
+                },
+                {
+                    "nice_name": "ArrayExpress Experiment overview",
+                    "url": "http://identifiers.org/arrayexpress/E-GEOD-14001"
+                }
+            ],
+            "evidence_codes": [
+                "http://purl.obolibrary.org/obo/ECO_0000356"
+            ],
+            "log2_fold_change": -1.3,
+            "date_asserted": "2015-03-30T20:47:04Z",
+            "experiment_overview": "Transcription profiling of human LMP ovarian tumors and low-grade ovarian carcinomas to identify genes which dffer from  high-grade ovarian carcinomas - PAX2: a potential biomarker for low malignant potential ovarian tumors and low-grade serous ovarian carcinomas",
+            "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
+            "association_score": {
+                "pvalue": {
+                    "value": 0.0168,
+                    "method": {
+                        "description": "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
+                    }
+                }
+            },
+            "provenance_type": {
+                "literature": {
+                    "id": "Expression_Atlas",
+                    "version": "NA",
+                    "type": "database"
+                }
+            }
+        }
+    }
 }

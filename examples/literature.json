@@ -4,7 +4,7 @@
     "validated_against_schema_version": "1.2",
     "unique_association_fields": {
         "target": "http://identifiers.org/P43116",
-        "publicationIDs": "http://identifiers.org/pubmed/18989535,http://identifiers.org/pubmed/18989333,http://identifiers.org/pubmed/18989444",
+        "publicationIDs": "http://identifiers.org/pubmed/18989535,http://europepmc.org/articles/PMC4363614",
         "disease_uri": "http://www.ebi.ac.uk/efo/EFO_0000249"
     },
     "target": {
@@ -36,16 +36,29 @@
                         "score": {
                             "rank": {
                                 "position": 1,
-                                "sample_size": 200,
-                                "method": {
-                                    "description": ""
-                                }
+                                "sample_size": 200
                             }
                         },
                         "mined_sentences": [
-                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease."
+                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
+			    "example sentence 2",
+			    "example sentence 3"
                         ]
-                    }
+                    },
+                    {
+                        "id": "http://europepmc.org/articles/PMC4363614",
+                        "score": {
+                            "rank": {
+                                "position": 2,
+                                "sample_size": 200
+                            }
+                        },
+                        "mined_sentences": [
+                            "In the normal control paradigm and AD control group, 7.5-month-old SAMR1 male mice and SAMP8 male mice were grabbed and bandaged while ",
+			    "example sentence 2",
+			    "example sentence 3"
+                        ]
+                    }		    
                 ]
             },
             "is_associated": true,
@@ -53,12 +66,6 @@
             "evidence_codes": [
                 "http://www.targetvalidation.org/evidence/literature_mining",
                 "http://purl.obolibrary.org/obo/ECO_0000213"
-            ],
-            "urls": [
-                {
-                    "nice_name": "View article in EuropePMC",
-                    "url": "http://europepmc.org/search?page=1&query=PMCID:PMC18989535&sortby=Date"
-                }
             ]
         }
     }
