@@ -17,6 +17,9 @@
     "validated_against_schema_version": { },
     "unique_association_fields": { },
     "target" : { },
+    "drug" : {
+      "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/drug.json"  
+    },
     "disease" : { },
     "evidence" : {
         "type" : "object",
@@ -40,6 +43,7 @@
     "validated_against_schema_version",
     "unique_association_fields",
     "target",
+    "drug",
     "disease",
     "evidence"
   ],
