@@ -6,102 +6,105 @@
         "clinvarAccession": "http://identifiers.org/clinvar.record/RCV000038347",
         "phenotype": "http://identifiers.org/orphanet/648"
     },
-    "evidence_chain": {
-        "type": "genetics_via_snp_evidence_chain",
-        "chain": [
-            {
-                "target_type": "http://identifiers.org/cttv.target/gene",
-                "activity": "http://identifiers.org/cttv.activity/predicted_damaging",
-                "id": [
-                    "http://identifiers.org/ensembl/ENSG00000110395"
-                ]
-            },
-            {
-                "association_score": [
-                    {
-                        "value": 0.77,
-                        "type": "probability",
-                        "method": "Probability of gene-SNP assignment by mapping software"
+    "type": "genetics_evidence_string",
+    "target": {
+        "target_type": "http://identifiers.org/cttv.target/gene",
+        "activity": "http://identifiers.org/cttv.activity/predicted_damaging",
+        "id": [
+            "http://identifiers.org/ensembl/ENSG00000110395"
+        ]
+    },
+    "variant": {
+        "id": [
+            "http://identifiers.org/dbsnp/rs397517077"
+        ],
+        "type": "snp single"
+    },
+    "disease": {
+        "id": [
+            "http://www.orpha.net/ORDO/Orphanet_648"
+        ]
+    },
+    "evidence": {
+        "gene2variant": {
+            "association_score": [
+                {
+                    "value": 0.77,
+                    "type": "probability",
+                    "method": {
+                        "description": "Probability of gene-SNP assignment by mapping software"
                     }
-                ],
-                "provenance_type": [
-                    {
-                        "type": "database",
-                        "version": "0.1",
-                        "id": "EVA",
-                        "dbxref": {
-                            "version": "2014-09",
-                            "url": "http://identifiers.org/clinvar/RCV000038347",
-                            "id": "http://identifiers.org/clinvar"
-                        }
-                    },
-                    {
-                        "type": "expert",
-                        "statement": "Primary submitter of data",
-                        "status": true
+                }
+            ],
+            "provenance_type": [
+                {
+                    "type": "database",
+                    "version": "0.1",
+                    "id": "EVA",
+                    "dbxref": {
+                        "version": "2014-09",
+                        "url": "http://identifiers.org/clinvar/RCV000038347",
+                        "id": "http://identifiers.org/clinvar"
                     }
-                ],
-                "is_associated": true,
-                "date_asserted": "2014-05-20T00:00:00Z",
-                "evidence_codes": [
-                    "http://purl.obolibrary.org/obo/ECO_0000205",
-                    "http://identifiers.org/eco/cttv_mapping_pipeline"
-                ],
-                "functional_consequence": "http://purl.obolibrary.org/obo/SO_0001537",
-                "preferred_hyperlink_1": {
-                    "nice_name": "Further details in ClinVar database",
-                    "url": "http://www.ncbi.nlm.nih.gov/clinvar/RCV000038347"
+                },
+                {
+                    "type": "expert",
+                    "statement": "Primary submitter of data",
+                    "status": true
+                }
+            ],
+            "is_associated": true,
+            "date_asserted": "2014-05-20T00:00:00Z",
+            "evidence_codes": [
+                "http://purl.obolibrary.org/obo/ECO_0000205",
+                "http://identifiers.org/eco/cttv_mapping_pipeline"
+            ],
+            "functional_consequence": "http://purl.obolibrary.org/obo/SO_0001537",
+            "preferred_hyperlink_1": {
+                "nice_name": "Further details in ClinVar database",
+                "url": "http://www.ncbi.nlm.nih.gov/clinvar/RCV000038347"
+            }
+        },
+        "variant2disease": {
+            "association_score": {
+                "pvalue": {
+                    "value": 0.25,
+                    "method": {
+                        "description": "ClinVar star score divided by 4.0",
+                        "url": "http://methodexplanation.org/"
+                    }
                 }
             },
-            {
-                "id": [
-                    "http://identifiers.org/dbsnp/rs397517077"
-                ]
-            },
-            {
-                "association_score": [
-                    {
-                        "value": 0.25,
-                        "type": "pvalue",
-                        "method": "ClinVar star score divided by 4.0"
+            "provenance_type": [
+                {
+                    "type": "literature",
+                    "lit_refs": [
+                        "http://identifiers.org/pubmed/20301303",
+                        "http://identifiers.org/pubmed/20876176"
+                    ]
+                },
+                {
+                    "type": "database",
+                    "version": "0.1",
+                    "id": "EVA",
+                    "dbxref": {
+                        "version": "2014-09",
+                        "url": "http://identifiers.org/clinvar/RCV000038347",
+                        "id": "http://identifiers.org/clinvar"
                     }
-                ],
-                "provenance_type": [
-                    {
-                        "type": "literature",
-                        "lit_refs": [
-                            "http://identifiers.org/pubmed/20301303",
-                            "http://identifiers.org/pubmed/20876176"
-                        ]
-                    },
-                    {
-                        "type": "database",
-                        "version": "0.1",
-                        "id": "EVA",
-                        "dbxref": {
-                            "version": "2014-09",
-                            "url": "http://identifiers.org/clinvar/RCV000038347",
-                            "id": "http://identifiers.org/clinvar"
-                        }
-                    },
-                    {
-                        "type": "expert",
-                        "statement": "Primary submitter of data",
-                        "status": true
-                    }
-                ],
-                "is_associated": true,
-                "date_asserted": "2014-05-20T00:00:00Z",
-                "evidence_codes": [
-                    "http://identifiers.org/eco/GWAS",
-                    "http://purl.obolibrary.org/obo/ECO_0000205"
-                ]
-            },
-            {
-                "id": [
-                    "http://www.orpha.net/ORDO/Orphanet_648"
-                ]
-            }
-        ]
+                },
+                {
+                    "type": "expert",
+                    "statement": "Primary submitter of data",
+                    "status": true
+                }
+            ],
+            "is_associated": true,
+            "date_asserted": "2014-05-20T00:00:00Z",
+            "evidence_codes": [
+                "http://identifiers.org/eco/GWAS",
+                "http://purl.obolibrary.org/obo/ECO_0000205"
+            ]
+        }
     }
 }

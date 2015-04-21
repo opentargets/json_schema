@@ -18,6 +18,7 @@
     "unique_association_fields": { },
     "target" : { },
     "disease" : { },
+    "variant" : { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/variant.json" },
     "evidence" : {
         "type" : "object",
         "properties" : {
@@ -40,6 +41,7 @@
     "validated_against_schema_version",
     "unique_association_fields",
     "target",
+    "variant",
     "disease",
     "evidence"
   ],
