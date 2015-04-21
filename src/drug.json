@@ -4,38 +4,51 @@
   "description": "Schema for target-disease evidence where there is drug knowledge",
   "type": "object",
   "version": "1.2",
-  "properties": {
-    "type": {
-      "enum": [
-        "drug_evidence_string"
-      ]
-    },    
-    "allOf": {
+  "allOf": [
+    {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/base.json"
-    },    
-    "sourceID": { },
-    "validated_against_schema_version": { },
-    "unique_association_fields": { },
-    "target" : { },
-    "drug" : {
-      "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/drug.json"  
     },
-    "disease" : { },
-    "evidence" : {
-        "type" : "object",
-        "properties" : {
-            "target2drug" : {
-                "type" : "object",
-                "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/target2drug.json"
-            },
-            "drug2clinic" : {
-                "type" : "object",
-                "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/drug2clinic.json"
-            }            
+    {
+      "properties": {
+        "type": {
+          "enum": [
+            "drug_evidence_string"
+          ]
         },
-        "required" : [ "target2drug", "drug2clinic" ],
-        "additionalProperties": false
+        "drug": {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/drug.json"
+        },
+        "disease": {},
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "target2drug": {
+              "type": "object",
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/target2drug.json"
+            },
+            "drug2clinic": {
+              "type": "object",
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/drug2clinic.json"
+            }
+          },
+          "required": [
+            "target2drug",
+            "drug2clinic"
+          ],
+          "additionalProperties": false
+        }
+      }
     }
+  ],
+  "properties": {
+    "type": {},
+    "sourceID": {},
+    "validated_against_schema_version": {},
+    "unique_association_fields": {},
+    "target": {},
+    "disease": {},
+    "evidence": {},
+    "drug": {}
   },
   "required": [
     "type",
@@ -47,16 +60,34 @@
     "disease",
     "evidence"
   ],
-  "additionalProperties": false,  
+  "additionalProperties": false,
   "import_remote_schemas": [
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json" }
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+    }
   ]
 }

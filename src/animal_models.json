@@ -4,45 +4,59 @@
   "description": "Schema for target-disease evidence where there is phenotype knowledge from animal models",
   "type": "object",
   "version": "1.2",
-  "properties": {
-    "type": {
-      "enum": [
-        "animal_models_evidence_string"
-      ]
-    },    
-    "allOf": {
+  "allOf": [
+    {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/base.json"
-    },    
-    "sourceID": { },
-    "validated_against_schema_version": { },
-    "unique_association_fields": { },
-    "target" : { },
-    "disease" : { },
-    "modelorg_phenotype" : {
-    	    "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
     },
-    "human_phenotype" : {
-    	    "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json" 
-    },
-    "evidence" : {
-        "type" : "object",
-        "properties" : {
-            "pheno2disease" : {
-                "type" : "object",
-                "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/pheno2disease.json"
-            },
-            "pheno2pheno" : {
-                "type" : "object",
-                "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/pheno2pheno.json"
-            },
-            "target2pheno" : {
-                "type" : "object",
-                "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/target2pheno.json"
-            }   
+    {
+      "properties": {
+        "type": {
+          "enum": [
+            "animal_models_evidence_string"
+          ]
         },
-        "required" : [ "pheno2disease", "pheno2pheno", "target2pheno" ],
-        "additionalProperties": false
+        "modelorg_phenotype": {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
+        },
+        "human_phenotype": {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "pheno2disease": {
+              "type": "object",
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/pheno2disease.json"
+            },
+            "pheno2pheno": {
+              "type": "object",
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/pheno2pheno.json"
+            },
+            "target2pheno": {
+              "type": "object",
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/target2pheno.json"
+            }
+          },
+          "required": [
+            "pheno2disease",
+            "pheno2pheno",
+            "target2pheno"
+          ],
+          "additionalProperties": false
+        }
+      }
     }
+  ],
+  "properties": {
+    "type": {},
+    "sourceID": {},
+    "validated_against_schema_version": {},
+    "unique_association_fields": {},
+    "target": {},
+    "disease": {},
+    "evidence": {},
+    "model_org_phenotype": {},
+    "human_phenotype": {}
   },
   "required": [
     "type",
@@ -55,16 +69,34 @@
     "model_org_phenotype",
     "human_phenotype"
   ],
-  "additionalProperties": false,  
+  "additionalProperties": false,
   "import_remote_schemas": [
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json" }
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+    }
   ]
 }
