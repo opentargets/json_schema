@@ -12,7 +12,7 @@
             {
                 "target_type": "http://identifiers.org/cttv.target/gene",
                 "activity": "http://identifiers.org/cttv.activity/predicted_damaging",
-                "about": [
+                "id": [
                     "http://identifiers.org/ensembl/ENSG00000110395"
                 ]
             },
@@ -54,7 +54,7 @@
                 }
             },
             {
-                "about": [
+                "id": [
                     "http://identifiers.org/dbsnp/rs397517077"
                 ]
             },
@@ -98,7 +98,7 @@
                 ]
             },
             {
-                "about": [
+                "id": [
                     "http://www.orpha.net/ORDO/Orphanet_648"
                 ]
             }

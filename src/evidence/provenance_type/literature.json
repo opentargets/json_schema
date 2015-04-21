@@ -25,6 +25,8 @@
                 }
               }
             },
+            "required" : [ "id" ],
+            "additionalProperties" : false,
             "minItems": 1,
             "uniqueItems": true
           }

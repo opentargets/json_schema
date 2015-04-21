@@ -12,7 +12,7 @@
       {
         "target_type": "http://identifiers.org/cttv.target/transcript",
         "activity": "http://identifiers.org/cttv.activity/decreased_transcript_level",
-        "about": [
+        "id": [
           "http://identifiers.org/ensembl/ENSG00000112984"
         ]
       },
@@ -56,7 +56,7 @@
         "biosamples": [
           "animal ovary"
         ],
-        "about": [
+        "id": [
           "http://www.ebi.ac.uk/efo/EFO_0002917"
         ]
       }

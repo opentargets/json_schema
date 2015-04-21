@@ -1,0 +1,65 @@
+{
+    "type": "literature_evidence_string",
+    "sourceID": "EuropePMC",
+    "validated_against_schema_version": "1.2",
+    "unique_association_fields": {
+        "target": "http://identifiers.org/P43116",
+        "publicationIDs": "http://identifiers.org/pubmed/18989535,http://identifiers.org/pubmed/18989333,http://identifiers.org/pubmed/18989444",
+        "disease_uri": "http://www.ebi.ac.uk/efo/EFO_0000249"
+    },
+    "target": {
+        "target_type": "http://identifiers.org/cttv.target/protein",
+        "activity": "http://identifiers.org/cttv.activity/up_or_down",
+        "id": [
+            "http://identifiers.org/uniprot/P43116"
+        ]
+    },
+    "disease": {
+        "id": [
+            "http://www.ebi.ac.uk/efo/EFO_0000249"
+        ]
+    },
+    "evidence": {
+        "literature": {
+            "association_score": {
+                "probability": {
+                    "value": 0.6,
+                    "method": {
+                        "description": "Custom text-mining method for target-disease association"
+                    }
+                }
+            },
+            "provenance_type": {
+                "literature": [
+                    {
+                        "id": "http://identifiers.org/pubmed/18989535",
+                        "score": {
+                            "rank": {
+                                "position": 1,
+                                "sample_size": 200,
+                                "method": {
+                                    "description": ""
+                                }
+                            }
+                        },
+                        "mined_sentences": [
+                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease."
+                        ]
+                    }
+                ]
+            },
+            "is_associated": true,
+            "date_asserted": "2014-05-20T00:00:00Z",
+            "evidence_codes": [
+                "http://www.targetvalidation.org/evidence/literature_mining",
+                "http://purl.obolibrary.org/obo/ECO_0000213"
+            ],
+            "urls": [
+                {
+                    "nice_name": "View article in EuropePMC",
+                    "url": "http://europepmc.org/search?page=1&query=PMCID:PMC18989535&sortby=Date"
+                }
+            ]
+        }
+    }
+}

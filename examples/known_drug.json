@@ -14,7 +14,7 @@
                 "target_type": "http://identifiers.org/cttv.target/protein_family",
                 "target_name": "Cyclooxygenase",
                 "activity": "http://identifiers.org/cttv.activity/drug_negative_modulator",
-                "about": [
+                "id": [
                     "http://identifiers.org/uniprot/P23219",
                     "http://identifiers.org/uniprot/P35354"
                 ]
@@ -61,7 +61,7 @@
                 }
             },
             {
-                "about": [
+                "id": [
                     "http://identifiers.org/chembl.compound/CHEMBL6"
                 ],
                 "molecule_name": "Indomethacin",
@@ -98,7 +98,7 @@
                 ]
             },
             {
-                "about": [
+                "id": [
                     "http://purl.obolibrary.org/obo/HP_0003326"
                 ]
             }
