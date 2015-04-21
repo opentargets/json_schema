@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Literature-based evidence strings",
+  "description": "Schema for target-disease evidence extracted from the literature",
+  "type": "object",
+  "version": "1.2",
+  "properties": {
+    "type": {
+      "enum": [
+        "literature_evidence_string"
+      ]
+    },    
+    "allOf": {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/base.json"
+    },    
+    "sourceID": { },
+    "validated_against_schema_version": { },
+    "unique_association_fields": { },
+    "target" : { },
+    "disease" : { },
+    "evidence" : {
+        "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/generic.json"
+    }
+  },
+  "required": [
+    "type",
+    "sourceID",
+    "validated_against_schema_version",
+    "unique_association_fields",
+    "target",
+    "disease",
+    "evidence"
+  ],
+  "additionalProperties": false,  
+  "import_remote_schemas": [
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json" }    
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Target-Disease-Association",
+  "description": "Schema for different types of target-disease associations used by CTTV",
+  "type": "object",
+  "version": "1.2",
+  "properties": {
+    "sourceID": {
+      "type": "string",
+      "description": "A source ID (database or study ID) to help identify who this data is from."
+    },
+    "validated_against_schema_version": {
+      "description": "The CTTV-JSON schema version number against which your data was validated",
+      "type": "string",
+      "enum": [
+        "1.1",
+        "1.2"
+      ]
+    },
+    "unique_association_fields": {
+      "description": "String based key-value properties that must uniquely identify each JSON object in your data.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "target" : {
+      "description" : "Target in CTTV's target ontology",
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+    },
+    "disease" : {
+      "description" : "Disease in the EFO ontology",
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+    }
+  },
+  "import_remote_schemas": [
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" }
+  ]
+}
