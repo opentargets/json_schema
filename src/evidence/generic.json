@@ -50,9 +50,6 @@
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json" },
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json" },
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json" }
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" }
   ]
 }
