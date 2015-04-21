@@ -19,7 +19,15 @@
     "target" : { },
     "disease" : { },
     "evidence" : {
-        "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/generic.json"
+        "type" : "object",
+        "properties" : {
+            "literature" : {
+                "type" : "object",
+                "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/generic.json"
+            }
+        },
+        "required" : [ "literature" ],
+        "additionalProperties": false
     }
   },
   "required": [
@@ -40,6 +48,10 @@
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" },
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json" },
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json" },
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json" }    
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json" }
   ]
 }
