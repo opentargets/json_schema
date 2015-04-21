@@ -56,7 +56,7 @@
     "evidence_chain"
   ],
   "additionalProperties": false,
-  "remote_schemas": [
+  "import_remote_schemas": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json"
     },

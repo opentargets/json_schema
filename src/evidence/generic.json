@@ -18,6 +18,7 @@
       "items": {
         "type": "string",
         "enum": [
+          "http://purl.obolibrary.org/obo/ECO_0000213",
           "http://purl.obolibrary.org/obo/ECO_0000205",
           "http://purl.obolibrary.org/obo/ECO_0000053",
           "http://www.targetvalidation.org/evidence/literature_mining",
@@ -25,12 +26,17 @@
         ]
       },
       "minItems": 1
+    },
+    "known_mutations": {
+      "type" : "string",
+      "description" : "A comma-separated list of mutations e.g. A613K,T50I etc."
     }
   },
-  "patternProperties": {
-    "^preferred_hyperlink_[1-9]$": {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout.json"
-    }
+  "urls": {
+  	 "type" : "array",
+  	 "items": {
+  	 	 "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+  	 }
   },
   "required": [
     "association_score",
@@ -39,5 +45,14 @@
     "date_asserted",
     "evidence_codes"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "import_remote_schemas": [
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/literature.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/expert.json" },
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/provenance_type/database.json" }
+  ]
 }

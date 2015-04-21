@@ -39,7 +39,7 @@
                 "date_asserted": "2014-05-20T00:00:00Z",
                 "evidence_codes": [
                     "http://www.targetvalidation.org/evidence/literature_mining",
-                    "http://purl.obolibrary.org/obo/ECO_0000204"
+                    "http://purl.obolibrary.org/obo/ECO_0000213"
                 ],
                 "preferred_hyperlink_1" : {
                 	"nice_name" : "View article in EuropePMC",

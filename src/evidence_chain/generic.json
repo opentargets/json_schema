@@ -31,7 +31,7 @@
     "type",
     "chain"
   ],
-  "remote_schemas": [
+  "import_remote_schemas": [
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/bioentities.json" },
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/root.json" },
     { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout.json" }
