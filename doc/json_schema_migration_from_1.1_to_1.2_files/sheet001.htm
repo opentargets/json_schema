@@ -1,0 +1,595 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 12">
+<link id=Main-File rel=Main-File
+href="../json_schema_migration_from_1.1_to_1.2.htm">
+<link rel=File-List href=filelist.xml>
+<title>JSON schema 1.2 - migration from 1.1</title>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../json_schema_migration_from_1.1_to_1.2.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1683 style='border-collapse:
+ collapse;table-layout:fixed;width:1264pt'>
+ <col width=254 style='mso-width-source:userset;mso-width-alt:9289;width:191pt'>
+ <col width=433 style='mso-width-source:userset;mso-width-alt:15835;width:325pt'>
+ <col width=542 style='mso-width-source:userset;mso-width-alt:19821;width:407pt'>
+ <col width=454 style='mso-width-source:userset;mso-width-alt:16603;width:341pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl81 colspan=2 width=687 style='height:15.0pt;mso-ignore:
+  colspan;width:516pt'>Table 1. Types of target-disease 'evidence chains': this
+  field needs to be specified in .type field in the schema</td>
+  <td width=542 style='width:407pt'></td>
+  <td width=454 style='width:341pt'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl84 width=254 style='height:15.0pt;width:191pt;
+  font-size:11.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#4BACC6;mso-pattern:black none'>CTTV data project</td>
+  <td class=xl85 width=433 style='border-left:none;width:325pt;font-size:11.0pt;
+  color:black;font-weight:700;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#4BACC6;mso-pattern:black none'>.type field in schema</td>
+  <td class=xl65></td>
+  <td></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl73 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>CTTV006_Networks_Reactome</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>affected_pathways_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl73 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>CTTV006_Networks_IntAct</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>affected_pathways_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl73 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>CTTV009_GWAS_Catalog</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>genetics_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl73 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>CTTV010_Tissue_Specificity</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>expression_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='height:30.0pt'>
+  <td height=40 class=xl73 width=254 style='height:30.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>CTTV011_UniProt</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>genetics_literature_evidence_string
+  OR genetics_evidence_string depending on whether dbSNP/ESV/NSV variant IDs
+  are available</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl73 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>CTTV012_Variation</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>genetics_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl73 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>CTTV008_ChEMBL</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>drug_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl73 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>CTTV025 Literature</td>
+  <td class=xl74 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>literature_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl75 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>CTTV_external_Mousemodels</td>
+  <td class=xl76 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>animal_models_evidence_string</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=45 style='mso-height-source:userset;height:33.75pt'>
+  <td colspan=2 height=45 class=xl72 width=687 style='height:33.75pt;
+  width:516pt;font-size:11.0pt;color:red;font-style:italic;font-weight:700;
+  text-decoration:none;text-underline-style:none;text-line-through:none;
+  font-family:Calibri;border:none'>NOTE: affected_pathways_evidence_string,
+  literature_evidence_string and genetics_literature_evidence_string are the
+  same schema but different valid labels.</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl66 width=254 style='height:15.0pt;width:191pt'></td>
+  <td class=xl67 width=433 style='width:325pt'></td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=28 style='mso-height-source:userset;height:21.0pt'>
+  <td colspan=2 height=28 class=xl83 width=687 style='height:21.0pt;width:516pt;
+  font-size:11.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:none;background:#FAC090;
+  mso-pattern:black none'>Table 2. Types of 'evidence' objects for linking 2
+  entities and their corresponding 'evidence chain'</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl84 width=254 style='height:15.0pt;width:191pt;
+  font-size:11.0pt;color:black;font-weight:700;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#4BACC6;mso-pattern:black none'>Evidence chain type (.type)</td>
+  <td class=xl85 width=433 style='border-left:none;width:325pt;font-size:11.0pt;
+  color:black;font-weight:700;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#4BACC6;mso-pattern:black none'>EVIDENCE_OBJECT</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl77 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>drug_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>drug2clinic</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl77 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>drug_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>target2drug</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl77 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>expression_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>expression</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=60 style='height:45.0pt'>
+  <td height=60 class=xl77 width=254 style='height:45.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>literature_evidence_string,
+  genetics_literature_evidence_string, affected_pathways_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>literature</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl77 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>genetics_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>gene2variant</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl77 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>genetics_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>variant2disease</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl77 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>animal_models_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>pheno2disease</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl77 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext'>animal_models_evidence_string</td>
+  <td class=xl78 width=433 style='border-top:none;border-left:none;width:325pt;
+  font-size:11.0pt;color:black;font-weight:400;text-decoration:none;text-underline-style:
+  none;text-line-through:none;font-family:Calibri;border:.5pt solid windowtext'>pheno2pheno</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl79 width=254 style='height:15.0pt;border-top:none;
+  width:191pt;font-size:11.0pt;color:black;font-weight:400;text-decoration:
+  none;text-underline-style:none;text-line-through:none;font-family:Calibri;
+  border:.5pt solid windowtext;background:#D8D8D8;mso-pattern:#D8D8D8 none'>animal_models_evidence_string</td>
+  <td class=xl80 style='border-top:none;border-left:none;font-size:11.0pt;
+  color:black;font-weight:400;text-decoration:none;text-underline-style:none;
+  text-line-through:none;font-family:Calibri;border:.5pt solid windowtext;
+  background:#D8D8D8;mso-pattern:#D8D8D8 none'>target2pheno</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl67 style='height:15.0pt'></td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td colspan=4 height=40 class=xl83 width=1683 style='height:30.0pt;
+  width:1264pt'>Table 3. Specific fields. See Table 2 for EVIDENCE_OBJECT
+  types.</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl86 width=254 style='height:15.0pt;width:191pt'>Evidence
+  chain type</td>
+  <td class=xl86 width=433 style='border-left:none;width:325pt'>Field
+  description</td>
+  <td class=xl87 width=542 style='border-left:none;width:407pt'>Field in JSON
+  1.1</td>
+  <td class=xl87 width=454 style='border-left:none;width:341pt'>Corresponding
+  field in JSON 1.2</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl67 width=254 style='height:15.0pt;width:191pt'>All</td>
+  <td class=xl67 width=433 style='width:325pt'>Target</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_subject</td>
+  <td class=xl68 width=454 style='width:341pt'>.target</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Target ID</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_subject.about</td>
+  <td class=xl68 width=454 style='width:341pt'>.target.id</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Target activity</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_subject.properties.activity</td>
+  <td class=xl68 width=454 style='width:341pt'>.target.activity</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Target type</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_subject.properties.target_type</td>
+  <td class=xl68 width=454 style='width:341pt'>.target.target_type</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Target name</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.evidence_chain[0].evidence.experiment_specific</td>
+  <td class=xl68 width=454 style='width:341pt'>.target.target_name</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl69 width=433 style='width:325pt'>Target class</td>
+  <td class=xl70 width=542 style='width:407pt'>.evidence.evidence_chain[0].evidence.experiment_specific</td>
+  <td class=xl70 width=454 style='width:341pt'>.target.target_class</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Disease ID</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_object.about</td>
+  <td class=xl68 width=454 style='width:341pt'>.disease.id</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Disease</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_object</td>
+  <td class=xl68 width=454 style='width:341pt'>.disease</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl69 width=433 style='width:325pt'>Disease tissue</td>
+  <td class=xl70 width=542 style='width:407pt'>.biological_object.properties.biosamples</td>
+  <td class=xl70 width=454 style='width:341pt'>.disease.biosamples</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Date asserted</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.date_asserted</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.date_asserted</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Evidence codes</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.evidence_codes</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.evidence_codes</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Links to source DB</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.urls.linkouts</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.urls</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>is_associated</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.is_associated</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.is_associated</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Pvalue</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.association_score.pvalue</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.association_score.pvalue</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Probability</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.association_score.probability</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.association_score.probability</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Rank</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.association_score.rank</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.association_score.rank</td>
+ </tr>
+ <tr height=40 style='page-break-before:always;height:30.0pt'>
+  <td height=40 class=xl68 style='height:30.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Description of association score
+  method</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.association_score.method</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.association_score.[pvalue
+  OR probability OR rank].method.[description AND/OR reference AND/OR url]</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Expert curation details</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.provenance_type.expert</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.provenance_type.expert</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Source database details</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.provenance_type.database</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.provenance_type.database</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Literature references (EuropePMC
+  or Pubmed)</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.provenance_type.literature</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.provenance_type.literature</td>
+ </tr>
+ <tr height=40 style='height:30.0pt'>
+  <td height=40 class=xl68 style='height:30.0pt'></td>
+  <td class=xl67 width=433 style='width:325pt'>Sentences from literature</td>
+  <td class=xl68 width=542 style='width:407pt'>-</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.provenance_type.literature.references.mined_sentences</td>
+ </tr>
+ <tr height=40 style='height:30.0pt'>
+  <td height=40 class=xl70 width=254 style='height:30.0pt;width:191pt'>&nbsp;</td>
+  <td class=xl69 width=433 style='width:325pt'>Score for each literature
+  article (for literature mining project)</td>
+  <td class=xl70 width=542 style='width:407pt'>-</td>
+  <td class=xl70 width=454 style='width:341pt'>.evidence.EVIDENCE_OBJECT.provenance_type.literature.references.score</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 width=254 style='height:15.0pt;width:191pt'>expression_evidence_string</td>
+  <td class=xl68 width=433 style='width:325pt'>Comparison name</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.experiment_specific.comparison_name</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.expression.comparison_name</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Study details</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_object.properties.experiment_specific</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.expression.study_details</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Log2 fold change</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.experiment_specific.log2_fold_change</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.expression.log2_fold_change</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Pvalue</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.association_score.pvalue.value</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.expression.association_score.pvalue.value</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 width=254 style='height:15.0pt;width:191pt'>&nbsp;</td>
+  <td class=xl70 width=433 style='width:325pt'>Provenance - References</td>
+  <td class=xl70 width=542 style='width:407pt'>.evidence.experiment_specific.literature.pubmed_refs</td>
+  <td class=xl70 width=454 style='width:341pt'>.evidence.expression.literature.references</td>
+ </tr>
+ <tr height=60 style='height:45.0pt'>
+  <td height=60 class=xl71 width=254 style='height:45.0pt;border-top:none;
+  width:191pt'>literature_evidence_string, genomics_literature_evidence_string,
+  affected_pathways_evidence_string</td>
+  <td class=xl71 width=433 style='border-top:none;width:325pt'>Mutations</td>
+  <td class=xl71 width=542 style='border-top:none;width:407pt'>.evidence.properties.experiment_specific.additional_properties</td>
+  <td class=xl71 width=454 style='border-top:none;width:341pt'>.evidence.literature.known_mutations</td>
+ </tr>
+ <tr height=40 style='height:30.0pt'>
+  <td height=40 class=xl68 width=254 style='height:30.0pt;width:191pt'>animal_models_evidence_string</td>
+  <td class=xl68 width=433 style='width:325pt'>Mouse Phenotypes</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.properties.evidence_chain[1].biological_object.properties.experiment_specific</td>
+  <td class=xl68 width=454 style='width:341pt'>.mouse_phenotype.id</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 width=254 style='height:15.0pt;width:191pt'>&nbsp;</td>
+  <td class=xl70 width=433 style='width:325pt'>Human Phenotypes</td>
+  <td class=xl70 width=542 style='width:407pt'>.biological_object.properties.experiment_specific</td>
+  <td class=xl70 width=454 style='width:341pt'>.human_phenotype.id</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 width=254 style='height:15.0pt;width:191pt'>drug_evidence_string</td>
+  <td class=xl68 width=433 style='width:325pt'>Mechanism of action references</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.evidence_chain[0].evidence.provenance_type.literature.pubmed_refs</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.target2drug.provenance_type.literature.lit_refs</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Mechanism of action of drug</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_subject.properties.activity</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.target2drug.mechanism_of_action</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Mechanism of action</td>
+  <td class=xl68 width=542 style='width:407pt'>.biological_subject.properties.action_type</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.target2drug.action_type</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Provenance - target</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.urls.linkouts[1]</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.target2drug.urls</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 width=254 style='height:15.0pt;width:191pt'>&nbsp;</td>
+  <td class=xl70 width=433 style='width:325pt'>Provenance - drug</td>
+  <td class=xl70 width=542 style='width:407pt'>.evidence.urls.linkouts[0]</td>
+  <td class=xl70 width=454 style='width:341pt'>.evidence.target2drug.urls</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Molecule name</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.evidence_chain[0].evidence.experiment_specific.name</td>
+  <td class=xl68 width=454 style='width:341pt'>.drug.name</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 width=254 style='height:15.0pt;width:191pt'>&nbsp;</td>
+  <td class=xl70 width=433 style='width:325pt'>Drug ID</td>
+  <td class=xl70 width=542 style='width:407pt'>.evidence.evidence_chain[0].evidence.experiment_specific</td>
+  <td class=xl70 width=454 style='width:341pt'>.drug.id</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 width=254 style='height:15.0pt;width:191pt'>genetics_evidence_string</td>
+  <td class=xl70 width=433 style='width:325pt'>Functional consequence</td>
+  <td class=xl71 width=542 style='border-top:none;width:407pt'>-</td>
+  <td class=xl71 width=454 style='border-top:none;width:341pt'>.evidence.gene2variant.functional_consequence</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>Variant ID</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.urls.linkouts</td>
+  <td class=xl68 width=454 style='width:341pt'>.variant.id</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl70 width=433 style='width:325pt'>Variant type</td>
+  <td class=xl70 width=542 style='width:407pt'>-</td>
+  <td class=xl70 width=454 style='width:341pt'>.variant.type</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>GWAS - method</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.evidence_chain[1].evidence.association_score.pvalue.method</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.variant2disease.association_score.pvalue.method</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl68 style='height:15.0pt'></td>
+  <td class=xl68 width=433 style='width:325pt'>GWAS - pvalue</td>
+  <td class=xl68 width=542 style='width:407pt'>.evidence.evidence_chain[1].evidence.association_score.pvalue</td>
+  <td class=xl68 width=454 style='width:341pt'>.evidence.variant2disease.association_score.pvalue</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl70 width=254 style='height:15.0pt;width:191pt'>&nbsp;</td>
+  <td class=xl70 width=433 style='width:325pt'>Provenance: GWAS references</td>
+  <td class=xl70 width=542 style='width:407pt'>.evidence.evidence_chain[1].evidence.provenance_type.literature.pubmed_refs</td>
+  <td class=xl70 width=454 style='width:341pt'>.evidence.variant2disease.provenance_type.literature.references</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=254 style='width:191pt'></td>
+  <td width=433 style='width:325pt'></td>
+  <td width=542 style='width:407pt'></td>
+  <td width=454 style='width:341pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
