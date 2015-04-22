@@ -14,7 +14,7 @@
 
 - The goal of this schema is to standardize target-disease evidence from different data projects.
 
-- [Click here](https://github.com/CTTV/json_schema/blob/master/doc/json_schema_migration_from_1.1_to_1.2.xlsx?raw=true) for the list of changes from schema 1.1 to 1.2
+- [Click here for an Excel file](https://github.com/CTTV/json_schema/blob/master/doc/json_schema_migration_from_1.1_to_1.2.xlsx?raw=true) detailing the list of changes from schema 1.1 to 1.2
 
 - There are 5 target-disease evidence string schemas tailored for different types of experimental evidence. Click to see each:
 
@@ -25,11 +25,6 @@
 | [Drug](../src/drug.json) | "drug_evidence_string" |
 | [Genetics](../src/genetics.json)  | "genetics_evidence_string" |
 | [Animal models](../src/animal_models.json) | "animal_models_evidence_string" |
-
-Note: ["Literature"](../src/literature.json) is quite a generic schema.
-
-
-
 
 - [Click here](../examples) to see some validated examples.
 
@@ -42,8 +37,6 @@ Note: ["Literature"](../src/literature.json) is quite a generic schema.
 ...
 ```
 
-
-- The above schemas reference a number of remote schemas e.g. [target](../src/bioentity/target.json), [disease](../src/bioentity/disease.json), [variant](../src/bioentity/variant.json), [expression evidence](../src/evidence/expression.json) etc. So, it is much more granular than schema 1.1.
 
 ## Test the schemas
 
