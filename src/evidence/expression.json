@@ -68,7 +68,6 @@
     "date_asserted": {},
     "comparison_name": {},
     "log2_fold_change": {},
-    "log2_rank": {},
     "test_sample": {},
     "reference_sample": {},
     "experiment_overview": {},
@@ -84,7 +83,6 @@
     "evidence_codes",
     "comparison_name",
     "log2_fold_change",
-    "log2_rank",
     "test_sample",
     "reference_sample",
     "experiment_overview"
