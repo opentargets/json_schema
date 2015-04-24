@@ -17,7 +17,10 @@
     "disease": {
         "id": [
             "http://www.ebi.ac.uk/efo/EFO_0000249"
-        ]
+        ],
+	"name": [
+	    "Alzheimer's disease"
+	]
     },
     "evidence": {
         "literature": {

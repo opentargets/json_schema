@@ -16,6 +16,18 @@
                 "log2_fold_change": {
                     "type": "number"
                 },
+                "log2_rank": {
+                  "type" : "object",
+                  "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+                },
+                "test_sample": {
+                  "description" : "Free text - test sample",
+                  "type" : "string"                    
+                },
+                "reference_sample" : {
+                  "description" : "Free text - reference sample",
+                  "type" : "string"
+                },
                 "experiment_overview": {
                     "type": "string"
                 },
@@ -50,6 +62,9 @@
         "date_asserted": {},
         "comparison_name": {},
         "log2_fold_change": {},
+        "log2_rank" : {},
+        "test_sample" : {},
+        "reference_sample" : {},
         "experiment_overview": {},
         "evidence_codes": {},
         "urls": {} 
@@ -63,6 +78,9 @@
         "evidence_codes",
         "comparison_name",
         "log2_fold_change",
+        "log2_rank",
+        "test_sample",
+        "reference_sample",
         "experiment_overview"
     ],
     "import_remote_schemas": [
