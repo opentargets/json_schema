@@ -15,9 +15,10 @@
         ]
     },
     "disease": {
-        "biosamples": [
-            "animal ovary"
-        ],
+        "biosample": {
+            "name" : "animal ovary",
+            "id" : "http://www.ebi.ac.uk/efo/EFO_0000089"
+        },
         "id": [
             "http://www.ebi.ac.uk/efo/EFO_0002917"
         ]
@@ -43,6 +44,12 @@
                 "http://purl.obolibrary.org/obo/ECO_0000356"
             ],
             "log2_fold_change": -1.3,
+            "log2_rank" : {
+              "position": 1,
+              "sample_size": 200              
+            },
+            "test_sample" : "Breast cancer tissue sample",
+            "reference_sample" : "healthy tissue",
             "date_asserted": "2015-03-30T20:47:04Z",
             "experiment_overview": "Transcription profiling of human LMP ovarian tumors and low-grade ovarian carcinomas to identify genes which dffer from  high-grade ovarian carcinomas - PAX2: a potential biomarker for low malignant potential ovarian tumors and low-grade serous ovarian carcinomas",
             "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
