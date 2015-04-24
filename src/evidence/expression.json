@@ -1,100 +1,106 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "expression_evidence",
-    "description": "Expression evidence linking gene/protein to disease",
-    "type": "object",
-    "version": "1.2",
-    "allOf": [
-        {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
-        },
-        {
-            "properties": {
-                "comparison_name": {
-                    "type": "string"
-                },
-                "log2_fold_change": {
-                    "type": "number"
-                },
-                "log2_rank": {
-                  "type" : "object",
-                  "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
-                },
-                "test_sample": {
-                  "description" : "Free text - test sample",
-                  "type" : "string"                    
-                },
-                "reference_sample" : {
-                  "description" : "Free text - reference sample",
-                  "type" : "string"
-                },
-                "experiment_overview": {
-                    "type": "string"
-                },
-                "evidence_codes": {
-                    "type": "array",
-                    "description": "An array of evidence codes",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "http://purl.obolibrary.org/obo/ECO_0000356",
-                            "http://purl.obolibrary.org/obo/ECO_0000357",
-                            "http://purl.obolibrary.org/obo/ECO_0000358",
-                            "http://purl.obolibrary.org/obo/ECO_0000359",
-                            "http://purl.obolibrary.org/obo/ECO_0000205"
-                        ]
-                    },
-                    "minItems": 1
-                },
-                "urls": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
-                    }
-                }
-            }
-        }
-    ],
-    "properties": {
-        "association_score": {},
-        "provenance_type": {},
-        "is_associated": {},
-        "date_asserted": {},
-        "comparison_name": {},
-        "log2_fold_change": {},
-        "log2_rank" : {},
-        "test_sample" : {},
-        "reference_sample" : {},
-        "experiment_overview": {},
-        "evidence_codes": {},
-        "urls": {} 
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "expression_evidence",
+  "description": "Expression evidence linking gene/protein to disease",
+  "type": "object",
+  "version": "1.2",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
     },
-    "additionalProperties": false,
-    "required": [
-        "association_score",
-        "provenance_type",
-        "is_associated",
-        "date_asserted",
-        "evidence_codes",
-        "comparison_name",
-        "log2_fold_change",
-        "log2_rank",
-        "test_sample",
-        "reference_sample",
-        "experiment_overview"
-    ],
-    "import_remote_schemas": [
-        {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    {
+      "properties": {
+        "comparison_name": {
+          "type": "string"
         },
-        {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+        "log2_fold_change": {
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+            }
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            }
+          }
         },
-        {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+        "test_sample": {
+          "description": "Free text - test sample",
+          "type": "string"
         },
-        {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+        "reference_sample": {
+          "description": "Free text - reference sample",
+          "type": "string"
+        },
+        "experiment_overview": {
+          "type": "string"
+        },
+        "evidence_codes": {
+          "type": "array",
+          "description": "An array of evidence codes",
+          "items": {
+            "type": "string",
+            "enum": [
+              "http://purl.obolibrary.org/obo/ECO_0000356",
+              "http://purl.obolibrary.org/obo/ECO_0000357",
+              "http://purl.obolibrary.org/obo/ECO_0000358",
+              "http://purl.obolibrary.org/obo/ECO_0000359",
+              "http://purl.obolibrary.org/obo/ECO_0000205"
+            ]
+          },
+          "minItems": 1
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+          }
         }
-    ]
+      }
+    }
+  ],
+  "properties": {
+    "association_score": {},
+    "provenance_type": {},
+    "is_associated": {},
+    "date_asserted": {},
+    "comparison_name": {},
+    "log2_fold_change": {},
+    "log2_rank": {},
+    "test_sample": {},
+    "reference_sample": {},
+    "experiment_overview": {},
+    "evidence_codes": {},
+    "urls": {}
+  },
+  "additionalProperties": false,
+  "required": [
+    "association_score",
+    "provenance_type",
+    "is_associated",
+    "date_asserted",
+    "evidence_codes",
+    "comparison_name",
+    "log2_fold_change",
+    "log2_rank",
+    "test_sample",
+    "reference_sample",
+    "experiment_overview"
+  ],
+  "import_remote_schemas": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+    }
+  ]
 }
