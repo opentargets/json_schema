@@ -18,13 +18,24 @@
           "allOf": [
             {
               "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+            },
+            {
+              "properties": {
+                "value": {
+                  "type": "number"
+                }
+              }
             }
           ],
           "properties": {
-            "value": {
-              "type": "number"
-            }
-          }
+            "value": {},
+            "rank": {}
+          },
+          "required": [
+            "value",
+            "rank"
+          ],
+          "additionalProperties": false
         },
         "test_sample": {
           "description": "Free text - test sample",
