@@ -32,18 +32,22 @@
     },
     "biosample": {
       "description": "Tissue names - provide EFO name if you have this",
-      
-      "name" : {
-        "type" : "string",
-        "description" : "free text of the tissue / cell name"
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "free text of the tissue / cell name"
+        },
+        "id": {
+          "type": "string",
+          "format": "uri",
+          "description": "EFO ID of the tissue - optional"
+        }
       },
-      
-      "efo_id" : {
-        "type" : "uri",
-        "description" : "EFO ID of the tissue or cell"
-      },
-      "required" : [ "name" ],
-      "additionalProperties" : false
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
