@@ -30,7 +30,11 @@
             "http://identifiers.org/chembl.compound/CHEMBL6"
         ],
         "molecule_name": "Indomethacin",
-        "molecule_type": "Small molecule"
+        "molecule_type": "Small molecule",
+        "max_phase_for_all_diseases": {
+            "numeric_index": 10,
+            "label": "Approved"
+        }
     },
     "evidence": {
         "target2drug": {
@@ -90,11 +94,11 @@
                     }
                 }
             },
+            "max_phase_for_disease": {
+                "numeric_index": 8,
+                "label": "Phase IV"
+            },
             "provenance_type": {
-                "database": {
-                    "version": "20",
-                    "id": "ChEMBL"
-                },
                 "expert": {
                     "status": true
                 }
@@ -104,6 +108,20 @@
             "evidence_codes": [
                 "http://identifiers.org/eco/drug_disease",
                 "http://purl.obolibrary.org/obo/ECO_0000205"
+            ],
+            "urls": [
+                {
+                    "nice_name": "ATC classification of disease",
+                    "url": "http://www.atc.class.org/"
+                },
+                {
+                    "nice_name": "Drug label",
+                    "url": "https://www.linktodruglabel.org/"
+                },
+                {
+                    "nice_name": "Clinical trials for this drug and disease",
+                    "url": "https://www.clinicaltrials.org/xxxyyy"
+                }
             ]
         }
     }
