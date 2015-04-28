@@ -1,151 +1,151 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Evidence_Base",
-  "description": "Base schema for CTTV evidence",
-  "version": "1.2",
-  "type": "object",
-  "properties": {
-    "is_associated": {
-      "type": "boolean"
-    },
-    "date_asserted": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "association_score": {
-      "type": "object",
-      "oneOf": [
-        {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Evidence_Base",
+    "description": "Base schema for CTTV evidence",
+    "version": "1.2",
+    "type": "object",
+    "properties": {
+        "is_associated": {
+            "type": "boolean"
         },
-        {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+        "date_asserted": {
+            "type": "string",
+            "format": "date-time"
         },
-        {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
-        },
-        {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
-        },        
-      ]
-    },
-    "provenance_type": {
-      "type": "object",
-      "properties": {
-        "expert": {
-          "type": "object",
-          "properties": {
-            "statement": {
-              "type": "string"
-            },
-            "author": {
-              "type": "object",
-              "properties": {
-                "organization": {
-                  "type": "string"
+        "association_score": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
                 },
-                "email": {
-                  "type": "string",
-                  "format": "email"
+                {
+                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
                 },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "additionalProperties": false
-            },
-            "status": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "status"
-          ],
-          "additionalProperties": false
-        },
-        "literature": {
-          "type": "object",
-          "properties": {
-            "references": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
-                  },
-                  "score": {
-                    "type": "object",
+                {
                     "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
-                  },
-                  "mined_sentences": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "minItems": 1
-                    }
-                  }
                 },
-                "required": [
-                  "id"
-                ],
-                "additionalProperties": false,
-                "minItems": 1,
-                "uniqueItems": true
-              }
-            }
-          },
-          "required": [
-            "references"
-          ],
-          "additionalProperties": false
-        },
-        "database": {
-          "type": "object",
-          "properties": {
-            "dbxref": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "description": "Please provide the original DB name"
-                },
-                "url": {
-                  "type": "string",
-                  "format": "uri",
-                  "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
-                },
-                "version": {
-                  "type": "string"
+                {
+                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
                 }
-              },
-              "additionalProperties": false,
-              "required": [
-                "id",
-                "version"
-              ]
+            ]
+        },
+        "provenance_type": {
+            "type": "object",
+            "properties": {
+                "expert": {
+                    "type": "object",
+                    "properties": {
+                        "statement": {
+                            "type": "string"
+                        },
+                        "author": {
+                            "type": "object",
+                            "properties": {
+                                "organization": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "format": "email"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "status": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "status"
+                    ],
+                    "additionalProperties": false
+                },
+                "literature": {
+                    "type": "object",
+                    "properties": {
+                        "references": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
+                                    },
+                                    "score": {
+                                        "type": "object",
+                                        "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+                                    },
+                                    "mined_sentences": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "minItems": 1
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "id"
+                                ],
+                                "additionalProperties": false,
+                                "minItems": 1,
+                                "uniqueItems": true
+                            }
+                        }
+                    },
+                    "required": [
+                        "references"
+                    ],
+                    "additionalProperties": false
+                },
+                "database": {
+                    "type": "object",
+                    "properties": {
+                        "dbxref": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Please provide the original DB name"
+                                },
+                                "url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
+                                },
+                                "version": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "id",
+                                "version"
+                            ]
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "version": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "id",
+                        "version"
+                    ]
+                }
             },
-            "id": {
-              "type": "string"
-            },
-            "version": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "id",
-            "version"
-          ]
+            "additionalProperties": false
         }
-      },
-      "additionalProperties": false
-    }
-  },
-  "import_remote_schemas": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
-    }
-  ]
+    },
+    "import_remote_schemas": [
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+        }
+    ]
 }
