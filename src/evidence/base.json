@@ -125,6 +125,7 @@
   "definitions": {
     "single_lit_reference": {
       "type": "object",
+      "id": "#single_lit_reference",
       "properties": {
         "id": {
           "type": "string",
