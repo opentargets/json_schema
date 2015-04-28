@@ -1,11 +1,11 @@
 {
-    "type": "affected_pathways_curated_literature_evidence_string",
-    "sourceID": "Reactome",
+    "type": "genetics_curated_literature_evidence_string",
+    "sourceID": "UniProt",
     "validated_against_schema_version": "1.2",
     "unique_association_fields": {
-        "biological_objects": "http://identifiers.org/efo/0005592,http://identifiers.org/efo/0000311",
-        "biological_subjects": "http://identifiers.org/ensembl/ENSG00000197921,http://identifiers.org/uniprot/P46531,http://identifiers.org/uniprot/Q06330,http://identifiers.org/uniprot/Q09472,http://identifiers.org/uniprot/Q13573,http://identifiers.org/uniprot/Q8IZL2,http://identifiers.org/uniprot/Q92793,http://identifiers.org/uniprot/Q92830",
-        "reactome_id": "http://identifiers.org/reactome/REACT_160289"
+        "target": "http://identifiers.org/P43116",
+        "publicationIDs": "http://identifiers.org/pubmed/18989535,http://europepmc.org/articles/PMC4363614",
+        "disease_uri": "http://www.ebi.ac.uk/efo/EFO_0000249"
     },
     "target": {
         "target_type": "http://identifiers.org/cttv.target/protein",
@@ -18,17 +18,16 @@
         "id": [
             "http://www.ebi.ac.uk/efo/EFO_0000249"
         ],
-        "name": [
-            "Alzheimer's disease"
-        ]
+	"name": [
+	    "Alzheimer's disease"
+	]
     },
     "evidence": {
-            "known_mutations": "[NICD1 P2474Afs*4, NICD1 P2514Rfs*4]",
             "association_score": {
                 "probability": {
                     "value": 1,
                     "method": {
-                        "description": "Curator inferred association"
+                        "description": "Curator inference hence 1"
                     }
                 }
             },
@@ -44,12 +43,6 @@
                     ]
                 }
             },
-            "urls": [
-                {
-                    "nice_name": "NOTCH1 PEST domain mutants stimulate HES5 transcription",
-                    "url": "http://identifiers.org/reactome/REACT_160289"
-                }
-            ],
             "is_associated": true,
             "date_asserted": "2014-05-20T00:00:00Z",
             "evidence_codes": [

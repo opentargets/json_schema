@@ -12,7 +12,7 @@
       "properties": {
         "type": {
           "enum": [
-            "genomics_curated_literature_evidence_string",
+            "genetics_curated_literature_evidence_string",
             "affected_pathways_curated_literature_evidence_string"
           ]
         },
