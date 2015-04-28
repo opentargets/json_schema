@@ -23,7 +23,10 @@
         },
         {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
-        }
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
+        },        
       ]
     },
     "provenance_type": {
