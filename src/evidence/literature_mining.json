@@ -17,7 +17,7 @@
                         "type": "string",
                         "enum": [
                             "http://www.targetvalidation.org/evidence/literature_mining",
-                            "http://purl.obolibrary.org/obo/ECO_0000204"
+                            "http://purl.obolibrary.org/obo/ECO_0000213"
                         ]
                     },
                     "minItems": 1

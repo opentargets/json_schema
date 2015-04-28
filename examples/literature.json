@@ -1,5 +1,5 @@
 {
-    "type": "literature_evidence_string",
+    "type": "curated_literature_evidence_string",
     "sourceID": "EuropePMC",
     "validated_against_schema_version": "1.2",
     "unique_association_fields": {
@@ -23,11 +23,9 @@
 	]
     },
     "evidence": {
-        "literature": {
             "association_score": {
-                "rank": {
-                    "position": 1,
-		    "sample_size" : 200,
+                "summed_total": {
+                    "value": 243,
                     "method": {
                         "description": "Custom text-mining method for target-disease association"
                     }
@@ -73,6 +71,5 @@
                 "http://www.targetvalidation.org/evidence/literature_mining",
                 "http://purl.obolibrary.org/obo/ECO_0000213"
             ]
-        }
     }
 }

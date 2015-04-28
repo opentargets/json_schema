@@ -12,9 +12,8 @@
       "properties": {
         "type": {
           "enum": [
-            "literature_evidence_string",
-            "genomics_literature_evidence_string",
-            "affected_pathways_evidence_string"
+            "genomics_curated_literature_evidence_string",
+            "affected_pathways_curated_literature_evidence_string"
           ]
         },
         "evidence": {
