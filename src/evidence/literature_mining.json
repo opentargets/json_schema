@@ -1,62 +1,69 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "literature_mining_evidence",
-  "description": "Literature mining evidence linking gene/protein to disease",
-  "type": "object",
-  "version": "1.2",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
-    },
-    {
-      "properties": {
-        "evidence_codes": {
-          "type": "array",
-          "description": "An array of evidence codes",
-          "items": {
-            "type": "string",
-            "enum": [
-              "http://www.targetvalidation.org/evidence/literature_mining",
-              "http://purl.obolibrary.org/obo/ECO_0000204"
-            ]
-          },
-          "minItems": 1
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "literature_mining_evidence",
+    "description": "Literature mining evidence linking gene/protein to disease",
+    "type": "object",
+    "version": "1.2",
+    "allOf": [
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
         },
-        "literature_ref": {
-          "type" : "object",
-          "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#definitions/single_lit_reference"
+        {
+            "properties": {
+                "evidence_codes": {
+                    "type": "array",
+                    "description": "An array of evidence codes",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "http://www.targetvalidation.org/evidence/literature_mining",
+                            "http://purl.obolibrary.org/obo/ECO_0000204"
+                        ]
+                    },
+                    "minItems": 1
+                },
+                "literature_ref": {
+                    "type": "object",
+                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#/single_lit_reference"
+                }
+            }
         }
-        
-      }
-    }
-  ],
-  "properties": {
-    "association_score": {},
-    "provenance_type": {},
-    "is_associated": {},
-    "date_asserted": {},
-    "evidence_codes": {},
-  },
-  "required": [
-    "association_score",
-    "provenance_type",
-    "is_associated",
-    "date_asserted",
-    "evidence_codes"
-  ],
-  "additionalProperties": false,
-  "import_remote_schemas": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    ],
+    "properties": {
+        "association_score": {},
+        "provenance_type": {},
+        "is_associated": {},
+        "date_asserted": {},
+        "evidence_codes": {},
+        "literature_ref": {}
     },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
-    }
-  ]
+    "required": [
+        "association_score",
+        "provenance_type",
+        "is_associated",
+        "date_asserted",
+        "evidence_codes",
+        "literature_ref"
+    ],
+    "additionalProperties": false,
+    "import_remote_schemas": [
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+        }
+    ]
 }
