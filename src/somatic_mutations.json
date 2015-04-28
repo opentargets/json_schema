@@ -17,16 +17,7 @@
         },
         "evidence": {
           "type": "object",
-          "properties": {
-            "somatic_mutations": {
-              "type": "object",
-              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/generic.json"
-            }
-          },
-          "required": [
-            "somatic_mutations"
-          ],
-          "additionalProperties": false
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/generic.json"
         }
       }
     }

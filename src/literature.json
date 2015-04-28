@@ -19,16 +19,7 @@
         },
         "evidence": {
           "type": "object",
-          "properties": {
-            "literature": {
-              "type": "object",
-              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/generic.json"
-            }
-          },
-          "required": [
-            "literature"
-          ],
-          "additionalProperties": false
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/generic.json"
         }
       }
     }
