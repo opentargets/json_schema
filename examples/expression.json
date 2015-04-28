@@ -16,58 +16,56 @@
     },
     "disease": {
         "biosample": {
-            "name" : "animal ovary",
-            "id" : "http://www.ebi.ac.uk/efo/EFO_0000089"
+            "name": "animal ovary",
+            "id": "http://www.ebi.ac.uk/efo/EFO_0000089"
         },
         "id": [
             "http://www.ebi.ac.uk/efo/EFO_0002917"
         ]
     },
     "evidence": {
-        "expression": {
-            "is_associated": true,
-            "urls": [
-                {
-                    "url": "http://www.ebi.ac.uk/gxa/experiments/E-GEOD-14001?geneQuery=ENSG00000112984",
-                    "nice_name": "Gene expression in Expression Atlas"
-                },
-                {
-                    "nice_name": "Baseline gene expression in Expression Atlas",
-                    "url": "http://www.ebi.ac.uk/gxa/genes/ENSG00000112984"
-                },
-                {
-                    "nice_name": "ArrayExpress Experiment overview",
-                    "url": "http://identifiers.org/arrayexpress/E-GEOD-14001"
-                }
-            ],
-            "evidence_codes": [
-                "http://purl.obolibrary.org/obo/ECO_0000356"
-            ],
-            "log2_fold_change": {
-              "value" : -1.3,
-              "rank" : {
+        "is_associated": true,
+        "urls": [
+            {
+                "url": "http://www.ebi.ac.uk/gxa/experiments/E-GEOD-14001?geneQuery=ENSG00000112984",
+                "nice_name": "Gene expression in Expression Atlas"
+            },
+            {
+                "nice_name": "Baseline gene expression in Expression Atlas",
+                "url": "http://www.ebi.ac.uk/gxa/genes/ENSG00000112984"
+            },
+            {
+                "nice_name": "ArrayExpress Experiment overview",
+                "url": "http://identifiers.org/arrayexpress/E-GEOD-14001"
+            }
+        ],
+        "evidence_codes": [
+            "http://purl.obolibrary.org/obo/ECO_0000356"
+        ],
+        "log2_fold_change": {
+            "value": -1.3,
+            "rank": {
                 "position": 1,
                 "sample_size": 200
-              }
-            },
-            "test_sample" : "Breast cancer tissue sample",
-            "reference_sample" : "healthy tissue",
-            "date_asserted": "2015-03-30T20:47:04Z",
-            "experiment_overview": "Transcription profiling of human LMP ovarian tumors and low-grade ovarian carcinomas to identify genes which dffer from  high-grade ovarian carcinomas - PAX2: a potential biomarker for low malignant potential ovarian tumors and low-grade serous ovarian carcinomas",
-            "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
-            "association_score": {
-                "pvalue": {
-                    "value": 0.0168,
-                    "method": {
-                        "description": "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
-                    }
+            }
+        },
+        "test_sample": "Breast cancer tissue sample",
+        "reference_sample": "healthy tissue",
+        "date_asserted": "2015-03-30T20:47:04Z",
+        "experiment_overview": "Transcription profiling of human LMP ovarian tumors and low-grade ovarian carcinomas to identify genes which dffer from  high-grade ovarian carcinomas - PAX2: a potential biomarker for low malignant potential ovarian tumors and low-grade serous ovarian carcinomas",
+        "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
+        "association_score": {
+            "pvalue": {
+                "value": 0.0168,
+                "method": {
+                    "description": "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
                 }
-            },
-            "provenance_type": {
-                "database": {
-                    "id": "Expression_Atlas",
-                    "version": "NA"
-                }
+            }
+        },
+        "provenance_type": {
+            "database": {
+                "id": "Expression_Atlas",
+                "version": "NA"
             }
         }
     }
