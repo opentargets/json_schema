@@ -26,6 +26,18 @@
         ]
     },
     "evidence": {
+
+        "association_score": {
+            "rank": {
+                "position": 1,
+                "sample_size" : 200,
+                "method": {
+                    "url": "http://www.methodsdescribed.org/",
+                    "description": "Custom method for association calculation"
+                }
+            }
+        },
+
         "gene2variant": {
             "association_score": {
                 "probability" : {
