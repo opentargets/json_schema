@@ -4,7 +4,7 @@
     "validated_against_schema_version": "1.2",
     "unique_association_fields": {
         "target": "http://identifiers.org/P43116",
-        "publicationIDs": "http://identifiers.org/pubmed/18989535,http://europepmc.org/articles/PMC4363614",
+        "publicationIDs": "http://europepmc.org/abstract/MED/18989535,http://europepmc.org/articles/PMC4363614",
         "disease_uri": "http://www.ebi.ac.uk/efo/EFO_0000249"
     },
     "target": {
@@ -35,7 +35,7 @@
                 "literature": {
                     "references": [
                         {
-                            "id": "http://identifiers.org/pubmed/18989535"
+                            "id": "http://europepmc.org/abstract/MED/18989535"
                         },
                         {
                             "id": "http://europepmc.org/articles/PMC4363614"

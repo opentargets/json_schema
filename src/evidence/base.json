@@ -130,7 +130,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "http://identifiers.org/pubmed/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
+          "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
+          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
         },
         "score": {
           "type": "object",
