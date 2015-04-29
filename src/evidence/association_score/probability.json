@@ -1,5 +1,6 @@
 {
   "type": "object",
+  "id": "#probability",  
   "properties": {
     "probability": {
       "type": "object",

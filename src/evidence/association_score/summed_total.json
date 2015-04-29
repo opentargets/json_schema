@@ -1,5 +1,6 @@
 {
   "type": "object",
+  "id": "#summed_total",     
   "properties": {
     "summed_total": {
       "type": "object",
