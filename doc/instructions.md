@@ -16,16 +16,6 @@
 
 - [Click here for an Excel file](https://github.com/CTTV/json_schema/blob/master/doc/json_schema_migration_from_1.1_to_1.2.xlsx?raw=true) detailing the list of changes from schema 1.1 to 1.2
 
-- There are 5 target-disease evidence string schemas tailored for different types of experimental evidence. Click to see each:
-
-| Link to schema | .type field in schema |
-|--------|--------|
-|     [Literature](../src/literature.json)   |   "literature_evidence_string", "genomics_literature_evidence_string", "affected_pathways_evidence_string"     |
-| [Expression](../src/expression.json) | "expression_evidence_string" |
-| [Drug](../src/drug.json) | "drug_evidence_string" |
-| [Genetics](../src/genetics.json)  | "genetics_evidence_string" |
-| [Animal models](../src/animal_models.json) | "animal_models_evidence_string" |
-
 - [Click here](../examples) to see some validated examples.
 
 - Please provide JSON instances validated against the above schema in **a single file** using 1 JSON instance per line e.g.

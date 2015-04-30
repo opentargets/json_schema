@@ -8,5 +8,10 @@
     "type": "string"
   },
   "minItems": 1,
+<<<<<<< HEAD
   "uniqueItems": true
 }
+=======
+  "uniqueItems" : true
+}
+>>>>>>> aa118b7551acb64c066ad4cb2616a3cb7c305531
