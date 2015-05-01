@@ -13,7 +13,8 @@
         "type": {
           "enum": [
             "genetics_curated_literature_evidence_string",
-            "affected_pathways_curated_literature_evidence_string"
+            "affected_pathways_curated_literature_evidence_string",
+            "somatic_mutations_curated_literature_evidence_string"
           ]
         },
         "evidence": {

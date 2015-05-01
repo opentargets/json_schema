@@ -18,36 +18,52 @@
         "id": [
             "http://www.ebi.ac.uk/efo/EFO_0000249"
         ],
-	"name": [
-	    "Alzheimer's disease"
-	]
+        "name": [
+            "Alzheimer's disease"
+        ]
     },
     "evidence": {
-	    "known_mutations": "[NICD1 P2474Afs*4, NICD1 P2514Rfs*4]",
-            "association_score": {
-                "probability": {
-                    "value": 1,
-                    "method": {
-                        "description": "Curator inference hence 1"
+        "known_mutations": "[NICD1 P2474Afs*4, NICD1 P2514Rfs*4]",
+        "association_score": {
+            "probability": {
+                "value": 1,
+                "method": {
+                    "description": "Curator inference hence 1"
+                }
+            }
+        },
+        "urls": [
+            {
+                "nice_name": "NOTCH1 PEST domain mutants stimulate HES5 transcription",
+                "url": "http://identifiers.org/reactome/REACT_160289"
+            }
+        ],
+        "provenance_type": {
+            "literature": {
+                "references": [
+                    {
+                        "id": "http://europepmc.org/abstract/MED/18989535",
+                        "mined_sentences": [
+                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
+                            "example sentence 2",
+                            "example sentence 3"
+                        ]
+                    },
+                    {
+                        "id": "http://europepmc.org/articles/PMC4363614",
+                        "mined_sentences": [
+                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
+                            "example sentence 2",
+                            "example sentence 3"
+                        ]
                     }
-                }
-            },
-            "provenance_type": {
-                "literature": {
-                    "references": [
-                        {
-                            "id": "http://europepmc.org/abstract/MED/18989535"
-                        },
-                        {
-                            "id": "http://europepmc.org/articles/PMC4363614"
-                        }
-                    ]
-                }
-            },
-            "is_associated": true,
-            "date_asserted": "2014-05-20T00:00:00Z",
-            "evidence_codes": [
-                "http://purl.obolibrary.org/obo/ECO_0000213"
-            ]
+                ]
+            }
+        },
+        "is_associated": true,
+        "date_asserted": "2014-05-20T00:00:00Z",
+        "evidence_codes": [
+            "http://purl.obolibrary.org/obo/ECO_0000213"
+        ]
     }
 }
