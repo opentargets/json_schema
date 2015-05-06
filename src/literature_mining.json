@@ -11,6 +11,7 @@
     {
       "properties": {
         "label": {
+          "type" : "string",
           "enum": [
             "literature_mining_evidence_string"
           ]

@@ -11,11 +11,13 @@
     {
       "properties": {
         "label": {
+          "type" : "string",
           "enum": [
             "genetics_evidence_string"
           ]
         },
         "variant": {
+          "type": "object",
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/variant.json"
         },
         "evidence": {

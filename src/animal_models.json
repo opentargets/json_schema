@@ -11,14 +11,17 @@
     {
       "properties": {
         "label": {
+          "type" : "string",
           "enum": [
             "animal_models_evidence_string"
           ]
         },
         "modelorg_phenotype": {
+	  "type": "object",
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
         },
         "human_phenotype": {
+	  "type": "object",
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
         },
         "evidence": {
