@@ -11,7 +11,9 @@
     {
       "properties": {
         "id": {
+          "type" : "array",
           "items": {
+            "type" : "string",
             "description": "An array of drug identifiers",
             "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$"
           }
