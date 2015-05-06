@@ -25,7 +25,8 @@
             "description": "Optional - EFO disease name corresponding to the EFO ID"
           },
           "minItems": 1,
-          "maxItems": 1
+          "maxItems": 1,
+          "uniqueItems": true
         },
         "biosample": {
           "description": "Tissue names - provide EFO name if you have this",
