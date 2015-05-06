@@ -11,8 +11,10 @@
         {
             "properties": {
                 "id": {
+                    "type": "array",
                     "items": {
                         "description": "An array of variant identifiers",
+                        "type": "string",
                         "pattern": "^http://identifiers.org/dbsnp/rs[0-9]+|esv[0-9]+|nsv[0-9]+$"
                     }
                 },
