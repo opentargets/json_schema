@@ -28,11 +28,16 @@
             "variant2disease": {
               "label": "object",
               "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/genetics/variant2disease.json"
+            },
+            "association_score": {
+              "type" : "object",
+              "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#base_evidence/properties/association_score"
             }
           },
           "required": [
             "gene2variant",
-            "variant2disease"
+            "variant2disease",
+            "association_score"
           ],
           "additionalProperties": false
         }
@@ -40,7 +45,7 @@
     }
   ],
   "properties": {
-    "type": {},
+    "label": {},
     "sourceID": {},
     "validated_against_schema_version": {},
     "unique_association_fields": {},
@@ -50,7 +55,7 @@
     "variant": {}
   },
   "required": [
-    "type",
+    "label",
     "sourceID",
     "validated_against_schema_version",
     "unique_association_fields",

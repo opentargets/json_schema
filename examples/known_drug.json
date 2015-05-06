@@ -7,7 +7,7 @@
         "atc_classification": "http://identifiers.org/atc/M02AA23",
         "efo_classification": "http://purl.obolibrary.org/obo/HP_0003326"
     },
-    "type": "drug_evidence_string",
+    "label": "drug_evidence_string",
     "target": {
         "target_type": "http://identifiers.org/cttv.target/protein_family",
         "target_name": "Cyclooxygenase",

@@ -1,7 +1,7 @@
 {
     "sourceID": "Expression Atlas",
     "validated_against_schema_version": "1.2",
-    "type": "expression_evidence_string",
+    "label": "expression_evidence_string",
     "unique_association_fields": {
         "study_id": "http://identifiers.org/gxa.expt/E-GEOD-14001",
         "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",

@@ -6,7 +6,7 @@
         "clinvarAccession": "http://identifiers.org/clinvar.record/RCV000038347",
         "phenotype": "http://identifiers.org/orphanet/648"
     },
-    "type": "genetics_evidence_string",
+    "label": "genetics_evidence_string",
     "target": {
         "target_type": "http://identifiers.org/cttv.target/gene",
         "activity": "http://identifiers.org/cttv.activity/predicted_damaging",
