@@ -1,35 +1,38 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Variant",
-  "description": "CTTV variant model - an array of dbSNP, European structural variant (esv) or NCBI structural variant (nsv)",
-  "type": "object",
-  "version": "1.2",
-  "properties": {
-    "id": {
-      "allOf": [
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Variant",
+    "description": "CTTV variant model - an array of dbSNP, European structural variant (esv) or NCBI structural variant (nsv)",
+    "type": "object",
+    "version": "1.2",
+    "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+        },
+        {
+            "properties": {
+                "id": {
+                    "items": {
+                        "description": "An array of variant identifiers",
+                        "pattern": "^http://identifiers.org/dbsnp/rs[0-9]+|esv[0-9]+|nsv[0-9]+$"
+                    }
+                },
+                "type": {
+                    "enum": [
+                        "snp single",
+                        "snp multiple",
+                        "structural variant"
+                    ]
+                }
+            }
         }
-      ],
-      "items": {
-        "description": "An array of variant identifiers",
-        "pattern": "^http://identifiers.org/dbsnp/rs[0-9]+|esv[0-9]+|nsv[0-9]+$"
-      },
-      "minItems": 1
+    ],
+    "properties": {
+        "id": {},
+        "type": {}
     },
-    
-    "type": {
-      "enum": [
-        "snp single",
-        "snp multiple",
-        "structural variant"
-      ]
-    }
-    
-  },
-  "required": [
-    "id",
-    "type"
-  ],
-  "additionalProperties": false
+    "required": [
+        "id",
+        "type"
+    ],
+    "additionalProperties": false
 }

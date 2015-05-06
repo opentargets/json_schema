@@ -10,7 +10,7 @@
     },
     {
       "properties": {
-        "type": {
+        "label": {
           "enum": [
             "expression_evidence_string"
           ]
@@ -23,7 +23,7 @@
     }
   ],
   "properties": {
-    "type": {},
+    "label": {},
     "sourceID": {},
     "validated_against_schema_version": {},
     "unique_association_fields": {},
@@ -32,7 +32,7 @@
     "evidence": {}
   },
   "required": [
-    "type",
+    "label",
     "sourceID",
     "validated_against_schema_version",
     "unique_association_fields",

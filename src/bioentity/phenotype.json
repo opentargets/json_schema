@@ -1,36 +1,42 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "phenotype",
-  "description": "CTTV phenotype model",
-  "type": "object",
-  "version": "1.2",
-  "properties": {
-    "id": {
-      "allOf": [
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "phenotype",
+    "description": "CTTV phenotype model",
+    "type": "object",
+    "version": "1.2",
+    "allOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+        },
+        {
+            "properties": {
+                "id": {
+                    "items": {
+                        "description": "An array of phenotype identifers",
+                        "pattern": "^http://purl.obolibrary.org/obo/HP_[0-9]{4,}||http://purl.obolibrary.org/obo/MP_[0-9]{4,}$"
+                    },
+                    "minItems": 1
+                },
+                "species": {
+                    "type": "string",
+                    "enum": [
+                        "mouse",
+                        "human",
+                        "rat",
+                        "zebrafish",
+                        "dog"
+                    ]
+                }
+            }
         }
-      ],
-      "items": {
-        "description": "An array of phenotype identifers",
-        "pattern": "^http://purl.obolibrary.org/obo/HP_[0-9]{4,}||http://purl.obolibrary.org/obo/MP_[0-9]{4,}$"
-      },
-      "minItems": 1
+    ],
+    "properties": {
+        "id": {},
+        "species": {}
     },
-    "species": {
-      "type": "string",
-      "enum": [
-        "mouse",
-        "human",
-        "rat",
-        "zebrafish",
-        "dog"
-      ]
-    }
-  },
-  "required": [
-    "id",
-    "species"
-  ],
-  "additionalProperties": false
+    "required": [
+        "id",
+        "species"
+    ],
+    "additionalProperties": false
 }

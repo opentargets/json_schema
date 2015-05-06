@@ -4,28 +4,36 @@
   "description": "CTTV drug model",
   "type": "object",
   "version": "1.2",
-  "properties": {
-    "id": {
-      "allOf": [
-        {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+    },
+    {
+      "properties": {
+        "id": {
+          "items": {
+            "description": "An array of drug identifiers",
+            "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$"
+          }
+        },
+        "molecule_name": {
+          "type": "string"
+        },
+        "molecule_type": {
+          "type": "string"
+        },
+        "max_phase_for_all_diseases": {
+          "type": "object",
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/diseasephase.json"
         }
-      ],
-      "items": {
-        "description": "An array of drug identifiers",
-        "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$"
       }
-    },
-    "molecule_name": {
-      "type": "string"
-    },
-    "molecule_type": {
-      "type": "string"
-    },
-    "max_phase_for_all_diseases": {
-      "type" : "object",
-      "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/diseasephase.json"
     }
+  ],
+  "properties": {
+    "id": {},
+    "molecule_name": {},
+    "molecule_type": {},
+    "max_phase_for_all_diseases": {}
   },
   "required": [
     "id",

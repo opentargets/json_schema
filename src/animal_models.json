@@ -10,7 +10,7 @@
     },
     {
       "properties": {
-        "type": {
+        "label": {
           "enum": [
             "animal_models_evidence_string"
           ]
@@ -48,7 +48,7 @@
     }
   ],
   "properties": {
-    "type": {},
+    "label": {},
     "sourceID": {},
     "validated_against_schema_version": {},
     "unique_association_fields": {},
@@ -59,7 +59,7 @@
     "human_phenotype": {}
   },
   "required": [
-    "type",
+    "label",
     "sourceID",
     "validated_against_schema_version",
     "unique_association_fields",
