@@ -142,9 +142,9 @@
         "mined_sentences": {
           "type": "array",
           "items": {
-            "type": "string",
-            "minItems": 1
-          }
+            "type": "string"
+          },
+          "minItems": 1
         }
       },
       "required": [
