@@ -71,7 +71,7 @@
             "references": {
               "type": "array",
               "items": {
-                "type": "object"
+                "type": "object",
                 "$ref": "#/definitions/single_lit_reference"
               },
               "minItems": 1,
