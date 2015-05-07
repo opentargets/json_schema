@@ -29,6 +29,7 @@
         "urls": {
           "type": "array",
           "items": {
+            "type" : "object",
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
           }
         }
