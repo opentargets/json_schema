@@ -26,6 +26,7 @@
     },
     "evidence": {
         "is_associated": true,
+        "unique_experiment_reference" : "STUDYID_E-GEOD-14001",
         "urls": [
             {
                 "url": "http://www.ebi.ac.uk/gxa/experiments/E-GEOD-14001?geneQuery=ENSG00000112984",

@@ -24,6 +24,7 @@
         ]
     },
     "evidence": {
+    	"unique_experiment_reference" : "http://europepmc.org/abstract/MED/18989535",
         "association_score": {
             "summed_total": {
                 "value": 243,

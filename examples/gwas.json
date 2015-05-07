@@ -87,14 +87,12 @@
                     }
                 }
             },
+            "unique_experiment_reference" : "http://europepmc.org/abstract/MED/20301303",
             "provenance_type": {
                 "literature": {
                     "references": [
                         {
                             "id": "http://europepmc.org/abstract/MED/20301303"
-                        },
-                        {
-                            "id": "http://europepmc.org/abstract/MED/20876176"
                         }
                     ]
                 },
