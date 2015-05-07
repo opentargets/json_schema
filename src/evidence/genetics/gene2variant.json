@@ -2274,6 +2274,7 @@
   "properties": {
     "association_score": {},
     "provenance_type": {},
+    "unique_experiment_reference": {},
     "is_associated": {},
     "date_asserted": {},
     "evidence_codes": {},

@@ -95,7 +95,8 @@
     "reference_sample": {},
     "experiment_overview": {},
     "evidence_codes": {},
-    "urls": {}
+    "urls": {},
+    "unique_experiment_reference": {}
   },
   "additionalProperties": false,
   "required": [
@@ -108,7 +109,8 @@
     "log2_fold_change",
     "test_sample",
     "reference_sample",
-    "experiment_overview"
+    "experiment_overview",
+    "unique_experiment_reference"
   ],
   "import_remote_schemas": [
     {

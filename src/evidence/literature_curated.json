@@ -46,7 +46,8 @@
     "date_asserted": {},
     "evidence_codes": {},
     "known_mutations": {},
-    "urls": {}
+    "urls": {},
+    "unique_experiment_reference": {}
   },
   "required": [
     "association_score",
