@@ -1,6 +1,7 @@
 {
     "sourceID": "European Variation Archive",
     "validated_against_schema_version": "1.2",
+    "access_level" : "public",
     "unique_association_fields": {
         "gene": "ENSG00000110395",
         "clinvarAccession": "http://identifiers.org/clinvar.record/RCV000038347",

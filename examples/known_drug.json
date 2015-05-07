@@ -1,6 +1,7 @@
 {
     "sourceID": "ChEMBL",
     "validated_against_schema_version": "1.2",
+    "access_level" : "public",
     "unique_association_fields": {
         "chembl_targets": "http://identifiers.org/uniprot/P23219,http://identifiers.org/uniprot/P35354",
         "chembl_molecules": "http://identifiers.org/chembl.compound/CHEMBL6",

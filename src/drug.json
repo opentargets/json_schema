@@ -54,11 +54,13 @@
     "unique_association_fields": {},
     "target": {},
     "disease": {},
+    "access_level" :{},
     "evidence": {},
     "drug": {}
   },
   "required": [
     "label",
+    "access_level",
     "sourceID",
     "validated_against_schema_version",
     "unique_association_fields",

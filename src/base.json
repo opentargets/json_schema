@@ -9,6 +9,16 @@
       "type": "string",
       "description": "A source ID (database or study ID) to help identify who this data is from."
     },
+    
+    "access_level": {
+      "description": "Choose public as default; private is for internal datasets",
+      "type": "string",
+      "enum": [
+        "public",
+        "private"
+      ]      
+    },
+    
     "validated_against_schema_version": {
       "description": "The CTTV-JSON schema version number against which your data was validated",
       "type": "string",

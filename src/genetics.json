@@ -51,6 +51,7 @@
     "sourceID": {},
     "validated_against_schema_version": {},
     "unique_association_fields": {},
+    "access_level" :{},
     "target": {},
     "disease": {},
     "evidence": {},
@@ -59,6 +60,7 @@
   "required": [
     "label",
     "sourceID",
+    "access_level",
     "validated_against_schema_version",
     "unique_association_fields",
     "target",
