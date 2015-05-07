@@ -29,12 +29,10 @@
     "evidence": {
 
         "association_score": {
-            "rank": {
-                "position": 1,
-                "sample_size" : 200,
+            "probability": {
+                "value": 1,
                 "method": {
-                    "url": "http://www.methodsdescribed.org/",
-                    "description": "Custom method for association calculation"
+                    "description": "custom probability calculation"
                 }
             }
         },
