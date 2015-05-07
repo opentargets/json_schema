@@ -71,10 +71,11 @@
             "references": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/single_lit_reference",
-                "minItems": 1,
-                "uniqueItems": true
-              }
+                "type": "object"
+                "$ref": "#/definitions/single_lit_reference"
+              },
+              "minItems": 1,
+              "uniqueItems": true
             }
           },
           "required": [
