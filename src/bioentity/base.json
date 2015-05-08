@@ -4,11 +4,9 @@
     "description": "A generic schema for an array of base. Must be subclassed with additional properties to be meaningful.",
     "version": "1.2",
     "type": "object",
-    "id": "#base_bioentity",
     "properties" : {
       "id" : {
         "type" : "array",
-        "id" : "#id",
         "items": {
             "type": "string"
         },
