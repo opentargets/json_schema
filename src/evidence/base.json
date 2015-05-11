@@ -155,7 +155,7 @@
         }
       },
       "required": [
-        "id"
+        "lit_id"
       ],
       "additionalProperties": false
     }
