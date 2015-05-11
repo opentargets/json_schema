@@ -1,0 +1,139 @@
+{
+    "sourceID": "ChEMBL",
+    "validated_against_schema_version": "1.2",
+    "access_level" : "public",
+    "unique_association_fields": {
+        "chembl_targets": "http://identifiers.org/uniprot/P23219,http://identifiers.org/uniprot/P35354",
+        "chembl_molecules": "http://identifiers.org/chembl.compound/CHEMBL6",
+        "atc_classification": "http://identifiers.org/atc/M02AA23",
+        "efo_classification": "http://purl.obolibrary.org/obo/HP_0003326"
+    },
+    "label": "drug_evidence_string",
+    "target": {
+        "target_type": "http://identifiers.org/cttv.target/protein_family",
+        "target_name": "Cyclooxygenase",
+        "activity": "http://identifiers.org/cttv.activity/drug_negative_modulator",
+        "id": [
+            "http://identifiers.org/uniprot/P23219",
+            "http://identifiers.org/uniprot/P35354"
+        ],
+        "target_class": [
+            "Oxidoreductase"
+        ]
+    },
+    "disease": {
+        "id": [
+            "http://purl.obolibrary.org/obo/HP_0003326"
+        ]
+    },
+    "drug": {
+        "id": [
+            "http://identifiers.org/chembl.compound/CHEMBL6"
+        ],
+        "molecule_name": "Indomethacin",
+        "molecule_type": "Small molecule",
+        "max_phase_for_all_diseases": {
+            "numeric_index": 10,
+            "label": "Approved"
+        }
+    },
+    "evidence": {
+        
+        "association_score": {
+            "probability": {
+                "value": 1,
+                "method": {
+                    "description": "custom probability calculation"
+                }
+            }
+        },
+
+        "target2drug": {
+            "association_score": {
+                "probability": {
+                    "value": 1,
+                    "method": {
+                        "url": "http://www.methodsdescribed.org/",
+                        "description": "Custom method for probability of mechanism of action association"
+                    }
+                }
+            },
+            "provenance_type": {
+                "literature": {
+                    "references": [
+                        {
+                            "id": "http://europepmc.org/abstract/MED/20301303"
+                        },
+                        {
+                            "id": "http://europepmc.org/abstract/MED/20876176"
+                        }
+                    ]
+                },
+                "database": {
+                    "version": "20",
+                    "id": "ChEMBL"
+                },
+                "expert": {
+                    "status": true
+                }
+            },
+            "is_associated": true,
+            "date_asserted": "2014-05-20T00:00:00Z",
+            "evidence_codes": [
+                "http://identifiers.org/eco/target_drug",
+                "http://purl.obolibrary.org/obo/ECO_0000205"
+            ],
+            "urls": [
+                {
+                    "nice_name": "ChEMBL molecule information",
+                    "url": "https://www.ebi.ac.uk/chembl/compound/inspect/CHEMBL2094253"
+                },
+                {
+                    "nice_name": "ChEMBL target information",
+                    "url": "https://www.ebi.ac.uk/chembl/target/inspect/CHEMBL6"
+                }
+            ],
+            "mechanism_of_action": "Small molecule",
+            "action_type": "INHIBITOR"
+        },
+        "drug2clinic": {
+            "association_score": {
+                "probability": {
+                    "value": 1,
+                    "method": {
+                        "description": "Custom scoring method for assigning marketed drug to clinical indication"
+                    }
+                }
+            },
+            "max_phase_for_disease": {
+                "numeric_index": 8,
+                "label": "Phase IV"
+            },
+            "provenance_type": {
+                "expert": {
+                    "status": true
+                }
+            },
+            "is_associated": true,
+            "date_asserted": "2014-05-20T00:00:00Z",
+            "evidence_codes": [
+                "http://identifiers.org/eco/drug_disease",
+                "http://purl.obolibrary.org/obo/ECO_0000205"
+            ],
+            "urls": [
+                {
+                    "nice_name": "ATC classification of disease",
+                    "url": "http://www.atc.class.org/"
+                },
+                {
+                    "nice_name": "Drug label",
+                    "url": "https://www.linktodruglabel.org/"
+                },
+                {
+                    "nice_name": "Clinical trials for this drug and disease",
+                    "url": "https://www.clinicaltrials.org/xxxyyy"
+                }
+            ]
+        }
+    }
+}
