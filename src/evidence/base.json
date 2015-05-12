@@ -6,13 +6,11 @@
   "type": "object",
   "id": "#base_evidence",
   "properties": {
-    
     "unique_experiment_reference": {
-      "type" : "string",
-      "description" : "A unique experiment identifer or literature reference that uniquely identifies the study in your database",
+      "type": "string",
+      "description": "A unique experiment identifer or literature reference that uniquely identifies the study in your database",
       "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|STUDYID_.+$"
     },
-    
     "is_associated": {
       "type": "boolean"
     },
@@ -25,16 +23,28 @@
       "id": "#association_score",
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+          "pvalue": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+          }
         },
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+          "probability": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+          }
         },
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+          "rank": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+          }
         },
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
+          "summed_total": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
+          }
         }
       ]
     },
