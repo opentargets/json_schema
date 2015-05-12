@@ -22,34 +22,26 @@
       "type": "object",
       "id": "#association_score",
       "oneOf": [
-        {
           "pvalue": {
             "type": "object",
             "id": "#pvalue",
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
-          }
-        },
-        {
+          },
           "probability": {
             "type": "object",
             "id" : "#probability",
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
-          }
-        },
-        {
+          },
           "rank": {
             "type": "object",
             "id": "#rank",
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
-          }
-        },
-        {
+          },
           "summed_total": {
             "type": "object",
             "id": "#rank",
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
           }
-        }
       ]
     },
     "provenance_type": {
