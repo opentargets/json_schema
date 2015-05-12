@@ -5,6 +5,9 @@
 ##Installation Notes
 
 1] Install [node.js](https://nodejs.org/)
+
+- If you are behind a firewall proxy, you need to follow [these instructions](http://jjasonclark.com/how-to-setup-node-behind-web-proxy/) because the validator needs to query remote schemas.
+
 2] Install [z-schema validator](https://github.com/zaggino/z-schema) using the node.js shell:
 ```bash
 npm install --global z-schema
@@ -30,5 +33,3 @@ z-schema schema.json instance.json
 alias nodejs_setup="/cygdrive/c/Program\ Files/nodejs/nodevars.bat;echo z-schema myschema.json instance.json"
 nodejs_setup
 ```
-
-5] **Note**: z-schema needs to download remote json schemas. With the above instructions, this script will work only on networks that are not configured to work behind proxy servers.

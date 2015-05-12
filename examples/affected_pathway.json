@@ -37,10 +37,10 @@
                 "literature": {
                     "references": [
                         {
-                            "id": "http://europepmc.org/abstract/MED/18989535"
+                            "lit_id": "http://europepmc.org/abstract/MED/18989535"
                         },
                         {
-                            "id": "http://europepmc.org/articles/PMC4363614"
+                            "lit_id": "http://europepmc.org/articles/PMC4363614"
                         }
                     ]
                 }

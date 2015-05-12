@@ -43,7 +43,7 @@
             "literature": {
                 "references": [
                     {
-                        "id": "http://europepmc.org/abstract/MED/18989535",
+                        "lit_id": "http://europepmc.org/abstract/MED/18989535",
                         "mined_sentences": [
                             "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
                             "example sentence 2",
@@ -51,7 +51,7 @@
                         ]
                     },
                     {
-                        "id": "http://europepmc.org/articles/PMC4363614",
+                        "lit_id": "http://europepmc.org/articles/PMC4363614",
                         "mined_sentences": [
                             "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
                             "example sentence 2",
