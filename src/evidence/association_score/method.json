@@ -15,8 +15,5 @@
     	"format": "uri"
     }
   },
-  "required": [
-    "description"
-  ],
   "additionalProperties": false
 }
