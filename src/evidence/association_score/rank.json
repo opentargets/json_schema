@@ -1,11 +1,9 @@
 {
   "type": "object",
-  "id": "#rank",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
-    },
-    {
+  "id": "#rank",    
+  "properties": {
+    "rank": {
+      "type": "object",
       "properties": {
         "position": {
           "type": "number",
@@ -19,16 +17,16 @@
           "type": "object",
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
         }
-      }
+      },
+      "additionalProperties": false,
+      "required": [
+        "position",
+        "sample_size"
+      ]
     }
-  ],
-  "properties": {
-    "position": {},
-    "sample_size": {}
   },
   "required": [
-    "position",
-    "sample_size"
+    "rank"
   ],
   "additionalProperties": false
 }

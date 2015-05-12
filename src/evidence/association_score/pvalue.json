@@ -7,25 +7,33 @@
     },
     {
       "properties": {
-        "value": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1
-        },
-        "method": {
+        "pvalue": {
           "type": "object",
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "method": {
+              "type": "object",
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "method"
+          ]
         }
       }
     }
   ],
   "properties": {
-    "value": {},
-    "method": {}
+    "pvalue": {}
   },
   "required": [
-    "value",
-    "method"
+    "pvalue"
   ],
   "additionalProperties": false
 }
