@@ -10,7 +10,7 @@
     },
     {
       "properties": {
-        "label": {
+        "type": {
           "type" : "string",
           "enum": [
             "genetics_curated_literature_evidence_string",
@@ -26,7 +26,7 @@
     }
   ],
   "properties": {
-    "label": {},
+    "type": {},
     "sourceID": {},
     "validated_against_schema_version": {},
     "unique_association_fields": {},
@@ -36,7 +36,7 @@
     "evidence": {}
   },
   "required": [
-    "label",
+    "type",
     "sourceID",
     "access_level",
     "validated_against_schema_version",

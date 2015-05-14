@@ -10,7 +10,7 @@
     },
     {
       "properties": {
-        "label": {
+        "type": {
           "type" : "string",
           "enum": [
             "drug_evidence_string"
@@ -60,7 +60,7 @@
     }
   ],
   "properties": {
-    "label": {},
+    "type": {},
     "sourceID": {},
     "validated_against_schema_version": {},
     "unique_association_fields": {},
@@ -71,7 +71,7 @@
     "drug": {}
   },
   "required": [
-    "label",
+    "type",
     "access_level",
     "sourceID",
     "validated_against_schema_version",

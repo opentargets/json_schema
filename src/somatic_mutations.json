@@ -10,7 +10,7 @@
     },
     {
       "properties": {
-        "label": {
+        "type": {
           "type" : "string",
           "enum": [
             "somatic_mutations_evidence_string"
@@ -24,7 +24,7 @@
     }
   ],
   "properties": {
-    "label": {},
+    "type": {},
     "sourceID": {},
     "access_level" :{},
     "validated_against_schema_version": {},
@@ -34,7 +34,7 @@
     "evidence": {}
   },
   "required": [
-    "label",
+    "type",
     "sourceID",
     "validated_against_schema_version",
     "unique_association_fields",

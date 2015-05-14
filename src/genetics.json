@@ -10,7 +10,7 @@
     },
     {
       "properties": {
-        "label": {
+        "type": {
           "type" : "string",
           "enum": [
             "genetics_evidence_string"
@@ -24,11 +24,11 @@
           "type": "object",
           "properties": {
             "gene2variant": {
-              "label": "object",
+              "type": "object",
               "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/genetics/gene2variant.json"
             },
             "variant2disease": {
-              "label": "object",
+              "type": "object",
               "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/genetics/variant2disease.json"
             },
             "association_score": {
@@ -60,7 +60,7 @@
     }
   ],
   "properties": {
-    "label": {},
+    "type": {},
     "sourceID": {},
     "validated_against_schema_version": {},
     "unique_association_fields": {},
@@ -71,7 +71,7 @@
     "variant": {}
   },
   "required": [
-    "label",
+    "type",
     "sourceID",
     "access_level",
     "validated_against_schema_version",
