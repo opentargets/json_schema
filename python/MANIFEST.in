@@ -1,0 +1,3 @@
+
+recursive-include cttv *.py
+include README.rst LICENSE tox.ini setup.py *requirements.txt
