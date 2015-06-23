@@ -22,7 +22,6 @@
     },
     "association_score": {
       "type": "object",
-      "id": "#association_score",
       "oneOf": [
         {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
