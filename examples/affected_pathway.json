@@ -1,5 +1,5 @@
 {
-    "label": "affected_pathways_curated_literature_evidence_string",
+    "type": "affected_pathways_curated_literature_evidence_string",
     "sourceID": "Reactome",
     "validated_against_schema_version": "1.2",
     "access_level" : "public",
