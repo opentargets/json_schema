@@ -1,6 +1,6 @@
 {
-    "sourceID": "ChEMBL",
-    "validated_against_schema_version": "1.2",
+    "sourceID": "chembl",
+    "validated_against_schema_version": "1.2.1",
     "access_level" : "public",
     "unique_association_fields": {
         "chembl_targets": "http://identifiers.org/uniprot/P23219,http://identifiers.org/uniprot/P35354",
@@ -8,7 +8,7 @@
         "atc_classification": "http://identifiers.org/atc/M02AA23",
         "efo_classification": "http://purl.obolibrary.org/obo/HP_0003326"
     },
-    "label": "drug_evidence_string",
+    "type": "known_drug",
     "target": {
         "target_type": "http://identifiers.org/cttv.target/protein_family",
         "target_name": "Cyclooxygenase",
@@ -40,23 +40,21 @@
     "evidence": {
         
         "association_score": {
-            "probability": {
                 "value": 1,
                 "method": {
                     "description": "custom probability calculation"
-                }
-            }
+                },
+                "type":"probability"
         },
 
         "target2drug": {
             "association_score": {
-                "probability": {
                     "value": 1,
                     "method": {
                         "url": "https://github.com/CTTV/association_score_methods/blob/master/CTTV008_ChEMBL/description.md",
                         "description": "Custom method for probability of mechanism of action association"
-                    }
-                }
+                    },
+                    "type":"probability"
             },
             "provenance_type": {
                 "literature": {
@@ -98,12 +96,11 @@
         },
         "drug2clinic": {
             "association_score": {
-                "probability": {
                     "value": 1,
                     "method": {
                         "description": "Custom scoring method for assigning marketed drug to clinical indication"
-                    }
-                }
+                    },
+                    "type":"probability"
             },
             "max_phase_for_disease": {
                 "numeric_index": 8,

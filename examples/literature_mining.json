@@ -1,8 +1,8 @@
 {
-    "label": "literature_mining_evidence_string",
-    "sourceID": "EuropePMC",
-    "validated_against_schema_version": "1.2",
-    "access_level" : "public",
+    "type": "literature",
+    "sourceID": "europmc",
+    "validated_against_schema_version": "1.2.1",
+    "access_level": "public",
     "unique_association_fields": {
         "target": "http://identifiers.org/P43116",
         "publicationIDs": "http://europepmc.org/abstract/MED/18989535,http://europepmc.org/articles/PMC4363614",
@@ -24,21 +24,25 @@
         ]
     },
     "evidence": {
-    	"unique_experiment_reference" : "http://europepmc.org/abstract/MED/18989535",
+        "unique_experiment_reference": "http://europepmc.org/abstract/MED/18989535",
         "association_score": {
-            "summed_total": {
-                "value": 243,
-                "method": {
-                    "description": "Custom text-mining method for target-disease association"
-                }
-            }
+            "value": 500,
+            "method": {
+                "description": "Custom text-mining method for target-disease association"
+            },
+            "type": "summed_total"
         },
         "literature_ref": {
             "lit_id": "http://europepmc.org/abstract/MED/18989535",
             "mined_sentences": [
-                "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
-                "example sentence 2",
-                "example sentence 3"
+                {
+                    "text": "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
+                    "section": "abstract",
+                    "t_start": 40,
+                    "t_end": 45,
+                    "d_start": 100,
+                    "d_end": 105
+                }
             ]
         },
         "provenance_type": {
