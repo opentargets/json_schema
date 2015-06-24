@@ -3,7 +3,6 @@
     "title": "phenotype",
     "description": "CTTV phenotype model",
     "type": "object",
-    "id": "#phenotype",
     "version": "1.2.1",
     "allOf": [
         {
