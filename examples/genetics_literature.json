@@ -2,7 +2,7 @@
     "type": "genetic_literature",
     "sourceID": "uniprot",
     "validated_against_schema_version": "1.2.1",
-    "access_level" : "public",
+    "access_level": "public",
     "unique_association_fields": {
         "target": "http://identifiers.org/P43116",
         "publicationIDs": "http://europepmc.org/abstract/MED/18989535,http://europepmc.org/articles/PMC4363614",
@@ -26,11 +26,11 @@
     "evidence": {
         "known_mutations": "[NICD1 P2474Afs*4, NICD1 P2514Rfs*4]",
         "association_score": {
-                "value": 1,
-                "method": {
-                    "description": "Curator inference hence 1"
-                },
-                "type":"probability"
+            "value": 1,
+            "method": {
+                "description": "Curator inference hence 1"
+            },
+            "type": "probability"
         },
         "urls": [
             {
@@ -44,18 +44,14 @@
                     {
                         "lit_id": "http://europepmc.org/abstract/MED/18989535",
                         "mined_sentences": [
-                            { "sentence": { 
-                            	    "text": "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease." 
-                            }}
+                            {
+                                "text": "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
+                                "section": "abstract"
+                            }
                         ]
                     },
                     {
-                        "lit_id": "http://europepmc.org/articles/PMC4363614",
-                        "mined_sentences": [
-                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
-                            "example sentence 2",
-                            "example sentence 3"
-                        ]
+                        "lit_id": "http://europepmc.org/articles/PMC4363614"
                     }
                 ]
             }
