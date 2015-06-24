@@ -4,7 +4,7 @@
     "description": "Expression evidence linking gene/protein to disease",
     "type": "object",
     "version": "1.2.1",
-    "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/expression.json",
+    "id": "#expression_evidence",
     "allOf": [
         {
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
@@ -120,5 +120,13 @@
         "test_replicates_n",
         "reference_replicates_n",
         "confidence_level"
-    ]
+    ],
+  "import_remote_schemas": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
+    }
+  ]    
 }
