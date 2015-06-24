@@ -1,7 +1,7 @@
 {
     "sourceID": "Expression Atlas",
-    "validated_against_schema_version": "1.2",
-    "label": "expression_evidence_string",
+    "validated_against_schema_version": "1.2.1",
+    "type": "rna_expression",
     "access_level": "public",
     "unique_association_fields": {
         "study_id": "http://identifiers.org/gxa.expt/E-GEOD-14001",
@@ -50,16 +50,18 @@
         },
         "test_sample": "Breast cancer tissue sample",
         "reference_sample": "healthy tissue",
+        "test_replicates_n": 10,
+        "reference_replicates_n": 5,
+	"confidence_level" : "medium",
         "date_asserted": "2015-03-30T20:47:04Z",
         "experiment_overview": "Transcription profiling of human LMP ovarian tumors and low-grade ovarian carcinomas to identify genes which dffer from  high-grade ovarian carcinomas - PAX2: a potential biomarker for low malignant potential ovarian tumors and low-grade serous ovarian carcinomas",
         "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
         "association_score": {
-            "pvalue": {
                 "value": 0.0168,
                 "method": {
                     "description": "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
-                }
-            }
+                },
+                "type":"pvalue"
         },
         "provenance_type": {
             "database": {
