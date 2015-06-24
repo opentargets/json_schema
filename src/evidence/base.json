@@ -149,66 +149,61 @@
           "items": {
             "type": "object",
             "properties": {
-              "sentence": {
-                "type": "object",
-                "properties": {
-                  "text": {
-                    "type": "string"
-                  },
-                  "section": {
-                    "type": "string",
-                    "enum": [
-                      "title",
-                      "abstract",
-                      "introduction_and_background",
-                      "results",
-                      "discussion",
-                      "case_study",
-                      "conclusion_and_future_work",
-                      "appendix",
-                      "figure",
-                      "table",
-                      "other"
-                    ],
-                    "description": "Section of the article in which this sentence appears"
-                  },
-                  "t_start": {
-                    "type": "number",
-                    "minValue": 0,
-                    "description": "Start co-ordinate of target (protein/gene) in text"
-                  },
-                  "t_end": {
-                    "type": "number",
-                    "minValue": 0,
-                    "description": "End co-ordinate of target (protein/gene) in text"
-                  },
-                  "d_start": {
-                    "type": "number",
-                    "minValue": 0,
-                    "description": "Start co-ordinate of disease name in text"
-                  },
-                  "d_end": {
-                    "type": "number",
-                    "minValue": 0,
-                    "description": "End co-ordinate of disease name in text"
-                  }
-                },
-                "additionalProperties": false,
-                "required": [
-                  "text",
-                  "section"
-                ]
+              "text": {
+                "type": "string"
+              },
+              "section": {
+                "type": "string",
+                "enum": [
+                  "title",
+                  "abstract",
+                  "introduction_and_background",
+                  "results",
+                  "discussion",
+                  "case_study",
+                  "conclusion_and_future_work",
+                  "appendix",
+                  "figure",
+                  "table",
+                  "other"
+                ],
+                "description": "Section of the article in which this sentence appears"
+              },
+              "t_start": {
+                "type": "number",
+                "minValue": 0,
+                "description": "Start co-ordinate of target (protein/gene) in text"
+              },
+              "t_end": {
+                "type": "number",
+                "minValue": 0,
+                "description": "End co-ordinate of target (protein/gene) in text"
+              },
+              "d_start": {
+                "type": "number",
+                "minValue": 0,
+                "description": "Start co-ordinate of disease name in text"
+              },
+              "d_end": {
+                "type": "number",
+                "minValue": 0,
+                "description": "End co-ordinate of disease name in text"
               }
-            }
-          },
-          "minItems": 1
-        }
-      },
-      "required": [
-        "lit_id"
-      ],
-      "additionalProperties": false
-    }
+            },
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "section"
+            ]
+          }
+        },
+        "minItems": 1
+      }
+    },
+    "required": [
+      "lit_id"
+    ],
+    "additionalProperties": false
   },
   "import_remote_schemas": [
     {

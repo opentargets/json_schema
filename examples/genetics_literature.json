@@ -1,5 +1,5 @@
 {
-    "label": "genetic_literature",
+    "type": "genetic_literature",
     "sourceID": "uniprot",
     "validated_against_schema_version": "1.2.1",
     "access_level" : "public",
@@ -26,12 +26,11 @@
     "evidence": {
         "known_mutations": "[NICD1 P2474Afs*4, NICD1 P2514Rfs*4]",
         "association_score": {
-            "probability": {
                 "value": 1,
                 "method": {
                     "description": "Curator inference hence 1"
-                }
-            }
+                },
+                "type":"probability"
         },
         "urls": [
             {
@@ -45,9 +44,9 @@
                     {
                         "lit_id": "http://europepmc.org/abstract/MED/18989535",
                         "mined_sentences": [
-                            "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease.",
-                            "example sentence 2",
-                            "example sentence 3"
+                            { "sentence": { 
+                            	    "text": "a novel proinflammatory and proamyloidogenic function for the PGE2 EP2 receptor is demonstrated in a model of familial Alzheimer's disease." 
+                            }}
                         ]
                     },
                     {
