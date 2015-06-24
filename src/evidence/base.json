@@ -4,7 +4,7 @@
   "description": "Base schema for CTTV evidence",
   "version": "1.2.1",
   "type": "object",
-  "id": "#base_evidence",
+  "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json",
   "properties": {
     "unique_experiment_reference": {
       "type": "string",
@@ -22,16 +22,16 @@
       "type": "object",
       "properties": {
         "pvalue": {
-          "$ref": "evidence/association_score/pvalue.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
         },
         "probability": {
-          "$ref": "evidence/association_score/probability.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
         },
         "rank": {
-          "$ref": "evidence/association_score/rank.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
         },
         "summed_total": {
-          "$ref": "evidence/association_score/summed_total.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
         }
       },
       "additionalProperties": false
@@ -133,7 +133,7 @@
   "definitions": {
     "single_lit_reference": {
       "type": "object",
-      "id": "#single_lit_reference",
+      "id": "single_lit_reference",
       "properties": {
         "lit_id": {
           "type": "string",
@@ -142,7 +142,7 @@
         },
         "score": {
           "type": "object",
-          "$ref": "evidence/association_score/rank.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
         },
         "mined_sentences": {
           "type": "array",
