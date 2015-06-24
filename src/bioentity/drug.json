@@ -6,7 +6,7 @@
   "version": "1.2.1",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+      "$ref": "base.json"
     },
     {
       "properties": {
@@ -26,7 +26,7 @@
         },
         "max_phase_for_all_diseases": {
           "type": "object",
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/diseasephase.json"
+          "$ref": "evidence/drug/diseasephase.json"
         }
       }
     }

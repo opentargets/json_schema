@@ -6,7 +6,7 @@
     "version": "1.2.1",
     "allOf": [
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+            "$ref": "base.json"
         },
         {
             "properties": {
@@ -22,7 +22,7 @@
                     "type": "string",
                     "enum": [
                         "snp single",
-                        "snp multiple",
+                        "snp snp interaction",
                         "structural variant"
                     ]
                 }
