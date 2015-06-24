@@ -6,6 +6,13 @@
   "type": "object",
   "version": "1.2.1",
   "properties": {
+        "type": {
+          "type" : "string",          
+          "enum": [
+            "rank"
+          ]
+        },  	  
+  	  
     "position": {
       "type": "number",
       "minimum": 1
@@ -22,6 +29,7 @@
   "additionalProperties": false,
   "required": [
     "position",
-    "sample_size"
+    "sample_size",
+    "type"
   ]
 }

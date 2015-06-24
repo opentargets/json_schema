@@ -7,6 +7,12 @@
     },
     {
       "properties": {
+        "type": {
+          "type" : "string",          
+          "enum": [
+            "summed_total"
+          ]
+        },      	      
         "value": {
           "type": "number",
           "minimum": 0
@@ -21,6 +27,7 @@
   "additionalProperties": false,
   "required": [
     "value",
-    "method"
+    "method",
+    "type"
   ]
 }

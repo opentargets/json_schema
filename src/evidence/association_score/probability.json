@@ -7,6 +7,12 @@
         },
         {
             "properties": {
+        "type": {
+          "type" : "string",          
+          "enum": [
+            "probability"
+          ]
+        },
                 "value": {
                     "type": "number",
                     "minimum": 0,
@@ -21,11 +27,13 @@
     ],
     "properties": {
         "value": {},
-        "method": {}
+        "method": {},
+        "type": {}
     },
     "required": [
         "value",
-        "method"
+        "method",
+        "type"
     ],
     "additionalProperties": false
 }
