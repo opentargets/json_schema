@@ -4,9 +4,10 @@
   "description": "CTTV drug model",
   "type": "object",
   "version": "1.2.1",
+  "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/drug.json",
   "allOf": [
     {
-      "$ref": "base.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
     },
     {
       "properties": {
@@ -26,7 +27,7 @@
         },
         "max_phase_for_all_diseases": {
           "type": "object",
-          "$ref": "evidence/drug/diseasephase.json"
+          "$ref": "https://github.com/CTTV/json_schema/blob/master/src/evidence/drug/diseasephase.json"
         }
       }
     }

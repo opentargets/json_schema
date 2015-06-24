@@ -3,10 +3,11 @@
     "title": "phenotype",
     "description": "CTTV phenotype model",
     "type": "object",
+    "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json",
     "version": "1.2.1",
     "allOf": [
         {
-            "$ref": "base.json"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
         },
         {
             "properties": {
