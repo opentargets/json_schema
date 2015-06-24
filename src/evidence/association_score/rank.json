@@ -1,6 +1,6 @@
 {
     "type": "object",
-    "id": "#rank",
+    "id": "rank",
     "properties": {
         "position": {
             "type": "number",
@@ -12,7 +12,7 @@
         },
         "method": {
             "type": "object",
-            "$ref": "evidence/association_score/method.json"
+            "$ref": "method.json"
         }
     },
     "additionalProperties": false,

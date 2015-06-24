@@ -1,9 +1,9 @@
 {
     "type": "object",
-    "id": "#probability",
+    "id": "probability",
     "allOf": [
         {
-            "$ref": "evidence/association_score/base.json"
+            "$ref": "base.json"
         },
         {
             "properties": {
@@ -14,7 +14,7 @@
                 },
                 "method": {
                     "type": "object",
-                    "$ref": "evidence/association_score/method.json"
+                    "$ref": "method.json"
                 }
             }
         }
