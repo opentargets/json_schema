@@ -1,9 +1,9 @@
 {
   "type": "object",
-  "id": "summed_total",
+  "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json",
   "allOf": [
     {
-      "$ref": "base.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
     },
     {
       "properties": {
@@ -13,7 +13,7 @@
         },
         "method": {
           "type": "object",
-          "$ref": "method.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
         }
       }
     }

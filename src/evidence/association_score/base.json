@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "id": "#base_association_score",
+  "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json",
   "description" : "empty association score base class",
   "properties": {}
 }
