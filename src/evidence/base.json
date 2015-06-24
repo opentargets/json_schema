@@ -195,15 +195,16 @@
               "text",
               "section"
             ]
-          }
-        },
-        "minItems": 1
-      }
-    },
-    "required": [
+          },
+          "minItems" : 1
+        }
+      },
+      
+     "required": [
       "lit_id"
     ],
     "additionalProperties": false
+    }
   },
   "import_remote_schemas": [
     {
