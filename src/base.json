@@ -7,7 +7,8 @@
   "properties": {
     "sourceID": {
       "type": "string",
-      "description": "A source ID (database or study ID) to help identify who this data is from."
+      "description": "A source ID (database or study ID) to help identify who this data is from.",
+      "pattern": "^[a-z0-9_]+$"
     },
     
     "access_level": {
@@ -23,7 +24,6 @@
       "description": "The CTTV-JSON schema version number against which your data was validated",
       "type": "string",
       "enum": [
-        "1.1",
         "1.2.1"
       ]
     },
