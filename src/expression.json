@@ -3,7 +3,7 @@
   "title": "Expression-based evidence strings",
   "description": "Schema for target-disease evidence using gene/protein expression experiments",
   "type": "object",
-  "version": "1.2",
+  "version": "1.2.1",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/base.json"
@@ -13,7 +13,7 @@
         "type": {
           "type" : "string",          
           "enum": [
-            "expression_evidence_string"
+            "rna_expression"
           ]
         },
         "evidence": {

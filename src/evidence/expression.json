@@ -1,118 +1,143 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "expression_evidence",
-  "description": "Expression evidence linking gene/protein to disease",
-  "type": "object",
-  "version": "1.2",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
-    },
-    {
-      "properties": {
-        "comparison_name": {
-          "type": "string"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "expression_evidence",
+    "description": "Expression evidence linking gene/protein to disease",
+    "type": "object",
+    "version": "1.2.1",
+    "allOf": [
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
         },
-        "log2_fold_change": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "type": "number"
-            },
-            "percentile_rank": {
-              "type": "number",
-              "minValue": 0,
-              "maxValue": 100
+        {
+            "properties": {
+                "comparison_name": {
+                    "type": "string"
+                },
+                "log2_fold_change": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number"
+                        },
+                        "percentile_rank": {
+                            "type": "number",
+                            "minValue": 0,
+                            "maxValue": 100
+                        }
+                    },
+                    "required": [
+                        "value",
+                        "percentile_rank"
+                    ],
+                    "additionalProperties": false
+                },
+                "test_sample": {
+                    "description": "Free text - test sample",
+                    "type": "string"
+                },
+                "reference_sample": {
+                    "description": "Free text - reference sample",
+                    "type": "string"
+                },
+                "test_replicates_n": {
+                    "description": "Count of test replicates",
+                    "type": "number",
+                    "minimum": 1
+                },
+                "reference_replicates_n": {
+                    "description": "Count of reference replicates",
+                    "type": "number",
+                    "minimum": 1
+                },
+                "confidence_level": {
+                    "type": "string",
+                    "enum": [
+                        "high",
+                        "medium",
+                        "low"
+                    ],
+                    "description": "high = if the disease state is the only variable (i.e. case vs control); medium = if the disease is a variable but there is one or more other variables; low = where all samples have the disease but the variable is something else e.g. a treatment"
+                },
+                "experiment_overview": {
+                    "type": "string"
+                },
+                "evidence_codes": {
+                    "type": "array",
+                    "description": "An array of evidence codes",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "http://purl.obolibrary.org/obo/ECO_0000356",
+                            "http://purl.obolibrary.org/obo/ECO_0000357",
+                            "http://purl.obolibrary.org/obo/ECO_0000358",
+                            "http://purl.obolibrary.org/obo/ECO_0000359",
+                            "http://purl.obolibrary.org/obo/ECO_0000205"
+                        ]
+                    },
+                    "minItems": 1
+                },
+                "urls": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+                    }
+                }
             }
-          },
-          "required": [
-            "value",
-            "percentile_rank"
-          ],
-          "additionalProperties": false
-        },
-        "test_sample": {
-          "description": "Free text - test sample",
-          "type": "string"
-        },
-        "reference_sample": {
-          "description": "Free text - reference sample",
-          "type": "string"
-        },
-        "experiment_overview": {
-          "type": "string"
-        },
-        "evidence_codes": {
-          "type": "array",
-          "description": "An array of evidence codes",
-          "items": {
-            "type": "string",
-            "enum": [
-              "http://purl.obolibrary.org/obo/ECO_0000356",
-              "http://purl.obolibrary.org/obo/ECO_0000357",
-              "http://purl.obolibrary.org/obo/ECO_0000358",
-              "http://purl.obolibrary.org/obo/ECO_0000359",
-              "http://purl.obolibrary.org/obo/ECO_0000205"
-            ]
-          },
-          "minItems": 1
-        },
-        "urls": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
-          }
         }
-      }
-    }
-  ],
-  "properties": {
-    "association_score": {},
-    "provenance_type": {},
-    "is_associated": {},
-    "date_asserted": {},
-    "comparison_name": {},
-    "log2_fold_change": {},
-    "test_sample": {},
-    "reference_sample": {},
-    "experiment_overview": {},
-    "evidence_codes": {},
-    "urls": {},
-    "unique_experiment_reference": {}
-  },
-  "additionalProperties": false,
-  "required": [
-    "association_score",
-    "provenance_type",
-    "is_associated",
-    "date_asserted",
-    "evidence_codes",
-    "comparison_name",
-    "log2_fold_change",
-    "test_sample",
-    "reference_sample",
-    "experiment_overview",
-    "unique_experiment_reference"
-  ],
-  "import_remote_schemas": [
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    ],
+    "properties": {
+        "association_score": {},
+        "provenance_type": {},
+        "is_associated": {},
+        "date_asserted": {},
+        "comparison_name": {},
+        "log2_fold_change": {},
+        "test_sample": {},
+        "reference_sample": {},
+        "test_replicates_n": {},
+        "reference_replicates_n": {},
+        "confidence_level": {},
+        "experiment_overview": {},
+        "evidence_codes": {},
+        "urls": {},
+        "unique_experiment_reference": {}
     },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
-    }
-  ]
+    "additionalProperties": false,
+    "required": [
+        "association_score",
+        "provenance_type",
+        "is_associated",
+        "date_asserted",
+        "evidence_codes",
+        "comparison_name",
+        "log2_fold_change",
+        "test_sample",
+        "reference_sample",
+        "experiment_overview",
+        "unique_experiment_reference",
+        "test_replicates_n",
+        "reference_replicates_n",
+        "confidence_level"
+    ],
+    "import_remote_schemas": [
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
+        }
+    ]
 }

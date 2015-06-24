@@ -2,17 +2,15 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Evidence_Base",
   "description": "Base schema for CTTV evidence",
-  "version": "1.2",
+  "version": "1.2.1",
   "type": "object",
   "id": "#base_evidence",
   "properties": {
-    
     "unique_experiment_reference": {
-      "type" : "string",
-      "description" : "A unique experiment identifer or literature reference that uniquely identifies the study in your database",
+      "type": "string",
+      "description": "A unique experiment identifer or literature reference that uniquely identifies the study in your database",
       "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|STUDYID_.+$"
     },
-    
     "is_associated": {
       "type": "boolean"
     },
@@ -22,20 +20,21 @@
     },
     "association_score": {
       "type": "object",
-      "oneOf": [
-        {
+      "properties": {
+        "pvalue": {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
         },
-        {
+        "probability": {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
         },
-        {
+        "rank": {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
         },
-        {
+        "summed_total": {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
         }
-      ]
+      },
+      "additionalProperties": false
     },
     "provenance_type": {
       "type": "object",
@@ -148,13 +147,66 @@
         "mined_sentences": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+              "sentence": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "section": {
+                    "type": "string",
+                    "enum": [
+                      "title",
+                      "abstract",
+                      "introduction_and_background",
+                      "results",
+                      "discussion",
+                      "case_study",
+                      "conclusion_and_future_work",
+                      "appendix",
+                      "figure",
+                      "table",
+                      "other"
+                    ],
+                    "description": "Section of the article in which this sentence appears"
+                  },
+                  "t_start": {
+                    "type": "number",
+                    "minValue": 0,
+                    "description": "Start co-ordinate of target (protein/gene) in text"
+                  },
+                  "t_end": {
+                    "type": "number",
+                    "minValue": 0,
+                    "description": "End co-ordinate of target (protein/gene) in text"
+                  },
+                  "d_start": {
+                    "type": "number",
+                    "minValue": 0,
+                    "description": "Start co-ordinate of disease name in text"
+                  },
+                  "d_end": {
+                    "type": "number",
+                    "minValue": 0,
+                    "description": "End co-ordinate of disease name in text"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "text",
+                  "section"
+                ]
+              }
+            }
           },
           "minItems": 1
         }
       },
       "required": [
-        "lit_id"
+        "lit_id",
+        "mined_sentences"
       ],
       "additionalProperties": false
     }

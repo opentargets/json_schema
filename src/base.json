@@ -3,28 +3,25 @@
   "title": "Target-Disease-Association",
   "description": "Schema for different types of target-disease associations used by CTTV",
   "type": "object",
-  "version": "1.2",
+  "version": "1.2.1",
   "properties": {
     "sourceID": {
       "type": "string",
-      "description": "A source ID (database or study ID) to help identify who this data is from."
+      "description": "A source ID (database or study ID) to help identify who this data is from.",
+      "pattern": "^[a-z0-9_]+$"
     },
     
     "access_level": {
-      "description": "Choose public as default; private is for internal datasets",
+      "description": "Choose public as default; private_.* is for internal datasets",
       "type": "string",
-      "enum": [
-        "public",
-        "private"
-      ]      
+      "pattern": "^public|private_.+$"
     },
     
     "validated_against_schema_version": {
       "description": "The CTTV-JSON schema version number against which your data was validated",
       "type": "string",
       "enum": [
-        "1.1",
-        "1.2"
+        "1.2.1"
       ]
     },
     "unique_association_fields": {

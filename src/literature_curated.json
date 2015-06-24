@@ -3,7 +3,7 @@
   "title": "Literature-based evidence strings",
   "description": "Schema for target-disease evidence extracted from the literature",
   "type": "object",
-  "version": "1.2",
+  "version": "1.2.1",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/base.json"
@@ -13,9 +13,9 @@
         "type": {
           "type" : "string",
           "enum": [
-            "genetics_curated_literature_evidence_string",
-            "affected_pathways_curated_literature_evidence_string",
-            "somatic_mutations_curated_literature_evidence_string"
+            "genetic_literature",
+            "affected_pathway",
+            "somatic_mutation"
           ]
         },
         "evidence": {

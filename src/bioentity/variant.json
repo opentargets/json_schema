@@ -3,7 +3,7 @@
     "title": "Variant",
     "description": "CTTV variant model - an array of dbSNP, European structural variant (esv) or NCBI structural variant (nsv)",
     "type": "object",
-    "version": "1.2",
+    "version": "1.2.1",
     "allOf": [
         {
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"

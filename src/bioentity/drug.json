@@ -3,7 +3,7 @@
   "title": "Drug",
   "description": "CTTV drug model",
   "type": "object",
-  "version": "1.2",
+  "version": "1.2.1",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"

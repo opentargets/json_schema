@@ -1,32 +1,23 @@
 {
-  "type": "object",
-  "id": "#rank",    
-  "properties": {
-    "rank": {
-      "type": "object",
-      "properties": {
+    "type": "object",
+    "id": "#rank",
+    "properties": {
         "position": {
-          "type": "number",
-          "minimum": 1
+            "type": "number",
+            "minimum": 1
         },
         "sample_size": {
-          "type": "number",
-          "minimum": 1
+            "type": "number",
+            "minimum": 1
         },
         "method": {
-          "type": "object",
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
         }
-      },
-      "additionalProperties": false,
-      "required": [
+    },
+    "additionalProperties": false,
+    "required": [
         "position",
         "sample_size"
-      ]
-    }
-  },
-  "required": [
-    "rank"
-  ],
-  "additionalProperties": false
+    ]
 }

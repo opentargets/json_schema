@@ -3,7 +3,7 @@
   "title": "snp_gwas_disease_evidence",
   "description": "Evidence linking SNP to disease in a GWAS study",
   "type": "object",
-  "version": "1.2",
+  "version": "1.2.1",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
@@ -12,6 +12,16 @@
       "properties": {
         "allOf": {
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+        },
+        "gwas_panel_resolution": {
+          "description": "Panel resolution of GWAS study",
+          "type": "number",
+          "minimum": 1
+        },
+        "gwas_sample_size": {
+          "description": "Sample size of GWAS study",
+          "type": "number",
+          "minimum": 1
         },
         "evidence_codes": {
           "type": "array",
@@ -42,7 +52,9 @@
     "is_associated": {},
     "date_asserted": {},
     "evidence_codes": {},
-    "urls": {}
+    "urls": {},
+    "gwas_panel_resolution": {},
+    "gwas_sample_size": {}
   },
   "required": [
     "unique_experiment_reference",

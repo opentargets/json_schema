@@ -7,32 +7,20 @@
     },
     {
       "properties": {
-        "summed_total": {
+        "value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "method": {
           "type": "object",
-          "properties": {
-            "value": {
-              "type": "number",
-              "minimum": 0
-            },
-            "method": {
-              "type": "object",
-              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
-            }
-          },
-          "additionalProperties": false,
-          "required": [
-            "value",
-            "method"
-          ]
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
         }
       }
     }
   ],
-  "properties": {
-    "summed_total": {}
-  },
+  "additionalProperties": false,
   "required": [
-    "summed_total"
-  ],
-  "additionalProperties": false
+    "value",
+    "method"
+  ]
 }
