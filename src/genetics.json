@@ -6,7 +6,7 @@
   "version": "1.2.1",
   "allOf": [
     {
-      "$ref": "base.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/base.json"
     },
     {
       "properties": {
@@ -18,33 +18,33 @@
         },
         "variant": {
           "type": "object",
-          "$ref": "bioentity/variant.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/variant.json"
         },
         "evidence": {
           "type": "object",
           "properties": {
             "gene2variant": {
               "type": "object",
-              "$ref": "evidence/genetics/gene2variant.json"
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/genetics/gene2variant.json"
             },
             "variant2disease": {
               "type": "object",
-              "$ref": "evidence/genetics/variant2disease.json"
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/genetics/variant2disease.json"
             },
             "association_score": {
               "type" : "object",
               "oneOf": [
                 {
-                  "$ref": "evidence/association_score/pvalue.json"
+                  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
                 },
                 {
-                  "$ref": "evidence/association_score/probability.json"
+                  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
                 },
                 {
-                  "$ref": "evidence/association_score/rank.json"
+                  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
                 },
                 {
-                  "$ref": "evidence/association_score/summed_total.json"
+                  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
                 }
               ]
             }
@@ -81,5 +81,40 @@
     "disease",
     "evidence"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "import_remote_schemas": [
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
+    },    
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
+    }
+  ]
 }

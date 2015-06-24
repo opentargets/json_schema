@@ -7,20 +7,23 @@
   "properties": {
     "sourceID": {
       "type": "string",
-      "description": "A source ID (database or study ID) to help identify who this data is from.",
-      "pattern": "^[a-z0-9_]+$"
+      "description": "A source ID (database or study ID) to help identify who this data is from."
     },
     
     "access_level": {
-      "description": "Choose public as default; private_.* is for internal datasets",
+      "description": "Choose public as default; private is for internal datasets",
       "type": "string",
-      "pattern": "^public|private_.+$"
+      "enum": [
+        "public",
+        "private"
+      ]      
     },
     
     "validated_against_schema_version": {
       "description": "The CTTV-JSON schema version number against which your data was validated",
       "type": "string",
       "enum": [
+        "1.1",
         "1.2.1"
       ]
     },
@@ -34,12 +37,15 @@
     "target" : {
       "type": "object",
       "description" : "Target in CTTV's target ontology",
-      "$ref": "bioentity/target.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
     },
     "disease" : {
       "type": "object",
       "description" : "Disease in the EFO ontology",
-      "$ref": "bioentity/disease.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
     }
-  }
+  },
+  "import_remote_schemas": [
+    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" }
+  ]
 }
