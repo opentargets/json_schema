@@ -27,7 +27,7 @@
         },
         "max_phase_for_all_diseases": {
           "type": "object",
-          "$ref": "https://github.com/CTTV/json_schema/blob/master/src/evidence/drug/diseasephase.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/diseasephase.json"
         }
       }
     }
