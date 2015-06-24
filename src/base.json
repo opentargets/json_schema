@@ -34,15 +34,12 @@
     "target" : {
       "type": "object",
       "description" : "Target in CTTV's target ontology",
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+      "$ref": "bioentity/target.json"
     },
     "disease" : {
       "type": "object",
       "description" : "Disease in the EFO ontology",
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+      "$ref": "bioentity/disease.json"
     }
-  },
-  "import_remote_schemas": [
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" }
-  ]
+  }
 }

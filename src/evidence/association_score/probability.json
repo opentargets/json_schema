@@ -3,7 +3,7 @@
     "id": "#probability",
     "allOf": [
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
+            "$ref": "evidence/association_score/base.json"
         },
         {
             "properties": {
@@ -14,7 +14,7 @@
                 },
                 "method": {
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+                    "$ref": "evidence/association_score/method.json"
                 }
             }
         }
