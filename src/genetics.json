@@ -51,8 +51,7 @@
           },
           "required": [
             "gene2variant",
-            "variant2disease",
-            "association_score"
+            "variant2disease"
           ],
           "additionalProperties": false
         }

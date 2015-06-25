@@ -51,8 +51,7 @@
           },
           "required": [
             "target2drug",
-            "drug2clinic",
-            "association_score"
+            "drug2clinic"
           ],
           "additionalProperties": false
         }
