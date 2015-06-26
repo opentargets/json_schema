@@ -21,7 +21,7 @@
           "maxItems": 1          
         },
 
-        "target_complex_members": {
+        "complex_members": {
           "type" : "array",
           "items": {
             "description": "Other protein targets that interact with the gene or protein",
@@ -32,7 +32,7 @@
           "uniqueItems" : true
         },
         
-        "target_complex_type": {
+        "complex_type": {
           "type": "string",
           "enum": [
             "http://identifiers.org/cttv.target/chimeric_protein",
@@ -102,8 +102,8 @@
   ],
   "properties": {
     "id": {},
-    "target_complex_members" : {},
-    "target_complex_type" : {},
+    "complex_members" : {},
+    "complex_type" : {},
     "target_type": {},
     "target_class": {},
     "target_name": {},
@@ -115,8 +115,8 @@
     "activity"
   ],
   "dependencies" : {
-  	"target_complex_members" : ["target_complex_type"],
-  	"target_complex_type" : ["target_complex_members"]
+  	"complex_members" : ["complex_type"],
+  	"complex_type" : ["complex_members"]
   },
   "additionalProperties": false
 }
