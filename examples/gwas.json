@@ -9,7 +9,7 @@
     },
     "type": "genetic_association",
     "target": {
-        "target_type": "http://identifiers.org/cttv.target/gene",
+        "target_type": "http://identifiers.org/cttv.target/gene_evidence",
         "activity": "http://identifiers.org/cttv.activity/predicted_damaging",
         "id": [
             "http://identifiers.org/ensembl/ENSG00000110395"
@@ -27,14 +27,6 @@
         ]
     },
     "evidence": {
-
-        "resource_score": {
-                "value": 1,
-                "method": {
-                    "description": "custom probability calculation"
-                },
-                "type":"probability"
-        },
 
         "gene2variant": {
             "resource_score": {

@@ -10,13 +10,14 @@
     },
     "type": "known_drug",
     "target": {
-        "target_type": "http://identifiers.org/cttv.target/protein_family",
+        "target_type": "http://identifiers.org/cttv.target/protein_evidence",
         "target_name": "Cyclooxygenase",
         "activity": "http://identifiers.org/cttv.activity/drug_negative_modulator",
         "id": [
-            "http://identifiers.org/uniprot/P23219",
-            "http://identifiers.org/uniprot/P35354"
+            "http://identifiers.org/uniprot/P23219"
         ],
+        "target_complex_members" : [ "http://identifiers.org/uniprot/P35354" ],
+        "target_complex_type" : [ "http://identifiers.org/cttv.target/protein_family" ],
         "target_class": [
             "Oxidoreductase"
         ]
@@ -38,14 +39,6 @@
         }
     },
     "evidence": {
-        
-        "resource_score": {
-                "value": 1,
-                "method": {
-                    "description": "custom probability calculation"
-                },
-                "type":"probability"
-        },
 
         "target2drug": {
             "resource_score": {
@@ -95,6 +88,7 @@
             "action_type": "INHIBITOR"
         },
         "drug2clinic": {
+            "num_clinical_trials" : 2,
             "resource_score": {
                     "value": 1,
                     "method": {

@@ -9,7 +9,7 @@
         "disease_uri": "http://www.ebi.ac.uk/efo/EFO_0000249"
     },
     "target": {
-        "target_type": "http://identifiers.org/cttv.target/protein",
+        "target_type": "http://identifiers.org/cttv.target/protein_evidence",
         "activity": "http://identifiers.org/cttv.activity/up_or_down",
         "id": [
             "http://identifiers.org/uniprot/P43116"

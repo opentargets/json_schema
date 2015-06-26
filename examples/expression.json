@@ -9,7 +9,7 @@
         "geneID": "http://identifiers.org/ensembl/ENSG00000112984"
     },
     "target": {
-        "target_type": "http://identifiers.org/cttv.target/transcript",
+        "target_type": "http://identifiers.org/cttv.target/transcript_evidence",
         "activity": "http://identifiers.org/cttv.activity/decreased_transcript_level",
         "id": [
             "http://identifiers.org/ensembl/ENSG00000112984"
