@@ -19,7 +19,7 @@
       "description": "date the evidence was made public",
       "format": "date-time"
     },
-    "association_score": {
+    "resource_score": {
       "type": "object",
       "oneOf": [
         {

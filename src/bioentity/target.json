@@ -16,34 +16,51 @@
             "description": "An array of ensembl or uniprot identifiers",
             "type" : "string",
             "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
-          }
+          },
+          "minItems": 1,
+          "maxItems": 1          
         },
-        "target_type": {
+
+        "target_complex_members": {
+          "type" : "array",
+          "items": {
+            "description": "Other protein targets that interact with the gene or protein",
+            "type" : "string",
+            "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
+          },
+          "minItems": 1,
+          "uniqueItems" : true
+        },
+        
+        "target_complex_type": {
           "type": "string",
           "enum": [
             "http://identifiers.org/cttv.target/chimeric_protein",
-            "http://identifiers.org/cttv.target/gene",
+            "http://identifiers.org/cttv.target/protein_complex",
+            "http://identifiers.org/cttv.target/protein_complex_group",
+            "http://identifiers.org/cttv.target/protein_complex_heteropolymer",
+            "http://identifiers.org/cttv.target/protein_complex_homopolymer",
+            "http://identifiers.org/cttv.target/protein_family",
+            "http://identifiers.org/cttv.target/selectivity_group"
+          ],
+          "description": "Type of target"
+        },
+        
+        "target_type": {
+          "type": "string",
+          "enum": [
             "http://identifiers.org/cttv.target/gene_allele",
             "http://identifiers.org/cttv.target/gene_evidence",
             "http://identifiers.org/cttv.target/gene_in_LD_region",
             "http://identifiers.org/cttv.target/gene_in_epigenetic_regulation_complex",
             "http://identifiers.org/cttv.target/gene_variant",
             "http://identifiers.org/cttv.target/pro_protein",
-            "http://identifiers.org/cttv.target/protein",
-            "http://identifiers.org/cttv.target/protein_complex",
-            "http://identifiers.org/cttv.target/protein_complex_group",
-            "http://identifiers.org/cttv.target/protein_complex_heteropolymer",
-            "http://identifiers.org/cttv.target/protein_complex_homopolymer",
             "http://identifiers.org/cttv.target/protein_evidence",
-            "http://identifiers.org/cttv.target/protein_family",
-            "http://identifiers.org/cttv.target/protein_nucleic_acid_complex",
-            "http://identifiers.org/cttv.target/selectivity_group",
-            "http://identifiers.org/cttv.target/transcript",
             "http://identifiers.org/cttv.target/transcript_evidence",
             "http://identifiers.org/cttv.target/transcript_isoform",
             "http://identifiers.org/cttv.target/protein_isoform"
           ],
-          "description": "Type of target"
+          "description": "Type of target; if you do not have detailed information, select from gene_evidence, protein_evidence or transcript_evidence"
         },
         "activity": {
           "type": "string",
@@ -85,6 +102,8 @@
   ],
   "properties": {
     "id": {},
+    "target_complex_members" : {},
+    "target_complex_type" : {},
     "target_type": {},
     "target_class": {},
     "target_name": {},
@@ -95,5 +114,9 @@
     "target_type",
     "activity"
   ],
+  "dependencies" : {
+  	"target_complex_members" : ["target_complex_type"],
+  	"target_complex_type" : ["target_complex_members"]
+  },
   "additionalProperties": false
 }

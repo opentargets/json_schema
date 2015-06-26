@@ -40,7 +40,7 @@
     }
   ],
   "properties": {
-    "association_score": {},
+    "resource_score": {},
     "provenance_type": {},
     "is_associated": {},
     "date_asserted": {},
@@ -50,7 +50,7 @@
     "unique_experiment_reference": {}
   },
   "required": [
-    "association_score",
+    "resource_score",
     "provenance_type",
     "is_associated",
     "date_asserted",

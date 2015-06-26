@@ -25,7 +25,7 @@
     },
     "evidence": {
         "known_mutations": "[NICD1 P2474Afs*4, NICD1 P2514Rfs*4]",
-        "association_score": {
+        "resource_score": {
             "value": 1,
             "method": {
                 "description": "Curator inference hence 1"

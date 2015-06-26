@@ -28,7 +28,7 @@
     },
     "evidence": {
 
-        "association_score": {
+        "resource_score": {
                 "value": 1,
                 "method": {
                     "description": "custom probability calculation"
@@ -37,7 +37,7 @@
         },
 
         "gene2variant": {
-            "association_score": {
+            "resource_score": {
                     "value": 0.77,
                     "method": {
                         "description": "Probability of gene-SNP assignment by mapping software"
@@ -76,7 +76,7 @@
         "variant2disease": {
             "gwas_sample_size" : 100,
             "gwas_panel_resolution" : 10000,
-            "association_score": {
+            "resource_score": {
                     "value": 0.25,
                     "method": {
                         "description": "ClinVar star score divided by 4.0",

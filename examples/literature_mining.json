@@ -25,7 +25,7 @@
     },
     "evidence": {
         "unique_experiment_reference": "http://europepmc.org/abstract/MED/18989535",
-        "association_score": {
+        "resource_score": {
             "value": 500,
             "method": {
                 "description": "Custom text-mining method for target-disease association"

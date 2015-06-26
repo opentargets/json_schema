@@ -39,7 +39,7 @@
     },
     "evidence": {
         
-        "association_score": {
+        "resource_score": {
                 "value": 1,
                 "method": {
                     "description": "custom probability calculation"
@@ -48,7 +48,7 @@
         },
 
         "target2drug": {
-            "association_score": {
+            "resource_score": {
                     "value": 1,
                     "method": {
                         "url": "https://github.com/CTTV/association_score_methods/blob/master/CTTV008_ChEMBL/description.md",
@@ -95,7 +95,7 @@
             "action_type": "INHIBITOR"
         },
         "drug2clinic": {
-            "association_score": {
+            "resource_score": {
                     "value": 1,
                     "method": {
                         "description": "Custom scoring method for assigning marketed drug to clinical indication"

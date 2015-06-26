@@ -36,7 +36,7 @@
     }
   ],
   "properties": {
-    "association_score": {},
+    "resource_score": {},
     "provenance_type": {},
     "is_associated": {},
     "date_asserted": {},
@@ -44,7 +44,7 @@
     "urls": {}
   },
   "required": [
-    "association_score",
+    "resource_score",
     "provenance_type",
     "is_associated",
     "date_asserted",

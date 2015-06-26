@@ -87,7 +87,7 @@
         }
     ],
     "properties": {
-        "association_score": {},
+        "resource_score": {},
         "provenance_type": {},
         "is_associated": {},
         "date_asserted": {},
@@ -105,7 +105,7 @@
     },
     "additionalProperties": false,
     "required": [
-        "association_score",
+        "resource_score",
         "provenance_type",
         "is_associated",
         "date_asserted",

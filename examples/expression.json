@@ -56,7 +56,7 @@
         "date_asserted": "2015-03-30T20:47:04Z",
         "experiment_overview": "Transcription profiling of human LMP ovarian tumors and low-grade ovarian carcinomas to identify genes which dffer from  high-grade ovarian carcinomas - PAX2: a potential biomarker for low malignant potential ovarian tumors and low-grade serous ovarian carcinomas",
         "comparison_name": "'low grade serous ovarian carcinoma' vs 'normal'",
-        "association_score": {
+        "resource_score": {
                 "value": 0.0168,
                 "method": {
                     "description": "Moderated t-statistics computed with limma version 3.16.8. Independent filtering performed using genefilter version 1.46.1, with gene variances as filter statistic. p-values adjusted using Benjamini & Hochberg (1995) FDR correction. By default, significant differential expression called if adjusted p <= 0.05."
