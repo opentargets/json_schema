@@ -22,10 +22,6 @@
           },
           "minItems": 1
         },
-        "num_clinical_trials": {
-         "type" : "number",
-         "minValue" : 1
-        },
         "max_phase_for_disease": {
           "type" : "object",
           "$ref" : "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/drug/diseasephase.json"
@@ -48,8 +44,7 @@
     "date_asserted": {},
     "evidence_codes": {},
     "max_phase_for_disease" : {},
-    "urls": {},
-    "num_clinical_trials" : {}
+    "urls": {}
   },
   "required": [
     "resource_score",
@@ -57,8 +52,7 @@
     "is_associated",
     "date_asserted",
     "evidence_codes",
-    "max_phase_for_disease",
-    "num_clinical_trials"
+    "max_phase_for_disease"
   ],
   "additionalProperties": false,
   "import_remote_schemas": [

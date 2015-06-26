@@ -58,7 +58,8 @@
             "http://identifiers.org/cttv.target/protein_evidence",
             "http://identifiers.org/cttv.target/transcript_evidence",
             "http://identifiers.org/cttv.target/transcript_isoform",
-            "http://identifiers.org/cttv.target/protein_isoform"
+            "http://identifiers.org/cttv.target/protein_isoform",
+            "http://identifiers.org/cttv.target/gene_or_protein_or_transcript"
           ],
           "description": "Type of target; if you do not have detailed information, select from gene_evidence, protein_evidence or transcript_evidence"
         },

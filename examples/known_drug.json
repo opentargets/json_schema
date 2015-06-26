@@ -88,7 +88,6 @@
             "action_type": "INHIBITOR"
         },
         "drug2clinic": {
-            "num_clinical_trials" : 2,
             "resource_score": {
                     "value": 1,
                     "method": {
