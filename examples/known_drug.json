@@ -16,8 +16,8 @@
         "id": [
             "http://identifiers.org/uniprot/P23219"
         ],
-        "target_complex_members" : [ "http://identifiers.org/uniprot/P35354" ],
-        "target_complex_type" : [ "http://identifiers.org/cttv.target/protein_family" ],
+        "target_complex_members" : [ "http://identifiers.org/uniprot/P35354", "http://identifiers.org/uniprot/P35321" ],
+        "target_complex_type" : "http://identifiers.org/cttv.target/protein_family",
         "target_class": [
             "Oxidoreductase"
         ]
