@@ -16,12 +16,12 @@
         "gwas_panel_resolution": {
           "description": "Panel resolution of GWAS study",
           "type": "number",
-          "minimum": 1
+          "minimum": 0
         },
         "gwas_sample_size": {
           "description": "Sample size of GWAS study",
           "type": "number",
-          "minimum": 1
+          "minimum": 0
         },
         "evidence_codes": {
           "type": "array",
