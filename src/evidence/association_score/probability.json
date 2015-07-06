@@ -32,7 +32,6 @@
     },
     "required": [
         "value",
-        "method",
         "type"
     ],
     "additionalProperties": false
