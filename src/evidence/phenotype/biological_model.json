@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "orthology_evidence",
+  "title": "Biological model",
   "description": "Evidence linking human target to animal target",
   "type": "object",
   "version": "1.2.1",
@@ -22,23 +22,18 @@
           },
           "minItems": 1
         },
-        "hs_geneId": {
+        "model_gene_id": {
           "type": "string",
-          "description": "Human Ensembl gene identifier",
+          "description": "Biological model Ensembl gene identifier (ortholog)",
           "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$"
         },
         "model_id": {
           "type": "string",
           "description": "Internal identifier for the biological model"
-        },
-        "am_geneId": {
-          "type": "string",
-          "description": "Biological model Ensembl gene identifier (ortholog)",
-          "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$"
-        },
+        },        
         "allelic_composition": {
           "type": "string",
-          "description": "Animal model allelic composition",        
+          "description": "Animal model allelic composition"
         },
         "genetic_background": {
           "type": "string",
@@ -85,10 +80,13 @@
     "is_associated",
     "date_asserted",
     "evidence_codes",
-    "hs_geneId",
-    "am_geneId",
+    "model_id",
+    "model_gene_id",
     "genetic_background",
-    "allele_ids"
+    "allele_ids",
+    "allelic_composition",
+    "zygosity",
+    "phenotypes"
   ],
   "additionalProperties": false,
 }
