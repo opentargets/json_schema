@@ -22,14 +22,19 @@
           },
           "minItems": 1
         },
+        "hs_geneId": {
+          "type": "string",
+          "description": "Human Ensembl gene identifier",
+          "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$"
+        },        
         "am_geneId": {
           "type": "string",
-          "description": "Biological model Ensembl gene identifier",
+          "description": "Biological model Ensembl gene identifier (ortholog)",
           "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$"
         },
         "allelic_composition": {
           "type": "string",
-          "description": "Animal model gene Ensembl identifier",        
+          "description": "Animal model allelic composition",        
         },
         "genetic_background": {
           "type": "string",
@@ -37,11 +42,12 @@
         },
         "allele_ids": {
           "type": "string",
-          "description": "List of allele identifier for this model",
+          "description": "List of allele identifiers for this model separated by |",
         },
         "phenotypes": {
           "type": "object",
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json",
+          "description": "List of phenotypes for this model"
         },
         "urls": {
           "type": "array",
@@ -66,7 +72,11 @@
     "provenance_type",
     "is_associated",
     "date_asserted",
-    "evidence_codes"
+    "evidence_codes",
+    "hs_geneId",
+    "am_geneId",
+    "genetic_background",
+    "allele_ids"
   ],
   "additionalProperties": false,
 }
