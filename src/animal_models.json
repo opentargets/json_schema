@@ -27,9 +27,9 @@
               "type": "object",
               "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/biological_model.json"
             },
-            "biological_model_disease_association": {
+            "disease_model_association": {
               "type": "object",
-              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/biological_model_disease_association.json"
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/disease_model_association.json"
             }
           },
           "required": [
