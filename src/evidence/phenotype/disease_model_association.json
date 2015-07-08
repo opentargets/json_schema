@@ -70,5 +70,5 @@
     "model_phenotypes",
     "human_phenotypes"
   ],
-  "additionalProperties": false,
+  "additionalProperties": false
 }
