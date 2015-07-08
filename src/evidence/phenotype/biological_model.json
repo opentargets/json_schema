@@ -88,5 +88,5 @@
     "zygosity",
     "phenotypes"
   ],
-  "additionalProperties": false,
+  "additionalProperties": false
 }
