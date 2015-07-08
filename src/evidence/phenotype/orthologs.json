@@ -70,5 +70,5 @@
     "model_gene_id",
     "species"
   ],
-  "additionalProperties": false,
+  "additionalProperties": false
 }
