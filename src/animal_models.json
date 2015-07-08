@@ -16,28 +16,20 @@
             "animal_model"
           ]
         },
-        "modelorg_phenotype": {
-	  "type": "object",
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
-        },
-        "human_phenotype": {
-	  "type": "object",
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
-        },
         "evidence": {
           "type": "object",
           "properties": {
-            "pheno2disease": {
+            "orthologs": {
               "type": "object",
-              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/pheno2disease.json"
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/orthologs.json"
             },
-            "pheno2pheno": {
+            "biological_model": {
               "type": "object",
-              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/pheno2pheno.json"
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/biological_model.json"
             },
-            "target2pheno": {
+            "biological_model_disease_association": {
               "type": "object",
-              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/target2pheno.json"
+              "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/phenotype/biological_model_disease_association.json"
             }
           },
           "required": [
