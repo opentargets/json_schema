@@ -44,6 +44,14 @@
           "type": "string",
           "description": "List of allele identifiers for this model separated by |",
         },
+        "zygosity": {
+            "type": "string",
+            "enum": [
+              "hom",
+              "het",
+              "hemi"
+            ]
+          },      
         "phenotypes": {
           "type": "object",
           "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json",
