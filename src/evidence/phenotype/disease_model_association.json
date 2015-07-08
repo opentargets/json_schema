@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "orthology_evidence",
+  "title": "disease_model_association",
   "description": "Evidence linking human target to animal target",
   "type": "object",
   "version": "1.2.1",
