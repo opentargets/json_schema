@@ -15,17 +15,15 @@
                     "description": "An array of phenotypes",
                     "items": {
                         "type": "object",
-                        {
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "description": "Phenotype term Identifier from HPO/MP"
-                                    "pattern": "^http://purl.obolibrary.org/obo/HP_[0-9]{4,}||http://purl.obolibrary.org/obo/MP_[0-9]{4,}$"
-                                },
-                                "label": {
-                                    "type": "string",
-                                    "description": "Phenotype term label"
-                                }
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Phenotype term Identifier from HPO/MP"
+                                "pattern": "^http://purl.obolibrary.org/obo/HP_[0-9]{4,}||http://purl.obolibrary.org/obo/MP_[0-9]{4,}$"
+                            },
+                            "label": {
+                            "type": "string",
+                            "description": "Phenotype term label"
                             }
                         }
                     },
