@@ -37,11 +37,11 @@
         },
         "genetic_background": {
           "type": "string",
-          "description": "Genetic background of the biological model that influences phenotypes",
+          "description": "Genetic background of the biological model that influences phenotypes"
         },
         "allele_ids": {
           "type": "string",
-          "description": "List of allele identifiers for this model separated by |",
+          "description": "List of allele identifiers for this model separated by |"
         },
         "zygosity": {
             "type": "string",
