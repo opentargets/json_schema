@@ -26,7 +26,11 @@
           "type": "string",
           "description": "Human Ensembl gene identifier",
           "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$"
-        },        
+        },
+        "model_id": {
+          "type": "string",
+          "description": "Internal identifier for the biological model"
+        },
         "am_geneId": {
           "type": "string",
           "description": "Biological model Ensembl gene identifier (ortholog)",
