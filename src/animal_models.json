@@ -33,9 +33,9 @@
             }
           },
           "required": [
-            "pheno2disease",
-            "pheno2pheno",
-            "target2pheno"
+            "orthologs",
+            "biological_model",
+            "disease_model_association"
           ],
           "additionalProperties": false
         }
