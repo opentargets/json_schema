@@ -50,7 +50,17 @@
               "het",
               "hemi"
             ]
-          },      
+          },
+          "species": {
+            "type": "string",
+            "enum": [
+              "mouse",
+              "human",
+              "rat",
+              "zebrafish",
+              "dog"
+            ]
+          },       
         "phenotypes": {
           "type" : "array",
           "description": "List of phenotypes for this model",
@@ -90,7 +100,8 @@
     "allele_ids",
     "allelic_composition",
     "zygosity",
-    "phenotypes"
+    "phenotypes",
+    species,
   ],
   "additionalProperties": false
 }
