@@ -30,7 +30,7 @@
         "model_gene_id": {
           "type": "string",
           "description": "Biological model Ensembl gene identifier (ortholog)",
-          "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$"
+          "pattern": "^http://identifiers.org/ensembl/ENS[A-Z]{0,3}G[0-9]{4,}$"
         },
         "species": {
           "type": "string",
