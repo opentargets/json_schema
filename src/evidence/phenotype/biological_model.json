@@ -101,7 +101,7 @@
     "allelic_composition",
     "zygosity",
     "phenotypes",
-    species,
+    "species"
   ],
   "additionalProperties": false
 }
