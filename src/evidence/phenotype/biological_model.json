@@ -48,7 +48,8 @@
             "enum": [
               "hom",
               "het",
-              "hemi"
+              "hemi",
+              "oth"
             ]
           },
           "species": {
