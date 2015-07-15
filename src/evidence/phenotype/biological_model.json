@@ -48,7 +48,7 @@
             "enum": [
               "hom",
               "het",
-              "hemi",
+              "hem",
               "oth"
             ]
           },
