@@ -1,0 +1,233 @@
+{
+  "access_level": "public",
+  "disease": {
+    "id": [
+      "http://www.orpha.net/ORDO/Orphanet_41751"
+    ],
+    "name": [
+      "Bietti crystalline dystrophy"
+    ]
+  },
+  "evidence": {
+    "biological_model": {
+      "allele_ids": "MGI:3624136|MGI:3624136",
+      "allelic_composition": "Cep290<rd16>/Cep290<rd16>",
+      "date_asserted": "2015-07-15T23:14:00.596974",
+      "evidence_codes": [
+        "http://identifiers.org/eco/ECO:0000179"
+      ],
+      "genetic_background": "involves: BXD24/TyJ * C57BL/6",
+      "is_associated": false,
+      "model_gene_id": "http://identifiers.org/ensembl/ENSMUSG00000019971",
+      "model_id": "27552",
+      "phenotypes": [
+        {
+          "id": "MP:0001004",
+          "label": "abnormal retinal photoreceptor morphology",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0001004"
+        },
+        {
+          "id": "MP:0003729",
+          "label": "abnormal photoreceptor outer segment morphology",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0003729"
+        },
+        {
+          "id": "MP:0004022",
+          "label": "abnormal cone electrophysiology",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0004022"
+        },
+        {
+          "id": "MP:0008444",
+          "label": "retinal cone cell degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008444"
+        },
+        {
+          "id": "MP:0008450",
+          "label": "retinal photoreceptor degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008450"
+        },
+        {
+          "id": "MP:0008451",
+          "label": "retinal rod cell degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008451"
+        },
+        {
+          "id": "MP:0008515",
+          "label": "thin retinal outer nuclear layer",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008515"
+        },
+        {
+          "id": "MP:0008580",
+          "label": "photoreceptor inner segment degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008580"
+        },
+        {
+          "id": "MP:0008584",
+          "label": "photoreceptor outer segment degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008584"
+        },
+        {
+          "id": "MP:0008587",
+          "label": "short photoreceptor outer segment",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008587"
+        }
+      ],
+      "provenance_type": {
+        "database": {
+          "id": "IMPC",
+          "version": "2015"
+        }
+      },
+      "resource_score": {
+        "method": {
+          "description": ""
+        },
+        "type": "pvalue",
+        "value": 0
+      },
+      "species": "mouse",
+      "zygosity": "hom"
+    },
+    "disease_model_association": {
+      "date_asserted": "2015-07-15T23:14:00.596974",
+      "disease_id": "http://www.orpha.net/ORDO/Orphanet_41751",
+      "evidence_codes": [
+        "http://identifiers.org/eco/ECO:0000057"
+      ],
+      "human_phenotypes": [
+        {
+          "id": "HP:0007880",
+          "label": "Marginal corneal dystrophy",
+          "term_id": "http://purl.obolibrary.org/obo/HP_0007880"
+        },
+        {
+          "id": "HP:0001133",
+          "label": "Constricted visual fields",
+          "term_id": "http://purl.obolibrary.org/obo/HP_0001133"
+        },
+        {
+          "id": "HP:0000546",
+          "label": "Retinal degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/HP_0000546"
+        },
+        {
+          "id": "HP:0001150",
+          "label": "Choroidal sclerosis",
+          "term_id": "http://purl.obolibrary.org/obo/HP_0001150"
+        },
+        {
+          "id": "HP:0007675",
+          "label": "Progressive night blindness",
+          "term_id": "http://purl.obolibrary.org/obo/HP_0007675"
+        }
+      ],
+      "is_associated": false,
+      "model_id": "27552",
+      "model_phenotypes": [
+        {
+          "id": "MP:0008580",
+          "label": "photoreceptor inner segment degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008580"
+        },
+        {
+          "id": "MP:0008515",
+          "label": "thin retinal outer nuclear layer",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008515"
+        },
+        {
+          "id": "MP:0003729",
+          "label": "abnormal photoreceptor outer segment morphology",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0003729"
+        },
+        {
+          "id": "MP:0008450",
+          "label": "retinal photoreceptor degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008450"
+        },
+        {
+          "id": "MP:0008587",
+          "label": "short photoreceptor outer segment",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008587"
+        },
+        {
+          "id": "MP:0004022",
+          "label": "abnormal cone electrophysiology",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0004022"
+        },
+        {
+          "id": "MP:0008584",
+          "label": "photoreceptor outer segment degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008584"
+        },
+        {
+          "id": "MP:0001004",
+          "label": "abnormal retinal photoreceptor morphology",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0001004"
+        },
+        {
+          "id": "MP:0008444",
+          "label": "retinal cone cell degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008444"
+        },
+        {
+          "id": "MP:0008451",
+          "label": "retinal rod cell degeneration",
+          "term_id": "http://purl.obolibrary.org/obo/MP_0008451"
+        }
+      ],
+      "provenance_type": {
+        "database": {
+          "id": "PhenoDigm",
+          "version": "June 2015"
+        }
+      },
+      "resource_score": {
+        "method": {
+          "description": "phenodigm_model_to_disease_score"
+        },
+        "type": "summed_total",
+        "value": 0.8523000000000001
+      }
+    },
+    "orthologs": {
+      "date_asserted": "2015-07-15T23:14:00.596974",
+      "evidence_codes": [
+        "http://identifiers.org/eco/ECO:0000265"
+      ],
+      "human_gene_id": "http://identifiers.org/ensembl/ENSG00000198707",
+      "is_associated": false,
+      "model_gene_id": "http://identifiers.org/ensembl/ENSMUSG00000019971",
+      "provenance_type": {
+        "database": {
+          "id": "MGI",
+          "version": "2015"
+        }
+      },
+      "resource_score": {
+        "method": {
+          "description": "orthology from MGI"
+        },
+        "type": "pvalue",
+        "value": 0
+      },
+      "species": "mouse"
+    }
+  },
+  "sourceID": "phenodigm",
+  "target": {
+    "activity": "http://identifiers.org/cttv.activity/predicted_damaging",
+    "id": [
+      "http://identifiers.org/ensembl/ENSG00000198707"
+    ],
+    "target_type": "http://identifiers.org/cttv.target/gene_evidence"
+  },
+  "type": "animal_model",
+  "unique_association_fields": {
+    "disease": "http://www.orpha.net/ORDO/Orphanet_41751",
+    "predictionModel": "impc_predicted",
+    "projectName": "cttv_external_mousemodels",
+    "score": 0.8523000000000001,
+    "targetId": "http://identifiers.org/ensembl/ENSG00000198707"
+  },
+  "validated_against_schema_version": "1.2.1"
+}
