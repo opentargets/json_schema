@@ -9,7 +9,7 @@
     "unique_experiment_reference": {
       "type": "string",
       "description": "A unique experiment identifer or literature reference that uniquely identifies the study in your database",
-      "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI]*[%5Cs%5C.%5C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\"&%5C'])%5CS)+)|STUDYID_.+$"
+      "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI]*[\u005Cs%5C.%5C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\"&%5C'])%5CS)+)|STUDYID_.+$"
     },
     "is_associated": {
       "type": "boolean"
