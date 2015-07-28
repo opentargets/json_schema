@@ -138,7 +138,7 @@
         "lit_id": {
           "type": "string",
           "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
-          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
+          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)|$"
         },
         "rank": {
           "type": "object",
