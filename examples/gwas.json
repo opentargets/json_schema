@@ -29,13 +29,6 @@
     "evidence": {
 
         "gene2variant": {
-            "resource_score": {
-                    "value": 0.77,
-                    "method": {
-                        "description": "Probability of gene-SNP assignment by mapping software"
-                    },
-                    "type":"probability"
-            },
             "provenance_type": {
                 "database": {
                     "version": "0.1",
