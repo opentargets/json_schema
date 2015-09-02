@@ -2272,7 +2272,6 @@
     }
   ],
   "properties": {
-    "resource_score": {},
     "provenance_type": {},
     "unique_experiment_reference": {},
     "is_associated": {},
@@ -2282,7 +2281,6 @@
     "functional_consequence": {}
   },
   "required": [
-    "resource_score",
     "provenance_type",
     "is_associated",
     "date_asserted",
