@@ -15,7 +15,7 @@
           "items": {
             "type" : "string",
             "description": "An array of drug identifiers",
-            "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$"
+            "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+|http://customidentifier/$"
           }
         },
         "molecule_name": {
