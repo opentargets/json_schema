@@ -24,7 +24,7 @@
     },
     "disease": {
         "id": [
-            "http://purl.obolibrary.org/obo/HP_0003326"
+            "http://purl.bioontology.org/omim/OMIM_0003326"
         ]
     },
     "drug": {
@@ -88,6 +88,7 @@
             "action_type": "INHIBITOR"
         },
         "drug2clinic": {
+			"status": "Enrolling",
             "resource_score": {
                     "value": 1,
                     "method": {
