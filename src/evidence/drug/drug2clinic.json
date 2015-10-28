@@ -32,7 +32,12 @@
             "type" : "object",
             "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
           }
-        }
+        },
+		
+        "status": {
+          "type" : "string"
+        }	
+		
       }
     }
   ],
@@ -44,7 +49,8 @@
     "date_asserted": {},
     "evidence_codes": {},
     "max_phase_for_disease" : {},
-    "urls": {}
+    "urls": {},
+	"status": {}
   },
   "required": [
     "resource_score",
