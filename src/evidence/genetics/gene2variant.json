@@ -29,6 +29,7 @@
           "type": "string",
           "enum": [
             "http://targetvalidation.org/sequence/nearest_gene_five_prime_end",
+            "http://targetvalidation.org/sequence/regulatory_nearest_gene_five_prime_end",
             "http://purl.obolibrary.org/obo/SO_0001060",
             "http://purl.obolibrary.org/obo/SO_0000000",
             "http://purl.obolibrary.org/obo/SO_0000001",
