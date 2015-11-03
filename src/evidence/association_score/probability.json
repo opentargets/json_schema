@@ -16,7 +16,8 @@
                 "value": {
                     "type": "number",
                     "minimum": 0,
-                    "maximum": 1
+                    "maximum": 1,
+                    "exclusiveMinimum": true
                 },
                 "method": {
                     "type": "object",
