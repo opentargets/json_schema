@@ -16,8 +16,7 @@
           "items": {
             "type": "string",
             "enum": [
-              "http://purl.obolibrary.org/obo/ECO_0000205",
-              "http://purl.obolibrary.org/obo/ECO:0000179"
+              "http://identifiers.org/eco/ECO:0000179"
             ]
           },
           "minItems": 1
