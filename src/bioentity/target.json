@@ -15,7 +15,7 @@
           "items": {
             "description": "An array of ensembl or uniprot identifiers",
             "type" : "string",
-            "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
+            "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
           },
           "minItems": 1,
           "maxItems": 1          
@@ -26,7 +26,7 @@
           "items": {
             "description": "Other protein targets that interact with the gene or protein",
             "type" : "string",
-            "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}|http://identifiers.org/uniprot/.{4,}$"
+            "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
           },
           "minItems": 1,
           "uniqueItems" : true
