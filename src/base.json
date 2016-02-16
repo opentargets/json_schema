@@ -43,9 +43,38 @@
       "type": "object",
       "description" : "Disease in the EFO ontology",
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
-    }
+    },
+	"literature": {
+	  "type": "object",
+	  "properties": {
+		"references": {
+		  "type": "array",
+		  "items": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#base_evidence/definitions/single_lit_reference"
+		  },
+		  "minItems": 1,
+		  "uniqueItems": true
+		}
+	  },
+	  "required": [
+		"references"
+	  ],
+	  "additionalProperties": false
+	}
   },
   "import_remote_schemas": [
-    { "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" }
+    { 
+	  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" 
+	},
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+    },
+	{
+		"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+	},
+    {
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#/single_lit_reference"
+    },
   ]
 }
