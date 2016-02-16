@@ -3,7 +3,7 @@
   "title": "Target-Disease-Association",
   "description": "Schema for different types of target-disease associations used by CTTV",
   "type": "object",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "properties": {
     "sourceID": {
       "type": "string",
@@ -24,7 +24,7 @@
       "description": "The CTTV-JSON schema version number against which your data was validated",
       "type": "string",
       "enum": [
-        "1.2.1"
+        "1.2.2"
       ]
     },
     "unique_association_fields": {

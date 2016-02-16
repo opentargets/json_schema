@@ -4,7 +4,7 @@
   "description": "Rank",
   "id": "#rank",
   "type": "object",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "properties": {
         "type": {
           "type" : "string",          

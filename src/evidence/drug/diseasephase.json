@@ -3,7 +3,7 @@
   "title": "Clinical study phase information",
   "description": "Clinical study phase information",
   "type": "object",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "id": "#disease_phase",
   "properties": {
     "numeric_index": {
