@@ -26,8 +26,13 @@
           "minItems": 1
         },
         "known_mutations": {
-          "type": "string",
-          "description": "A comma-separated list of mutations e.g. A613K,T50I etc."
+          "description": "An array of mutations"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/mutation/mutation.json"
+          },
+		  "minItems": 1
         },
         "urls": {
           "type": "array",
