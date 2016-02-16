@@ -27,6 +27,7 @@
         "1.2.2"
       ]
     },
+
     "unique_association_fields": {
       "description": "String based key-value properties that must uniquely identify each JSON object in your data.",
       "type": "object",
@@ -34,36 +35,39 @@
         "type": "string"
       }
     },
+
     "target" : {
       "type": "object",
       "description" : "Target in CTTV's target ontology",
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
     },
+
     "disease" : {
       "type": "object",
       "description" : "Disease in the EFO ontology",
       "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
     },
-	"literature": {
-	  "type": "object",
-	  "properties": {
-		"references": {
-		  "type": "array",
-		  "items": {
-			"type": "object",
-			"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#base_evidence/definitions/single_lit_reference"
-		  },
-		  "minItems": 1,
-		  "uniqueItems": true
-		}
-	  },
-	  "required": [
-		"references"
+
+    "literature": {
+      "type": "object",
+      "properties": {
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#base_evidence/definitions/single_lit_reference"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+	},
+
+	"required": [
+      "references"
 	  ],
-	  "additionalProperties": false
-	}
-  },
-  "import_remote_schemas": [
+    "additionalProperties": false,
+    "import_remote_schemas": [
     { 
 	  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" 
 	},
