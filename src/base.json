@@ -61,13 +61,9 @@
           "uniqueItems": true
         }
       }
-    },
-
-	"required": [
-      "references"
-	  ],
-    "additionalProperties": false,
-    "import_remote_schemas": [
+    }
+  }
+  "import_remote_schemas": [
     { 
 	  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" 
 	},
