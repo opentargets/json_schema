@@ -11,8 +11,8 @@
     {
       "properties": {
         "evidence_codes": {
+          "description": "An array of evidence codes",		
           "type": "array",
-          "description": "An array of evidence codes",
           "items": {
             "type": "string",
             "enum": [

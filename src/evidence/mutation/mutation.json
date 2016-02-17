@@ -8,7 +8,7 @@
   "properties": {
     "preferred_name": {
       "description": "The preferred name for this mutation, e.g. NM_005228.3(EGFR):c.2500G>T (p.Val834Leu)",
-	  "type": "string"
+      "type": "string"
 	},
     "alternative_names": {
       "description": "A list of alternative names for this mutation, if known e.g. NC_000007.14:g.55191749G>T",
