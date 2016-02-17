@@ -7,11 +7,11 @@
   "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/mutation/mutation.json",
   "properties": {
     "preferred_name": {
-      "description": "The preferred name for this mutation, e.g. NM_005228.3(EGFR):c.2500G>T (p.Val834Leu)",	
+      "description": "The preferred name for this mutation, e.g. NM_005228.3(EGFR):c.2500G>T (p.Val834Leu)",
 	  "type": "string"
 	},
     "alternative_names": {
-      "description": "A list of alternative names for this mutation, e.g. NC_000007.14:g.55191749G>T",
+      "description": "A list of alternative names for this mutation, if known e.g. NC_000007.14:g.55191749G>T",
       "type": "array",	
       "items": {
         "type": "string"
@@ -19,11 +19,11 @@
 	  "minItems": 1
 	},	
     "functional_consequence": {
-	  "description": "deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
+      "description": "deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
       "type": "string",
       "enum": [
         "http://purl.obolibrary.org/obo/SO_0000159",
-        "http://purl.obolibrary.org/obo/SO_0001583",			
+        "http://purl.obolibrary.org/obo/SO_0001583",
         "http://purl.obolibrary.org/obo/SO_0001587",
         "http://purl.obolibrary.org/obo/SO:0001590",			
         "http://purl.obolibrary.org/obo/SO_1000065",			
@@ -33,23 +33,29 @@
         "http://purl.obolibrary.org/obo/SO:0001553"
       ]
     },
-	"inheritance_pattern": {
+    "number_samples_for_mutation_type": {
+      "description": "The number of samples for this mutation type if known",	
+	  "type": "int"
+	},
+	"number_samples_for_any_mutation_type": {
+      "description": "The number of samples for this mutation type if known",	
+	  "type": "int"
+	}, 
+    "inheritance_pattern": {
 	  "description": "dominant (a single copy of the abnormal allele is sufficient to give rise to the disease), semi-dominant, or recessive (requiring both copies of the gene to have an abnormal allele)",
       "type": "string",
       "enum": [
         "dominant",
-		"semi-dominant",
-		"co-dominant",
+        "semi-dominant",
+        "co-dominant",
         "recessive",
-		"dominant and recessive"
+        "dominant and recessive"
       ]
-    },
-	
+    }
   },
   "additionalProperties": false,
   "required": [
     "preferred_name",
-    "functional_consequence",
-    "url"
+    "functional_consequence"
   ]
 }
