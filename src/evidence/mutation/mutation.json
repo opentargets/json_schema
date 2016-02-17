@@ -33,13 +33,15 @@
         "http://purl.obolibrary.org/obo/SO:0001553"
       ]
     },
-    "number_samples_for_mutation_type": {
+    "number_samples_with_mutation_type": {
       "description": "The number of samples for this mutation type if known",	
-	  "type": "int"
+	  "type": "number",
+	  "minimum": 0
 	},
-	"number_samples_for_any_mutation_type": {
-      "description": "The number of samples for this mutation type if known",	
-	  "type": "int"
+	"number_samples_total": {
+      "description": "The total number of samples with any type of mutation if known",	
+	  "type": "number",
+	  "minimum": 0
 	}, 
     "inheritance_pattern": {
 	  "description": "dominant (a single copy of the abnormal allele is sufficient to give rise to the disease), semi-dominant, or recessive (requiring both copies of the gene to have an abnormal allele)",
