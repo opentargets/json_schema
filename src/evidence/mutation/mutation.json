@@ -19,7 +19,7 @@
 	  "minItems": 1
 	},	
     "functional_consequence": {
-      "description": "deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
+      "description": "sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
       "type": "string",
       "enum": [
         "http://purl.obolibrary.org/obo/SO_0000159",
@@ -30,7 +30,8 @@
         "http://purl.obolibrary.org/obo/SO_0001539",			
         "http://purl.obolibrary.org/obo/SO_0001605",
         "http://purl.obolibrary.org/obo/SO_0001825",
-        "http://purl.obolibrary.org/obo/SO:0001553"
+        "http://purl.obolibrary.org/obo/SO:0001553",
+		"http://purl.obolibrary.org/obo/SO:0001059"
       ]
     },
     "number_samples_with_mutation_type": {
