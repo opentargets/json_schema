@@ -25,13 +25,13 @@
         "http://purl.obolibrary.org/obo/SO_0000159",
         "http://purl.obolibrary.org/obo/SO_0001583",
         "http://purl.obolibrary.org/obo/SO_0001587",
-        "http://purl.obolibrary.org/obo/SO:0001590",			
+        "http://purl.obolibrary.org/obo/SO_0001590",			
         "http://purl.obolibrary.org/obo/SO_1000065",			
         "http://purl.obolibrary.org/obo/SO_0001539",			
         "http://purl.obolibrary.org/obo/SO_0001605",
         "http://purl.obolibrary.org/obo/SO_0001825",
-        "http://purl.obolibrary.org/obo/SO:0001553",
-		"http://purl.obolibrary.org/obo/SO:0001059"
+        "http://purl.obolibrary.org/obo/SO_0001553",
+        "http://purl.obolibrary.org/obo/SO_0001059"
       ]
     },
     "number_samples_with_mutation_type": {
@@ -39,7 +39,7 @@
 	  "type": "number",
 	  "minimum": 0
 	},
-	"number_samples_total": {
+	"number_mutated_samples": {
       "description": "The total number of samples with any type of mutation if known",	
 	  "type": "number",
 	  "minimum": 0
@@ -52,7 +52,7 @@
         "semi-dominant",
         "co-dominant",
         "recessive",
-        "dominant and recessive"
+        "dominant/recessive"
       ]
     }
   },
