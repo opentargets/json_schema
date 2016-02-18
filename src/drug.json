@@ -48,6 +48,7 @@
     "unique_association_fields": {},
     "target": {},
     "disease": {},
+    "literature": {},	
     "access_level" :{},
     "evidence": {},
     "drug": {}

@@ -50,6 +50,7 @@
     "unique_association_fields": {},
     "target": {},
     "disease": {},
+    "literature": {},
     "evidence": {},
     "model_org_phenotype": {},
     "human_phenotype": {}
