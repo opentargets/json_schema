@@ -19,7 +19,7 @@
 	  "minItems": 1
 	},	
     "functional_consequence": {
-      "description": "sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
+      "description": "For COSMIC: sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
       "type": "string",
       "enum": [
         "http://purl.obolibrary.org/obo/SO_0000159",
@@ -31,7 +31,16 @@
         "http://purl.obolibrary.org/obo/SO_0001605",
         "http://purl.obolibrary.org/obo/SO_0001825",
         "http://purl.obolibrary.org/obo/SO_0001553",
-        "http://purl.obolibrary.org/obo/SO_0001059"
+        "http://purl.obolibrary.org/obo/SO_0001059",
+        "http://purl.obolibrary.org/obo/SO_0001821",
+        "http://purl.obolibrary.org/obo/SO_0001578",
+        "http://purl.obolibrary.org/obo/SO_0001630",
+        "http://purl.obolibrary.org/obo/SO_0001575",
+        "http://purl.obolibrary.org/obo/SO_0001589",
+        "http://targetvalidation.org/sequence/nearest_gene_five_prime_end",
+        "http://purl.obolibrary.org/obo/SO_0001574",
+        "http://purl.obolibrary.org/obo/SO_0001819",
+        "http://purl.obolibrary.org/obo/SO_0001822"
       ]
     },
     "number_samples_with_mutation_type": {
@@ -40,7 +49,7 @@
 	  "minimum": 0
 	},
 	"number_mutated_samples": {
-      "description": "The total number of samples with any type of mutation if known",	
+      "description": "The total number of samples with any type of mutation if known",
 	  "type": "number",
 	  "minimum": 0
 	}, 

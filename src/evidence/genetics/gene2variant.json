@@ -2259,7 +2259,8 @@
             "http://purl.obolibrary.org/obo/SO_3000000",
             "http://purl.obolibrary.org/obo/SO_0000274",
             "http://purl.obolibrary.org/obo/SO_0000655",
-            "http://purl.obolibrary.org/obo/SO_0000704"
+            "http://purl.obolibrary.org/obo/SO_0000704",
+			"http://purl.obolibrary.org/obo/SO_0002012"
           ]
         },
         "urls": {
