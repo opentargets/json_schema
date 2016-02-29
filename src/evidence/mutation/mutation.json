@@ -41,7 +41,7 @@
         "http://purl.obolibrary.org/obo/SO_0001574",
         "http://purl.obolibrary.org/obo/SO_0001819",
         "http://purl.obolibrary.org/obo/SO_0001822",
-        "http://purl.obolibrary.org/obo/SO:0001818"
+        "http://purl.obolibrary.org/obo/SO_0001818"
       ]
     },
     "number_samples_with_mutation_type": {
