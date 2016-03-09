@@ -84,7 +84,8 @@
             "http://identifiers.org/cttv.activity/damaging_to_target",
             "http://identifiers.org/cttv.activity/predicted_tolerated",
             "http://identifiers.org/cttv.activity/predicted_damaging",
-            "http://identifiers.org/cttv.activity/tolerated_by_target"
+            "http://identifiers.org/cttv.activity/tolerated_by_target",
+            "http://identifiers.org/cttv.activity/unknown"
           ],
           "description": "Activity of target in disease context"
         },
