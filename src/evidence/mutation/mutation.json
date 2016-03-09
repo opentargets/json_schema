@@ -62,7 +62,8 @@
         "semi-dominant",
         "co-dominant",
         "recessive",
-        "dominant/recessive"
+        "dominant/recessive",
+        "X-linked recessive"
       ]
     }
   },
