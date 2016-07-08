@@ -229,5 +229,5 @@
     "score": 0.8523000000000001,
     "targetId": "http://identifiers.org/ensembl/ENSG00000198707"
   },
-  "validated_against_schema_version": "1.2.2"
+  "validated_against_schema_version": "1.2.3"
 }

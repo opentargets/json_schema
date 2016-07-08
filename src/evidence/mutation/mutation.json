@@ -3,8 +3,8 @@
   "title": "mutation",
   "description": "Details about mutation",
   "type": "object",
-  "version": "1.2.2",
-  "id": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/mutation/mutation.json",
+  "version": "1.2.3",
+  "id": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/mutation/mutation.json",
   "properties": {
     "preferred_name": {
       "description": "The preferred name for this mutation, e.g. NM_005228.3(EGFR):c.2500G>T (p.Val834Leu)",
@@ -41,9 +41,15 @@
         "http://purl.obolibrary.org/obo/SO_0001574",
         "http://purl.obolibrary.org/obo/SO_0001819",
         "http://purl.obolibrary.org/obo/SO_0001822",
-        "http://purl.obolibrary.org/obo/SO_0001818"
+        "http://purl.obolibrary.org/obo/SO_0001818",
+        "http://purl.obolibrary.org/obo/SO_0001564",
+        "http://purl.obolibrary.org/obo/SO_0001565"
       ]
     },
+    "mode_of_action": {
+      "type": "string",
+      "enum": [
+        ""
     "number_samples_with_mutation_type": {
       "description": "The number of samples for this mutation type if known",	
 	  "type": "number",

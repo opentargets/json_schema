@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Target-Disease-Association",
-  "description": "Schema for different types of target-disease associations used by CTTV",
+  "description": "Schema for different types of target-disease associations used by OpenTargets",
   "type": "object",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "properties": {
     "sourceID": {
       "type": "string",
@@ -21,10 +21,10 @@
     },
     
     "validated_against_schema_version": {
-      "description": "The CTTV-JSON schema version number against which your data was validated",
+      "description": "The OpenTargets-JSON schema version number against which your data was validated",
       "type": "string",
       "enum": [
-        "1.2.2"
+        "1.2.3"
       ]
     },
 
@@ -38,14 +38,14 @@
 
     "target" : {
       "type": "object",
-      "description" : "Target in CTTV's target ontology",
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/target.json"
+      "description" : "Target in OpenTargets's target ontology",
+      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/bioentity/target.json"
     },
 
     "disease" : {
       "type": "object",
       "description" : "Disease in the EFO ontology",
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/disease.json"
+      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/bioentity/disease.json"
     },
 
     "literature": {
@@ -55,7 +55,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#base_evidence/definitions/single_lit_reference"
+            "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/base.json#base_evidence/definitions/single_lit_reference"
           },
           "minItems": 1,
           "uniqueItems": true
@@ -65,16 +65,16 @@
   },
   "import_remote_schemas": [
     { 
-	  "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json" 
+	  "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/bioentity/base.json" 
 	},
     {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
+      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/linkout/linkout.json"
     },
 	{
-		"$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+		"$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/base.json"
 	},
     {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#/single_lit_reference"
+      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/base.json#/single_lit_reference"
     }
   ]
 }

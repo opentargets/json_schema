@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "CTTV disease",
-  "description": "CTTV disease. This uses the EFO ontology",
+  "title": "OpenTargets disease",
+  "description": "OpenTargets disease. This uses the EFO ontology",
   "type": "object",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/base.json"
+      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/bioentity/base.json"
     },
     {
       "properties": {
@@ -21,6 +21,16 @@
           "maxItems": 1
         },
         "name": {
+          "type" : "array",
+          "items": {
+            "type" : "string",
+            "description": "Optional - EFO disease name corresponding to the EFO ID"
+          },
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true
+        },
+        "source_name": {
           "type" : "array",
           "items": {
             "type" : "string",

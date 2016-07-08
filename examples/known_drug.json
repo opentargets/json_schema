@@ -1,6 +1,6 @@
 {
     "sourceID": "chembl",
-    "validated_against_schema_version": "1.2.2",
+    "validated_against_schema_version": "1.2.3",
     "access_level" : "public",
     "unique_association_fields": {
         "chembl_targets": "http://identifiers.org/uniprot/P23219,http://identifiers.org/uniprot/P35354",
@@ -44,7 +44,7 @@
             "resource_score": {
                     "value": 1,
                     "method": {
-                        "url": "https://github.com/CTTV/association_score_methods/blob/master/CTTV008_ChEMBL/description.md",
+                        "url": "https://github.com/OpenTargets/association_score_methods/blob/master/OpenTargets008_ChEMBL/description.md",
                         "description": "Custom method for probability of mechanism of action association"
                     },
                     "type":"probability"

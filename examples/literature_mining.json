@@ -1,7 +1,7 @@
 {
     "type": "literature",
     "sourceID": "europmc",
-    "validated_against_schema_version": "1.2.2",
+    "validated_against_schema_version": "1.2.3",
     "access_level": "public",
     "unique_association_fields": {
         "target": "http://identifiers.org/P43116",

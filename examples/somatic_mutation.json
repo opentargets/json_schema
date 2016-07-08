@@ -6,7 +6,7 @@
     "target_type": "http://identifiers.org/cttv.target/gene_evidence",
     "activity": "http://identifiers.org/cttv.activity/up_or_down"
   },
-  "validated_against_schema_version": "1.2.2",
+  "validated_against_schema_version": "1.2.3",
   "sourceID": "cancer_gene_census",
   "disease": {
     "name": [
