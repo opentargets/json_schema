@@ -1,6 +1,6 @@
-#CTTV JSON schema 1.2.2
+#CTTV JSON schema 1.2.3
 
-#### ![info](https://github.com/CTTV/input_data_format/raw/master/help/images/info.gif) [**Instructions for generating  target-disease-association objects using schema 1.2.2**](doc/instructions.md)
+#### ![info](https://github.com/CTTV/input_data_format/raw/master/help/images/info.gif) [**Instructions for generating  target-disease-association objects using schema 1.2.3**](doc/instructions.md)
 
 ## Schema overview
 
