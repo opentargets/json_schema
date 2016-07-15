@@ -46,10 +46,6 @@
         "http://purl.obolibrary.org/obo/SO_0001565"
       ]
     },
-    "mode_of_action": {
-      "type": "string",
-      "enum": [
-        ""
     "number_samples_with_mutation_type": {
       "description": "The number of samples for this mutation type if known",	
 	  "type": "number",
