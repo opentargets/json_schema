@@ -6,7 +6,7 @@
   "version": "1.2.3",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/base.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
     },
     {
       "properties": {
@@ -66,7 +66,7 @@
           "description": "List of phenotypes for this model",
           "items": {          
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/bioentity/phenotype.json"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/bioentity/phenotype.json"
           },
           "minItems": 1
         },
@@ -74,7 +74,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/linkout/linkout.json"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
           }
         }
       }

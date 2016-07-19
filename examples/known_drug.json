@@ -44,7 +44,7 @@
             "resource_score": {
                     "value": 1,
                     "method": {
-                        "url": "https://github.com/OpenTargets/association_score_methods/blob/master/OpenTargets008_ChEMBL/description.md",
+                        "url": "https://github.com/CTTV/association_score_methods/blob/master/OpenTargets008_ChEMBL/description.md",
                         "description": "Custom method for probability of mechanism of action association"
                     },
                     "type":"probability"

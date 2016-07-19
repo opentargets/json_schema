@@ -6,12 +6,12 @@
   "version": "1.2.3",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/base.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
     },
     {
       "properties": {
         "allOf": {
-          "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/base.json"
+          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
         },
         "evidence_codes": {
           "type": "array",
@@ -29,7 +29,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/linkout/linkout.json"
+            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/linkout/linkout.json"
           }
         }
       }
@@ -53,22 +53,22 @@
   "additionalProperties": false,
   "import_remote_schemas": [
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/association_score/method.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/association_score/probability.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/association_score/pvalue.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/association_score/rank.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/association_score/summed_total.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/OpenTargets/json_schema/master/src/evidence/association_score/base.json"
+      "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
     }
   ]
 }
