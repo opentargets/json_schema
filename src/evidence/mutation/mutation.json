@@ -43,7 +43,11 @@
         "http://purl.obolibrary.org/obo/SO_0001822",
         "http://purl.obolibrary.org/obo/SO_0001818",
         "http://purl.obolibrary.org/obo/SO_0001564",
-        "http://purl.obolibrary.org/obo/SO_0001565"
+        "http://purl.obolibrary.org/obo/SO_0001565",
+        "http://purl.obolibrary.org/obo/SO_0002012",
+        "http://purl.obolibrary.org/obo/SO_0001627",
+        "http://purl.obolibrary.org/obo/SO_0001060",
+        "http://purl.obolibrary.org/obo/SO_0001624"
       ]
     },
     "number_samples_with_mutation_type": {
