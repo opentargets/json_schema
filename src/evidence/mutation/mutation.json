@@ -64,6 +64,7 @@
 	  "description": "dominant (a single copy of the abnormal allele is sufficient to give rise to the disease), semi-dominant, or recessive (requiring both copies of the gene to have an abnormal allele)",
       "type": "string",
       "enum": [
+        "unknown",
         "dominant",
         "semi-dominant",
         "co-dominant",
