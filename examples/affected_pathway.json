@@ -1,7 +1,7 @@
 {
     "type": "affected_pathway",
     "sourceID": "reactome",
-    "validated_against_schema_version": "1.2.3",
+    "validated_against_schema_version": "1.2.4",
     "access_level" : "public",
     "unique_association_fields": {
         "biological_objects": "http://identifiers.org/efo/0005592,http://identifiers.org/efo/0000311",

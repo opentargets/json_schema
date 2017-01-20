@@ -58,7 +58,7 @@
       ],
       "date_asserted": "2014-10-11T00:00:00"
     },
-    "validated_against_schema_version": "1.2.3",
+    "validated_against_schema_version": "1.2.4",
     "type": "somatic_mutation"
   },
   {
@@ -170,7 +170,7 @@
         "date_asserted": "2014-10-16T00:00:00"
       }
     },
-    "validated_against_schema_version": "1.2.3",
+    "validated_against_schema_version": "1.2.4",
     "type": "genetic_association"
   }
 ]

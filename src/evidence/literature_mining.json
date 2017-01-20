@@ -3,10 +3,10 @@
     "title": "literature_mining_evidence",
     "description": "Literature mining evidence linking gene/protein to disease",
     "type": "object",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "allOf": [
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
         },
         {
             "properties": {
@@ -24,7 +24,7 @@
                 },
                 "literature_ref": {
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json#base_evidence/definitions/single_lit_reference"
+                    "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json#base_evidence/definitions/single_lit_reference"
                 }
             }
         }
@@ -50,25 +50,25 @@
     "additionalProperties": false,
     "import_remote_schemas": [
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/method.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
         },
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/base.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
         },
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/probability.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/probability.json"
         },
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/summed_total.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/summed_total.json"
         },
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/pvalue.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/pvalue.json"
         },
         {
-            "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/rank.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/rank.json"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/CTTV/json_schema/master/src/evidence/association_score/base.json"
+          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
         }
     ]
 }

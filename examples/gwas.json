@@ -1,6 +1,6 @@
 {
     "sourceID": "gwas",
-    "validated_against_schema_version": "1.2.3",
+    "validated_against_schema_version": "1.2.4",
     "access_level" : "public",
     "unique_association_fields": {
         "gene": "ENSG00000110395",

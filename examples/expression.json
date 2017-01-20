@@ -1,6 +1,6 @@
 {
     "sourceID": "expression_atlas",
-    "validated_against_schema_version": "1.2.3",
+    "validated_against_schema_version": "1.2.4",
     "type": "rna_expression",
     "access_level": "public",
     "unique_association_fields": {
