@@ -4,11 +4,11 @@
   "description": "Base schema for OpenTargets evidence",
   "version": "1.2.4",
   "type": "object",
-  "id": "base_evidence",
+  "id": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json",
   "properties": {
     "unique_experiment_reference": {
       "type": "string",
-      "description": "A unique experiment identifer or literature reference that uniquely identifies the study in your database",
+      "description": "A unique experiment identifier or literature reference that uniquely identifies the study in your database",
       "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)|STUDYID_.+$"
     },
     "is_associated": {
