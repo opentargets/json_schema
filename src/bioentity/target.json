@@ -12,7 +12,7 @@
       "properties": {
         "id": {
           "type" : "string",
-          "description": "An array of ensembl or uniprot identifiers",
+          "description": "An Ensembl or UniProt identifier",
           "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
         },
 
