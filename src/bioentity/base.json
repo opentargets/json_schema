@@ -1,17 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Bioentities",
-    "description": "A generic schema for an array of base. Must be subclassed with additional properties to be meaningful.",
+    "description": "A generic schema for a bioentity. Must be subclassed with additional properties to be meaningful.",
     "version": "1.2.4",
     "type": "object",
     "properties" : {
       "id" : {
-        "type" : "array",
-        "items": {
-            "type": "string"
-        },
-        "minItems": 1,
-        "uniqueItems": true
+        "type" : "string"
       }
     }
 }
