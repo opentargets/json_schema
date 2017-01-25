@@ -14,7 +14,6 @@
           "type" : "string",
           "description": "A ChEMBL or internal drug identifier",
           "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$|^http://private/.+$"
-          }
         },
         "molecule_name": {
           "type": "string"
