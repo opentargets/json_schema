@@ -59,6 +59,7 @@
   ],
   "properties": {
     "id": {},
+    "source_name": {},
     "name": {},
     "biosample": {}
   },
