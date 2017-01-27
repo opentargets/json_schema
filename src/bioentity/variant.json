@@ -11,12 +11,9 @@
         {
             "properties": {
                 "id": {
-                    "type": "array",
-                    "items": {
-                        "description": "An array of variant identifiers",
-                        "type": "string",
-                        "pattern": "(^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}$)|(^http://identifiers.org/dbsnp/rs[0-9]+$|esv[0-9]+$|nsv[0-9]+$)"
-                    }
+                    "type": "string",
+                    "description": "An array of variant identifiers",
+                    "pattern": "(^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}$)|(^http://identifiers.org/dbsnp/rs[0-9]+$|esv[0-9]+$|nsv[0-9]+$)"
                 },
                 "type": {
                     "type": "string",
