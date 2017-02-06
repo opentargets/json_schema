@@ -9,8 +9,10 @@ my $schema = $ARGV[1];
 
 my $validator = JSON::Validator->new;
 $validator->schema($schema);
+
 my $line_count = 1;
-my $err_count = 0;
+my $err_count  = 0;
+
 open(FILE, "<$json");
 
 while(<FILE>){
@@ -20,12 +22,16 @@ while(<FILE>){
    my @errors = $validator->validate(from_json($line));
 
    if(@errors){
-      warn "Error on line $line_count : \t";
-      warn Dumper $_ foreach @errors;
+      print "Validation error on evidence line $line_count : \t";
+      print Dumper $_ foreach @errors;
       $err_count++;	
    }
    $line_count++;
 }
+
 if($err_count>0){
-   die "Exited with $err_count errors"
+   die "Exited with $err_count evidence line(s) with errors of the total $line_count\n";
+}
+else {
+   print "$line_count evidence PASSED schema validation!\n";
 }
