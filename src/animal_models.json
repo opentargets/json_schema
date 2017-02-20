@@ -51,9 +51,7 @@
     "target": {},
     "disease": {},
     "literature": {},
-    "evidence": {},
-    "model_org_phenotype": {},
-    "human_phenotype": {}
+    "evidence": {}
   },
   "required": [
     "type",
@@ -63,9 +61,7 @@
     "unique_association_fields",
     "target",
     "disease",
-    "evidence",
-    "model_org_phenotype",
-    "human_phenotype"
+    "evidence"
   ],
   "additionalProperties": false,
   "import_remote_schemas": [
