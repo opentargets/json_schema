@@ -20,14 +20,8 @@
           "description": "Optional - EFO disease name corresponding to the EFO ID"
         },
         "source_name": {
-          "type" : "array",
-          "items": {
-            "type" : "string",
-            "description": "Optional - EFO disease name corresponding to the EFO ID"
-          },
-          "minItems": 1,
-          "maxItems": 1,
-          "uniqueItems": true
+          "type" : "string",
+          "description": "Optional - EFO disease name corresponding to the EFO ID"
         },
         "biosample": {
           "description": "Tissue names - provide EFO name if you have this",
