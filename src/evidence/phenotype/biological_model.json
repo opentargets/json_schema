@@ -3,7 +3,7 @@
   "title": "Biological model",
   "description": "Evidence linking human target to animal target",
   "type": "object",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
