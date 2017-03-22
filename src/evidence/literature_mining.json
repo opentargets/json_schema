@@ -3,7 +3,7 @@
     "title": "literature_mining_evidence",
     "description": "Literature mining evidence linking gene/protein to disease",
     "type": "object",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "allOf": [
         {
             "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
