@@ -20,7 +20,8 @@
             "type": "string",
             "enum": [
               "http://identifiers.org/eco/cttv_mapping_pipeline",
-              "http://purl.obolibrary.org/obo/ECO_0000205"
+              "http://purl.obolibrary.org/obo/ECO_0000205",
+              "http://purl.obolibrary.org/obo/ECO_0000305"
             ]
           },
           "minItems": 1
