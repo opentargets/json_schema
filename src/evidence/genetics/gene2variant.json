@@ -29,7 +29,6 @@
         "functional_consequence": {
           "type": "string",
           "enum": [
-	    "http://purl.obolibrary.org/obo/VariO_0189",
             "http://targetvalidation.org/sequence/nearest_gene_five_prime_end",
             "http://targetvalidation.org/sequence/regulatory_nearest_gene_five_prime_end",
             "http://purl.obolibrary.org/obo/SO_0001060",
