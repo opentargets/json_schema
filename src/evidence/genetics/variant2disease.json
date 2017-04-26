@@ -13,6 +13,14 @@
         "allOf": {
           "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
         },
+        "clinical_significance": {
+          "type": "string",
+	  "enum": [
+              "Pathogenic" ,
+              "Likely pathogenic" ,
+	      "protective"
+          ]
+        },
         "gwas_panel_resolution": {
           "description": "Panel resolution of GWAS study",
           "type": "number",
