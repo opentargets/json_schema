@@ -18,7 +18,11 @@
 	  "enum": [
               "Pathogenic" ,
               "Likely pathogenic" ,
-	      "protective"
+	      "protective",
+	      "association",
+	      "risk_factor",
+	      "Affects",
+	      "drug response"
           ]
         },
         "gwas_panel_resolution": {
