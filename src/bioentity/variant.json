@@ -3,7 +3,7 @@
     "title": "Variant",
     "description": "OpenTargets variant model - an array of dbSNP, European structural variant (esv) or NCBI structural variant (nsv)",
     "type": "object",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "allOf": [
         {
             "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/base.json"

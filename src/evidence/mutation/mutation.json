@@ -3,7 +3,7 @@
   "title": "mutation",
   "description": "Details about mutation",
   "type": "object",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "id": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/mutation/mutation.json",
   "properties": {
     "preferred_name": {
