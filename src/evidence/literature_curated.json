@@ -10,6 +10,18 @@
     },
     {
       "properties": {
+        "clinical_significance": {
+          "type": "string",
+	  "enum": [
+              "Pathogenic" ,
+              "Likely pathogenic" ,
+	      "protective",
+	      "association",
+	      "risk_factor",
+	      "Affects",
+	      "drug response"
+          ]
+        },
         "evidence_codes": {
           "description": "An array of evidence codes",		
           "type": "array",
@@ -46,6 +58,7 @@
     }
   ],
   "properties": {
+    "clinical_significance": {},
     "resource_score": {},
     "provenance_type": {},
     "is_associated": {},
