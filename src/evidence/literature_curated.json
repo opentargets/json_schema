@@ -45,7 +45,7 @@
             "type": "object",
             "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/mutation/mutation.json"
           },
-		  "minItems": 1
+		  "minItems": 0
         },
         "urls": {
           "type": "array",
