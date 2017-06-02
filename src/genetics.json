@@ -60,9 +60,9 @@
     "validated_against_schema_version",
     "unique_association_fields",
     "target",
-    "variant",
     "disease",
-    "evidence"
+    "evidence",
+    "variant"
   ],
   "additionalProperties": false,
   "import_remote_schemas": [
