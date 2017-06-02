@@ -62,7 +62,8 @@
     "unique_association_fields",
     "target",
     "disease",
-    "evidence"
+    "evidence",
+    "variant"
   ],
   "additionalProperties": false,
   "import_remote_schemas": [
