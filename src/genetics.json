@@ -13,8 +13,7 @@
         "type": {
           "type" : "string",
           "enum": [
-            "genetic_association",
-	    "genetic_literature"
+            "genetic_association"
           ]
         },
         "variant": {
