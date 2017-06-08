@@ -24,10 +24,10 @@ while(<STDIN>){
    my @errors = $validator->validate($record);
 
    if(@errors){
-      print Dumper $_ foreach @errors;
+      print STDERR Dumper $_ foreach @errors;
       $err_count++;
    } else {
-     print(to_json($record), "\n");
+     print STDOUT to_json($record) ."\n" ;
    }
    if($err_count > 1000){
      die "Too many errors. Giving up";
