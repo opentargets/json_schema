@@ -1,14 +1,18 @@
 #!/usr/bin/env perl
+# Validate submission records line by line.
+# Stdout: correct submission records
+# Stderr: submission errors, warnings
+# Usage: cat submissions-file.json | ./json_schema_validator.pl (<schema_dir>) > validated-file.json
 use strict;
 use JSON;
 use Data::Dumper;
 use JSON::Validator;
 use File::Slurp;
+use File::Basename;
 
-if ($#ARGV < 0) {
-    die "\nUsage: cat lines | json_schema_validator.pl <schema_dir> ";
-}
-my $schema = $ARGV[0] . "/src/base.json" ;
+my $dir = $ARGV[0] // ( dirname(__FILE__) . "/.." );
+
+my $schema = $dir . "/src/base.json" ;
 
 my $schema_version = from_json(read_file($schema))->{'version'};
 
