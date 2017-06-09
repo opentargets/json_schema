@@ -10,9 +10,14 @@ use Carp qw( croak );
 use Text::Trim qw(trim);
 use File::Basename;
 use File::Slurp;
+use Getopt::Long;
 
-my $schemaUri = $ARGV[0] ;
-croak "Usage: ./json_schema_validator.pl <schema url or file> " unless defined $schemaUri;
+my $schemaUri;
+my $stamp = 0;
+GetOptions ("schema=s"   => \$schemaUri,
+            "add-validation-stamp"  => \$stamp);
+
+croak "Usage: ./json_schema_validator.pl --schema <schema url or file> [--add-validation-stamp] \n" unless defined $schemaUri;
 
 my $validator = JSON::Validator->new;
 $validator->schema($schemaUri);
@@ -23,7 +28,9 @@ my $err_count = 0;
 
 while(<STDIN>){
    my $record = from_json($_);
-   $record->{'validated_against_schema_version'} = $schema_version;
+   if($stamp) {
+     $record->{'validated_against_schema_version'} = $schema_version;
+   }
 
    my @errors = $validator->validate($record);
 
