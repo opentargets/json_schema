@@ -2,24 +2,24 @@
 # Validate submission records line by line.
 # Stdout: correct submission records
 # Stderr: submission errors, warnings
-# Usage: cat submissions-file.json | ./json_schema_validator.pl (<schema_dir>) > validated-file.json
+# Usage: cat submissions-file.json | ./json_schema_validator.pl <schema url or file> > validated-file.json
 use strict;
 use JSON;
-use Data::Dumper;
 use JSON::Validator;
-use File::Slurp;
+use Carp qw( croak );
+use Text::Trim qw(trim);
 use File::Basename;
+use File::Slurp;
 
-my $dir = $ARGV[0] // ( dirname(__FILE__) . "/.." );
-
-my $schema = $dir . "/src/base.json" ;
-
-my $schema_version = from_json(read_file($schema))->{'version'};
+my $schemaUri = $ARGV[0] ;
+croak "Usage: ./json_schema_validator.pl <schema url or file> " unless defined $schemaUri;
 
 my $validator = JSON::Validator->new;
-$validator->schema($schema);
+$validator->schema($schemaUri);
 
-my $err_count  = 0;
+my $schema_version = $validator->schema->data->{'version'};
+
+my $err_count = 0;
 
 while(<STDIN>){
    my $record = from_json($_);
@@ -28,16 +28,18 @@ while(<STDIN>){
    my @errors = $validator->validate($record);
 
    if(@errors){
-      print STDERR Dumper $_ foreach @errors;
+      print STDERR ("Bad record: " . trim($_) ."\t" );
+      print STDERR ($_->{path} .": ". $_->{message} ."\t")  foreach @errors;
+      print STDERR "\n" ;
       $err_count++;
    } else {
      print STDOUT to_json($record) ."\n" ;
    }
    if($err_count > 1000){
-     die "Too many errors. Giving up";
+     croak "Too many errors. Giving up";
    }
 }
 
 if($err_count>0){
-   die "Exited with $err_count evidence line(s) with errors";
+   croak "Exited with $err_count invalid records";
 }
