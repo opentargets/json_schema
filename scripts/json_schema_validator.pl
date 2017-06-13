@@ -1,37 +1,52 @@
 #!/usr/bin/env perl
+# Validate submission records line by line.
+# Stdout: correct submission records
+# Stderr: submission errors, warnings
+# Usage: cat submissions-file.json | ./json_schema_validator.pl <schema url or file> > validated-file.json
 use strict;
 use JSON;
-use Data::Dumper;
 use JSON::Validator;
+use Carp qw( croak );
+use Text::Trim qw(trim);
+use File::Basename;
+use File::Slurp;
+use Getopt::Long;
 
-my $json   = $ARGV[0];
-my $schema = $ARGV[1];
+my $schemaUri;
+my $stamp = 0;
+GetOptions ("schema=s"   => \$schemaUri,
+            "add-validation-stamp"  => \$stamp);
+
+croak "Usage: ./json_schema_validator.pl --schema <schema url or file> [--add-validation-stamp] \n" unless defined $schemaUri;
 
 my $validator = JSON::Validator->new;
-$validator->schema($schema);
+$validator->schema($schemaUri);
 
-my $line_count = 1;
-my $err_count  = 0;
+my $schema_version = $validator->schema->data->{'version'};
 
-open(FILE, "<$json");
+my $err_count = 0;
 
-while(<FILE>){
-   my($line) = $_;
-   chomp($line);
+while(<STDIN>){
+   my $record = from_json($_);
+   if($stamp) {
+     $record->{'validated_against_schema_version'} = $schema_version;
+   }
 
-   my @errors = $validator->validate(from_json($line));
+   my @errors = $validator->validate($record);
 
    if(@errors){
-      print "Validation error on evidence line $line_count : \t";
-      print Dumper $_ foreach @errors;
-      $err_count++;	
+      print STDERR ("Bad record: " . trim($_) ."\t" );
+      print STDERR ($_->{path} .": ". $_->{message} ."\t")  foreach @errors;
+      print STDERR "\n" ;
+      $err_count++;
+   } else {
+     print STDOUT to_json($record) ."\n" ;
    }
-   $line_count++;
+   if($err_count > 1000){
+     croak "Too many errors. Giving up";
+   }
 }
 
 if($err_count>0){
-   die "Exited with $err_count evidence line(s) with errors of the total $line_count\n";
-}
-else {
-   print "$line_count evidence PASSED schema validation!\n";
+   croak "Exited with $err_count invalid records";
 }
