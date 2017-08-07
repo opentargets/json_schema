@@ -57,7 +57,7 @@
             "type": "object",
             "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json#/definitions/single_lit_reference"
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         }
       }
