@@ -18,6 +18,10 @@
       },
 	  "minItems": 1
 	},	
+    "role_in_cancer": {
+      "description": "The role in cancer can be TSG, oncogene or gene_fusion",
+      "type": "string"
+        },
     "functional_consequence": {
       "description": "For COSMIC: sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
       "type": "string",
@@ -51,6 +55,11 @@
         "http://purl.obolibrary.org/obo/SO_0001624"
       ]
     },
+    "number_samples_tested": {
+      "description": "The number of samples tested",
+          "type": "number",
+          "minimum": 0
+        },
     "number_samples_with_mutation_type": {
       "description": "The number of samples for this mutation type if known",	
 	  "type": "number",
