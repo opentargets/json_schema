@@ -3,10 +3,10 @@
   "title": "Drug",
   "description": "OpenTargets drug model",
   "type": "object",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/bioentity/base.json"
     },
     {
       "properties": {
@@ -23,7 +23,7 @@
         },
         "max_phase_for_all_diseases": {
           "type": "object",
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/drug/diseasephase.json"
+          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/drug/diseasephase.json"
         }
       }
     }

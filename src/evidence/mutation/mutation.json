@@ -3,8 +3,8 @@
   "title": "mutation",
   "description": "Details about mutation",
   "type": "object",
-  "version": "1.2.6",
-  "id": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/mutation/mutation.json",
+  "version": "1.2.7",
+  "id": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/mutation/mutation.json",
   "properties": {
     "preferred_name": {
       "description": "The preferred name for this mutation, e.g. NM_005228.3(EGFR):c.2500G>T (p.Val834Leu)",
@@ -18,6 +18,10 @@
       },
 	  "minItems": 1
 	},	
+    "role_in_cancer": {
+      "description": "The role in cancer can be TSG, oncogene or gene_fusion",
+      "type": "string"
+        },
     "functional_consequence": {
       "description": "For COSMIC: sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
       "type": "string",
@@ -51,6 +55,11 @@
         "http://purl.obolibrary.org/obo/SO_0001624"
       ]
     },
+    "number_samples_tested": {
+      "description": "The number of samples tested",
+          "type": "number",
+          "minimum": 0
+        },
     "number_samples_with_mutation_type": {
       "description": "The number of samples for this mutation type if known",	
 	  "type": "number",
