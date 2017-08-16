@@ -3,34 +3,33 @@
   "title": "Genetics-based evidence strings",
   "description": "Schema for target-disease evidence where there is genetics / variation knowledge",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.6",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/base.json"
     },
     {
       "properties": {
         "type": {
           "type" : "string",
           "enum": [
-            "genetic_association",
-	    "somatic_mutation"
+            "genetic_association"
           ]
         },
         "variant": {
           "type": "object",
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/bioentity/variant.json"
+          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/variant.json"
         },
         "evidence": {
           "type": "object",
           "properties": {
             "gene2variant": {
               "type": "object",
-              "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/genetics/gene2variant.json"
+              "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/genetics/gene2variant.json"
             },
             "variant2disease": {
               "type": "object",
-              "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/genetics/variant2disease.json"
+              "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/genetics/variant2disease.json"
             }
           },
           "required": [
@@ -68,37 +67,37 @@
   "additionalProperties": false,
   "import_remote_schemas": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/bioentity/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/base.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/method.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/probability.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/probability.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/pvalue.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/pvalue.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/rank.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/rank.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/summed_total.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/summed_total.json"
     },    
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/linkout/linkout.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/linkout/linkout.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/bioentity/disease.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/disease.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/bioentity/target.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/target.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
     }
   ]
 }

@@ -3,10 +3,10 @@
   "title": "OpenTargets target",
   "description": "OpenTargets target model. Target includes base like proteins, genes, protein complexes etc.",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.6",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/bioentity/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/base.json"
     },
     {
       "properties": {
@@ -14,15 +14,6 @@
           "type" : "string",
           "description": "An Ensembl or UniProt identifier",
           "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
-        },
-
-        "tier": {
-          "type" : "string",
-          "description": "Cancer Gene Census genes has been split into two tiers",
-	  "enum": [
-	    "tier 1",
-	    "tier 2"
-	  ]
         },
 
         "complex_members": {
@@ -108,7 +99,6 @@
   ],
   "properties": {
     "id": {},
-    "tier": {},
     "complex_members" : {},
     "complex_type" : {},
     "target_type": {},

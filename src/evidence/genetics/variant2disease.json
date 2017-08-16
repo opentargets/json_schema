@@ -3,15 +3,15 @@
   "title": "snp_gwas_disease_evidence",
   "description": "Evidence linking SNP to disease in a GWAS study",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.6",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
     },
     {
       "properties": {
         "allOf": {
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/base.json"
+          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
         },
         "clinical_significance": {
           "type": "string",
@@ -53,7 +53,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/linkout/linkout.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/linkout/linkout.json"
           }
         }
       }
@@ -82,22 +82,22 @@
   "additionalProperties": false,
   "import_remote_schemas": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/method.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/probability.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/probability.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/summed_total.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/summed_total.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/pvalue.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/pvalue.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/rank.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/rank.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/base.json"
+      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
     }
   ]
 }

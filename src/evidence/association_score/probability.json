@@ -3,7 +3,7 @@
     "id": "#probability",
     "allOf": [
         {
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/base.json"
+            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
         },
         {
             "properties": {
@@ -21,7 +21,7 @@
                 },
                 "method": {
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/1.2.7/src/evidence/association_score/method.json"
+                    "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
                 }
             }
         }
