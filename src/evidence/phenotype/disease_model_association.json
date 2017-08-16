@@ -3,7 +3,7 @@
   "title": "disease_model_association",
   "description": "Evidence linking human target to animal target",
   "type": "object",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"

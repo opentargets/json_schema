@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Bioentities",
     "description": "A generic schema for a bioentity. Must be subclassed with additional properties to be meaningful.",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "type": "object",
     "properties" : {
       "id" : {
