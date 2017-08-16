@@ -3,7 +3,7 @@
   "title": "snp_gwas_disease_evidence",
   "description": "Evidence linking SNP to disease in a GWAS study",
   "type": "object",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"

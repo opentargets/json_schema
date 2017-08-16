@@ -3,7 +3,7 @@
   "title": "drug_mechanism_of_action_evidence",
   "description": "Mechanism of action evidence linking gene/protein to drug",
   "type": "object",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"

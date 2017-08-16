@@ -3,7 +3,7 @@
   "title": "Animal model-based evidence strings",
   "description": "Schema for target-disease evidence where there is phenotype knowledge from animal models",
   "type": "object",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/base.json"
