@@ -26,6 +26,7 @@
       "description": "For COSMIC: sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",	
       "type": "string",
       "enum": [
+        "http://purl.obolibrary.org/obo/SO_0001893",
         "http://purl.obolibrary.org/obo/SO_0001632",
         "http://purl.obolibrary.org/obo/SO_0001631",
         "http://purl.obolibrary.org/obo/SO_0000159",
