@@ -25,6 +25,12 @@
 	  ]
         },
 
+        "complex_id": {
+          "type" : "string",
+          "description": "A ChEMBL protein complex identifier",
+          "pattern": "^CHEMBL[0-9]$"
+        },
+
         "complex_members": {
           "type" : "array",
           "items": {
