@@ -115,6 +115,7 @@
   "properties": {
     "id": {},
     "tier": {},
+    "complex_id": {},
     "complex_members" : {},
     "complex_type" : {},
     "target_type": {},
