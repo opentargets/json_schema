@@ -64,6 +64,10 @@
     "is_associated": {},
     "date_asserted": {},
     "evidence_codes": {},
+    "human_phenotypes": {},
+    "disease_id": {},
+    "model_id": {}, 
+    "model_phenotypes": {},
     "urls": {}
   },
   "required": [
