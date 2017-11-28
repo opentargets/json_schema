@@ -86,6 +86,14 @@
     "is_associated": {},
     "date_asserted": {},
     "evidence_codes": {},
+    "model_id": {},
+    "model_gene_id": {},
+    "genetic_background": {},
+    "allele_ids": {},
+    "allelic_composition": {},
+    "zygosity": {},
+    "phenotypes": {},
+    "species": {},
     "urls": {}
   },
   "required": [
