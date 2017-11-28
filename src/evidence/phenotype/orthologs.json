@@ -57,6 +57,9 @@
     "is_associated": {},
     "date_asserted": {},
     "evidence_codes": {},
+    "human_gene_id": {},
+    "model_gene_id": {},
+    "species": {},
     "urls": {}
   },
   "required": [
