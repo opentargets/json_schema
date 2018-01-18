@@ -3,7 +3,7 @@
   "title": "Genetics-based evidence strings",
   "description": "Schema for target-disease evidence where there is genetics / variation knowledge",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/base.json"

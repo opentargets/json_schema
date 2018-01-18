@@ -3,7 +3,7 @@
   "title": "Target-Disease-Association",
   "description": "Schema for different types of target-disease associations used by OpenTargets",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "properties": {
     "sourceID": {
       "type": "string",
@@ -24,7 +24,7 @@
       "description": "The OpenTargets-JSON schema version number against which your data was validated",
       "type": "string",
       "enum": [
-        "1.2.7"
+        "1.2.8"
       ]
     },
 

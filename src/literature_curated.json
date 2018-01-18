@@ -3,7 +3,7 @@
   "title": "Literature-based evidence strings",
   "description": "Schema for target-disease evidence extracted from the literature",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/base.json"

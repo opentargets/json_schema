@@ -3,7 +3,7 @@
   "title": "OpenTargets disease",
   "description": "OpenTargets disease. This uses the EFO ontology",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/base.json"
