@@ -3,7 +3,7 @@
   "title": "target_pheno_evidence",
   "description": "Evidence linking target to phenotype e.g. in a knockout study",
   "type": "object",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "allOf": [
     {
       "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"

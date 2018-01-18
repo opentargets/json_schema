@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Evidence_Base",
   "description": "Base schema for OpenTargets evidence",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "type": "object",
   "id": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json",
   "properties": {

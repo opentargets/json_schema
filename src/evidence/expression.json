@@ -3,7 +3,7 @@
     "title": "expression_evidence",
     "description": "Expression evidence linking gene/protein to disease",
     "type": "object",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "allOf": [
         {
             "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
