@@ -25,9 +25,6 @@
           "type": "object",
           "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/drug/diseasephase.json"
         },
-        "withdrawn_status": {
-          "type": "boolean"
-        },
         "withdrawn_country": {
           "type": "string"
         },
@@ -45,7 +42,6 @@
     "molecule_name": {},
     "molecule_type": {},
     "max_phase_for_all_diseases": {},
-    "withdrawn_status": {},
     "withdrawn_country": {},
     "withdrawn_reason": {},
     "withdrawn_year": {}
@@ -54,7 +50,6 @@
     "id",
     "molecule_name",
     "molecule_type",
-    "withdrawn_status"
   ],
   "additionalProperties": false
 }
