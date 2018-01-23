@@ -49,7 +49,7 @@
   "required": [
     "id",
     "molecule_name",
-    "molecule_type",
+    "molecule_type"
   ],
   "additionalProperties": false
 }
