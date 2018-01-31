@@ -29,10 +29,10 @@
           "type": "string"
         },
         "withdrawn_reason": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "withdrawn_year": {
-          "type": "number"
+          "type": "string"
         }
       }
     }
