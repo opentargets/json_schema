@@ -26,13 +26,13 @@
           "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/drug/diseasephase.json"
         },
         "withdrawn_country": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "withdrawn_reason": {
           "type": ["string","null"]
         },
         "withdrawn_year": {
-          "type": "string"
+          "type": ["string","null"]
         }
       }
     }
