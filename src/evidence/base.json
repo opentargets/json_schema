@@ -77,7 +77,7 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "$ref": "#/definitions/single_lit_reference"
+                "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json#/definitions/single_lit_reference"
               },
               "minItems": 1,
               "uniqueItems": true
