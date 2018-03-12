@@ -23,9 +23,7 @@
     "validated_against_schema_version": {
       "description": "The OpenTargets-JSON schema version number against which your data was validated",
       "type": "string",
-      "enum": [
-        "1.2.8"
-      ]
+      "pattern": "^([1]+).([2-9]+).([0-9]+)$"
     },
 
     "unique_association_fields": {
