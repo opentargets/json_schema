@@ -54,7 +54,8 @@
         "http://purl.obolibrary.org/obo/SO_0002012",
         "http://purl.obolibrary.org/obo/SO_0001627",
         "http://purl.obolibrary.org/obo/SO_0001060",
-        "http://purl.obolibrary.org/obo/SO_0001624"
+        "http://purl.obolibrary.org/obo/SO_0001624",
+        "http://purl.obolibrary.org/obo/SO_0001623"
       ]
     },
     "number_samples_tested": {
