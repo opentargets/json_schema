@@ -1,9 +1,8 @@
 {
     "type": "object",
-    "id": "#probability",
     "allOf": [
         {
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
+            "$ref": "base.json"
         },
         {
             "properties": {
@@ -21,7 +20,7 @@
                 },
                 "method": {
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
+                    "$ref": "method.json"
                 }
             }
         }

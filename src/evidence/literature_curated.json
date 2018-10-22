@@ -1,12 +1,12 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "generic_evidence",
   "description": "Generic evidence linking gene/protein to disease: author-curated or computational or both",
   "type": "object",
   "version": "1.2.8",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
+      "$ref": "base.json"
     },
     {
       "properties": {
@@ -43,7 +43,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/mutation/mutation.json"
+            "$ref": "mutation/mutation.json"
           },
 		  "minItems": 0
         },
@@ -51,7 +51,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/linkout/linkout.json"
+            "$ref": "linkout/linkout.json"
           }
         }
       }
@@ -78,22 +78,22 @@
   "additionalProperties": false,
   "import_remote_schemas": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
+      "$ref": "association_score/method.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/probability.json"
+      "$ref": "association_score/probability.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/summed_total.json"
+      "$ref": "association_score/summed_total.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/pvalue.json"
+      "$ref": "association_score/pvalue.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/rank.json"
+      "$ref": "association_score/rank.json"
     },
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
+      "$ref": "association_score/base.json"
     }
   ]  
 }

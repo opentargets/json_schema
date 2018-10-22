@@ -1,10 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Clinical study phase information",
   "description": "Clinical study phase information",
   "type": "object",
   "version": "1.2.8",
-  "id": "#disease_phase",
   "properties": {
     "numeric_index": {
       "description": "An integer indicating the position of this study phase. Higher the number = more advanced phase.",

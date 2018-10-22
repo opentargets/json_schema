@@ -1,12 +1,12 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "OpenTargets disease",
   "description": "OpenTargets disease. This uses the EFO ontology",
   "type": "object",
   "version": "1.2.8",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/base.json"
+      "$ref": "base.json"
     },
     {
       "properties": {
