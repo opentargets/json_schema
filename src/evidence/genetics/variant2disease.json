@@ -44,6 +44,7 @@
             "type": "string",
             "enum": [
               "http://identifiers.org/eco/GWAS",
+	      "http://identifiers.org/eco/PheWAS",
               "http://purl.obolibrary.org/obo/ECO_0000205"
             ]
           },

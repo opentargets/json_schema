@@ -10,8 +10,8 @@
 ## Validation
 Execute something like:
 ```
-git clone https://github.com/opentargets/json_schema.git /var/tmp/json_schema && /var/tmp/json_schema/scripts/json_schema_validator.pl <your file>
+cpanm JSON::Validator
+git clone https://github.com/opentargets/json_schema.git json_schema
+cat <your document> | json_schema/scripts/json_schema_validator.pl --schema <your schema>
 ```
-Beware there are a couple of bugs in the perl json schema validation library, so the output of this script will not be 100% accurate.
-
-See [issues](https://github.com/jhthorsen/json-validator/issues?q=is%3Aissue+author%3AckongEbi) here.
+The script is a thin wrapper around https://github.com/jhthorsen/json-validator. There was a bug affecting our schema between 0.96 and 1.04, do make sure you use at least version 1.05.
