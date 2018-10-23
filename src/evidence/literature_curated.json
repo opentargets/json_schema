@@ -12,14 +12,14 @@
       "properties": {
         "clinical_significance": {
           "type": "string",
-	  "enum": [
-              "Pathogenic" ,
-              "Likely pathogenic" ,
-	      "protective",
-	      "association",
-	      "risk_factor",
-	      "Affects",
-	      "drug response"
+          "enum": [
+            "Pathogenic" ,
+            "Likely pathogenic" ,
+            "protective",
+            "association",
+            "risk_factor",
+            "Affects",
+            "drug response"
           ]
         },
         "evidence_codes": {
