@@ -16,10 +16,10 @@
         "tier": {
            "type" : "string",
           "description": "Cancer Gene Census genes has been split into two tiers",
-	  "enum": [
-	    "tier 1",
-	    "tier 2"
-	  ]
+          "enum": [
+            "tier 1",
+            "tier 2"
+          ]
         },
 
         "complex_id": {
