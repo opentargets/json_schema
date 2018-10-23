@@ -98,9 +98,6 @@
     },
     {
       "$ref" : "evidence/drug/diseasephase.json"
-    },
-    {
-      "$ref": "evidence/association_score/base.json"
     }
   ]
 }

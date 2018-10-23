@@ -94,9 +94,6 @@
     },
     {
       "$ref": "bioentity/target.json"
-    },
-    {
-      "$ref": "evidence/association_score/base.json"
     }
   ]
 }

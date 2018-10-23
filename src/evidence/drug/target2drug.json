@@ -79,9 +79,6 @@
       "$ref": "../association_score/rank.json"
     },
     {
-      "$ref": "../association_score/base.json"
-    },
-    {
       "$ref": "../base.json"
     }
   ]

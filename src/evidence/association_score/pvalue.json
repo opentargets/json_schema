@@ -2,21 +2,17 @@
     "type": "object",
     "allOf": [
         {
-            "$ref": "base.json"
-        },
-        {
             "properties": {
-        "type": {
-          "type" : "string",          
-          "enum": [
-            "pvalue"
-          ]
-        },            	    
+                "type": {
+                    "type" : "string",          
+                    "enum": [
+                        "pvalue"
+                    ]
+                },            	    
                 "value": {
                     "type": "number",
-                    "minimum": 0,
                     "maximum": 1,
-                    "exclusiveMinimum": true
+                    "exclusiveMinimum": 0
                 },
                 "method": {
                     "type": "object",

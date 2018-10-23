@@ -24,7 +24,7 @@
       "description": "The OpenTargets-JSON schema version number against which your data was validated",
       "type": "string",
       "enum": [
-        "foo"
+        "1.2.8"
       ]
     },
 

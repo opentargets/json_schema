@@ -83,9 +83,6 @@
     },
     {
       "$ref": "evidence/association_score/summed_total.json"
-    },    
-    {
-      "$ref": "evidence/association_score/base.json"
     },
     {
       "$ref": "evidence/linkout/linkout.json"

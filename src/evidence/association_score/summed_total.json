@@ -2,20 +2,16 @@
     "type": "object",
     "allOf": [
         {
-            "$ref": "base.json"
-        },
-        {
             "properties": {
-        "type": {
-          "type" : "string",          
-          "enum": [
-            "summed_total"
-          ]
-        },
+                "type": {
+                    "type" : "string",          
+                    "enum": [
+                        "summed_total"
+                    ]
+                },
                 "value": {
                     "type": "number",
-                    "minimum": 0,
-                    "exclusiveMinimum": true
+                    "exclusiveMinimum": 0
                 },
                 "method": {
                     "type": "object",
