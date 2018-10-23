@@ -75,22 +75,5 @@
     "date_asserted",
     "evidence_codes"
   ],
-  "additionalProperties": false,
-  "import_remote_schemas": [
-    {
-      "$ref": "association_score/method.json"
-    },
-    {
-      "$ref": "association_score/probability.json"
-    },
-    {
-      "$ref": "association_score/summed_total.json"
-    },
-    {
-      "$ref": "association_score/pvalue.json"
-    },
-    {
-      "$ref": "association_score/rank.json"
-    }
-  ]  
+  "additionalProperties": false
 }

@@ -55,26 +55,12 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "evidence/base.json#/definitions/single_lit_reference"
+            "$ref": "evidence/single_lit_reference.json"
           },
           "minItems": 1,
           "uniqueItems": true
         }
       }
     }
-  },
-  "import_remote_schemas": [
-    { 
-      "$ref": "bioentity/base.json"
-    },
-    {
-      "$ref": "evidence/linkout/linkout.json"
-    },
-    {
-      "$ref": "evidence/base.json"
-    },
-    {
-      "$ref": "evidence/base.json#/definitions/single_lit_reference"
-    }
-  ]
+  }
 }

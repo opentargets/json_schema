@@ -2269,7 +2269,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "evidence/linkout/linkout.json"
+            "$ref": "..//linkout/linkout.json"
           }
         }
       }
@@ -2291,22 +2291,5 @@
     "evidence_codes",
     "functional_consequence"
   ],
-  "additionalProperties": false,
-  "import_remote_schemas": [
-    {
-      "$ref": "../association_score/method.json"
-    },
-    {
-      "$ref": "../association_score/probability.json"
-    },
-    {
-      "$ref": "../association_score/summed_total.json"
-    },
-    {
-      "$ref": "../association_score/pvalue.json"
-    },
-    {
-      "$ref": "../association_score/rank.json"
-    }
-  ]
+  "additionalProperties": false
 }

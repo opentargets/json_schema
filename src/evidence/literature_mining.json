@@ -24,7 +24,7 @@
                 },
                 "literature_ref": {
                     "type": "object",
-                    "$ref": "base.json#definitions/single_lit_reference"
+                    "$ref": "single_lit_reference.json"
                 }
             }
         }
@@ -47,25 +47,5 @@
         "literature_ref",
         "unique_experiment_reference"
     ],
-    "additionalProperties": false,
-    "import_remote_schemas": [
-        {
-            "$ref": "association_score/method.json"
-        },
-        {
-            "$ref": "base.json"
-        },
-        {
-            "$ref": "association_score/probability.json"
-        },
-        {
-            "$ref": "association_score/summed_total.json"
-        },
-        {
-            "$ref": "association_score/pvalue.json"
-        },
-        {
-            "$ref": "association_score/rank.json"
-        }
-    ]
+    "additionalProperties": false
 }
