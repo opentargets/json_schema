@@ -65,14 +65,14 @@
   },
   "import_remote_schemas": [
     { 
-	  "$ref": "bioentity/base.json"
-	},
+      "$ref": "bioentity/base.json"
+    },
     {
       "$ref": "evidence/linkout/linkout.json"
     },
-	{
-		"$ref": "evidence/base.json"
-	},
+    {
+      "$ref": "evidence/base.json"
+    },
     {
       "$ref": "evidence/base.json#/definitions/single_lit_reference"
     }
