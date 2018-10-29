@@ -22,6 +22,7 @@
         },
         "biosample": {
           "description": "Tissue names - provide EFO name if you have this",
+          "title": "Disease Biosample",
           "type": "object",
           "properties": {
             "name": {
