@@ -1,27 +1,22 @@
 {
     "type": "object",
-    "id": "#probability",
     "allOf": [
         {
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
-        },
-        {
             "properties": {
-        "type": {
-          "type" : "string",          
-          "enum": [
-            "probability"
-          ]
-        },
+                "type": {
+                    "type" : "string",          
+                    "enum": [
+                        "probability"
+                    ]
+                },
                 "value": {
                     "type": "number",
-                    "minimum": 0,
                     "maximum": 1,
-                    "exclusiveMinimum": true
+                    "exclusiveMinimum": 0
                 },
                 "method": {
                     "type": "object",
-                    "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
+                    "$ref": "method.json"
                 }
             }
         }

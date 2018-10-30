@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Target-Disease-Association",
   "description": "Schema for different types of target-disease associations used by OpenTargets",
   "type": "object",
@@ -39,13 +39,13 @@
     "target" : {
       "type": "object",
       "description" : "Target in OpenTargets's target ontology",
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/target.json"
+      "$ref": "bioentity/target.json"
     },
 
     "disease" : {
       "type": "object",
       "description" : "Disease in the EFO ontology",
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/disease.json"
+      "$ref": "bioentity/disease.json"
     },
 
     "literature": {
@@ -55,26 +55,12 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json#/definitions/single_lit_reference"
+            "$ref": "evidence/single_lit_reference.json"
           },
           "minItems": 1,
           "uniqueItems": true
         }
       }
     }
-  },
-  "import_remote_schemas": [
-    { 
-	  "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/base.json"
-	},
-    {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/linkout/linkout.json"
-    },
-	{
-		"$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
-	},
-    {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json#/definitions/single_lit_reference"
-    }
-  ]
+  }
 }

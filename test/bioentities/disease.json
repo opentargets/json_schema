@@ -1,7 +1,0 @@
-{
-  "id": ["http://www.ebi.ac.uk/efo/EFO_0000637"],
-  "name" : ["Breast cancer"],
-  "biosample" : {
-  	 "name" : "breast tissue biopsy"
-   }
-}

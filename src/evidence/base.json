@@ -1,10 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Evidence_Base",
   "description": "Base schema for OpenTargets evidence",
   "version": "1.2.8",
   "type": "object",
-  "id": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json",
   "properties": {
     "unique_experiment_reference": {
       "type": "string",
@@ -23,16 +22,16 @@
       "type": "object",
       "oneOf": [
         {
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/pvalue.json"
+          "$ref": "association_score/pvalue.json"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/probability.json"
+          "$ref": "association_score/probability.json"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/rank.json"
+          "$ref": "association_score/rank.json"
         },
         {
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/summed_total.json"
+          "$ref": "association_score/summed_total.json"
         }
       ]
     },
@@ -77,7 +76,7 @@
               "type": "array",
               "items": {
                 "type": "object",
-                "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json#/definitions/single_lit_reference"
+                "$ref": "single_lit_reference.json"
               },
               "minItems": 1,
               "uniqueItems": true
@@ -129,89 +128,5 @@
       },
       "additionalProperties": false
     }
-  },
-  "definitions": {
-    "single_lit_reference": {
-      "type": "object",
-      "id": "#single_lit_reference",
-      "properties": {
-        "lit_id": {
-          "type": "string",
-          "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
-          "pattern": "NA|http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)$"
-        },
-        "rank": {
-          "type": "object",
-          "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/rank.json"
-        },
-        "mined_sentences": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "text": {
-                "type": "string"
-              },
-              "section": {
-                "type": "string",
-                "enum": [
-                  "title",
-                  "abstract",
-                  "introduction_and_background",
-                  "results",
-                  "discussion",
-                  "case_study",
-                  "conclusion_and_future_work",
-                  "appendix",
-                  "figure",
-                  "table",
-                  "other"
-                ],
-                "description": "Section of the article in which this sentence appears"
-              },
-              "t_start": {
-                "type": "number",
-                "minimum": 0,
-                "description": "Start co-ordinate of target (protein/gene) in text"
-              },
-              "t_end": {
-                "type": "number",
-                "minimum": 0,
-                "description": "End co-ordinate of target (protein/gene) in text"
-              },
-              "d_start": {
-                "type": "number",
-                "minimum": 0,
-                "description": "Start co-ordinate of disease name in text"
-              },
-              "d_end": {
-                "type": "number",
-                "minimum": 0,
-                "description": "End co-ordinate of disease name in text"
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "text",
-              "section"
-            ]
-          },
-          "minItems" : 1
-        }
-      },
-      
-     "required": [
-      "lit_id"
-    ],
-    "additionalProperties": false
-    }
-  },
-  "import_remote_schemas": [
-    {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/method.json"
-    },
-    {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/association_score/base.json"
-    }
-  ]
+  }
 }

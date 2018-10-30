@@ -1,10 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Linkout",
   "description": "URL linkout",
   "version": "1.2.8",
   "type": "object",
-  "id": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/linkout/linkout.json",
   "properties": {
     "nice_name": {
       "type": "string"

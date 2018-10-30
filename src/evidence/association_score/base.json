@@ -1,6 +1,0 @@
-{
-  "type": "object",
-  "id": "#base_association_score",
-  "description" : "empty association score base class",
-  "properties": {}
-}

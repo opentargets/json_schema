@@ -1,12 +1,12 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "disease_model_association",
   "description": "Evidence linking human target to animal target",
   "type": "object",
   "version": "1.2.8",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/base.json"
+      "$ref": "../base.json"
     },
     {
       "properties": {
@@ -35,7 +35,7 @@
           "description": "List of human phenotypes for this model",
           "items": {          
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/phenotype.json"
+            "$ref": "../../bioentity/phenotype.json"
           },
           "minItems": 1
         },
@@ -44,7 +44,7 @@
           "description": "List of biomodel phenotypes for this model",
           "items": {          
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/bioentity/phenotype.json"
+            "$ref": "../../bioentity/phenotype.json"
           },
           "minItems": 1
         },
@@ -52,7 +52,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/opentargets/json_schema/master/src/evidence/linkout/linkout.json"
+            "$ref": "../linkout/linkout.json"
           }
         }
       }
