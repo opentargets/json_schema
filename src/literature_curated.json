@@ -28,7 +28,6 @@
   "properties": {
     "type": {},
     "sourceID": {},
-    "validated_against_schema_version": {},
     "unique_association_fields": {},
     "access_level" :{},
     "target": {},
@@ -40,11 +39,9 @@
     "type",
     "sourceID",
     "access_level",
-    "validated_against_schema_version",
     "unique_association_fields",
     "target",
     "disease",
     "evidence"
-  ],
-  "additionalProperties": false
+  ]
 }

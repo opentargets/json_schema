@@ -47,6 +47,5 @@
     "id",
     "molecule_name",
     "molecule_type"
-  ],
-  "additionalProperties": false
+  ]
 }

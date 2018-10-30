@@ -2290,6 +2290,5 @@
     "date_asserted",
     "evidence_codes",
     "functional_consequence"
-  ],
-  "additionalProperties": false
+  ]
 }

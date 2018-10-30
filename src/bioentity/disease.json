@@ -37,8 +37,7 @@
           },
           "required": [
             "name"
-          ],
-          "additionalProperties": false
+          ]
         }
       }
     }
@@ -51,6 +50,6 @@
   },
   "required": [
     "id"
-  ],
-  "additionalProperties": false
+  ]
+  
 }

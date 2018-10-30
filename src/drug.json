@@ -35,8 +35,7 @@
           "required": [
             "target2drug",
             "drug2clinic"
-          ],
-          "additionalProperties": false
+          ]
         }
       }
     }
@@ -44,7 +43,6 @@
   "properties": {
     "type": {},
     "sourceID": {},
-    "validated_against_schema_version": {},
     "unique_association_fields": {},
     "target": {},
     "disease": {},
@@ -57,12 +55,10 @@
     "type",
     "access_level",
     "sourceID",
-    "validated_against_schema_version",
     "unique_association_fields",
     "target",
     "drug",
     "disease",
     "evidence"
-  ],
-  "additionalProperties": false
+  ]
 }

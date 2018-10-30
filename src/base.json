@@ -19,19 +19,11 @@
         "private"
       ]      
     },
-    
-    "validated_against_schema_version": {
-      "description": "The OpenTargets-JSON schema version number against which your data was validated",
-      "type": "string",
-      "enum": [
-        "1.2.8"
-      ]
-    },
 
     "unique_association_fields": {
       "description": "String based key-value properties that must uniquely identify each JSON object in your data.",
       "type": "object",
-      "additionalProperties": {
+      "": {
         "type": "string"
       }
     },

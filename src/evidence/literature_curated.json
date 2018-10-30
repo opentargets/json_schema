@@ -74,6 +74,5 @@
     "is_associated",
     "date_asserted",
     "evidence_codes"
-  ],
-  "additionalProperties": false
+  ]
 }

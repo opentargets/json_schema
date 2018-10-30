@@ -128,6 +128,5 @@
   "dependencies" : {
   	"complex_members" : ["complex_type"],
   	"complex_type" : ["complex_members"]
-  },
-  "additionalProperties": false
+  }
 }

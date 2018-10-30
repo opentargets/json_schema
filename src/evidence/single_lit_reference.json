@@ -58,7 +58,6 @@
               "description": "End co-ordinate of disease name in text"
             }
           },
-          "additionalProperties": false,
           "required": [
             "text",
             "section"

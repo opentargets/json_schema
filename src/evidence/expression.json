@@ -31,8 +31,7 @@
                     "required": [
                         "value",
                         "percentile_rank"
-                    ],
-                    "additionalProperties": false
+                    ]
                 },
                 "test_sample": {
                     "description": "Free text - test sample",
@@ -107,7 +106,6 @@
         "urls": {},
         "unique_experiment_reference": {}
     },
-    "additionalProperties": false,
     "required": [
         "resource_score",
         "provenance_type",

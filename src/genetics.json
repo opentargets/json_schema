@@ -35,8 +35,8 @@
           "required": [
             "gene2variant",
             "variant2disease"
-          ],
-          "additionalProperties": false
+          ]
+          
         }
       }
     }
@@ -44,7 +44,6 @@
   "properties": {
     "type": {},
     "sourceID": {},
-    "validated_against_schema_version": {},
     "unique_association_fields": {},
     "access_level" :{},
     "target": {},
@@ -57,12 +56,10 @@
     "type",
     "sourceID",
     "access_level",
-    "validated_against_schema_version",
     "unique_association_fields",
     "target",
     "disease",
     "evidence",
     "variant"
-  ],
-  "additionalProperties": false
+  ]
 }

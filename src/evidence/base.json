@@ -57,8 +57,7 @@
                 "name": {
                   "type": "string"
                 }
-              },
-              "additionalProperties": false
+              }
             },
             "status": {
               "type": "boolean"
@@ -66,8 +65,7 @@
           },
           "required": [
             "status"
-          ],
-          "additionalProperties": false
+          ]
         },
         "literature": {
           "type": "object",
@@ -84,8 +82,7 @@
           },
           "required": [
             "references"
-          ],
-          "additionalProperties": false
+          ]
         },
         "database": {
           "type": "object",
@@ -106,7 +103,6 @@
                   "type": "string"
                 }
               },
-              "additionalProperties": false,
               "required": [
                 "id",
                 "version"
@@ -119,14 +115,12 @@
               "type": "string"
             }
           },
-          "additionalProperties": false,
           "required": [
             "id",
             "version"
           ]
         }
-      },
-      "additionalProperties": false
+      }
     }
   }
 }

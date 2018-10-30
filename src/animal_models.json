@@ -36,8 +36,7 @@
             "orthologs",
             "biological_model",
             "disease_model_association"
-          ],
-          "additionalProperties": false
+          ]
         }
       }
     }
@@ -45,7 +44,6 @@
   "properties": {
     "type": {},
     "sourceID": {},
-    "validated_against_schema_version": {},
     "access_level" :{},
     "unique_association_fields": {},
     "target": {},
@@ -56,12 +54,10 @@
   "required": [
     "type",
     "sourceID",
-    "validated_against_schema_version",
     "access_level",
     "unique_association_fields",
     "target",
     "disease",
     "evidence"
-  ],
-  "additionalProperties": false
+  ]
 }
