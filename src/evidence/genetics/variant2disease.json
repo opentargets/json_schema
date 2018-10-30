@@ -10,19 +10,16 @@
     },
     {
       "properties": {
-        "allOf": {
-          "$ref": "../base.json"
-        },
         "clinical_significance": {
           "type": "string",
-	  "enum": [
+            "enum": [
               "Pathogenic" ,
               "Likely pathogenic" ,
-	      "protective",
-	      "association",
-	      "risk_factor",
-	      "Affects",
-	      "drug response"
+              "protective",
+              "association",
+              "risk_factor",
+              "Affects",
+              "drug response"
           ]
         },
         "gwas_panel_resolution": {
