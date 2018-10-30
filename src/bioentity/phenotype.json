@@ -40,6 +40,5 @@
         "term_id",
         "label",
         "species"
-    ],
-    "additionalProperties": false
+    ]
 }

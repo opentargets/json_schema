@@ -71,6 +71,5 @@
     "human_gene_id",
     "model_gene_id",
     "species"
-  ],
-  "additionalProperties": false
+  ]
 }

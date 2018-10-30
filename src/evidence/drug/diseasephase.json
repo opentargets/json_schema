@@ -16,6 +16,5 @@
   "required": [
     "numeric_index",
     "label"
-  ],
-  "additionalProperties": false
+  ]
 }

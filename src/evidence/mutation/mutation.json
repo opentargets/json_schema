@@ -86,7 +86,6 @@
       ]
     }
   },
-  "additionalProperties": false,
   "required": [
     "preferred_name",
     "functional_consequence"

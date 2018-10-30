@@ -80,6 +80,5 @@
     "disease_id",
     "model_phenotypes",
     "human_phenotypes"
-  ],
-  "additionalProperties": false
+  ]
 }

@@ -110,6 +110,5 @@
     "zygosity",
     "phenotypes",
     "species"
-  ],
-  "additionalProperties": false
+  ]
 }

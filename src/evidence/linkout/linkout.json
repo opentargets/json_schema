@@ -13,7 +13,6 @@
       "format": "uri"
     }
   },
-  "additionalProperties": false,
   "required": [
     "nice_name",
     "url"
