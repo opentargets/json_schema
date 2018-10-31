@@ -66,7 +66,7 @@
           "description": "List of phenotypes for this model",
           "items": {          
             "type": "object",
-            "$ref": "bioentity/phenotype.json"
+            "$ref": "../../bioentity/phenotype.json"
           },
           "minItems": 1
         },
@@ -74,7 +74,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "evidence/linkout/linkout.json"
+            "$ref": "../linkout/linkout.json"
           }
         }
       }
