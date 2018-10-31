@@ -24,7 +24,7 @@
       "type": "object",
       "$ref": "method.json"
     }
-  }
+  },
   "required": [
     "position",
     "sample_size",
