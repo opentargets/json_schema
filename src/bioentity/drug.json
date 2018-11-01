@@ -20,7 +20,7 @@
         },
         "max_phase_for_all_diseases": {
           "type": "object",
-          "$ref": "evidence/drug/diseasephase.json"
+          "$ref": "../evidence/drug/diseasephase.json"
         },
         "withdrawn_country": {
           "type": ["string","null"]
