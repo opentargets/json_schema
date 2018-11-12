@@ -3,7 +3,7 @@
   "title": "mutation",
   "description": "Details about mutation",
   "type": "object",
-  "version": "1.2.8",
+  "version": "1.3.0",
   "properties": {
     "role_in_cancer": {
       "description": "The role in cancer can be TSG, oncogene or gene_fusion",

@@ -3,7 +3,7 @@
   "title": "Clinical study phase information",
   "description": "Clinical study phase information",
   "type": "object",
-  "version": "1.2.8",
+  "version": "1.3.0",
   "properties": {
     "numeric_index": {
       "description": "An integer indicating the position of this study phase. Higher the number = more advanced phase.",

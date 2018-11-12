@@ -3,7 +3,7 @@
     "title": "Variant",
     "description": "OpenTargets variant model - an array of dbSNP, European structural variant (esv) or NCBI structural variant (nsv)",
     "type": "object",
-    "version": "1.2.8",
+    "version": "1.3.0",
     "allOf": [
         {
             "properties": {

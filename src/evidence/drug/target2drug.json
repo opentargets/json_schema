@@ -3,7 +3,7 @@
   "title": "drug_mechanism_of_action_evidence",
   "description": "Mechanism of action evidence linking gene/protein to drug",
   "type": "object",
-  "version": "1.2.8",
+  "version": "1.3.0",
   "allOf": [
     {
       "$ref": "../base.json"

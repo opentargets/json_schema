@@ -3,7 +3,7 @@
   "title": "Target-Disease-Association",
   "description": "Schema for different types of target-disease associations used by OpenTargets",
   "type": "object",
-  "version": "1.2.8",
+  "version": "1.3.0",
   "properties": {
     "sourceID": {
       "type": "string",
