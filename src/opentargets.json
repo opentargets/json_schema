@@ -1,0 +1,811 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenTargets",
+  "description": "OpenTargets evidence objects",
+  "type": "object",
+  "properties": {
+    "sourceID": {
+      "type": "string",
+      "description": "A source ID (database or study ID) to help identify who this data is from.",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "access_level": {
+      "description": "Choose public as default; private is for internal datasets",
+      "type": "string",
+      "enum": [
+        "public",
+        "private"
+      ]
+    },
+    "unique_association_fields": {
+      "description": "String based key-value properties that must uniquely identify each JSON object in your data.",
+      "type": "object"
+    },
+    "target": {
+      "type": "object",
+      "description": "Target in OpenTargets's target ontology",
+      "$ref": "#/definitions/target"
+    },
+    "disease": {
+      "type": "object",
+      "description": "Disease in the EFO ontology",
+      "$ref": "#/definitions/disease"
+    },
+    "literature": {
+      "type": "object",
+      "properties": {
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/single_lit_reference"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "rna_expression",
+        "known_drug"
+      ]
+    },
+    "evidence": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "sourceID",
+    "access_level",
+    "unique_association_fields",
+    "target",
+    "disease",
+    "type",
+    "evidence"
+  ],
+  "oneOf": [
+    {
+      "$ref": "#/definitions/evidence_rna_expression"
+    },
+    {
+      "$ref": "#/definitions/evidence_known_drug"
+    }
+  ],
+  "definitions": {
+    "single_lit_reference": {
+      "properties": {
+        "lit_id": {
+          "type": "string",
+          "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
+          "pattern": "NA|http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)$"
+        },
+        "rank": {
+          "type": "object",
+          "$ref": "#/definitions/score_rank"
+        },
+        "mined_sentences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "section": {
+                "type": "string",
+                "enum": [
+                  "title",
+                  "abstract",
+                  "introduction_and_background",
+                  "results",
+                  "discussion",
+                  "case_study",
+                  "conclusion_and_future_work",
+                  "appendix",
+                  "figure",
+                  "table",
+                  "other"
+                ],
+                "description": "Section of the article in which this sentence appears"
+              },
+              "t_start": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Start co-ordinate of target (protein/gene) in text"
+              },
+              "t_end": {
+                "type": "number",
+                "minimum": 0,
+                "description": "End co-ordinate of target (protein/gene) in text"
+              },
+              "d_start": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Start co-ordinate of disease name in text"
+              },
+              "d_end": {
+                "type": "number",
+                "minimum": 0,
+                "description": "End co-ordinate of disease name in text"
+              }
+            },
+            "required": [
+              "text",
+              "section"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "target": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "An Ensembl or UniProt identifier",
+          "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
+        },
+        "tier": {
+          "type": "string",
+          "description": "Cancer Gene Census genes has been split into two tiers",
+          "enum": [
+            "tier 1",
+            "tier 2"
+          ]
+        },
+        "complex_id": {
+          "type": "string",
+          "description": "A ChEMBL protein complex identifier",
+          "pattern": "^CHEMBL[0-9]+$"
+        },
+        "complex_members": {
+          "type": "array",
+          "items": {
+            "description": "Other protein targets that interact with the gene or protein",
+            "type": "string",
+            "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "complex_type": {
+          "type": "string",
+          "enum": [
+            "http://identifiers.org/cttv.target/chimeric_protein",
+            "http://identifiers.org/cttv.target/protein_complex",
+            "http://identifiers.org/cttv.target/protein_complex_group",
+            "http://identifiers.org/cttv.target/protein_complex_heteropolymer",
+            "http://identifiers.org/cttv.target/protein_complex_homopolymer",
+            "http://identifiers.org/cttv.target/protein_family",
+            "http://identifiers.org/cttv.target/selectivity_group"
+          ],
+          "description": "Type of target"
+        },
+        "target_type": {
+          "type": "string",
+          "enum": [
+            "http://identifiers.org/cttv.target/gene_allele",
+            "http://identifiers.org/cttv.target/gene_evidence",
+            "http://identifiers.org/cttv.target/gene_in_LD_region",
+            "http://identifiers.org/cttv.target/gene_in_epigenetic_regulation_complex",
+            "http://identifiers.org/cttv.target/gene_variant",
+            "http://identifiers.org/cttv.target/pro_protein",
+            "http://identifiers.org/cttv.target/protein_evidence",
+            "http://identifiers.org/cttv.target/transcript_evidence",
+            "http://identifiers.org/cttv.target/transcript_isoform",
+            "http://identifiers.org/cttv.target/protein_isoform",
+            "http://identifiers.org/cttv.target/gene_or_protein_or_transcript"
+          ],
+          "description": "Type of target; if you do not have detailed information, select from gene_evidence, protein_evidence or transcript_evidence"
+        },
+        "activity": {
+          "type": "string",
+          "enum": [
+            "http://identifiers.org/cttv.activity/decreased_transcript_level",
+            "http://identifiers.org/cttv.activity/decreased_translational_product_level",
+            "http://identifiers.org/cttv.activity/drug_negative_modulator",
+            "http://identifiers.org/cttv.activity/drug_positive_modulator",
+            "http://identifiers.org/cttv.activity/gain_of_function",
+            "http://identifiers.org/cttv.activity/increased_transcript_level",
+            "http://identifiers.org/cttv.activity/increased_translational_product_level",
+            "http://identifiers.org/cttv.activity/loss_of_function",
+            "http://identifiers.org/cttv.activity/partial_loss_of_function",
+            "http://identifiers.org/cttv.activity/up_or_down",
+            "http://identifiers.org/cttv.activity/up",
+            "http://identifiers.org/cttv.activity/down",
+            "http://identifiers.org/cttv.activity/tolerated",
+            "http://identifiers.org/cttv.activity/predicted",
+            "http://identifiers.org/cttv.activity/damaging",
+            "http://identifiers.org/cttv.activity/damaging_to_target",
+            "http://identifiers.org/cttv.activity/predicted_tolerated",
+            "http://identifiers.org/cttv.activity/predicted_damaging",
+            "http://identifiers.org/cttv.activity/tolerated_by_target",
+            "http://identifiers.org/cttv.activity/unknown"
+          ],
+          "description": "Activity of target in disease context"
+        },
+        "target_name": {
+          "type": "string",
+          "description": "used by ChEMBL initially if they have a more canonical target name, optional"
+        },
+        "target_class": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "target_type",
+        "activity"
+      ],
+      "dependencies": {
+        "complex_members": [
+          "complex_type"
+        ],
+        "complex_type": [
+          "complex_members"
+        ]
+      }
+    },
+    "disease": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "A valid EFO IRI",
+          "pattern": "^http://purl.bioontology.org/omim/OMIM_[0-9]{1,}|http://www.orpha.net/ORDO/Orphanet_[0-9]{1,}|http://purl.obolibrary.org/obo/DOID_[0-9]{2,}|http://www.ebi.ac.uk/efo/EFO_[0-9]{7,}|http://purl.obolibrary.org/obo/HP_[0-9]{4,}|http://purl.obolibrary.org/obo/GO_[0-9]{4,}|http://purl.obolibrary.org/obo/MP_[0-9]{3,}|http://purl.obolibrary.org/obo/PATO_[0-9]{4,}|http://purl.obolibrary.org/obo/MPATH_[0-9]{1,}$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Optional - EFO disease name corresponding to the EFO ID"
+        },
+        "source_name": {
+          "type": "string",
+          "description": "Optional - EFO disease name corresponding to the EFO ID"
+        },
+        "biosample": {
+          "description": "Tissue names - provide EFO name if you have this",
+          "title": "Disease Biosample",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "free text of the tissue / cell name"
+            },
+            "id": {
+              "type": "string",
+              "format": "uri",
+              "description": "EFO ID of the tissue - optional"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "evidence_rna_expression": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "rna_expression"
+          ]
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "organism_part": {
+              "type": "string"
+            },
+            "comparison_name": {
+              "type": "string"
+            },
+            "log2_fold_change": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "number"
+                },
+                "percentile_rank": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                }
+              },
+              "required": [
+                "value",
+                "percentile_rank"
+              ]
+            },
+            "test_sample": {
+              "description": "Free text - test sample",
+              "type": "string"
+            },
+            "reference_sample": {
+              "description": "Free text - reference sample",
+              "type": "string"
+            },
+            "test_replicates_n": {
+              "description": "Count of test replicates",
+              "type": "number",
+              "minimum": 1
+            },
+            "reference_replicates_n": {
+              "description": "Count of reference replicates",
+              "type": "number",
+              "minimum": 1
+            },
+            "confidence_level": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ],
+              "description": "high = if the disease state is the only variable (i.e. case vs control); medium = if the disease is a variable but there is one or more other variables; low = where all samples have the disease but the variable is something else e.g. a treatment"
+            },
+            "experiment_overview": {
+              "type": "string"
+            },
+            "evidence_codes": {
+              "type": "array",
+              "description": "An array of evidence codes",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "http://purl.obolibrary.org/obo/ECO_0000356",
+                  "http://purl.obolibrary.org/obo/ECO_0000357",
+                  "http://purl.obolibrary.org/obo/ECO_0000358",
+                  "http://purl.obolibrary.org/obo/ECO_0000359",
+                  "http://purl.obolibrary.org/obo/ECO_0000205"
+                ]
+              },
+              "minItems": 1
+            },
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "$ref": "#/definitions/linkout"
+              }
+            },
+            "unique_experiment_reference": {
+              "type": "string",
+              "description": "A unique experiment identifier or literature reference that uniquely identifies the study in your database",
+              "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)|STUDYID_.+$"
+            },
+            "is_associated": {
+              "type": "boolean"
+            },
+            "date_asserted": {
+              "type": "string",
+              "description": "date the evidence was made public",
+              "format": "date-time"
+            },
+            "resource_score": {
+              "type": "object",
+              "oneOf": [
+                {
+                  "$ref": "#/definitions/score_pvalue"
+                },
+                {
+                  "$ref": "#/definitions/score_probability"
+                },
+                {
+                  "$ref": "#/definitions/score_rank"
+                },
+                {
+                  "$ref": "#/definitions/score_summed_total"
+                }
+              ]
+            },
+            "provenance_type": {
+              "type": "object",
+              "properties": {
+                "expert": {
+                  "type": "object",
+                  "properties": {
+                    "statement": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "object",
+                      "properties": {
+                        "organization": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "status": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "status"
+                  ]
+                },
+                "literature": {
+                  "type": "object",
+                  "properties": {
+                    "references": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "#/definitions/single_lit_reference"
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "references"
+                  ]
+                },
+                "database": {
+                  "type": "object",
+                  "properties": {
+                    "dbxref": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Please provide the original DB name"
+                        },
+                        "url": {
+                          "type": "string",
+                          "format": "uri",
+                          "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
+                        },
+                        "version": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "version"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "resource_score",
+            "provenance_type",
+            "is_associated",
+            "date_asserted",
+            "evidence_codes",
+            "comparison_name",
+            "log2_fold_change",
+            "test_sample",
+            "reference_sample",
+            "experiment_overview",
+            "unique_experiment_reference",
+            "test_replicates_n",
+            "reference_replicates_n",
+            "confidence_level"
+          ]
+          
+        }
+      },
+      "required": [
+        "type",
+        "evidence"
+      ]
+    },
+    "evidence_known_drug": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "known_drug"
+          ]
+        },
+        "drug": {
+          "type": "object",
+          "$ref": "#/definitions/drug"
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "target2drug": {
+              "type": "object",
+              "$ref": "#/definitions/target2drug"
+            },
+            "drug2clinic": {
+              "type": "object",
+              "$ref": "#/definitions/drug2clinic"
+            }
+          },
+          "required": [
+            "target2drug",
+            "drug2clinic"
+          ]
+        }
+      },
+      "required": [
+        "drug"
+      ]
+    },
+    "score_method": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string",
+          "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
+          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "score_pvalue": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "pvalue"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "maximum": 1,
+          "exclusiveMinimum": 0
+        },
+        "method": {
+          "type": "object",
+          "$ref": "#/definitions/score_method"
+        }
+      }
+    },
+    "score_probability": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "probability"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "maximum": 1,
+          "exclusiveMinimum": 0
+        },
+        "method": {
+          "type": "object",
+          "$ref": "#/definitions/score_method"
+        }
+      },
+      "required": [
+        "value",
+        "type"
+      ]
+    },
+    "score_summed_total": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "summed_total"
+          ]
+        },
+        "value": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "method": {
+          "type": "object",
+          "$ref": "#/definitions/score_method"
+        }
+      },
+      "required": [
+        "value",
+        "type"
+      ]
+    },
+    "score_rank": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "rank"
+          ]
+        },
+        "position": {
+          "type": "number",
+          "minimum": 1
+        },
+        "sample_size": {
+          "type": "number",
+          "minimum": 1
+        },
+        "method": {
+          "type": "object",
+          "$ref": "#/definitions/score_method"
+        }
+      },
+      "required": [
+        "position",
+        "sample_size",
+        "type"
+      ]
+    },
+    "linkout": {
+      "properties": {
+        "nice_name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "nice_name",
+        "url"
+      ]
+    },
+    "drug": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "A ChEMBL or internal drug identifier",
+          "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$|^http://private/.+$"
+        },
+        "molecule_name": {
+          "type": "string"
+        },
+        "molecule_type": {
+          "type": "string"
+        },
+        "max_phase_for_all_diseases": {
+          "type": "object",
+          "$ref": "#/definitions/diseasephase"
+        },
+        "withdrawn_country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "withdrawn_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "withdrawn_year": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "molecule_name",
+        "molecule_type"
+      ]
+    },
+    "diseasephase": {
+      "properties": {
+        "numeric_index": {
+          "description": "An integer indicating the position of this study phase. Higher the number = more advanced phase.",
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "numeric_index",
+        "label"
+      ]
+    },
+    "target2drug": {
+      "properties": {
+        "evidence_codes": {
+          "type": "array",
+          "description": "An array of evidence codes",
+          "items": {
+            "type": "string",
+            "enum": [
+              "http://identifiers.org/eco/target_drug",
+              "http://purl.obolibrary.org/obo/ECO_0000205"
+            ]
+          },
+          "minItems": 1
+        },
+        "mechanism_of_action": {
+          "type": "string"
+        },
+        "action_type": {
+          "type": "string"
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/linkout"
+          }
+        }
+      },
+      "required": [
+        "resource_score",
+        "provenance_type",
+        "is_associated",
+        "date_asserted",
+        "evidence_codes",
+        "mechanism_of_action",
+        "action_type"
+      ]
+    },
+    "drug2clinic": {
+      "properties": {
+        "evidence_codes": {
+          "type": "array",
+          "description": "An array of evidence codes",
+          "items": {
+            "type": "string",
+            "enum": [
+              "http://identifiers.org/eco/drug_disease",
+              "http://purl.obolibrary.org/obo/ECO_0000205"
+            ]
+          },
+          "minItems": 1
+        },
+        "max_phase_for_disease": {
+          "type": "object",
+          "$ref": "#/definitions/diseasephase"
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/linkout"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "resource_score",
+        "provenance_type",
+        "is_associated",
+        "date_asserted",
+        "evidence_codes",
+        "max_phase_for_disease"
+      ]
+    }
+  }
+}
