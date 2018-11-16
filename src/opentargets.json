@@ -785,25 +785,81 @@
         "evidence": {
           "type": "object",
           "properties": {
-              "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                      "type": "string",
-                      "enum": [
-                          "http://www.targetvalidation.org/evidence/literature_mining",
-                          "http://purl.obolibrary.org/obo/ECO_0000213"
-                      ]
-                  },
-                  "minItems": 1
+            "evidence_codes": {
+              "type": "array",
+              "description": "An array of evidence codes",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "http://www.targetvalidation.org/evidence/literature_mining",
+                  "http://purl.obolibrary.org/obo/ECO_0000213"
+                ]
               },
-              "literature_ref": {
-                  "type": "object",
-                  "$ref": "#/definitions/single_lit_reference"
-              }
+              "minItems": 1
+            },
+            "literature_ref": {
+              "type": "object",
+              "$ref": "#/definitions/single_lit_reference"
+            }
           }
         }
-      }
+      },
+      "required": [
+        "type",
+        "evidence"
+      ]
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "genetic_association"
+        }
+      },
+      "variant": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "An array of variant identifiers",
+            "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "snp single",
+              "snp snp interaction",
+              "structural variant"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ]
+      },
+      "evidence": {
+        "type": "object",
+        "properties": {
+          "gene2variant": {
+            "type": "object",
+            "$ref": "evidence/genetics/gene2variant.json"
+          },
+          "variant2disease": {
+            "type": "object",
+            "$ref": "evidence/genetics/variant2disease.json"
+          }
+        },
+        "required": [
+          "gene2variant",
+          "variant2disease"
+        ]
+      },
+      "required": [
+        "type",
+        "evidence",
+        "variant"
+      ]
     }
   ],
   "definitions": {
