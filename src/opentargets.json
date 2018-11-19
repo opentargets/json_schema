@@ -317,7 +317,10 @@
         "resource_score",
         "provenance_type"
       ]
-    }
+    },
+    "type": {
+      "type": "string"
+    },
   },
   "required": [
     "sourceID",
@@ -331,11 +334,9 @@
     {
       "properties": {
         "type": {
-          "type": "string",
           "const": "rna_expression"
         },
         "evidence": {
-          "type": "object",
           "properties": {
             "organism_part": {
               "type": "string"
@@ -434,11 +435,9 @@
     {
       "properties": {
         "type": {
-          "type": "string",
           "const": "known_drug"
         },
         "evidence": {
-          "type": "object",
           "properties": {
             "target2drug": {
               "type": "object",
@@ -577,11 +576,9 @@
     {
       "properties": {
         "type": {
-          "type": "string",
           "const": "animal_model"
         },
         "evidence": {
-          "type": "object",
           "properties": {
             "orthologs": {
               "type": "object",
@@ -779,11 +776,9 @@
     {
       "properties": {
         "type": {
-          "type": "string",
           "const": "literature"
         },
         "evidence": {
-          "type": "object",
           "properties": {
             "evidence_codes": {
               "type": "array",
@@ -812,7 +807,6 @@
     {
       "properties": {
         "type": {
-          "type": "string",
           "const": "genetic_association"
         }
       },
@@ -839,7 +833,6 @@
         ]
       },
       "evidence": {
-        "type": "object",
         "properties": {
           "gene2variant": {
             "type": "object",
