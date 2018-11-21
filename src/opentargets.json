@@ -320,7 +320,7 @@
     },
     "type": {
       "type": "string"
-    },
+    }
   },
   "required": [
     "sourceID",
@@ -565,7 +565,7 @@
             "molecule_name",
             "molecule_type"
           ]
-        },
+        }
       },
       "required": [
         "type",
