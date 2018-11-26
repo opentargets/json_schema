@@ -190,136 +190,7 @@
       }
     },
     "evidence": {
-      "type": "object",
-      "properties": {
-        "unique_experiment_reference": {
-          "type": "string",
-          "description": "A unique experiment identifier or literature reference that uniquely identifies the study in your database",
-          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)|STUDYID_.+$"
-        },
-        "is_associated": {
-          "type": "boolean"
-        },
-        "date_asserted": {
-          "type": "string",
-          "description": "date the evidence was made public",
-          "format": "date-time"
-        },
-        "resource_score": {
-          "type": "object",
-          "oneOf": [
-            {
-              "$ref": "#/definitions/score_pvalue"
-            },
-            {
-              "$ref": "#/definitions/score_probability"
-            },
-            {
-              "$ref": "#/definitions/score_rank"
-            },
-            {
-              "$ref": "#/definitions/score_summed_total"
-            }
-          ]
-        },
-        "provenance_type": {
-          "type": "object",
-          "properties": {
-            "expert": {
-              "type": "object",
-              "properties": {
-                "statement": {
-                  "type": "string"
-                },
-                "author": {
-                  "type": "object",
-                  "properties": {
-                    "organization": {
-                      "type": "string"
-                    },
-                    "email": {
-                      "type": "string",
-                      "format": "email"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "status": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "status"
-              ]
-            },
-            "literature": {
-              "type": "object",
-              "properties": {
-                "references": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/single_lit_reference"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
-              },
-              "required": [
-                "references"
-              ]
-            },
-            "database": {
-              "type": "object",
-              "properties": {
-                "dbxref": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "description": "Please provide the original DB name"
-                    },
-                    "url": {
-                      "type": "string",
-                      "format": "uri",
-                      "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
-                    },
-                    "version": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "version"
-                  ]
-                },
-                "id": {
-                  "type": "string"
-                },
-                "version": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "version"
-              ]
-            }
-          }
-        }
-      },
-      "required": [
-        "unique_experiment_reference",
-        "is_associated",
-        "date_asserted",
-        "resource_score",
-        "provenance_type"
-      ]
-    },
-    "type": {
-      "type": "string"
+      "type": "object"
     }
   },
   "required": [
@@ -337,6 +208,11 @@
           "const": "rna_expression"
         },
         "evidence": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/evidence_base"
+            }
+          ],
           "properties": {
             "organism_part": {
               "type": "string"
@@ -441,6 +317,11 @@
           "properties": {
             "target2drug": {
               "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/evidence_base"
+                }
+              ],
               "properties": {
                 "evidence_codes": {
                   "type": "array",
@@ -480,6 +361,11 @@
             },
             "drug2clinic": {
               "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/evidence_base"
+                }
+              ],
               "properties": {
                 "evidence_codes": {
                   "type": "array",
@@ -582,6 +468,11 @@
           "properties": {
             "orthologs": {
               "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/evidence_base"
+                }
+              ],
               "properties": {
                 "evidence_codes": {
                   "type": "array",
@@ -625,6 +516,11 @@
             },
             "biological_model": {
               "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/evidence_base"
+                }
+              ],
               "properties": {
                 "evidence_codes": {
                   "type": "array",
@@ -712,6 +608,11 @@
             },
             "disease_model_association": {
               "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/evidence_base"
+                }
+              ],
               "properties": {
                 "evidence_codes": {
                   "type": "array",
@@ -779,6 +680,11 @@
           "const": "literature"
         },
         "evidence": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/evidence_base"
+            }
+          ],
           "properties": {
             "evidence_codes": {
               "type": "array",
@@ -836,11 +742,101 @@
         "properties": {
           "gene2variant": {
             "type": "object",
-            "$ref": "evidence/genetics/gene2variant.json"
+            "allOf": [
+              {
+                "$ref": "#/definitions/evidence_base"
+              }
+            ],
+            "properties": {
+              "evidence_codes": {
+                "type": "array",
+                "description": "An array of evidence codes",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "http://identifiers.org/eco/cttv_mapping_pipeline",
+                    "http://purl.obolibrary.org/obo/ECO_0000205",
+                    "http://purl.obolibrary.org/obo/ECO_0000305"
+                  ]
+                },
+                "minItems": 1
+              },
+              "functional_consequence": {
+                "type": "uri"
+              },
+              "urls": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "$ref": "#/definitions/linkout"
+                }
+              }
+            },
+            "required": [
+              "provenance_type",
+              "is_associated",
+              "date_asserted",
+              "evidence_codes",
+              "functional_consequence"
+            ]
           },
           "variant2disease": {
             "type": "object",
-            "$ref": "evidence/genetics/variant2disease.json"
+            "allOf": {
+              "$ref": "#/definitions/evidence_base"
+            },
+            "properties": {
+              "clinical_significance": {
+                "type": "string",
+                "enum": [
+                  "Pathogenic",
+                  "Likely pathogenic",
+                  "protective",
+                  "association",
+                  "risk_factor",
+                  "Affects",
+                  "drug response"
+                ]
+              },
+              "gwas_panel_resolution": {
+                "description": "Panel resolution of GWAS study",
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "gwas_sample_size": {
+                "description": "Sample size of GWAS study",
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "evidence_codes": {
+                "type": "array",
+                "description": "An array of evidence codes",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "http://identifiers.org/eco/GWAS",
+                    "http://identifiers.org/eco/PheWAS",
+                    "http://purl.obolibrary.org/obo/ECO_0000205"
+                  ]
+                },
+                "minItems": 1
+              },
+              "urls": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "$ref": "#/definitions/linkout.json"
+                }
+              }
+            },
+            "required": [
+              "unique_experiment_reference",
+              "resource_score",
+              "provenance_type",
+              "is_associated",
+              "date_asserted",
+              "evidence_codes"
+            ]
           }
         },
         "required": [
@@ -852,6 +848,160 @@
         "type",
         "evidence",
         "variant"
+      ]
+    },
+    {
+      "properties": {
+        "type": {
+          "enum": [
+            "genetic_literature",
+            "affected_pathway",
+            "somatic_mutation"
+          ]
+        },
+        "evidence": {
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/evidence_base"
+            }
+          ],
+          "properties": {
+            "clinical_significance": {
+              "type": "string",
+              "enum": [
+                "Pathogenic",
+                "Likely pathogenic",
+                "protective",
+                "association",
+                "risk_factor",
+                "Affects",
+                "drug response"
+              ]
+            },
+            "evidence_codes": {
+              "description": "An array of evidence codes",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "http://purl.obolibrary.org/obo/ECO_0000213",
+                  "http://purl.obolibrary.org/obo/ECO_0000305",
+                  "http://www.targetvalidation.org/evidence/literature_mining",
+                  "http://purl.obolibrary.org/obo/ECO_0000204",
+                  "http://purl.obolibrary.org/obo/ECO_0000205",
+                  "http://purl.obolibrary.org/obo/ECO_0000053"
+                ]
+              },
+              "minItems": 1
+            },
+            "known_mutations": {
+              "description": "An array of mutations",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "role_in_cancer": {
+                    "description": "The role in cancer can be TSG, oncogene or gene_fusion",
+                    "type": "string"
+                  },
+                  "preferred_name": {
+                    "description": "The preferred name for this mutation, e.g. NM_005228.3(EGFR):c.2500G>T (p.Val834Leu)",
+                    "type": "string"
+                  },
+                  "alternative_names": {
+                    "description": "A list of alternative names for this mutation, if known e.g. NC_000007.14:g.55191749G>T",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1
+                  },
+                  "functional_consequence": {
+                    "description": "For COSMIC: sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",
+                    "type": "string",
+                    "enum": [
+                      "http://purl.obolibrary.org/obo/SO_0001893",
+                      "http://purl.obolibrary.org/obo/SO_0001632",
+                      "http://purl.obolibrary.org/obo/SO_0001631",
+                      "http://purl.obolibrary.org/obo/SO_0000159",
+                      "http://purl.obolibrary.org/obo/SO_0001583",
+                      "http://purl.obolibrary.org/obo/SO_0001587",
+                      "http://purl.obolibrary.org/obo/SO_0001590",
+                      "http://purl.obolibrary.org/obo/SO_1000065",
+                      "http://purl.obolibrary.org/obo/SO_0001539",
+                      "http://purl.obolibrary.org/obo/SO_0001605",
+                      "http://purl.obolibrary.org/obo/SO_0001825",
+                      "http://purl.obolibrary.org/obo/SO_0001553",
+                      "http://purl.obolibrary.org/obo/SO_0001059",
+                      "http://purl.obolibrary.org/obo/SO_0001821",
+                      "http://purl.obolibrary.org/obo/SO_0001578",
+                      "http://purl.obolibrary.org/obo/SO_0001630",
+                      "http://purl.obolibrary.org/obo/SO_0001575",
+                      "http://purl.obolibrary.org/obo/SO_0001589",
+                      "http://targetvalidation.org/sequence/nearest_gene_five_prime_end",
+                      "http://purl.obolibrary.org/obo/SO_0001574",
+                      "http://purl.obolibrary.org/obo/SO_0001819",
+                      "http://purl.obolibrary.org/obo/SO_0001822",
+                      "http://purl.obolibrary.org/obo/SO_0001818",
+                      "http://purl.obolibrary.org/obo/SO_0001564",
+                      "http://purl.obolibrary.org/obo/SO_0001565",
+                      "http://purl.obolibrary.org/obo/SO_0002012",
+                      "http://purl.obolibrary.org/obo/SO_0001627",
+                      "http://purl.obolibrary.org/obo/SO_0001060",
+                      "http://purl.obolibrary.org/obo/SO_0001624",
+                      "http://purl.obolibrary.org/obo/SO_0001623"
+                    ]
+                  },
+                  "number_samples_tested": {
+                    "description": "The number of samples tested",
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "number_samples_with_mutation_type": {
+                    "description": "The number of samples for this mutation type if known",
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "number_mutated_samples": {
+                    "description": "The total number of samples with any type of mutation if known",
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "inheritance_pattern": {
+                    "description": "dominant (a single copy of the abnormal allele is sufficient to give rise to the disease), semi-dominant, or recessive (requiring both copies of the gene to have an abnormal allele)",
+                    "type": "string",
+                    "enum": [
+                      "unknown",
+                      "dominant",
+                      "semi-dominant",
+                      "co-dominant",
+                      "recessive",
+                      "dominant/recessive",
+                      "X-linked recessive"
+                    ]
+                  }
+                },
+                "required": [
+                  "preferred_name",
+                  "functional_consequence"
+                ]
+              },
+              "minItems": 0
+            },
+            "urls": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "$ref": "#/definitions/linkout"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "type",
+        "evidence"
       ]
     }
   ],
@@ -1095,6 +1245,128 @@
         "numeric_index",
         "label"
       ]
+    },
+    "evidence_base": {
+      "type": "object",
+      "properties": {
+        "unique_experiment_reference": {
+          "type": "string",
+          "description": "A unique experiment identifier or literature reference that uniquely identifies the study in your database",
+          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)|STUDYID_.+$"
+        },
+        "is_associated": {
+          "type": "boolean"
+        },
+        "date_asserted": {
+          "type": "string",
+          "description": "date the evidence was made public",
+          "format": "date-time"
+        },
+        "resource_score": {
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "#/definitions/score_pvalue"
+            },
+            {
+              "$ref": "#/definitions/score_probability"
+            },
+            {
+              "$ref": "#/definitions/score_rank"
+            },
+            {
+              "$ref": "#/definitions/score_summed_total"
+            }
+          ]
+        },
+        "provenance_type": {
+          "type": "object",
+          "properties": {
+            "expert": {
+              "type": "object",
+              "properties": {
+                "statement": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "object",
+                  "properties": {
+                    "organization": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "status": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "status"
+              ]
+            },
+            "literature": {
+              "type": "object",
+              "properties": {
+                "references": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/definitions/single_lit_reference"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "references"
+              ]
+            },
+            "database": {
+              "type": "object",
+              "properties": {
+                "dbxref": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Please provide the original DB name"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "version"
+                  ]
+                },
+                "id": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "version"
+              ]
+            }
+          }
+        }
+      }
     }
   }
 }
