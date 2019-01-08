@@ -996,7 +996,10 @@
                 "$ref": "#/definitions/linkout"
               }
             }
-          }
+          },
+          "required": [
+            "evidence_codes"
+          ]
         }
       },
       "required": [
@@ -1366,7 +1369,13 @@
             }
           }
         }
-      }
+      },
+      "required": [
+        "resource_score",
+        "provenance_type",
+        "is_associated",
+        "date_asserted"
+      ]
     }
   }
 }
