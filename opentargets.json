@@ -117,7 +117,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "uniqueItems": true
         }
       },
       "required": [
@@ -271,23 +272,18 @@
               "type": "array",
               "description": "An array of evidence codes",
               "items": {
-                "type": "string",
-                "enum": [
-                  "http://purl.obolibrary.org/obo/ECO_0000356",
-                  "http://purl.obolibrary.org/obo/ECO_0000357",
-                  "http://purl.obolibrary.org/obo/ECO_0000358",
-                  "http://purl.obolibrary.org/obo/ECO_0000359",
-                  "http://purl.obolibrary.org/obo/ECO_0000205"
-                ]
+                "type": "string"
               },
-              "minItems": 1
+              "minItems": 1,
+              "uniqueItems": true
             },
             "urls": {
               "type": "array",
               "items": {
                 "type": "object",
                 "$ref": "#/definitions/linkout"
-              }
+              },
+              "uniqueItems": true
             }
           },
           "required": [
@@ -327,13 +323,10 @@
                   "type": "array",
                   "description": "An array of evidence codes",
                   "items": {
-                    "type": "string",
-                    "enum": [
-                      "http://identifiers.org/eco/target_drug",
-                      "http://purl.obolibrary.org/obo/ECO_0000205"
-                    ]
+                    "type": "string"
                   },
-                  "minItems": 1
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "mechanism_of_action": {
                   "type": "string"
@@ -346,7 +339,8 @@
                   "items": {
                     "type": "object",
                     "$ref": "#/definitions/linkout"
-                  }
+                  },
+                  "uniqueItems": true
                 }
               },
               "required": [
@@ -371,13 +365,10 @@
                   "type": "array",
                   "description": "An array of evidence codes",
                   "items": {
-                    "type": "string",
-                    "enum": [
-                      "http://identifiers.org/eco/drug_disease",
-                      "http://purl.obolibrary.org/obo/ECO_0000205"
-                    ]
+                    "type": "string"
                   },
-                  "minItems": 1
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "max_phase_for_disease": {
                   "type": "object",
@@ -388,7 +379,8 @@
                   "items": {
                     "type": "object",
                     "$ref": "#/definitions/linkout"
-                  }
+                  },
+                  "uniqueItems": true
                 },
                 "status": {
                   "type": "string"
@@ -479,9 +471,7 @@
                   "description": "An array of evidence codes",
                   "items": {
                     "type": "string",
-                    "enum": [
-                      "http://identifiers.org/eco/ECO:0000265"
-                    ]
+                    "uniqueItems": true
                   },
                   "minItems": 1
                 },
@@ -510,7 +500,8 @@
                   "items": {
                     "type": "object",
                     "$ref": "#/definitions/linkout"
-                  }
+                  },
+                  "uniqueItems": true
                 }
               }
             },
@@ -526,12 +517,10 @@
                   "type": "array",
                   "description": "An array of evidence codes",
                   "items": {
-                    "type": "string",
-                    "enum": [
-                      "http://identifiers.org/eco/ECO:0000179"
-                    ]
+                    "type": "string"
                   },
-                  "minItems": 1
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "model_gene_id": {
                   "type": "string",
@@ -580,14 +569,16 @@
                     "type": "object",
                     "$ref": "#/definitions/phenotype"
                   },
-                  "minItems": 1
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "urls": {
                   "type": "array",
                   "items": {
                     "type": "object",
                     "$ref": "#/definitions/linkout"
-                  }
+                  },
+                  "uniqueItems": true
                 }
               },
               "required": [
@@ -618,12 +609,10 @@
                   "type": "array",
                   "description": "An array of evidence codes",
                   "items": {
-                    "type": "string",
-                    "enum": [
-                      "http://identifiers.org/eco/ECO:0000057"
-                    ]
+                    "type": "string"
                   },
-                  "minItems": 1
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "model_id": {
                   "type": "string",
@@ -641,7 +630,8 @@
                     "type": "object",
                     "$ref": "#/definitions/phenotype"
                   },
-                  "minItems": 1
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "model_phenotypes": {
                   "type": "array",
@@ -650,14 +640,16 @@
                     "type": "object",
                     "$ref": "#/definitions/phenotype"
                   },
-                  "minItems": 1
+                  "minItems": 1,
+                  "uniqueItems": true
                 },
                 "urls": {
                   "type": "array",
                   "items": {
                     "type": "object",
                     "$ref": "#/definitions/linkout"
-                  }
+                  },
+                  "uniqueItems": true
                 }
               }
             }
@@ -690,13 +682,10 @@
               "type": "array",
               "description": "An array of evidence codes",
               "items": {
-                "type": "string",
-                "enum": [
-                  "http://www.targetvalidation.org/evidence/literature_mining",
-                  "http://purl.obolibrary.org/obo/ECO_0000213"
-                ]
+                "type": "string"
               },
-              "minItems": 1
+              "minItems": 1,
+              "uniqueItems": true
             },
             "literature_ref": {
               "type": "object",
@@ -752,14 +741,10 @@
                 "type": "array",
                 "description": "An array of evidence codes",
                 "items": {
-                  "type": "string",
-                  "enum": [
-                    "http://identifiers.org/eco/cttv_mapping_pipeline",
-                    "http://purl.obolibrary.org/obo/ECO_0000205",
-                    "http://purl.obolibrary.org/obo/ECO_0000305"
-                  ]
+                  "type": "string"
                 },
-                "minItems": 1
+                "minItems": 1,
+                "uniqueItems": true
               },
               "functional_consequence": {
                 "type": "uri"
@@ -769,7 +754,8 @@
                 "items": {
                   "type": "object",
                   "$ref": "#/definitions/linkout"
-                }
+                },
+                "uniqueItems": true
               }
             },
             "required": [
@@ -812,21 +798,18 @@
                 "type": "array",
                 "description": "An array of evidence codes",
                 "items": {
-                  "type": "string",
-                  "enum": [
-                    "http://identifiers.org/eco/GWAS",
-                    "http://identifiers.org/eco/PheWAS",
-                    "http://purl.obolibrary.org/obo/ECO_0000205"
-                  ]
+                  "type": "string"
                 },
-                "minItems": 1
+                "minItems": 1,
+                "uniqueItems": true
               },
               "urls": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "$ref": "#/definitions/linkout.json"
-                }
+                },
+                "uniqueItems": true
               }
             },
             "required": [
@@ -883,17 +866,10 @@
               "description": "An array of evidence codes",
               "type": "array",
               "items": {
-                "type": "string",
-                "enum": [
-                  "http://purl.obolibrary.org/obo/ECO_0000213",
-                  "http://purl.obolibrary.org/obo/ECO_0000305",
-                  "http://www.targetvalidation.org/evidence/literature_mining",
-                  "http://purl.obolibrary.org/obo/ECO_0000204",
-                  "http://purl.obolibrary.org/obo/ECO_0000205",
-                  "http://purl.obolibrary.org/obo/ECO_0000053"
-                ]
+                "type": "string"
               },
-              "minItems": 1
+              "minItems": 1,
+              "uniqueItems": true
             },
             "known_mutations": {
               "description": "An array of mutations",
@@ -915,43 +891,12 @@
                     "items": {
                       "type": "string"
                     },
-                    "minItems": 1
+                    "minItems": 1,
+                    "uniqueItems": true
                   },
                   "functional_consequence": {
                     "description": "For COSMIC: sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",
-                    "type": "string",
-                    "enum": [
-                      "http://purl.obolibrary.org/obo/SO_0001893",
-                      "http://purl.obolibrary.org/obo/SO_0001632",
-                      "http://purl.obolibrary.org/obo/SO_0001631",
-                      "http://purl.obolibrary.org/obo/SO_0000159",
-                      "http://purl.obolibrary.org/obo/SO_0001583",
-                      "http://purl.obolibrary.org/obo/SO_0001587",
-                      "http://purl.obolibrary.org/obo/SO_0001590",
-                      "http://purl.obolibrary.org/obo/SO_1000065",
-                      "http://purl.obolibrary.org/obo/SO_0001539",
-                      "http://purl.obolibrary.org/obo/SO_0001605",
-                      "http://purl.obolibrary.org/obo/SO_0001825",
-                      "http://purl.obolibrary.org/obo/SO_0001553",
-                      "http://purl.obolibrary.org/obo/SO_0001059",
-                      "http://purl.obolibrary.org/obo/SO_0001821",
-                      "http://purl.obolibrary.org/obo/SO_0001578",
-                      "http://purl.obolibrary.org/obo/SO_0001630",
-                      "http://purl.obolibrary.org/obo/SO_0001575",
-                      "http://purl.obolibrary.org/obo/SO_0001589",
-                      "http://targetvalidation.org/sequence/nearest_gene_five_prime_end",
-                      "http://purl.obolibrary.org/obo/SO_0001574",
-                      "http://purl.obolibrary.org/obo/SO_0001819",
-                      "http://purl.obolibrary.org/obo/SO_0001822",
-                      "http://purl.obolibrary.org/obo/SO_0001818",
-                      "http://purl.obolibrary.org/obo/SO_0001564",
-                      "http://purl.obolibrary.org/obo/SO_0001565",
-                      "http://purl.obolibrary.org/obo/SO_0002012",
-                      "http://purl.obolibrary.org/obo/SO_0001627",
-                      "http://purl.obolibrary.org/obo/SO_0001060",
-                      "http://purl.obolibrary.org/obo/SO_0001624",
-                      "http://purl.obolibrary.org/obo/SO_0001623"
-                    ]
+                    "type": "string"
                   },
                   "number_samples_tested": {
                     "description": "The number of samples tested",
@@ -994,7 +939,8 @@
               "items": {
                 "type": "object",
                 "$ref": "#/definitions/linkout"
-              }
+              },
+              "uniqueItems": true
             }
           },
           "required": [
