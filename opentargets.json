@@ -58,7 +58,9 @@
             "http://identifiers.org/cttv.target/protein_complex_heteropolymer",
             "http://identifiers.org/cttv.target/protein_complex_homopolymer",
             "http://identifiers.org/cttv.target/protein_family",
+            "http://identifiers.org/cttv.target/protein_protein_interaction",
             "http://identifiers.org/cttv.target/selectivity_group",
+            "http://identifiers.org/cttv.target/single_protein",
             "http://identifiers.org/cttv.target/nucleic_acid"
           ],
           "description": "Type of target; if you do not have detailed information, select from gene_evidence, protein_evidence or transcript_evidence"
