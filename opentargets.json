@@ -344,7 +344,7 @@
                   "minItems": 1,
                   "uniqueItems": true
                 },
-                "max_phase_for_disease": {
+                "clinical_trial_phase": {
                   "type": "object",
                   "$ref": "#/definitions/diseasephase"
                 },
