@@ -428,16 +428,6 @@
             "binding_subunit_known": {
               "type": "boolean",
               "description": "Is the complex binding subunit known"
-            },
-            "complex_members": {
-              "type": "array",
-              "items": {
-                "description": "Other protein targets that interact with the gene or protein",
-                "type": "string",
-                "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
-              },
-              "minItems": 1,
-              "uniqueItems": true
             }
           }
         }
