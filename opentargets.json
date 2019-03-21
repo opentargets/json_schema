@@ -366,7 +366,7 @@
                 "is_associated",
                 "date_asserted",
                 "evidence_codes",
-                "max_phase_for_disease"
+                "clinical_trial_phase"
               ]
             }
           },
