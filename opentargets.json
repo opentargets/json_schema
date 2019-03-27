@@ -806,7 +806,7 @@
                 "type": "array",
                 "items": {
                   "type": "object",
-                  "$ref": "#/definitions/linkout.json"
+                  "$ref": "#/definitions/linkout"
                 },
                 "uniqueItems": true
               }
