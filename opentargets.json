@@ -689,129 +689,129 @@
       "properties": {
         "type": {
           "const": "genetic_association"
-        }
-      },
-      "variant": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "An array of variant identifiers",
-            "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}$"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "snp single",
-              "snp snp interaction",
-              "structural variant"
-            ]
-          }
         },
-        "required": [
-          "id",
-          "type"
-        ]
-      },
-      "evidence": {
-        "properties": {
-          "gene2variant": {
-            "type": "object",
-            "allOf": [
-              {
+        "variant": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "An array of variant identifiers",
+              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}$"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "snp single",
+                "snp snp interaction",
+                "structural variant"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "type"
+          ]
+        },
+        "evidence": {
+          "properties": {
+            "gene2variant": {
+              "type": "object",
+              "allOf": [
+                {
+                  "$ref": "#/definitions/evidence_base"
+                }
+              ],
+              "properties": {
+                "evidence_codes": {
+                  "type": "array",
+                  "description": "An array of evidence codes",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "functional_consequence": {
+                  "type": "uri"
+                },
+                "urls": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/definitions/linkout"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "provenance_type",
+                "is_associated",
+                "date_asserted",
+                "evidence_codes",
+                "functional_consequence"
+              ]
+            },
+            "variant2disease": {
+              "type": "object",
+              "allOf": {
                 "$ref": "#/definitions/evidence_base"
-              }
-            ],
-            "properties": {
-              "evidence_codes": {
-                "type": "array",
-                "description": "An array of evidence codes",
-                "items": {
-                  "type": "string"
-                },
-                "minItems": 1,
-                "uniqueItems": true
               },
-              "functional_consequence": {
-                "type": "uri"
-              },
-              "urls": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "$ref": "#/definitions/linkout"
+              "properties": {
+                "clinical_significance": {
+                  "type": "string",
+                  "enum": [
+                    "Pathogenic",
+                    "Likely pathogenic",
+                    "protective",
+                    "association",
+                    "risk_factor",
+                    "Affects",
+                    "drug response"
+                  ]
                 },
-                "uniqueItems": true
-              }
-            },
-            "required": [
-              "provenance_type",
-              "is_associated",
-              "date_asserted",
-              "evidence_codes",
-              "functional_consequence"
-            ]
+                "gwas_panel_resolution": {
+                  "description": "Panel resolution of GWAS study",
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "gwas_sample_size": {
+                  "description": "Sample size of GWAS study",
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "evidence_codes": {
+                  "type": "array",
+                  "description": "An array of evidence codes",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "urls": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/definitions/linkout"
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "unique_experiment_reference",
+                "resource_score",
+                "provenance_type",
+                "is_associated",
+                "date_asserted",
+                "evidence_codes"
+              ]
+            }
           },
-          "variant2disease": {
-            "type": "object",
-            "allOf": {
-              "$ref": "#/definitions/evidence_base"
-            },
-            "properties": {
-              "clinical_significance": {
-                "type": "string",
-                "enum": [
-                  "Pathogenic",
-                  "Likely pathogenic",
-                  "protective",
-                  "association",
-                  "risk_factor",
-                  "Affects",
-                  "drug response"
-                ]
-              },
-              "gwas_panel_resolution": {
-                "description": "Panel resolution of GWAS study",
-                "type": "number",
-                "exclusiveMinimum": 0
-              },
-              "gwas_sample_size": {
-                "description": "Sample size of GWAS study",
-                "type": "number",
-                "exclusiveMinimum": 0
-              },
-              "evidence_codes": {
-                "type": "array",
-                "description": "An array of evidence codes",
-                "items": {
-                  "type": "string"
-                },
-                "minItems": 1,
-                "uniqueItems": true
-              },
-              "urls": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "$ref": "#/definitions/linkout"
-                },
-                "uniqueItems": true
-              }
-            },
-            "required": [
-              "unique_experiment_reference",
-              "resource_score",
-              "provenance_type",
-              "is_associated",
-              "date_asserted",
-              "evidence_codes"
-            ]
-          }
-        },
-        "required": [
-          "gene2variant",
-          "variant2disease"
-        ]
+          "required": [
+            "gene2variant",
+            "variant2disease"
+          ]
+        }
       },
       "required": [
         "type",
