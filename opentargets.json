@@ -754,9 +754,11 @@
             },
             "variant2disease": {
               "type": "object",
-              "allOf": {
-                "$ref": "#/definitions/evidence_base"
-              },
+              "allOf": [
+                {
+                  "$ref": "#/definitions/evidence_base"
+                }
+              ],
               "properties": {
                 "clinical_significance": {
                   "type": "string",
