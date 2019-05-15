@@ -732,7 +732,8 @@
                   "uniqueItems": true
                 },
                 "functional_consequence": {
-                  "type": "uri"
+                  "type": "string",
+                  "format": "uri"
                 },
                 "urls": {
                   "type": "array",
