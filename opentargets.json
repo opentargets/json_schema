@@ -388,7 +388,8 @@
             },
             "molecule_type": {
               "type": "string"
-            },
+            }
+          },
           "required": [
             "id",
             "molecule_name",
