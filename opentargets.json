@@ -389,29 +389,6 @@
             "molecule_type": {
               "type": "string"
             },
-            "max_phase_for_all_diseases": {
-              "type": "object",
-              "$ref": "#/definitions/diseasephase"
-            },
-            "withdrawn_country": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "withdrawn_reason": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "withdrawn_year": {
-              "type": [
-                "string",
-                "null"
-              ]
-            }
-          },
           "required": [
             "id",
             "molecule_name",
