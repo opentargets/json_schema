@@ -268,7 +268,8 @@
             "experiment_overview",
             "test_replicates_n",
             "reference_replicates_n",
-            "confidence_level"
+            "confidence_level",
+            "resource_score"
           ]
         }
       },
@@ -489,7 +490,10 @@
                   },
                   "uniqueItems": true
                 }
-              }
+              },
+              "required":[
+                "resource_score"
+              ]
             },
             "biological_model": {
               "type": "object",
@@ -636,7 +640,10 @@
                   },
                   "uniqueItems": true
                 }
-              }
+              },
+              "required": [
+                "resource_score"
+              ]
             }
           },
           "required": [
@@ -676,7 +683,10 @@
               "type": "object",
               "$ref": "#/definitions/single_lit_reference"
             }
-          }
+          },
+          "required": [
+            "resource_score"
+          ]
         }
       },
       "required": [
@@ -932,7 +942,8 @@
             }
           },
           "required": [
-            "evidence_codes"
+            "evidence_codes",
+            "resource_score"
           ]
         }
       },
