@@ -70,8 +70,9 @@
           "enum": [
             "http://identifiers.org/cttv.activity/decreased_transcript_level",
             "http://identifiers.org/cttv.activity/decreased_translational_product_level",
-            "http://identifiers.org/cttv.activity/drug_negative_modulator",
-            "http://identifiers.org/cttv.activity/drug_positive_modulator",
+            "http://identifiers.org/cttv.activity/negative_modulator",
+            "http://identifiers.org/cttv.activity/positive_modulator",
+            "http://identifiers.org/cttv.activity/other",
             "http://identifiers.org/cttv.activity/gain_of_function",
             "http://identifiers.org/cttv.activity/increased_transcript_level",
             "http://identifiers.org/cttv.activity/increased_translational_product_level",
@@ -387,28 +388,6 @@
             },
             "molecule_type": {
               "type": "string"
-            },
-            "max_phase_for_all_diseases": {
-              "type": "object",
-              "$ref": "#/definitions/diseasephase"
-            },
-            "withdrawn_country": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "withdrawn_reason": {
-              "type": [
-                "string",
-                "null"
-              ]
-            },
-            "withdrawn_year": {
-              "type": [
-                "string",
-                "null"
-              ]
             }
           },
           "required": [
