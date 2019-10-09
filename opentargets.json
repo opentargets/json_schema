@@ -1030,11 +1030,22 @@
           "maximum": 1,
           "exclusiveMinimum": 0
         },
+        "mantissa": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "exponent": {
+          "type": "number",
+          "maximum": 0
+        },
         "method": {
           "type": "object",
           "$ref": "#/definitions/score_method"
         }
-      }
+      },
+      "required": [
+        "value"
+      ]
     },
     "score_probability": {
       "type": "object",
