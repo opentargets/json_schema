@@ -1152,6 +1152,10 @@
     "phenotype": {
       "type": "object",
       "properties": {
+        "id" :{
+          "type" : "string",
+          "description" : "Phenotype identifier."
+        }
         "term_id": {
           "type": "string",
           "description": "Phenotype term Identifier from HPO/MP",
