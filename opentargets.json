@@ -180,6 +180,7 @@
     {
       "properties": {
         "type": {
+          "type": "string",
           "const": "rna_expression"
         },
         "evidence": {
@@ -282,6 +283,7 @@
     {
       "properties": {
         "type": {
+          "type": "string",
           "const": "known_drug"
         },
         "evidence": {
@@ -420,6 +422,7 @@
     {
       "properties": {
         "type": {
+          "type": "string",
           "const": "animal_model"
         },
         "evidence": {
@@ -640,6 +643,7 @@
     {
       "properties": {
         "type": {
+          "type": "string",
           "const": "literature"
         },
         "evidence": {
@@ -676,6 +680,7 @@
     {
       "properties": {
         "type": {
+          "type": "string",
           "const": "genetic_association"
         },
         "variant": {
