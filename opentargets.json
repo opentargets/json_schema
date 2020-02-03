@@ -763,12 +763,14 @@
                 "gwas_panel_resolution": {
                   "description": "Panel resolution of GWAS study",
                   "type": "number",
-                  "exclusiveMinimum": 0
+                  "minimum": 0,
+                  "exclusiveMinimum": true
                 },
                 "gwas_sample_size": {
                   "description": "Sample size of GWAS study",
                   "type": "number",
-                  "exclusiveMinimum": 0
+                  "minimum": 0,
+                  "exclusiveMinimum": true
                 },
                 "evidence_codes": {
                   "type": "array",
@@ -1028,11 +1030,13 @@
         "value": {
           "type": "number",
           "maximum": 1,
-          "exclusiveMinimum": 0
+          "minimum": 0,
+          "exclusiveMinimum": true
         },
         "mantissa": {
           "type": "integer",
-          "exclusiveMinimum": 0
+          "minimum": 0,
+          "exclusiveMinimum": true
         },
         "exponent": {
           "type": "number",
@@ -1059,7 +1063,8 @@
         "value": {
           "type": "number",
           "maximum": 1,
-          "exclusiveMinimum": 0
+          "minimum": 0,
+          "exclusiveMinimum": true
         },
         "method": {
           "type": "object",
@@ -1082,7 +1087,8 @@
         },
         "value": {
           "type": "number",
-          "exclusiveMinimum": 0
+          "minimum": 0,
+          "exclusiveMinimum": true
         },
         "method": {
           "type": "object",
