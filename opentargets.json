@@ -1056,7 +1056,8 @@
         "type": {
           "type": "string",
           "enum": [
-            "probability"
+            "probability",
+            "locus_to_gene_score"
           ]
         },
         "value": {
@@ -1123,29 +1124,6 @@
         "position",
         "sample_size",
         "type"
-      ]
-    },
-    "score_locus_to_gene": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "locus_to_gene_score"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "maximum": 1,
-          "exclusiveMinimum": 0
-        },
-        "method": {
-          "type": "object",
-          "$ref": "#/definitions/score_method"
-        }
-      },
-      "required": [
-        "value"
       ]
     },
     "linkout": {
