@@ -117,7 +117,8 @@
         "id": {
           "type": "string",
           "description": "A valid EFO full IRI",
-          "pattern": "^[^\u0020]*$"
+          "pattern": "^[^\u0020]*$",
+          "minLength": 1
         },
         "name": {
           "type": "string",
