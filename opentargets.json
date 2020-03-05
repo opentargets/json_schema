@@ -118,7 +118,8 @@
           "type": "string",
           "description": "A valid EFO full IRI",
           "pattern": "^[^\u0020]*$",
-          "minLength": 1
+          "minLength": 1,
+          "format": "uri"
         },
         "name": {
           "type": "string",
