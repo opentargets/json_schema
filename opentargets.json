@@ -116,7 +116,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "A valid EFO full IRI"
+          "description": "A valid EFO full IRI",
+          "pattern": "^[^\u0020]*$"
         },
         "name": {
           "type": "string",
