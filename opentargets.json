@@ -116,7 +116,10 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "A valid EFO full IRI"
+          "description": "A valid EFO full IRI",
+          "pattern": "^[^\u0020]*$",
+          "minLength": 1,
+          "format": "uri"
         },
         "name": {
           "type": "string",
@@ -921,6 +924,38 @@
                 "$ref": "#/definitions/linkout"
               },
               "uniqueItems": true
+            },
+            "cohort":{
+              "type": "object",
+              "decription": "Information about the cohort where the target was detected as driver",
+              "properties": {
+                "cohort_id": {
+                  "type": "string"
+                },
+                "cohort_short_name": {
+                  "type": "string"
+                },
+                "cohort_description": {
+                  "type": "string"
+                }
+              }
+            },
+            "significant_driver_methods":{
+              "type": "array",
+              "description": "Cancer driver gene identification method that detects target as driver",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "cbase",
+                  "combination",
+                  "dndscv",
+                  "hotmaps",
+                  "mutpanning",
+                  "oncodriveclustl",
+                  "oncodrivefml",
+                  "smregions"
+                ]
+              }
             }
           },
           "required": [
