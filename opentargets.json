@@ -684,7 +684,7 @@
             "id": {
               "type": "string",
               "description": "An array of variant identifiers",
-              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{,2}_[0-9]+_[ACTG]+_[ACTG]+$"
+              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{1,2}_[0-9]+_[ACTG]+_[ACTG]+$"
             },
             "type": {
               "type": "string",
