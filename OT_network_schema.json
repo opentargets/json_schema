@@ -1,0 +1,161 @@
+{
+    "schema": "http://json-schema.org/draft-04/schema#",
+    "title": "OpenTargetsNetwork",
+    "description": "Open Targets Network objects",
+    "type": "object",
+    "properties": {
+        "interactorA": {
+            "description": "Object describing the first interactor",
+            "type": "object",
+            "$ref": "#/definitions/interactor"
+        },
+        "interactorB": {
+            "description": "Object describing the second interactor",
+            "type": "object",
+            "$ref": "#/definitions/interactor"
+        },
+        "interaction": {
+            "description": "Object storing edge information",
+            "type": "object",
+            "properties": {
+                "interaction_score": {
+                    "type": "number",
+                    "description": "Source specific score/weight of the interaction, combined for all evidences"
+                },
+                "causal_interaction": {
+                    "type": "boolean",
+                    "description": "Flag indicating wether the A->B interaction is directed or not"
+                },
+                "evidence": {
+                    "type": "array",
+                    "uniqueItems": false,
+                    "description": "JSON objects describing the evidences supporting the given interaction.",
+                    "items": {
+                        "type": "object",
+                        "$ref": "#/definitions/evidence"
+                    }
+                }
+            },
+            "required": [
+                "interaction_score",
+                "causal_interaction"
+            ]
+        },
+        "source_info": {
+            "description": "Object describing source and data version",
+            "type": "object",
+            "properties": {
+                "source_database": {
+                    "type": "string",
+                    "description": "Name of the datasource."
+                },
+                "database_version": {
+                    "type": "string",
+                    "description": "version of the data"
+                },
+                "required": [
+                    "source_database",
+                    "database_version"
+                ]
+            }
+        }
+    },
+    "required": [
+        "interactorA",
+        "interactorB",
+        "interaction",
+        "source_info"
+    ],
+    "definitions": {
+        "interactor": {
+            "type": "object",
+            "description": "Interactor description",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Identifier of the interactor in the given database"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "source database from where the ID is looked up"
+                },
+                "biological_role": {
+                    "type": "string",
+                    "description": "Describing the biological role of the interactor in the given interaction"
+                },
+                "organism": {
+                    "type": "object",
+                    "description": "Organism information of the interactor",
+                    "properties": {
+                        "scientific_name": {
+                            "type": "string",
+                            "description": "Scientific name of the organism"
+                        },
+                        "taxon_id": {
+                            "type": "number",
+                            "description": "NCBI taxon identifier of the organism"
+                        },
+                        "mnemonic": {
+                            "type": "string",
+                            "description": "Common name of the organism."
+                        }
+                    },
+                    "required": [
+                        "scientific_name",
+                        "taxon_id"
+                    ]
+                },
+                "required": [
+                    "id",
+                    "source",
+                    "organism",
+                    "biological_role"
+                ]
+            }
+        },
+        "evidence": {
+            "type": "object",
+            "properties": {
+                "interaction_identifier": {
+                    "type": "string"
+                },
+                "interaction_detection_method_short_name": {
+                    "type": "string"
+                },
+                "interaction_detection_method_mi_identifier": {
+                    "type": "string"
+                },
+                "pubmed_id": {
+                    "type": "string"
+                },
+                "evidence_score": {
+                    "type": "string"
+                },
+                "interaction_type_short_name": {
+                    "type": "string"
+                },
+                "interaction_type_mi_identifier": {
+                    "type": "string"
+                },
+                "host_organism_scientific_name": {
+                    "type": "string"
+                },
+                "host_organism_tax_id": {
+                    "type": "string"
+                },
+                "participant_detection_method_short_name": {
+                    "type": "string"
+                },
+                "participant_detection_method_mi_identifier": {
+                    "type": "string"
+                },
+                "expansion_method_short_name": {
+                    "type": "string"
+                },
+                "expansion_method_mi_identifier": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
