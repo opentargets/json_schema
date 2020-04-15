@@ -52,12 +52,12 @@
                 "database_version": {
                     "type": "string",
                     "description": "version of the data"
-                },
-                "required": [
-                    "source_database",
-                    "database_version"
-                ]
-            }
+                }
+            },
+            "required": [
+                "source_database",
+                "database_version"
+            ]
         }
     },
     "required": [
@@ -77,10 +77,16 @@
                 },
                 "source": {
                     "type": "string",
-                    "description": "source database from where the ID is looked up"
+                    "description": "source database from where the ID is looked up",
+                    "enum": [
+                        "uniprot", 
+                        "ensembl_protein",
+                        "ensembl_gene",
+                        "rna_base"
+                    ]
                 },
                 "biological_role": {
-                    "type": "string",
+                    "type": [ "string", "null" ],
                     "description": "Describing the biological role of the interactor in the given interaction"
                 },
                 "organism": {
@@ -104,14 +110,14 @@
                         "scientific_name",
                         "taxon_id"
                     ]
-                },
-                "required": [
-                    "id",
-                    "source",
-                    "organism",
-                    "biological_role"
-                ]
-            }
+                }
+            },
+            "required": [
+                "id",
+                "source",
+                "organism",
+                "biological_role"
+            ]
         },
         "evidence": {
             "type": "object",
@@ -129,7 +135,7 @@
                     "type": "string"
                 },
                 "evidence_score": {
-                    "type": "string"
+                    "type": "number"
                 },
                 "interaction_type_short_name": {
                     "type": "string"
