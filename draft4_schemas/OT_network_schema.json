@@ -38,7 +38,8 @@
             },
             "required": [
                 "interaction_score",
-                "causal_interaction"
+                "causal_interaction",
+                "evidence"
             ]
         },
         "source_info": {
@@ -75,7 +76,7 @@
                     "type": "string",
                     "description": "Identifier of the interactor in the given database"
                 },
-                "source": {
+                "id_source": {
                     "type": "string",
                     "description": "source database from where the ID is looked up",
                     "enum": [
@@ -147,7 +148,7 @@
                     "type": "string"
                 },
                 "host_organism_tax_id": {
-                    "type": "string"
+                    "type": "number"
                 },
                 "participant_detection_method_short_name": {
                     "type": "string"
