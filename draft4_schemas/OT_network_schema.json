@@ -115,7 +115,7 @@
             },
             "required": [
                 "id",
-                "source",
+                "id_source",
                 "organism",
                 "biological_role"
             ]
