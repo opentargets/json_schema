@@ -1251,8 +1251,8 @@
         },
         "date_asserted": {
           "type": "string",
-          "description": "date the evidence was made public",
-          "format": "date-time"
+          "description": "date the evidence was made public in yyyy-mm-dd format",
+          "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
         },
         "resource_score": {
           "type": "object",
