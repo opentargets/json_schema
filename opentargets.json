@@ -106,8 +106,7 @@
       },
       "required": [
         "id",
-        "target_type",
-        "activity"
+        "target_type"
       ]
     },
     "disease": {
@@ -126,8 +125,21 @@
           "description": "Optional - EFO disease name corresponding to the EFO ID"
         },
         "source_name": {
-          "type": "string",
-          "description": "Optional - EFO disease name corresponding to the EFO ID"
+          "description": "Optional - Disease name used at source (it can be a single string or an array of strings for synonyms)",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items":
+              {
+                "type": "string"
+              },
+              "uniqueItems": true,
+              "minItems": 1
+            }
+          ]
         },
         "biosample": {
           "description": "Tissue names - provide EFO name if you have this",
@@ -687,7 +699,12 @@
             "id": {
               "type": "string",
               "description": "An array of variant identifiers",
-              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{1,2}_[0-9]+_[ACTG]+_[ACTG]+$"
+              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/variation/VCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{1,2}_[0-9]+_[ACTG]+_[ACTG]+$"
+            },
+            "secondary_id":{
+              "type": "string",
+              "description": "Optional RS id to be used as secondary variant id",
+              "pattern": "^http://identifiers.org/dbsnp/rs[0-9]{1,}$"
             },
             "type": {
               "type": "string",
@@ -755,16 +772,29 @@
               ],
               "properties": {
                 "clinical_significance": {
-                  "type": "string",
-                  "enum": [
-                    "Pathogenic",
-                    "Likely pathogenic",
-                    "protective",
-                    "association",
-                    "risk_factor",
-                    "Affects",
-                    "drug response"
-                  ]
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "pathogenic",
+                      "likely pathogenic",
+                      "protective",
+                      "association",
+                      "risk factor",
+                      "affects",
+                      "drug response",
+                      "benign",
+                      "likely benign",
+                      "uncertain significance",
+                      "association",
+                      "conflicting data from submitters",
+                      "other",
+                      "not provided",
+                      "-",
+                      "conflicting interpretation of pathogenicity",
+                      "association not found"
+                    ]
+                  }
                 },
                 "gwas_panel_resolution": {
                   "description": "Panel resolution of GWAS study",
@@ -792,6 +822,54 @@
                     "$ref": "#/definitions/linkout"
                   },
                   "uniqueItems": true
+                },
+                "clinvar_rating": {
+                  "type": "object",
+                  "properties": {
+                    "star_rating": {
+                      "type": "integer",
+                      "description": "ClinVar star rating of the variant. Int. 0-5",
+                      "maximum": 4,
+                      "minimum": 0
+                    },
+                    "review_status": {
+                      "type": "string",
+                      "description": "ClinVar review_status of the variant."
+                    }
+                  },
+                  "required": [
+                    "star_rating",
+                    "review_status"
+                  ]
+                },
+                "mode_of_inheritance": {
+                  "type": "string",
+                  "description": "ClinVar mode of inheritance",
+                  "enum": [
+                    "autosomal dominant inheritance",
+                    "autosomal recessive inheritance",
+                    "somatic mutation",
+                    "x-linked inheritance",
+                    "autosomal unknown",
+                    "x-linked recessive inheritance",
+                    "sporadic",
+                    "mitochondrial inheritance",
+                    "x-linked dominant inheritance",
+                    "modeofinheritance multiple",
+                    "oligogenic inheritance",
+                    "other",
+                    "y-linked inheritance",
+                    "sex-limited autosomal dominant",
+                    "autosomal dominant inheritance with maternal imprinting",
+                    "genetic anticipation",
+                    "co-dominant",
+                    "autosomal dominant inheritance with paternal imprinting",
+                    "enigma rules, 2015"
+                  ]
+                },
+                "last_evaluated_date": {
+                  "$ref": "#/definitions/date",
+                  "description": "The most recent date that the variant was interpreted, or evaluated, by a submitter."
                 }
               },
               "required": [
@@ -835,15 +913,18 @@
           "properties": {
             "clinical_significance": {
               "type": "string",
-              "enum": [
-                "Pathogenic",
-                "Likely pathogenic",
-                "protective",
-                "association",
-                "risk_factor",
-                "Affects",
-                "drug response"
-              ]
+              "items": {
+                  "type": "string",
+                  "enum": [
+                    "Pathogenic",
+                    "Likely pathogenic",
+                    "protective",
+                    "association",
+                    "risk_factor",
+                    "Affects",
+                    "drug response"
+                  ]
+              }
             },
             "evidence_codes": {
               "description": "An array of evidence codes",
@@ -1235,9 +1316,8 @@
           "type": "boolean"
         },
         "date_asserted": {
-          "type": "string",
+          "$ref": "#/definitions/date",
           "description": "date the evidence was made public in yyyy-mm-dd format or N/A if not available",
-          "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|N/A"
         },
         "resource_score": {
           "type": "object",
@@ -1349,6 +1429,11 @@
         "is_associated",
         "date_asserted"
       ]
+    },
+    "date": {
+      "type": "string",
+      "description": "Any date proveided has to follow the yyyy-mm-dd format or N/A if not available",
+      "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|N/A"
     }
   }
 }
