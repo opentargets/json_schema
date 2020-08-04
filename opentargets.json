@@ -1327,7 +1327,7 @@
         },
         "date_asserted": {
           "$ref": "#/definitions/date",
-          "description": "date the evidence was made public in yyyy-mm-dd format or N/A if not available",
+          "description": "date the evidence was made public in yyyy-mm-dd format or N/A if not available"
         },
         "resource_score": {
           "type": "object",
