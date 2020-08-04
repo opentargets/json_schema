@@ -912,18 +912,28 @@
           ],
           "properties": {
             "clinical_significance": {
-              "type": "string",
+              "type": "array",
               "items": {
-                  "type": "string",
-                  "enum": [
-                    "Pathogenic",
-                    "Likely pathogenic",
-                    "protective",
-                    "association",
-                    "risk_factor",
-                    "Affects",
-                    "drug response"
-                  ]
+                "type": "string",
+                "enum": [
+                  "pathogenic",
+                  "likely pathogenic",
+                  "protective",
+                  "association",
+                  "risk factor",
+                  "affects",
+                  "drug response",
+                  "benign",
+                  "likely benign",
+                  "uncertain significance",
+                  "association",
+                  "conflicting data from submitters",
+                  "other",
+                  "not provided",
+                  "-",
+                  "conflicting interpretation of pathogenicity",
+                  "association not found"
+                ]
               }
             },
             "evidence_codes": {
