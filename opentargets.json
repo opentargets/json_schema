@@ -828,7 +828,7 @@
                   "properties": {
                     "star_rating": {
                       "type": "integer",
-                      "description": "ClinVar star rating of the variant. Int. 0-5",
+                      "description": "ClinVar star rating of the variant. Int. 0-4",
                       "maximum": 4,
                       "minimum": 0
                     },
