@@ -772,14 +772,13 @@
               ],
               "properties": {
                 "clinical_significance": {
-                  "type": "array",
-                  "items": {
+                    "type": "array",
+                    "items": {
                     "type": "string",
                     "enum": [
                       "pathogenic",
                       "likely pathogenic",
                       "protective",
-                      "association",
                       "risk factor",
                       "affects",
                       "drug response",
@@ -919,7 +918,6 @@
                   "pathogenic",
                   "likely pathogenic",
                   "protective",
-                  "association",
                   "risk factor",
                   "affects",
                   "drug response",

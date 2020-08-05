@@ -106,8 +106,7 @@
       },
       "required": [
         "id",
-        "target_type",
-        "activity"
+        "target_type"
       ]
     },
     "disease": {
@@ -117,7 +116,7 @@
         "id": {
           "type": "string",
           "description": "A valid EFO full IRI",
-          "pattern": "^[^\u0020]*$",
+          "pattern": "^[^ ]*$",
           "minLength": 1,
           "format": "uri"
         },
@@ -126,8 +125,20 @@
           "description": "Optional - EFO disease name corresponding to the EFO ID"
         },
         "source_name": {
-          "type": "string",
-          "description": "Optional - EFO disease name corresponding to the EFO ID"
+          "description": "Optional - Disease name used at source (it can be a single string or an array of strings for synonyms)",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true,
+              "minItems": 1
+            }
+          ]
         },
         "biosample": {
           "description": "Tissue names - provide EFO name if you have this",
@@ -183,8 +194,8 @@
     {
       "properties": {
         "type": {
-          "type": "string",
-          "const": "rna_expression"
+          "const": "rna_expression",
+          "type": "string"
         },
         "evidence": {
           "allOf": [
@@ -286,8 +297,8 @@
     {
       "properties": {
         "type": {
-          "type": "string",
-          "const": "known_drug"
+          "const": "known_drug",
+          "type": "string"
         },
         "evidence": {
           "properties": {
@@ -402,8 +413,8 @@
             "molecule_type"
           ]
         },
-        "target" : {
-          "properties" :{
+        "target": {
+          "properties": {
             "complex_id": {
               "type": "string",
               "description": "A ChEMBL protein complex identifier",
@@ -425,8 +436,8 @@
     {
       "properties": {
         "type": {
-          "type": "string",
-          "const": "animal_model"
+          "const": "animal_model",
+          "type": "string"
         },
         "evidence": {
           "properties": {
@@ -476,7 +487,7 @@
                   "uniqueItems": true
                 }
               },
-              "required":[
+              "required": [
                 "resource_score"
               ]
             },
@@ -646,8 +657,8 @@
     {
       "properties": {
         "type": {
-          "type": "string",
-          "const": "literature"
+          "const": "literature",
+          "type": "string"
         },
         "evidence": {
           "allOf": [
@@ -683,8 +694,8 @@
     {
       "properties": {
         "type": {
-          "type": "string",
-          "const": "genetic_association"
+          "const": "genetic_association",
+          "type": "string"
         },
         "variant": {
           "type": "object",
@@ -692,7 +703,12 @@
             "id": {
               "type": "string",
               "description": "An array of variant identifiers",
-              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{1,2}_[0-9]+_[ACTG]+_[ACTG]+$"
+              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/variation/VCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{1,2}_[0-9]+_[ACTG]+_[ACTG]+$"
+            },
+            "secondary_id": {
+              "type": "string",
+              "description": "Optional RS id to be used as secondary variant id",
+              "pattern": "^http://identifiers.org/dbsnp/rs[0-9]{1,}$"
             },
             "type": {
               "type": "string",
@@ -760,28 +776,40 @@
               ],
               "properties": {
                 "clinical_significance": {
-                  "type": "string",
-                  "enum": [
-                    "Pathogenic",
-                    "Likely pathogenic",
-                    "protective",
-                    "association",
-                    "risk_factor",
-                    "Affects",
-                    "drug response"
-                  ]
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "pathogenic",
+                      "likely pathogenic",
+                      "protective",
+                      "risk factor",
+                      "affects",
+                      "drug response",
+                      "benign",
+                      "likely benign",
+                      "uncertain significance",
+                      "association",
+                      "conflicting data from submitters",
+                      "other",
+                      "not provided",
+                      "-",
+                      "conflicting interpretation of pathogenicity",
+                      "association not found"
+                    ]
+                  }
                 },
                 "gwas_panel_resolution": {
                   "description": "Panel resolution of GWAS study",
                   "type": "number",
-                  "minimum": 0,
-                  "exclusiveMinimum": true
+                  "exclusiveMinimum": true,
+                  "minimum": 0
                 },
                 "gwas_sample_size": {
                   "description": "Sample size of GWAS study",
                   "type": "number",
-                  "minimum": 0,
-                  "exclusiveMinimum": true
+                  "exclusiveMinimum": true,
+                  "minimum": 0
                 },
                 "evidence_codes": {
                   "type": "array",
@@ -799,6 +827,54 @@
                     "$ref": "#/definitions/linkout"
                   },
                   "uniqueItems": true
+                },
+                "clinvar_rating": {
+                  "type": "object",
+                  "properties": {
+                    "star_rating": {
+                      "type": "integer",
+                      "description": "ClinVar star rating of the variant. Int. 0-4",
+                      "maximum": 4,
+                      "minimum": 0
+                    },
+                    "review_status": {
+                      "type": "string",
+                      "description": "ClinVar review_status of the variant."
+                    }
+                  },
+                  "required": [
+                    "star_rating",
+                    "review_status"
+                  ]
+                },
+                "mode_of_inheritance": {
+                  "type": "string",
+                  "description": "ClinVar mode of inheritance",
+                  "enum": [
+                    "autosomal dominant inheritance",
+                    "autosomal recessive inheritance",
+                    "somatic mutation",
+                    "x-linked inheritance",
+                    "autosomal unknown",
+                    "x-linked recessive inheritance",
+                    "sporadic",
+                    "mitochondrial inheritance",
+                    "x-linked dominant inheritance",
+                    "modeofinheritance multiple",
+                    "oligogenic inheritance",
+                    "other",
+                    "y-linked inheritance",
+                    "sex-limited autosomal dominant",
+                    "autosomal dominant inheritance with maternal imprinting",
+                    "genetic anticipation",
+                    "co-dominant",
+                    "autosomal dominant inheritance with paternal imprinting",
+                    "enigma rules, 2015"
+                  ]
+                },
+                "last_evaluated_date": {
+                  "$ref": "#/definitions/date",
+                  "description": "The most recent date that the variant was interpreted, or evaluated, by a submitter."
                 }
               },
               "required": [
@@ -830,7 +906,8 @@
             "genetic_literature",
             "affected_pathway",
             "somatic_mutation"
-          ]
+          ],
+          "type": "string"
         },
         "evidence": {
           "type": "object",
@@ -841,16 +918,28 @@
           ],
           "properties": {
             "clinical_significance": {
-              "type": "string",
-              "enum": [
-                "Pathogenic",
-                "Likely pathogenic",
-                "protective",
-                "association",
-                "risk_factor",
-                "Affects",
-                "drug response"
-              ]
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "pathogenic",
+                  "likely pathogenic",
+                  "protective",
+                  "risk factor",
+                  "affects",
+                  "drug response",
+                  "benign",
+                  "likely benign",
+                  "uncertain significance",
+                  "association",
+                  "conflicting data from submitters",
+                  "other",
+                  "not provided",
+                  "-",
+                  "conflicting interpretation of pathogenicity",
+                  "association not found"
+                ]
+              }
             },
             "evidence_codes": {
               "description": "An array of evidence codes",
@@ -932,7 +1021,7 @@
               },
               "uniqueItems": true
             },
-            "cohort":{
+            "cohort": {
               "type": "object",
               "decription": "Information about the cohort where the target was detected as driver",
               "properties": {
@@ -947,7 +1036,7 @@
                 }
               }
             },
-            "significant_driver_methods":{
+            "significant_driver_methods": {
               "type": "array",
               "description": "Cancer driver gene identification method that detects target as driver",
               "items": {
@@ -983,7 +1072,7 @@
         "lit_id": {
           "type": "string",
           "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
-          "pattern": "NA|http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|(https?://)?(dx\u005C.)?doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)$"
+          "pattern": "NA|http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|(https?://)?(dx\\.)?doi.org/]*[\\s\\.\\:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\\\"&\\'])\\S)+)$"
         },
         "rank": {
           "type": "object",
@@ -1073,13 +1162,13 @@
         "value": {
           "type": "number",
           "maximum": 1,
-          "minimum": 0,
-          "exclusiveMinimum": true
+          "exclusiveMinimum": true,
+          "minimum": 0
         },
         "mantissa": {
           "type": "integer",
-          "minimum": 0,
-          "exclusiveMinimum": true
+          "exclusiveMinimum": true,
+          "minimum": 0
         },
         "exponent": {
           "type": "number",
@@ -1107,8 +1196,8 @@
         "value": {
           "type": "number",
           "maximum": 1,
-          "minimum": 0,
-          "exclusiveMinimum": true
+          "exclusiveMinimum": true,
+          "minimum": 0
         },
         "method": {
           "type": "object",
@@ -1131,8 +1220,8 @@
         },
         "value": {
           "type": "number",
-          "minimum": 0,
-          "exclusiveMinimum": true
+          "exclusiveMinimum": true,
+          "minimum": 0
         },
         "method": {
           "type": "object",
@@ -1191,9 +1280,9 @@
     "phenotype": {
       "type": "object",
       "properties": {
-        "id" : {
-            "type" : "string",
-            "description" : "Phenotype identifier." 
+        "id": {
+          "type": "string",
+          "description": "Phenotype identifier."
         },
         "term_id": {
           "type": "string",
@@ -1244,15 +1333,14 @@
         "unique_experiment_reference": {
           "type": "string",
           "description": "A unique experiment identifier or literature reference that uniquely identifies the study in your database",
-          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)|STUDYID_.+$"
+          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\\s\\.\\:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\\\"&\\'])\\S)+)|STUDYID_.+$"
         },
         "is_associated": {
           "type": "boolean"
         },
         "date_asserted": {
-          "type": "string",
-          "description": "date the evidence was made public in yyyy-mm-dd format or N/A if not available",
-          "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|N/A"
+          "$ref": "#/definitions/date",
+          "description": "date the evidence was made public in yyyy-mm-dd format or N/A if not available"
         },
         "resource_score": {
           "type": "object",
@@ -1268,7 +1356,7 @@
             },
             {
               "$ref": "#/definitions/score_summed_total"
-            }          
+            }
           ]
         },
         "provenance_type": {
@@ -1364,6 +1452,11 @@
         "is_associated",
         "date_asserted"
       ]
+    },
+    "date": {
+      "type": "string",
+      "description": "Any date proveided has to follow the yyyy-mm-dd format or N/A if not available",
+      "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|N/A"
     }
   }
 }
