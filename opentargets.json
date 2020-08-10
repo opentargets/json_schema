@@ -772,28 +772,44 @@
               ],
               "properties": {
                 "clinical_significance": {
-                    "type": "array",
-                    "items": {
-                    "type": "string",
-                    "enum": [
-                      "pathogenic",
-                      "likely pathogenic",
-                      "protective",
-                      "risk factor",
-                      "affects",
-                      "drug response",
-                      "benign",
-                      "likely benign",
-                      "uncertain significance",
-                      "association",
-                      "conflicting data from submitters",
-                      "other",
-                      "not provided",
-                      "-",
-                      "conflicting interpretation of pathogenicity",
-                      "association not found"
-                    ]
-                  }
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "Pathogenic",
+                        "Likely pathogenic",
+                        "protective",
+                        "association",
+                        "risk_factor",
+                        "Affects",
+                        "drug response"
+                      ]
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "pathogenic",
+                          "likely pathogenic",
+                          "protective",
+                          "risk factor",
+                          "affects",
+                          "drug response",
+                          "benign",
+                          "likely benign",
+                          "uncertain significance",
+                          "association",
+                          "conflicting data from submitters",
+                          "other",
+                          "not provided",
+                          "-",
+                          "conflicting interpretation of pathogenicity",
+                          "association not found"
+                        ]
+                      }                      
+                    }
+                  ]
                 },
                 "gwas_panel_resolution": {
                   "description": "Panel resolution of GWAS study",
@@ -911,28 +927,44 @@
           ],
           "properties": {
             "clinical_significance": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "pathogenic",
-                  "likely pathogenic",
-                  "protective",
-                  "risk factor",
-                  "affects",
-                  "drug response",
-                  "benign",
-                  "likely benign",
-                  "uncertain significance",
-                  "association",
-                  "conflicting data from submitters",
-                  "other",
-                  "not provided",
-                  "-",
-                  "conflicting interpretation of pathogenicity",
-                  "association not found"
-                ]
-              }
+              "oneOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Pathogenic",
+                    "Likely pathogenic",
+                    "protective",
+                    "association",
+                    "risk_factor",
+                    "Affects",
+                    "drug response"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "pathogenic",
+                      "likely pathogenic",
+                      "protective",
+                      "risk factor",
+                      "affects",
+                      "drug response",
+                      "benign",
+                      "likely benign",
+                      "uncertain significance",
+                      "association",
+                      "conflicting data from submitters",
+                      "other",
+                      "not provided",
+                      "-",
+                      "conflicting interpretation of pathogenicity",
+                      "association not found"
+                    ]
+                  }                      
+                }
+              ]
             },
             "evidence_codes": {
               "description": "An array of evidence codes",
