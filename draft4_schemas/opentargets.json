@@ -945,7 +945,7 @@
                     "risk_factor",
                     "Affects",
                     "drug response"
-                  ],
+                  ]
                 },
                 {
                   "type": "array",
