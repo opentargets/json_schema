@@ -1,6 +1,5 @@
 language: python
 python:
-  - "2.7"
   - "3.6"
 install:
   - pip install git+git://github.com/Julian/jsonschema.git@v3.0.0a4#egg=jsonschema
