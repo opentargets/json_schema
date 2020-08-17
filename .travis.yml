@@ -5,5 +5,8 @@ python:
 install:
   - pip install git+git://github.com/Julian/jsonschema.git@v3.0.0a4#egg=jsonschema
   - wget -O draft7.json http://json-schema.org/draft-07/schema
+  - wget -O draft4.json http://json-schema.org/draft-04/schema
 script:
   - jsonschema -i opentargets.json draft7.json
+  - jsonschema -i draft4_schemas/opentargets.json draft4.json
+  - jsonschema -i draft4_schemas/OT_network_schema.json draft4.json
