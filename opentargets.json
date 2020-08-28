@@ -803,8 +803,7 @@
                           "conflicting data from submitters",
                           "other",
                           "not provided",
-                          "-",
-                          "conflicting interpretation of pathogenicity",
+                          "conflicting interpretations of pathogenicity",
                           "association not found"
                         ]
                       }                      
@@ -958,8 +957,7 @@
                       "conflicting data from submitters",
                       "other",
                       "not provided",
-                      "-",
-                      "conflicting interpretation of pathogenicity",
+                      "conflicting interpretations of pathogenicity",
                       "association not found"
                     ]
                   }                      
