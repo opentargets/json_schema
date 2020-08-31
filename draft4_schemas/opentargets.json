@@ -791,27 +791,7 @@
                     },
                     {
                       "type": "array",
-                      "items": {
-                        "type": "string",
-                        "enum": [
-                          "pathogenic",
-                          "likely pathogenic",
-                          "protective",
-                          "risk factor",
-                          "affects",
-                          "drug response",
-                          "benign",
-                          "likely benign",
-                          "uncertain significance",
-                          "association",
-                          "conflicting data from submitters",
-                          "other",
-                          "not provided",
-                          "-",
-                          "conflicting interpretation of pathogenicity",
-                          "association not found"
-                        ]
-                      }
+                      "$ref": "#/definitions/clinical_significance"
                     }
                   ]
                 },
@@ -949,27 +929,7 @@
                 },
                 {
                   "type": "array",
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "pathogenic",
-                      "likely pathogenic",
-                      "protective",
-                      "risk factor",
-                      "affects",
-                      "drug response",
-                      "benign",
-                      "likely benign",
-                      "uncertain significance",
-                      "association",
-                      "conflicting data from submitters",
-                      "other",
-                      "not provided",
-                      "-",
-                      "conflicting interpretation of pathogenicity",
-                      "association not found"
-                    ]
-                  }
+                  "$ref": "#/definitions/clinical_significance"
                 }
               ]
             },
@@ -1488,6 +1448,29 @@
       "type": "string",
       "description": "Any date provided has to follow the yyyy-mm-dd format",
       "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+    },
+    "clinical_significance": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "affects",
+          "association",
+          "association not found",
+          "benign",
+          "conflicting data from submitters",
+          "conflicting interpretations of pathogenicity",
+          "drug response",
+          "likely benign",
+          "likely pathogenic",
+          "not provided",
+          "other",
+          "pathogenic",
+          "protective",
+          "risk factor",
+          "uncertain significance"
+        ]
+      }
     }
   }
 }
