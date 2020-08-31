@@ -829,7 +829,16 @@
                     },
                     "review_status": {
                       "type": "string",
-                      "description": "ClinVar review_status of the variant."
+                      "description": "ClinVar review_status of the variant.",
+                      "enum": [
+                        "no assertion provided",
+                        "no assertion criteria provided",
+                        "criteria provided, single submitter",
+                        "criteria provided, conflicting interpretations",
+                        "criteria provided, multiple submitters, no conflicts",
+                        "reviewed by expert panel",
+                        "practice guideline"
+                      ]
                     }
                   },
                   "required": [
