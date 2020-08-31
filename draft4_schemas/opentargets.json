@@ -830,28 +830,7 @@
                 },
                 "mode_of_inheritance": {
                   "type": "string",
-                  "description": "ClinVar mode of inheritance",
-                  "enum": [
-                    "autosomal dominant inheritance",
-                    "autosomal recessive inheritance",
-                    "somatic mutation",
-                    "x-linked inheritance",
-                    "autosomal unknown",
-                    "x-linked recessive inheritance",
-                    "sporadic",
-                    "mitochondrial inheritance",
-                    "x-linked dominant inheritance",
-                    "modeofinheritance multiple",
-                    "oligogenic inheritance",
-                    "other",
-                    "y-linked inheritance",
-                    "sex-limited autosomal dominant",
-                    "autosomal dominant inheritance with maternal imprinting",
-                    "genetic anticipation",
-                    "co-dominant",
-                    "autosomal dominant inheritance with paternal imprinting",
-                    "enigma rules, 2015"
-                  ]
+                  "description": "ClinVar mode of inheritance"
                 },
                 "last_evaluated_date": {
                   "$ref": "#/definitions/date",
