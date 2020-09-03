@@ -1481,14 +1481,13 @@
       },
       "required": [
         "provenance_type",
-        "is_associated",
-        "date_asserted"
+        "is_associated"
       ]
     },
     "date": {
       "type": "string",
-      "description": "Any date provided has to follow the yyyy-mm-dd format or N/A if not available",
-      "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])|N/A"
+      "description": "Any date provided has to follow the yyyy-mm-dd format",
+      "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
     }
   }
 }
