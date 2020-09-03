@@ -1470,8 +1470,7 @@
       },
       "required": [
         "provenance_type",
-        "is_associated",
-        "date_asserted"
+        "is_associated"
       ]
     },
     "date": {
