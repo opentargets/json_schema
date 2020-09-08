@@ -758,7 +758,6 @@
               "required": [
                 "provenance_type",
                 "is_associated",
-                "date_asserted",
                 "evidence_codes",
                 "functional_consequence"
               ]
@@ -895,6 +894,10 @@
             },
             "mode_of_inheritance": {
               "$ref": "#/definitions/mode_of_inheritance"
+            },
+            "last_evaluated_date": {
+              "$ref": "#/definitions/date",
+              "description": "The most recent date that the variant was interpreted, or evaluated, by a submitter."
             },
             "evidence_codes": {
               "description": "An array of evidence codes",
