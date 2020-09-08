@@ -820,31 +820,7 @@
                 },
                 "clinvar_rating": {
                   "type": "object",
-                  "properties": {
-                    "star_rating": {
-                      "type": "integer",
-                      "description": "ClinVar star rating of the variant. Int. 0-4",
-                      "maximum": 4,
-                      "minimum": 0
-                    },
-                    "review_status": {
-                      "type": "string",
-                      "description": "ClinVar review_status of the variant.",
-                      "enum": [
-                        "no assertion provided",
-                        "no assertion criteria provided",
-                        "criteria provided, single submitter",
-                        "criteria provided, conflicting interpretations",
-                        "criteria provided, multiple submitters, no conflicts",
-                        "reviewed by expert panel",
-                        "practice guideline"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "star_rating",
-                    "review_status"
-                  ]
+                  "$ref": "#/definitions/clinvar_rating"
                 },
                 "mode_of_inheritance": {
                   "type": "string",
@@ -934,6 +910,10 @@
                   "$ref": "#/definitions/clinical_significance"
                 }
               ]
+            },
+            "clinvar_rating": {
+              "type": "object",
+              "$ref": "#/definitions/clinvar_rating"
             },
             "evidence_codes": {
               "description": "An array of evidence codes",
@@ -1469,6 +1449,34 @@
           "uncertain significance"
         ]
       }
+    },
+    "clinvar_rating": {
+      "type": "object",
+      "properties": {
+        "star_rating": {
+          "type": "integer",
+          "description": "ClinVar star rating of the variant. Int. 0-4",
+          "maximum": 4,
+          "minimum": 0
+        },
+        "review_status": {
+          "type": "string",
+          "description": "ClinVar review_status of the variant.",
+          "enum": [
+            "no assertion provided",
+            "no assertion criteria provided",
+            "criteria provided, single submitter",
+            "criteria provided, conflicting interpretations",
+            "criteria provided, multiple submitters, no conflicts",
+            "reviewed by expert panel",
+            "practice guideline"
+          ]
+        }
+      },
+      "required": [
+        "star_rating",
+        "review_status"
+      ]
     }
   }
 }
