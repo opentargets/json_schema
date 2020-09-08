@@ -829,11 +829,7 @@
                   "$ref": "#/definitions/clinvar_rating"
                 },
                 "mode_of_inheritance": {
-                  "description": "ClinVar mode of inheritance",
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "$ref": "#/definitions/mode_of_inheritance"
                 },
                 "last_evaluated_date": {
                   "$ref": "#/definitions/date",
@@ -903,6 +899,9 @@
             "clinvar_rating": {
               "type": "object",
               "$ref": "#/definitions/clinvar_rating"
+            },
+            "mode_of_inheritance": {
+              "$ref": "#/definitions/mode_of_inheritance"
             },
             "evidence_codes": {
               "description": "An array of evidence codes",
@@ -1469,6 +1468,22 @@
       "required": [
         "star_rating",
         "review_status"
+      ]
+    },
+    "mode_of_inheritance": {
+      "description": "ClinVar mode of inheritance",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
       ]
     }
   }
