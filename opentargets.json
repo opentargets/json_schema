@@ -758,7 +758,6 @@
               "required": [
                 "provenance_type",
                 "is_associated",
-                "date_asserted",
                 "evidence_codes",
                 "functional_consequence"
               ]
@@ -787,27 +786,7 @@
                     },
                     {
                       "type": "array",
-                      "items": {
-                        "type": "string",
-                        "enum": [
-                          "pathogenic",
-                          "likely pathogenic",
-                          "protective",
-                          "risk factor",
-                          "affects",
-                          "drug response",
-                          "benign",
-                          "likely benign",
-                          "uncertain significance",
-                          "association",
-                          "conflicting data from submitters",
-                          "other",
-                          "not provided",
-                          "-",
-                          "conflicting interpretation of pathogenicity",
-                          "association not found"
-                        ]
-                      }                      
+                      "$ref": "#/definitions/clinical_significance"
                     }
                   ]
                 },
@@ -840,47 +819,10 @@
                 },
                 "clinvar_rating": {
                   "type": "object",
-                  "properties": {
-                    "star_rating": {
-                      "type": "integer",
-                      "description": "ClinVar star rating of the variant. Int. 0-4",
-                      "maximum": 4,
-                      "minimum": 0
-                    },
-                    "review_status": {
-                      "type": "string",
-                      "description": "ClinVar review_status of the variant."
-                    }
-                  },
-                  "required": [
-                    "star_rating",
-                    "review_status"
-                  ]
+                  "$ref": "#/definitions/clinvar_rating"
                 },
                 "mode_of_inheritance": {
-                  "type": "string",
-                  "description": "ClinVar mode of inheritance",
-                  "enum": [
-                    "autosomal dominant inheritance",
-                    "autosomal recessive inheritance",
-                    "somatic mutation",
-                    "x-linked inheritance",
-                    "autosomal unknown",
-                    "x-linked recessive inheritance",
-                    "sporadic",
-                    "mitochondrial inheritance",
-                    "x-linked dominant inheritance",
-                    "modeofinheritance multiple",
-                    "oligogenic inheritance",
-                    "other",
-                    "y-linked inheritance",
-                    "sex-limited autosomal dominant",
-                    "autosomal dominant inheritance with maternal imprinting",
-                    "genetic anticipation",
-                    "co-dominant",
-                    "autosomal dominant inheritance with paternal imprinting",
-                    "enigma rules, 2015"
-                  ]
+                  "$ref": "#/definitions/mode_of_inheritance"
                 },
                 "last_evaluated_date": {
                   "$ref": "#/definitions/date",
@@ -942,29 +884,20 @@
                 },
                 {
                   "type": "array",
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "pathogenic",
-                      "likely pathogenic",
-                      "protective",
-                      "risk factor",
-                      "affects",
-                      "drug response",
-                      "benign",
-                      "likely benign",
-                      "uncertain significance",
-                      "association",
-                      "conflicting data from submitters",
-                      "other",
-                      "not provided",
-                      "-",
-                      "conflicting interpretation of pathogenicity",
-                      "association not found"
-                    ]
-                  }                      
+                  "$ref": "#/definitions/clinical_significance"
                 }
               ]
+            },
+            "clinvar_rating": {
+              "type": "object",
+              "$ref": "#/definitions/clinvar_rating"
+            },
+            "mode_of_inheritance": {
+              "$ref": "#/definitions/mode_of_inheritance"
+            },
+            "last_evaluated_date": {
+              "$ref": "#/definitions/date",
+              "description": "The most recent date that the variant was interpreted, or evaluated, by a submitter."
             },
             "evidence_codes": {
               "description": "An array of evidence codes",
@@ -1303,7 +1236,7 @@
       "properties": {
         "id" : {
           "type" : "string",
-          "description" : "Phenotype identifier." 
+          "description" : "Phenotype identifier."
         },
         "term_id": {
           "type": "string",
@@ -1377,7 +1310,7 @@
             },
             {
               "$ref": "#/definitions/score_summed_total"
-            } 
+            }
           ]
         },
         "provenance_type": {
@@ -1477,6 +1410,73 @@
       "type": "string",
       "description": "Any date provided has to follow the yyyy-mm-dd format",
       "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+    },
+    "clinical_significance": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "affects",
+          "association",
+          "association not found",
+          "benign",
+          "conflicting data from submitters",
+          "conflicting interpretations of pathogenicity",
+          "drug response",
+          "likely benign",
+          "likely pathogenic",
+          "not provided",
+          "other",
+          "pathogenic",
+          "protective",
+          "risk factor",
+          "uncertain significance"
+        ]
+      }
+    },
+    "clinvar_rating": {
+      "type": "object",
+      "properties": {
+        "star_rating": {
+          "type": "integer",
+          "description": "ClinVar star rating of the variant. Int. 0-4",
+          "maximum": 4,
+          "minimum": 0
+        },
+        "review_status": {
+          "type": "string",
+          "description": "ClinVar review_status of the variant.",
+          "enum": [
+            "no assertion provided",
+            "no assertion criteria provided",
+            "criteria provided, single submitter",
+            "criteria provided, conflicting interpretations",
+            "criteria provided, multiple submitters, no conflicts",
+            "reviewed by expert panel",
+            "practice guideline"
+          ]
+        }
+      },
+      "required": [
+        "star_rating",
+        "review_status"
+      ]
+    },
+    "mode_of_inheritance": {
+      "description": "ClinVar mode of inheritance",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      ]
     }
   }
 }
