@@ -1,6 +1,6 @@
 {
     "schema": "http://json-schema.org/draft-04/schema#",
-    "title": "OpenTargetsNetwork",
+    "title": "Open Targets Network",
     "description": "Open Targets Network objects",
     "type": "object",
     "properties": {
