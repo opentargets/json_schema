@@ -705,6 +705,11 @@
               "description": "An array of variant identifiers",
               "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://www.ncbi.nlm.nih.gov/clinvar/variation/VCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{1,2}_[0-9]+_[ACTG]+_[ACTG]+$"
             },
+            "rs_id":{
+              "type": "string",
+              "description": "RS id of the variant",
+              "pattern": "^rs[0-9]{1,}$"
+            },
             "secondary_id": {
               "type": "string",
               "description": "Optional RS id to be used as secondary variant id",
@@ -722,9 +727,19 @@
               ]
             }
           },
-          "required": [
-            "id",
-            "type"
+          "anyOf": [
+            {
+              "required": [
+                "id",
+                "type"
+              ]
+            },
+            {
+              "required": [
+                "rs_id",
+                "type"
+              ]
+            }
           ]
         },
         "evidence": {
