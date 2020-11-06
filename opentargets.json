@@ -723,10 +723,20 @@
               ]
             }
           },
-          "required": [
-            "id",
-            "type"
-          ]
+          "anyOf": [
+            {
+              "required": [
+                "id",
+                "type"
+              ]
+            },
+            {
+              "required": [
+                "rs_id",
+                "type"
+              ]
+            }
+          ],
         },
         "evidence": {
           "properties": {
