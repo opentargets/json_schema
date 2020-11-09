@@ -723,19 +723,8 @@
               ]
             }
           },
-          "anyOf": [
-            {
-              "required": [
-                "id",
-                "type"
-              ]
-            },
-            {
-              "required": [
-                "rs_id",
-                "type"
-              ]
-            }
+          "required": [
+            "type"
           ]
         },
         "evidence": {
