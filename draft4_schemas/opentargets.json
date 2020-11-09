@@ -727,7 +727,7 @@
               ]
             }
           },
-          "anyOf": [
+          "oneOf": [
             {
               "required": [
                 "id",
@@ -736,6 +736,13 @@
             },
             {
               "required": [
+                "rs_id",
+                "type"
+              ]
+            },
+            {
+              "required": [
+                "id",
                 "rs_id",
                 "type"
               ]
