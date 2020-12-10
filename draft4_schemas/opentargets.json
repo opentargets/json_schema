@@ -830,14 +830,14 @@
     },
     "biologicalModelAllelicComposition": {
       "type": "string",
-      "description": "Allelic composition of the mouse model",
+      "description": "Allelic composition of the model organism",
       "examples": [
         "Lepr<tm1Jke>/Lepr<tm1Jke>"
       ]
     },
     "biologicalModelGeneticBackground": {
       "type": "string",
-      "description": "Genetic background of the mouse model",
+      "description": "Genetic background of the model organism",
       "examples": [
         "involves: 129X1/SvJ"
       ]
@@ -850,7 +850,7 @@
     },
     "clinicalSignificances": {
       "type": "array",
-      "description": "Clinical significance definition",
+      "description": "Standard terms to define clinical significance",
       "items": {
         "type": "string",
         "examples": [
@@ -868,7 +868,7 @@
     },
     "clinicalUrls": {
       "type": "array",
-      "description": "Link to clinical trial information",
+      "description": "Reference to linked clinical information (studies, package inserts, etc.)",
       "items": {
         "type": "object",
         "properties": {
@@ -894,7 +894,7 @@
     },
     "cohortDescription": {
       "type": "string",
-      "description": "Description of the cohort",
+      "description": "Description of the studied cohort",
       "examples": [
         "Prostate adenocarcinoma data from SU2C-PCF Dream Team"
       ]
@@ -915,7 +915,7 @@
     },
     "cohortPhenotypes": {
       "type": "array",
-      "description": "List of all phenotypes provided by the source",
+      "description": "Clinical features/phenotypes observed in studied individuals",
       "items": {
         "type": "string",
         "examples": [
@@ -926,6 +926,7 @@
     },
     "confidence": {
       "type": "string",
+      "description": "Confidence qualifier on the reported evidence",
       "enum": [
         "Definitive",
         "Limited",
@@ -950,7 +951,8 @@
       "description": "Upper value of the confidence interval"
     },
     "contrast": {
-      "type": "string"
+      "type": "string",
+      "description": "Experiment contrast"
     },
     "datasourceId": {
       "type": "string"
@@ -960,6 +962,7 @@
     },
     "diseaseCellLines": {
       "type": "array",
+      "description": "Cancer cell lines used to generate evidence",
       "items": {
         "type": "string"
       },
@@ -988,6 +991,7 @@
     },
     "diseaseModelAssociatedHumanPhenotypes": {
       "type": "array",
+      "description": "Human phenotypes equivalent to those observed in animal models",
       "items": {
         "type": "object",
         "properties": {
@@ -1003,6 +1007,7 @@
     },
     "diseaseModelAssociatedModelPhenotypes": {
       "type": "array",
+      "description": "Phenotypes observed in genetically-modified animal models",
       "items": {
         "type": "object",
         "properties": {
@@ -1017,10 +1022,12 @@
       "uniqueItems": true
     },
     "drugId": {
-      "type": "string"
+      "type": "string",
+      "description": "Drug molecule ID"
     },
     "literature": {
       "type": "array",
+      "description": "Literature reference identifiers (Pubmed or PMC)",
       "items": {
         "type": "string",
         "pattern": "\\d+|PMC\\d+"
@@ -1028,10 +1035,12 @@
       "uniqueItems": true
     },
     "log2FoldChangePercentileRank": {
-      "type": "number"
+      "type": "number",
+      "description": "Percentile of top differentially regulated genes (transcripts) within experiment"
     },
     "log2FoldChangeValue": {
-      "type": "number"
+      "type": "number",
+      "description": "Log2 fold expression change in contrast experiment"
     },
     "mutatedSamples": {
       "type": "array",
@@ -1048,16 +1057,19 @@
           },
           "numberMutatedSamples": {
             "type": "integer",
+            "description": "Number of cohort samples in which target is mutated",
             "exclusiveMinimum": true,
             "minimum": 0
           },
           "numberSamplesTested": {
             "type": "integer",
+            "description": "Number of cohort samples tested",
             "exclusiveMinimum": true,
             "minimum": 0
           },
           "numberSamplesWithMutationType": {
             "type": "integer",
+            "description": "Number of cohort samples in which target is mutated with a specific mutation type",
             "exclusiveMinimum": true,
             "minimum": 0
           }
@@ -1067,17 +1079,20 @@
     },
     "oddsRatio": {
       "type": "number",
-      "description": "Odds ratio of the association"
+      "description": "Odds ratio (e.g GWAS association)"
     },
     "pathwayId": {
-      "type": "string"
+      "type": "string",
+      "description": "Pathway or gene set ID"
     },
     "pValueExponent": {
       "type": "integer",
+      "description": "p-value (e.g. GWAS association) exponent",
       "maximum": -8
     },
     "pValueMantissa": {
       "type": "number",
+      "description": "p-value (e.g. GWAS association) exponent",
       "minimum": 0.0
     },
     "pathwayName": {
@@ -1092,14 +1107,17 @@
       "description": "Year of publication"
     },
     "reactionId": {
-      "type": "string"
+      "type": "string",
+      "description": "Pathway reaction ID"
     },
     "resourceScore": {
       "type": "number",
+      "description": "Score provided by datasource indicating strength of target-disease association",
       "minimum": 0.0
     },
     "significantDriverMethods": {
       "type": "array",
+      "description": "Methods to detect cancer driver genes producing significant results",
       "items": {
         "type": "string"
       },
@@ -1107,6 +1125,7 @@
     },
     "studyCases": {
       "type": "integer",
+      "description": "Number of cases in case-control study",
       "exclusiveMinimum": true,
       "minimum": 0
     },
@@ -1115,7 +1134,8 @@
       "description": "Identifier of the study"
     },
     "studyOverview": {
-      "type": "string"
+      "type": "string",
+      "description": "Description of the study"
     },
     "studySampleSize": {
       "type": "integer",
@@ -1125,13 +1145,15 @@
     },
     "targetFromSourceId": {
       "type": "string",
-      "description": "Identifier of a target/gene/protein other than Ensembl gene id."
+      "description": "Target ID in resource of origin"
     },
     "targetInModel": {
-      "type": "string"
+      "type": "string",
+      "description": "Target ID in animal model"
     },
     "targetModulation": {
-      "type": "string"
+      "type": "string",
+      "description": "Description of target modulation event"
     },
     "textMiningSentences": {
       "type": "array",
@@ -1139,21 +1161,27 @@
         "type": "object",
         "properties": {
           "dEnd": {
+            "description": "Index position where disease name ends in sentence",
             "type": "integer"
           },
           "dStart": {
+            "description": "Index position where disease name starts in sentence",
             "type": "integer"
           },
           "section": {
+            "description": "Section in which sentence occurs",
             "type": "string"
           },
           "tEnd": {
+            "description": "Index position where target name ends in sentence",
             "type": "integer"
           },
           "text": {
+            "description": "Sentence text",
             "type": "string"
           },
           "tStart": {
+            "description": "Index position where target name starts in sentence",
             "type": "integer"
           }
         }
@@ -1170,7 +1198,7 @@
     },
     "variantId": {
       "type": "string",
-      "description": "Identifier of the variant in the OpenTargets Genetics portal",
+      "description": "Identifier of the variant using CHROM_POS_REF_ALT notation",
       "pattern": "^[0-9XY]{1,2}_\\d+_[ACTG]+_[ACTG]+$",
       "examples": [
         "20_41203988_T_C"
@@ -1178,11 +1206,12 @@
     },
     "variantRsId": {
       "type": "string",
-      "description": "rs identifier of the variant",
+      "description": "Variant reference SNP cluster ID (Rsid)",
       "pattern": "^rs[0-9]{1,}$"
     },
     "variantAminoacidDescriptions": {
       "type": "array",
+      "description": "Descriptions of variant consequences at protein level",
       "items": {
         "type": "string"
       },
