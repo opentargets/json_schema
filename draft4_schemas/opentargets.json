@@ -855,6 +855,22 @@
         "type": "string",
         "examples": [
           "pathogenic"
+        ],
+        "enum": [
+          "uncertain significance",
+          "pathogenic",
+          "likely benign",
+          "association not found",
+          "other",
+          "benign",
+          "association",
+          "risk factor",
+          "likely pathogenic",
+          "not provided",
+          "affects",
+          "protective",
+          "drug response",
+          "conflicting interpretations of pathogenicity"
         ]
       },
       "uniqueItems": true
@@ -864,6 +880,18 @@
       "description": "Current stage of a clinical study",
       "examples": [
         "Enrolling by invitation"
+      ],
+      "enum": [
+        "Suspended",
+        "Unknown status",
+        "Completed",
+        "Enrolling by invitation",
+        "Not yet recruiting",
+        "Recruiting",
+        "Terminated",
+        "N/A",
+        "Withdrawn",
+        "Active, not recruiting"
       ]
     },
     "clinicalUrls": {
@@ -882,10 +910,10 @@
           "niceName": {
             "type": "string",
             "enum": [
-              "Clinical Trials Information",
-              "DailyMed Information",
-              "FDA Information",
-              "ATC Information"
+              "Clinical Trials",
+              "DailyMed",
+              "FDA",
+              "ATC"
             ]
           }
         }
@@ -951,14 +979,23 @@
       "description": "Upper value of the confidence interval"
     },
     "contrast": {
-      "type": "string",
-      "description": "Experiment contrast"
+      "type": "string"
     },
     "datasourceId": {
       "type": "string"
     },
     "datatypeId": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "affected_pathway",
+        "literature",
+        "rna_expression",
+        "genetic_literature",
+        "animal_model",
+        "somatic_mutation",
+        "known_drug",
+        "genetic_association"
+      ]
     },
     "diseaseCellLines": {
       "type": "array",
@@ -1012,10 +1049,16 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "abnormal skin morphology"
+            ]
           },
           "label": {
-            "type": "string"
+            "type": "string",
+            "examples": [
+              "MP:0002060"
+            ]
           }
         }
       },
@@ -1023,19 +1066,24 @@
     },
     "drugId": {
       "type": "string",
-      "description": "Drug molecule ID"
+      "description": "Drug molecule ID",
+      "pattern": "^(CHEMBL)\\d+$",
+      "examples": [
+        "CHEMBL1431",
+        "CHEMBL803"
+      ]
     },
     "literature": {
       "type": "array",
       "description": "Literature reference identifiers (Pubmed or PMC)",
       "items": {
         "type": "string",
-        "pattern": "\\d+|PMC\\d+"
+        "pattern": "\\d+$"
       },
       "uniqueItems": true
     },
     "log2FoldChangePercentileRank": {
-      "type": "number",
+      "type": "integer",
       "description": "Percentile of top differentially regulated genes (transcripts) within experiment"
     },
     "log2FoldChangeValue": {
@@ -1057,7 +1105,7 @@
           },
           "numberMutatedSamples": {
             "type": "integer",
-            "description": "Number of cohort samples in which target is mutated",
+            "description": "Number of cohort samples in which target is mutated with a specific mutation type",
             "exclusiveMinimum": true,
             "minimum": 0
           },
@@ -1083,7 +1131,11 @@
     },
     "pathwayId": {
       "type": "string",
-      "description": "Pathway or gene set ID"
+      "description": "Pathway or gene set ID",
+      "pattern": "^(R-HSA-)\\d+$",
+      "examples": [
+        "R-HSA-4615885"
+      ]
     },
     "pValueExponent": {
       "type": "integer",
@@ -1096,19 +1148,36 @@
       "minimum": 0.0
     },
     "pathwayName": {
-      "type": "string"
+      "type": "string",
+      "description": "Pathway or gene set name",
+      "examples": [
+        "Chaperonin-mediated protein folding",
+        "Signaling by FGFR3"
+      ]
     },
     "publicationFirstAuthor": {
       "type": "string",
-      "description": "First author of the publication"
+      "description": "First author of the publication",
+      "examples": [
+        "Davies G",
+        "Kanai M",
+        "Pirastu N",
+        "Astle WJ",
+        "Kichaev G"
+      ]
     },
     "publicationYear": {
       "type": "integer",
-      "description": "Year of publication"
+      "description": "Year of publication",
+      "pattern": "\\d{4}$"
     },
     "reactionId": {
       "type": "string",
-      "description": "Pathway reaction ID"
+      "description": "Pathway reaction ID",
+      "pattern": "^(R-HSA-)\\d+$",
+      "examples": [
+        "R-HSA-9660615"
+      ]
     },
     "resourceScore": {
       "type": "number",
@@ -1119,7 +1188,20 @@
       "type": "array",
       "description": "Methods to detect cancer driver genes producing significant results",
       "items": {
-        "type": "string"
+        "type": "string",
+        "examples": [
+          "mutpanning"
+        ],
+        "enum": [
+          "oncodriveclustl",
+          "combination",
+          "smregions",
+          "mutpanning",
+          "cbase",
+          "hotmaps",
+          "dndscv",
+          "oncodrivefml"
+        ]
       },
       "uniqueItems": true
     },
@@ -1145,11 +1227,17 @@
     },
     "targetFromSourceId": {
       "type": "string",
-      "description": "Target ID in resource of origin"
+      "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
+      "examples": [
+        "BRCA1",
+        "ENSG00000012048",
+        "P38398"
+      ]
     },
     "targetInModel": {
       "type": "string",
-      "description": "Target ID in animal model"
+      "description": "Target ID in animal model",
+      "pattern": "^(ENSMUSG)\\d+$"
     },
     "targetModulation": {
       "type": "string",
@@ -1161,28 +1249,36 @@
         "type": "object",
         "properties": {
           "dEnd": {
-            "description": "Index position where disease name ends in sentence",
-            "type": "integer"
+            "type": "integer",
+            "description": "Index position where disease name ends in sentence"
           },
           "dStart": {
-            "description": "Index position where disease name starts in sentence",
-            "type": "integer"
+            "type": "integer",
+            "description": "Index position where disease name starts in sentence"
           },
           "section": {
+            "type": "string",
             "description": "Section in which sentence occurs",
-            "type": "string"
+            "enum": [
+              "title",
+              "table",
+              "other",
+              "figure",
+              "appendix",
+              "abstract"
+            ]
           },
           "tEnd": {
-            "description": "Index position where target name ends in sentence",
-            "type": "integer"
+            "type": "integer",
+            "description": "Index position where target name ends in sentence"
           },
           "text": {
-            "description": "Sentence text",
-            "type": "string"
+            "type": "string",
+            "description": "Sentence text"
           },
           "tStart": {
-            "description": "Index position where target name starts in sentence",
-            "type": "integer"
+            "type": "integer",
+            "description": "Index position where target name starts in sentence"
           }
         }
       },
@@ -1207,13 +1303,20 @@
     "variantRsId": {
       "type": "string",
       "description": "Variant reference SNP cluster ID (Rsid)",
-      "pattern": "^rs[0-9]{1,}$"
+      "pattern": "^rs[0-9]{1,}$",
+      "examples": [
+        "rs539139475"
+      ]
     },
     "variantAminoacidDescriptions": {
       "type": "array",
       "description": "Descriptions of variant consequences at protein level",
       "items": {
-        "type": "string"
+        "type": "string",
+        "examples": [
+          "glycine 598 replaced with L-valine",
+          "Deletion of residues 550 to 558"
+        ]
       },
       "uniqueItems": true
     }
