@@ -954,21 +954,7 @@
     },
     "confidence": {
       "type": "string",
-      "description": "Confidence qualifier on the reported evidence",
-      "enum": [
-        "Definitive",
-        "Limited",
-        "No Reported Evidence",
-        "Moderate",
-        "Refuted",
-        "Disputed",
-        "Strong",
-        "confirmed",
-        "probable",
-        "possible",
-        "child IF",
-        "both RD and IF"
-      ]
+      "description": "Confidence qualifier on the reported evidence"
     },
     "confidenceIntervalLower": {
       "type": "number",
@@ -979,7 +965,11 @@
       "description": "Upper value of the confidence interval"
     },
     "contrast": {
-      "type": "string"
+      "type": "string",
+      "description": "Experiment contrast",
+      "examples": [
+        "glioblastoma vs normal"
+      ]
     },
     "datasourceId": {
       "type": "string"
@@ -1022,6 +1012,7 @@
     "diseaseId": {
       "type": "string",
       "description": "Identifier of the disease in the EFO ontology",
+      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$)",
       "examples": [
         "EFO_0005537"
       ]
