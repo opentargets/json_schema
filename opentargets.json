@@ -950,7 +950,7 @@
       "description": "Upper value of the confidence interval"
     },
     "contrast": {
-      "type": "string"
+      "type": "string",
       "description": "Experiment contrast"    
     },
     "datasourceId": {
@@ -1078,7 +1078,7 @@
       "description": "Odds ratio (e.g GWAS association)"
     },
     "pathwayId": {
-      "type": "string"
+      "type": "string",
       "description": "Pathway or gene set ID"
     },
     "pValueExponent": {
@@ -1104,7 +1104,7 @@
     },
     "reactionId": {
       "type": "string",
-      "description": "Pathway reaction ID",
+      "description": "Pathway reaction ID"
     },
     "resourceScore": {
       "type": "number",
@@ -1113,7 +1113,7 @@
     },
     "significantDriverMethods": {
       "type": "array",
-      "description": "Score provided by datasource indicating strength of target-disease association",
+      "description": "Methods to detect cancer driver genes producing significant results",
       "items": {
         "type": "string"
       },
@@ -1130,7 +1130,7 @@
     },
     "studyOverview": {
       "type": "string",
-      "description": "Description of the study",
+      "description": "Description of the study"
     },
     "studySampleSize": {
       "type": "integer",
