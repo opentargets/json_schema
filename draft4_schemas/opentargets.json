@@ -1024,7 +1024,8 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^HP:\\d+$"
           },
           "label": {
             "type": "string"
@@ -1041,14 +1042,15 @@
         "properties": {
           "id": {
             "type": "string",
+            "pattern": "^MP:\\d+$",
             "examples": [
-              "abnormal skin morphology"
+              "MP:0002060"
             ]
           },
           "label": {
             "type": "string",
             "examples": [
-              "MP:0002060"
+              "abnormal skin morphology"
             ]
           }
         }
