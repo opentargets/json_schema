@@ -15,8 +15,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -37,7 +37,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -61,8 +61,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "drugId": {
           "$ref": "#/definitions/drugId"
@@ -74,7 +74,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -98,8 +98,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "studyId": {
           "$ref": "#/definitions/studyId"
@@ -111,7 +111,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -132,8 +132,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -148,7 +148,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -166,8 +166,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -185,7 +185,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -212,8 +212,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -234,7 +234,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -261,8 +261,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -280,7 +280,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -298,8 +298,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "log2FoldChangePercentileRank": {
           "$ref": "#/definitions/log2FoldChangePercentileRank"
@@ -323,7 +323,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -347,8 +347,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -363,7 +363,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -390,8 +390,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -409,7 +409,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -436,8 +436,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "mutatedSamples": {
           "$ref": "#/definitions/mutatedSamples"
@@ -458,7 +458,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -482,8 +482,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -528,7 +528,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -552,8 +552,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "diseaseModelAssociatedHumanPhenotypes": {
           "$ref": "#/definitions/diseaseModelAssociatedHumanPhenotypes"
@@ -574,7 +574,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -592,8 +592,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "oddsRatio": {
           "$ref": "#/definitions/oddsRatio"
@@ -620,7 +620,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -638,8 +638,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "pathwayId": {
           "$ref": "#/definitions/pathwayId"
@@ -657,7 +657,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -675,8 +675,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -703,7 +703,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -721,8 +721,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "pathwayId": {
           "$ref": "#/definitions/pathwayId"
@@ -740,7 +740,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -755,8 +755,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -777,7 +777,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -795,8 +795,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "diseaseId": {
-          "$ref": "#/definitions/diseaseId"
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -814,7 +814,7 @@
       "required": [
         "datasourceId",
         "targetFromSourceId",
-        "diseaseId"
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     }
@@ -1009,7 +1009,7 @@
         "OMIM:182920"
       ]
     },
-    "diseaseId": {
+    "diseaseFromSourceMappedId": {
       "type": "string",
       "description": "Identifier of the disease in the EFO ontology",
       "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$)",
