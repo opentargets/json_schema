@@ -36,8 +36,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -73,8 +72,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -110,8 +108,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -147,8 +144,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -184,8 +180,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -233,8 +228,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -279,8 +273,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -322,8 +315,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -362,8 +354,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -408,8 +399,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -457,8 +447,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -527,8 +516,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -573,8 +561,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -619,8 +606,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -656,8 +642,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -702,8 +687,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -739,8 +723,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -776,8 +759,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -813,8 +795,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId",
-        "diseaseId"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     }
