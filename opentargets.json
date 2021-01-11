@@ -3,1484 +3,1291 @@
   "title": "OpenTargets",
   "description": "OpenTargets evidence objects",
   "type": "object",
-  "properties": {
-    "sourceID": {
-      "type": "string",
-      "description": "A source ID (database or study ID) to help identify who this data is from.",
-      "pattern": "^[a-z0-9_]+$"
-    },
-    "access_level": {
-      "description": "Choose public as default; private is for internal datasets",
-      "type": "string",
-      "enum": [
-        "public",
-        "private"
-      ]
-    },
-    "unique_association_fields": {
-      "description": "String based key-value properties that must uniquely identify each JSON object in your data.",
-      "type": "object"
-    },
-    "target": {
-      "type": "object",
-      "description": "Target in OpenTargets's target ontology",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "An Ensembl or UniProt identifier",
-          "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$|^http://identifiers.org/uniprot/.{4,}$"
-        },
-        "tier": {
-          "type": "string",
-          "description": "Cancer Gene Census genes has been split into two tiers",
-          "enum": [
-            "tier 1",
-            "tier 2"
-          ]
-        },
-        "target_type": {
-          "type": "string",
-          "enum": [
-            "http://identifiers.org/cttv.target/gene_allele",
-            "http://identifiers.org/cttv.target/gene_evidence",
-            "http://identifiers.org/cttv.target/gene_in_LD_region",
-            "http://identifiers.org/cttv.target/gene_in_epigenetic_regulation_complex",
-            "http://identifiers.org/cttv.target/gene_variant",
-            "http://identifiers.org/cttv.target/pro_protein",
-            "http://identifiers.org/cttv.target/protein_evidence",
-            "http://identifiers.org/cttv.target/transcript_evidence",
-            "http://identifiers.org/cttv.target/transcript_isoform",
-            "http://identifiers.org/cttv.target/protein_isoform",
-            "http://identifiers.org/cttv.target/gene_or_protein_or_transcript",
-            "http://identifiers.org/cttv.target/chimeric_protein",
-            "http://identifiers.org/cttv.target/protein_complex",
-            "http://identifiers.org/cttv.target/protein_complex_group",
-            "http://identifiers.org/cttv.target/protein_complex_heteropolymer",
-            "http://identifiers.org/cttv.target/protein_complex_homopolymer",
-            "http://identifiers.org/cttv.target/protein_family",
-            "http://identifiers.org/cttv.target/protein_protein_interaction",
-            "http://identifiers.org/cttv.target/selectivity_group",
-            "http://identifiers.org/cttv.target/single_protein",
-            "http://identifiers.org/cttv.target/nucleic_acid"
-          ],
-          "description": "Type of target; if you do not have detailed information, select from gene_evidence, protein_evidence or transcript_evidence"
-        },
-        "activity": {
-          "type": "string",
-          "enum": [
-            "http://identifiers.org/cttv.activity/decreased_transcript_level",
-            "http://identifiers.org/cttv.activity/decreased_translational_product_level",
-            "http://identifiers.org/cttv.activity/negative_modulator",
-            "http://identifiers.org/cttv.activity/positive_modulator",
-            "http://identifiers.org/cttv.activity/other",
-            "http://identifiers.org/cttv.activity/gain_of_function",
-            "http://identifiers.org/cttv.activity/increased_transcript_level",
-            "http://identifiers.org/cttv.activity/increased_translational_product_level",
-            "http://identifiers.org/cttv.activity/loss_of_function",
-            "http://identifiers.org/cttv.activity/partial_loss_of_function",
-            "http://identifiers.org/cttv.activity/up_or_down",
-            "http://identifiers.org/cttv.activity/up",
-            "http://identifiers.org/cttv.activity/down",
-            "http://identifiers.org/cttv.activity/tolerated",
-            "http://identifiers.org/cttv.activity/predicted",
-            "http://identifiers.org/cttv.activity/damaging",
-            "http://identifiers.org/cttv.activity/damaging_to_target",
-            "http://identifiers.org/cttv.activity/predicted_tolerated",
-            "http://identifiers.org/cttv.activity/predicted_damaging",
-            "http://identifiers.org/cttv.activity/tolerated_by_target",
-            "http://identifiers.org/cttv.activity/unknown"
-          ],
-          "description": "Activity of target in disease context"
-        },
-        "target_name": {
-          "type": "string",
-          "description": "used by ChEMBL initially if they have a more canonical target name, optional"
-        },
-        "target_class": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true
-        }
-      },
-      "required": [
-        "id",
-        "target_type"
-      ]
-    },
-    "disease": {
-      "type": "object",
-      "description": "Disease in the EFO ontology",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "A valid EFO full IRI",
-          "pattern": "^[^\u0020]*$",
-          "minLength": 1,
-          "format": "uri"
-        },
-        "name": {
-          "type": "string",
-          "description": "Optional - EFO disease name corresponding to the EFO ID"
-        },
-        "source_name": {
-          "description": "Optional - Disease name used at source (it can be a single string or an array of strings for synonyms)",
-          "oneOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "array",
-              "items":
-              {
-                "type": "string"
-              },
-              "uniqueItems": true,
-              "minItems": 1
-            }
-          ]
-        },
-        "biosample": {
-          "description": "Tissue names - provide EFO name if you have this",
-          "title": "Disease Biosample",
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "description": "free text of the tissue / cell name"
-            },
-            "id": {
-              "type": "string",
-              "format": "uri",
-              "description": "EFO ID of the tissue - optional"
-            }
-          },
-          "required": [
-            "name"
-          ]
-        }
-      },
-      "required": [
-        "id"
-      ]
-    },
-    "literature": {
-      "type": "object",
-      "properties": {
-        "references": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/single_lit_reference"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      }
-    },
-    "evidence": {
-      "type": "object"
-    }
-  },
-  "required": [
-    "sourceID",
-    "access_level",
-    "unique_association_fields",
-    "target",
-    "disease",
-    "evidence"
-  ],
   "oneOf": [
     {
       "properties": {
-        "type": {
-          "const": "rna_expression"
+        "datasourceId": {
+          "const": "cancer_gene_census"
         },
-        "evidence": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/evidence_base"
-            }
-          ],
-          "properties": {
-            "organism_part": {
-              "type": "string"
-            },
-            "comparison_name": {
-              "type": "string"
-            },
-            "log2_fold_change": {
-              "type": "object",
-              "properties": {
-                "value": {
-                  "type": "number"
-                },
-                "percentile_rank": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 100
-                }
-              },
-              "required": [
-                "value",
-                "percentile_rank"
-              ]
-            },
-            "test_sample": {
-              "description": "Free text - test sample",
-              "type": "string"
-            },
-            "reference_sample": {
-              "description": "Free text - reference sample",
-              "type": "string"
-            },
-            "test_replicates_n": {
-              "description": "Count of test replicates",
-              "type": "number",
-              "minimum": 1
-            },
-            "reference_replicates_n": {
-              "description": "Count of reference replicates",
-              "type": "number",
-              "minimum": 1
-            },
-            "confidence_level": {
-              "type": "string",
-              "enum": [
-                "high",
-                "medium",
-                "low"
-              ],
-              "description": "high = if the disease state is the only variable (i.e. case vs control); medium = if the disease is a variable but there is one or more other variables; low = where all samples have the disease but the variable is something else e.g. a treatment"
-            },
-            "experiment_overview": {
-              "type": "string"
-            },
-            "evidence_codes": {
-              "type": "array",
-              "description": "An array of evidence codes",
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "uniqueItems": true
-            },
-            "urls": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "$ref": "#/definitions/linkout"
-              },
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "evidence_codes",
-            "comparison_name",
-            "log2_fold_change",
-            "test_sample",
-            "reference_sample",
-            "experiment_overview",
-            "test_replicates_n",
-            "reference_replicates_n",
-            "confidence_level",
-            "resource_score"
-          ]
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "mutatedSamples": {
+          "$ref": "#/definitions/mutatedSamples"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
-        "type",
-        "evidence"
-      ]
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     },
     {
       "properties": {
-        "type": {
-          "const": "known_drug"
+        "datasourceId": {
+          "const": "chembl"
         },
-        "evidence": {
-          "properties": {
-            "target2drug": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "#/definitions/evidence_base"
-                }
-              ],
-              "properties": {
-                "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                    "type": "string"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "mechanism_of_action": {
-                  "type": "string"
-                },
-                "action_type": {
-                  "type": "string"
-                },
-                "urls": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/linkout"
-                  },
-                  "uniqueItems": true
-                }
-              },
-              "required": [
-                "resource_score",
-                "provenance_type",
-                "is_associated",
-                "date_asserted",
-                "evidence_codes",
-                "mechanism_of_action",
-                "action_type"
-              ]
-            },
-            "drug2clinic": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "#/definitions/evidence_base"
-                }
-              ],
-              "properties": {
-                "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                    "type": "string"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "clinical_trial_phase": {
-                  "type": "object",
-                  "$ref": "#/definitions/diseasephase"
-                },
-                "urls": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/linkout"
-                  },
-                  "uniqueItems": true
-                },
-                "status": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "resource_score",
-                "provenance_type",
-                "is_associated",
-                "date_asserted",
-                "evidence_codes",
-                "clinical_trial_phase"
-              ]
-            }
-          },
-          "required": [
-            "target2drug",
-            "drug2clinic"
-          ]
+        "clinicalPhase": {
+          "$ref": "#/definitions/clinicalPhase"
         },
-        "drug": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string",
-              "description": "A ChEMBL or internal drug identifier",
-              "pattern": "^http://identifiers.org/chembl.compound/CHEMBL[0-9]+$|^http://private/.+$"
-            },
-            "molecule_name": {
-              "type": "string"
-            },
-            "molecule_type": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "id",
-            "molecule_name",
-            "molecule_type"
-          ]
+        "clinicalStatus": {
+          "$ref": "#/definitions/clinicalStatus"
         },
-        "target" : {
-          "properties" :{
-            "complex_id": {
-              "type": "string",
-              "description": "A ChEMBL protein complex identifier",
-              "pattern": "^CHEMBL[0-9]+$"
-            },
-            "binding_subunit_known": {
-              "type": "boolean",
-              "description": "Is the complex binding subunit known"
-            }
-          }
+        "clinicalUrls": {
+          "$ref": "#/definitions/clinicalUrls"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "drugId": {
+          "$ref": "#/definitions/drugId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
-        "type",
-        "evidence",
-        "drug"
-      ]
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     },
     {
       "properties": {
-        "type": {
-          "const": "animal_model"
+        "datasourceId": {
+          "const": "clingen"
         },
-        "evidence": {
-          "properties": {
-            "orthologs": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "#/definitions/evidence_base"
-                }
-              ],
-              "properties": {
-                "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                    "type": "string",
-                    "uniqueItems": true
-                  },
-                  "minItems": 1
-                },
-                "human_gene_id": {
-                  "type": "string",
-                  "description": "Human Ensembl gene identifier",
-                  "pattern": "^http://identifiers.org/ensembl/ENSG[0-9]{4,}$"
-                },
-                "model_gene_id": {
-                  "type": "string",
-                  "description": "Biological model Ensembl gene identifier (ortholog)",
-                  "pattern": "^http://identifiers.org/ensembl/ENS[A-Z]{0,3}G[0-9]{4,}$"
-                },
-                "species": {
-                  "type": "string",
-                  "enum": [
-                    "mouse",
-                    "human",
-                    "rat",
-                    "zebrafish",
-                    "dog"
-                  ]
-                },
-                "urls": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/linkout"
-                  },
-                  "uniqueItems": true
-                }
-              },
-              "required":[
-                "resource_score"
-              ]
-            },
-            "biological_model": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "#/definitions/evidence_base"
-                }
-              ],
-              "properties": {
-                "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                    "type": "string"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "model_gene_id": {
-                  "type": "string",
-                  "description": "Biological model Ensembl gene identifier (ortholog)",
-                  "pattern": "^http://identifiers.org/ensembl/ENS[A-Z]{0,3}G[0-9]{4,}$"
-                },
-                "model_id": {
-                  "type": "string",
-                  "description": "Internal identifier for the biological model"
-                },
-                "allelic_composition": {
-                  "type": "string",
-                  "description": "Animal model allelic composition"
-                },
-                "genetic_background": {
-                  "type": "string",
-                  "description": "Genetic background of the biological model that influences phenotypes"
-                },
-                "allele_ids": {
-                  "type": "string",
-                  "description": "List of allele identifiers for this model separated by |"
-                },
-                "zygosity": {
-                  "type": "string",
-                  "enum": [
-                    "hom",
-                    "het",
-                    "hem",
-                    "oth"
-                  ]
-                },
-                "species": {
-                  "type": "string",
-                  "enum": [
-                    "mouse",
-                    "human",
-                    "rat",
-                    "zebrafish",
-                    "dog"
-                  ]
-                },
-                "phenotypes": {
-                  "type": "array",
-                  "description": "List of phenotypes for this model",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/phenotype"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "urls": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/linkout"
-                  },
-                  "uniqueItems": true
-                }
-              },
-              "required": [
-                "resource_score",
-                "provenance_type",
-                "is_associated",
-                "date_asserted",
-                "evidence_codes",
-                "model_id",
-                "model_gene_id",
-                "genetic_background",
-                "allele_ids",
-                "allelic_composition",
-                "zygosity",
-                "phenotypes",
-                "species"
-              ]
-            },
-            "disease_model_association": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "#/definitions/evidence_base"
-                }
-              ],
-              "properties": {
-                "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                    "type": "string"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "model_id": {
-                  "type": "string",
-                  "description": "Internal identifier for the biological model"
-                },
-                "disease_id": {
-                  "type": "string",
-                  "description": "Disease identifier"
-                },
-                "human_phenotypes": {
-                  "type": "array",
-                  "description": "List of human phenotypes for this model",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/phenotype"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "model_phenotypes": {
-                  "type": "array",
-                  "description": "List of biomodel phenotypes for this model",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/phenotype"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "urls": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/linkout"
-                  },
-                  "uniqueItems": true
-                }
-              },
-              "required": [
-                "resource_score"
-              ]
-            }
-          },
-          "required": [
-            "orthologs",
-            "biological_model",
-            "disease_model_association"
-          ]
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
-        "type",
-        "evidence"
-      ]
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     },
     {
       "properties": {
-        "type": {
-          "const": "literature"
+        "datasourceId": {
+          "const": "crispr"
         },
-        "evidence": {
-          "allOf": [
-            {
-              "$ref": "#/definitions/evidence_base"
-            }
-          ],
-          "properties": {
-            "evidence_codes": {
-              "type": "array",
-              "description": "An array of evidence codes",
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "uniqueItems": true
-            },
-            "literature_ref": {
-              "type": "object",
-              "$ref": "#/definitions/single_lit_reference"
-            }
-          },
-          "required": [
-            "resource_score"
-          ]
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseCellLines": {
+          "$ref": "#/definitions/diseaseCellLines"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
-        "type",
-        "evidence"
-      ]
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     },
     {
       "properties": {
-        "type": {
-          "const": "genetic_association"
+        "datasourceId": {
+          "const": "europepmc"
         },
-        "variant": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string",
-              "description": "An array of variant identifiers",
-              "pattern": "^http://www.ncbi.nlm.nih.gov/clinvar/RCV[0-9]{9}|http://www.ncbi.nlm.nih.gov/clinvar/variation/VCV[0-9]{9}|http://identifiers.org/dbsnp/rs[0-9]{1,}|http://identifiers.org/dbsnp/esv[0-9]{1,}|http://identifiers.org/dbsnp/nsv[0-9]{1,}|.{1,2}_[0-9]+_[ACTG]+_[ACTG]+$"
-            },
-            "rs_id":{
-              "type": "string",
-              "description": "RS id of the variant",
-              "pattern": "^rs[0-9]{1,}$"
-            },
-            "secondary_id":{
-              "type": "string",
-              "description": "Optional RS id to be used as secondary variant id",
-              "pattern": "^http://identifiers.org/dbsnp/rs[0-9]{1,}$"
-            },
-            "type": {
-              "type": "string",
-              "enum": [
-                "snp single",
-                "snp snp interaction",
-                "structural variant",
-                "SNP",
-                "deletion",
-                "insertion"
-              ]
-            }
-          },
-          "required": [
-            "type"
-          ]
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
         },
-        "evidence": {
-          "properties": {
-            "gene2variant": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "#/definitions/evidence_base"
-                }
-              ],
-              "properties": {
-                "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                    "type": "string"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "functional_consequence": {
-                  "type": "string",
-                  "format": "uri"
-                },
-                "urls": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/linkout"
-                  },
-                  "uniqueItems": true
-                }
-              },
-              "required": [
-                "provenance_type",
-                "is_associated",
-                "evidence_codes",
-                "functional_consequence"
-              ]
-            },
-            "variant2disease": {
-              "type": "object",
-              "allOf": [
-                {
-                  "$ref": "#/definitions/evidence_base"
-                }
-              ],
-              "properties": {
-                "clinical_significance": {
-                  "oneOf": [
-                    {
-                      "type": "string",
-                      "enum": [
-                        "Pathogenic",
-                        "Likely pathogenic",
-                        "protective",
-                        "association",
-                        "risk_factor",
-                        "Affects",
-                        "drug response"
-                      ]
-                    },
-                    {
-                      "type": "array",
-                      "$ref": "#/definitions/clinical_significance"
-                    }
-                  ]
-                },
-                "gwas_panel_resolution": {
-                  "description": "Panel resolution of GWAS study",
-                  "type": "number",
-                  "exclusiveMinimum": 0
-                },
-                "gwas_sample_size": {
-                  "description": "Sample size of GWAS study",
-                  "type": "number",
-                  "exclusiveMinimum": 0
-                },
-                "evidence_codes": {
-                  "type": "array",
-                  "description": "An array of evidence codes",
-                  "items": {
-                    "type": "string"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                },
-                "urls": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/linkout"
-                  },
-                  "uniqueItems": true
-                },
-                "clinvar_rating": {
-                  "type": "object",
-                  "$ref": "#/definitions/clinvar_rating"
-                },
-                "mode_of_inheritance": {
-                  "$ref": "#/definitions/mode_of_inheritance"
-                },
-                "last_evaluated_date": {
-                  "$ref": "#/definitions/date",
-                  "description": "The most recent date that the variant was interpreted, or evaluated, by a submitter."
-                }
-              },
-              "required": [
-                "unique_experiment_reference",
-                "resource_score",
-                "provenance_type",
-                "is_associated",
-                "date_asserted",
-                "evidence_codes"
-              ]
-            }
-          },
-          "required": [
-            "gene2variant",
-            "variant2disease"
-          ]
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "textMiningSentences": {
+          "$ref": "#/definitions/textMiningSentences"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
-        "type",
-        "evidence",
-        "variant"
-      ]
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     },
     {
       "properties": {
-        "type": {
-          "enum": [
-            "genetic_literature",
-            "affected_pathway",
-            "somatic_mutation"
-          ]
+        "datasourceId": {
+          "const": "eva"
         },
-        "evidence": {
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/evidence_base"
-            }
-          ],
-          "properties": {
-            "clinical_significance": {
-              "oneOf": [
-                {
-                  "type": "string",
-                  "enum": [
-                    "Pathogenic",
-                    "Likely pathogenic",
-                    "protective",
-                    "association",
-                    "risk_factor",
-                    "Affects",
-                    "drug response"
-                  ]
-                },
-                {
-                  "type": "array",
-                  "$ref": "#/definitions/clinical_significance"
-                }
-              ]
-            },
-            "clinvar_rating": {
-              "type": "object",
-              "$ref": "#/definitions/clinvar_rating"
-            },
-            "mode_of_inheritance": {
-              "$ref": "#/definitions/mode_of_inheritance"
-            },
-            "last_evaluated_date": {
-              "$ref": "#/definitions/date",
-              "description": "The most recent date that the variant was interpreted, or evaluated, by a submitter."
-            },
-            "evidence_codes": {
-              "description": "An array of evidence codes",
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "minItems": 1,
-              "uniqueItems": true
-            },
-            "known_mutations": {
-              "description": "An array of mutations",
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "role_in_cancer": {
-                    "description": "The role in cancer can be TSG, oncogene or gene_fusion",
-                    "type": "string"
-                  },
-                  "preferred_name": {
-                    "description": "The preferred name for this mutation, e.g. NM_005228.3(EGFR):c.2500G>T (p.Val834Leu)",
-                    "type": "string"
-                  },
-                  "alternative_names": {
-                    "description": "A list of alternative names for this mutation, if known e.g. NC_000007.14:g.55191749G>T",
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "minItems": 1,
-                    "uniqueItems": true
-                  },
-                  "functional_consequence": {
-                    "description": "For COSMIC: sequence alteration, deletion, missense_variant, stop_gained, terminator_codon_variant, translational product variant, amino acid insertion, conservative decrease in CDS length, mutation causing uncharacterised change of translational product",
-                    "type": "string"
-                  },
-                  "number_samples_tested": {
-                    "description": "The number of samples tested",
-                    "type": "number",
-                    "minimum": 0
-                  },
-                  "number_samples_with_mutation_type": {
-                    "description": "The number of samples for this mutation type if known",
-                    "type": "number",
-                    "minimum": 0
-                  },
-                  "number_mutated_samples": {
-                    "description": "The total number of samples with any type of mutation if known",
-                    "type": "number",
-                    "minimum": 0
-                  },
-                  "inheritance_pattern": {
-                    "description": "dominant (a single copy of the abnormal allele is sufficient to give rise to the disease), semi-dominant, or recessive (requiring both copies of the gene to have an abnormal allele)",
-                    "type": "string",
-                    "enum": [
-                      "unknown",
-                      "dominant",
-                      "semi-dominant",
-                      "co-dominant",
-                      "recessive",
-                      "dominant/recessive",
-                      "X-linked recessive"
-                    ]
-                  }
-                },
-                "required": [
-                  "preferred_name",
-                  "functional_consequence"
-                ]
-              },
-              "minItems": 0
-            },
-            "urls": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "$ref": "#/definitions/linkout"
-              },
-              "uniqueItems": true
-            },
-            "cohort":{
-              "type": "object",
-              "decription": "Information about the cohort where the target was detected as driver",
-              "properties": {
-                "cohort_id": {
-                  "type": "string"
-                },
-                "cohort_short_name": {
-                  "type": "string"
-                },
-                "cohort_description": {
-                  "type": "string"
-                }
-              }
-            },
-            "significant_driver_methods":{
-              "type": "array",
-              "description": "Cancer driver gene identification method that detects target as driver",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "cbase",
-                  "combination",
-                  "dndscv",
-                  "hotmaps",
-                  "mutpanning",
-                  "oncodriveclustl",
-                  "oncodrivefml",
-                  "smregions"
-                ]
-              }
-            }
-          },
-          "required": [
-            "evidence_codes",
-            "resource_score"
-          ]
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
+        "clinicalSignificances": {
+          "$ref": "#/definitions/clinicalSignificances"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
+        },
+        "variantRsId": {
+          "$ref": "#/definitions/variantRsId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
-        "type",
-        "evidence"
-      ]
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "eva_somatic"
+        },
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
+        "clinicalSignificances": {
+          "$ref": "#/definitions/clinicalSignificances"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "variantRsId": {
+          "$ref": "#/definitions/variantRsId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "expression_atlas"
+        },
+        "contrast": {
+          "$ref": "#/definitions/contrast"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "log2FoldChangePercentileRank": {
+          "$ref": "#/definitions/log2FoldChangePercentileRank"
+        },
+        "log2FoldChangeValue": {
+          "$ref": "#/definitions/log2FoldChangeValue"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "studyOverview": {
+          "$ref": "#/definitions/studyOverview"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "gene2phenotype"
+        },
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "genomics_england"
+        },
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
+        "cohortPhenotypes": {
+          "$ref": "#/definitions/cohortPhenotypes"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "studyOverview": {
+          "$ref": "#/definitions/studyOverview"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "intogen"
+        },
+        "cohortDescription": {
+          "$ref": "#/definitions/cohortDescription"
+        },
+        "cohortId": {
+          "$ref": "#/definitions/cohortId"
+        },
+        "cohortShortName": {
+          "$ref": "#/definitions/cohortShortName"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "mutatedSamples": {
+          "$ref": "#/definitions/mutatedSamples"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "significantDriverMethods": {
+          "$ref": "#/definitions/significantDriverMethods"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "ot_genetics_portal"
+        },
+        "confidenceIntervalLower": {
+          "$ref": "#/definitions/confidenceIntervalLower"
+        },
+        "confidenceIntervalUpper": {
+          "$ref": "#/definitions/confidenceIntervalUpper"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "oddsRatio": {
+          "$ref": "#/definitions/oddsRatio"
+        },
+        "pValueExponent": {
+          "$ref": "#/definitions/pValueExponent"
+        },
+        "pValueMantissa": {
+          "$ref": "#/definitions/pValueMantissa"
+        },
+        "publicationFirstAuthor": {
+          "$ref": "#/definitions/publicationFirstAuthor"
+        },
+        "publicationYear": {
+          "$ref": "#/definitions/publicationYear"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "studySampleSize": {
+          "$ref": "#/definitions/studySampleSize"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
+        },
+        "variantId": {
+          "$ref": "#/definitions/variantId"
+        },
+        "variantRsId": {
+          "$ref": "#/definitions/variantRsId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "phenodigm"
+        },
+        "biologicalModelAllelicComposition": {
+          "$ref": "#/definitions/biologicalModelAllelicComposition"
+        },
+        "biologicalModelGeneticBackground": {
+          "$ref": "#/definitions/biologicalModelGeneticBackground"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseModelAssociatedHumanPhenotypes": {
+          "$ref": "#/definitions/diseaseModelAssociatedHumanPhenotypes"
+        },
+        "diseaseModelAssociatedModelPhenotypes": {
+          "$ref": "#/definitions/diseaseModelAssociatedModelPhenotypes"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetInModel": {
+          "$ref": "#/definitions/targetInModel"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "phewas_catalog"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "oddsRatio": {
+          "$ref": "#/definitions/oddsRatio"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "studyCases": {
+          "$ref": "#/definitions/studyCases"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
+        },
+        "variantId": {
+          "$ref": "#/definitions/variantId"
+        },
+        "variantRsId": {
+          "$ref": "#/definitions/variantRsId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "progeny"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "pathwayId": {
+          "$ref": "#/definitions/pathwayId"
+        },
+        "pathwayName": {
+          "$ref": "#/definitions/pathwayName"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "reactome"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "pathwayId": {
+          "$ref": "#/definitions/pathwayId"
+        },
+        "pathwayName": {
+          "$ref": "#/definitions/pathwayName"
+        },
+        "reactionId": {
+          "$ref": "#/definitions/reactionId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetModulation": {
+          "$ref": "#/definitions/targetModulation"
+        },
+        "variantAminoacidDescriptions": {
+          "$ref": "#/definitions/variantAminoacidDescriptions"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "slapenrich"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "pathwayId": {
+          "$ref": "#/definitions/pathwayId"
+        },
+        "pathwayName": {
+          "$ref": "#/definitions/pathwayName"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "sysbio"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "pathwayName": {
+          "$ref": "#/definitions/pathwayName"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "studyOverview": {
+          "$ref": "#/definitions/studyOverview"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "uniprot_literature"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     }
   ],
   "definitions": {
-    "single_lit_reference": {
-      "properties": {
-        "lit_id": {
-          "type": "string",
-          "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
-          "pattern": "NA|http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|(https?://)?(dx\u005C.)?doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)$"
-        },
-        "rank": {
-          "type": "object",
-          "$ref": "#/definitions/score_rank"
-        },
-        "mined_sentences": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "text": {
-                "type": "string"
-              },
-              "section": {
-                "type": "string",
-                "enum": [
-                  "title",
-                  "abstract",
-                  "introduction_and_background",
-                  "results",
-                  "discussion",
-                  "case_study",
-                  "conclusion_and_future_work",
-                  "appendix",
-                  "figure",
-                  "table",
-                  "other"
-                ],
-                "description": "Section of the article in which this sentence appears"
-              },
-              "t_start": {
-                "type": "number",
-                "minimum": 0,
-                "description": "Start co-ordinate of target (protein/gene) in text"
-              },
-              "t_end": {
-                "type": "number",
-                "minimum": 0,
-                "description": "End co-ordinate of target (protein/gene) in text"
-              },
-              "d_start": {
-                "type": "number",
-                "minimum": 0,
-                "description": "Start co-ordinate of disease name in text"
-              },
-              "d_end": {
-                "type": "number",
-                "minimum": 0,
-                "description": "End co-ordinate of disease name in text"
-              }
-            },
-            "required": [
-              "text",
-              "section"
+    "allelicRequirements": {
+      "type": "array",
+      "description": "Inheritance patterns",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "biologicalModelAllelicComposition": {
+      "type": "string",
+      "description": "Allelic composition of the model organism",
+      "examples": [
+        "Lepr<tm1Jke>/Lepr<tm1Jke>"
+      ]
+    },
+    "biologicalModelGeneticBackground": {
+      "type": "string",
+      "description": "Genetic background of the model organism",
+      "examples": [
+        "involves: 129X1/SvJ"
+      ]
+    },
+    "clinicalPhase": {
+      "type": "integer",
+      "description": "Phase of the clinical trial",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "clinicalSignificances": {
+      "type": "array",
+      "description": "Standard terms to define clinical significance",
+      "items": {
+        "type": "string",
+        "examples": [
+          "pathogenic"
+        ],
+        "enum": [
+          "uncertain significance",
+          "pathogenic",
+          "likely benign",
+          "association not found",
+          "other",
+          "benign",
+          "association",
+          "risk factor",
+          "likely pathogenic",
+          "not provided",
+          "affects",
+          "protective",
+          "drug response",
+          "conflicting interpretations of pathogenicity"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "clinicalStatus": {
+      "type": "string",
+      "description": "Current stage of a clinical study",
+      "examples": [
+        "Enrolling by invitation"
+      ],
+      "enum": [
+        "Suspended",
+        "Unknown status",
+        "Completed",
+        "Enrolling by invitation",
+        "Not yet recruiting",
+        "Recruiting",
+        "Terminated",
+        "N/A",
+        "Withdrawn",
+        "Active, not recruiting"
+      ]
+    },
+    "clinicalUrls": {
+      "type": "array",
+      "description": "Reference to linked clinical information (studies, package inserts, etc.)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "pattern": "https://|http://",
+            "examples": [
+              "https://clinicaltrials.gov/search?id=%22NCT01917656%22"
             ]
           },
-          "minItems": 1
-        }
-      }
-    },
-    "score_method": {
-      "type": "object",
-      "properties": {
-        "description": {
-          "type": "string"
-        },
-        "reference": {
-          "type": "string",
-          "description": "Note for pubmed identifiers, use the URI http://europepmc.org/abstract/MED/[0-9]+",
-          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}$"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        }
-      }
-    },
-    "score_pvalue": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "pvalue"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "maximum": 1,
-          "exclusiveMinimum": 0
-        },
-        "mantissa": {
-          "type": "integer",
-          "exclusiveMinimum": 0
-        },
-        "exponent": {
-          "type": "number",
-          "maximum": 0
-        },
-        "method": {
-          "type": "object",
-          "$ref": "#/definitions/score_method"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "score_probability": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "probability",
-            "locus_to_gene_score"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "maximum": 1,
-          "exclusiveMinimum": 0
-        },
-        "method": {
-          "type": "object",
-          "$ref": "#/definitions/score_method"
-        }
-      },
-      "required": [
-        "value",
-        "type"
-      ]
-    },
-    "score_summed_total": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "summed_total"
-          ]
-        },
-        "value": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "method": {
-          "type": "object",
-          "$ref": "#/definitions/score_method"
-        }
-      },
-      "required": [
-        "value",
-        "type"
-      ]
-    },
-    "score_rank": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "rank"
-          ]
-        },
-        "position": {
-          "type": "number",
-          "minimum": 1
-        },
-        "sample_size": {
-          "type": "number",
-          "minimum": 1
-        },
-        "method": {
-          "type": "object",
-          "$ref": "#/definitions/score_method"
-        }
-      },
-      "required": [
-        "position",
-        "sample_size",
-        "type"
-      ]
-    },
-    "linkout": {
-      "type": "object",
-      "properties": {
-        "nice_name": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string",
-          "format": "uri"
-        }
-      },
-      "required": [
-        "nice_name",
-        "url"
-      ]
-    },
-    "phenotype": {
-      "type": "object",
-      "properties": {
-        "id" : {
-          "type" : "string",
-          "description" : "Phenotype identifier."
-        },
-        "term_id": {
-          "type": "string",
-          "description": "Phenotype term Identifier from HPO/MP",
-          "pattern": "^http://purl.obolibrary.org/obo/HP_[0-9]{4,}||http://purl.obolibrary.org/obo/MP_[0-9]{4,}$"
-        },
-        "label": {
-          "type": "string",
-          "description": "Phenotype term label"
-        },
-        "species": {
-          "type": "string",
-          "enum": [
-            "mouse",
-            "human",
-            "rat",
-            "zebrafish",
-            "dog"
-          ]
-        }
-      },
-      "required": [
-        "id",
-        "term_id",
-        "label",
-        "species"
-      ]
-    },
-    "diseasephase": {
-      "type": "object",
-      "properties": {
-        "numeric_index": {
-          "description": "An integer indicating the position of this study phase. Higher the number = more advanced phase.",
-          "type": "number"
-        },
-        "label": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "numeric_index",
-        "label"
-      ]
-    },
-    "evidence_base": {
-      "type": "object",
-      "properties": {
-        "unique_experiment_reference": {
-          "type": "string",
-          "description": "A unique experiment identifier or literature reference that uniquely identifies the study in your database",
-          "pattern": "http://europepmc.org/abstract/MED/[0-9]+|http://europepmc.org/articles/PMC[0-9]{4,}|[doi|DOI|https://dx.doi.org/]*[\u005Cs\u005C.\u005C:]{0,2}(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![\u005C\"&\u005C'])\u005CS)+)|STUDYID_.+$"
-        },
-        "is_associated": {
-          "type": "boolean"
-        },
-        "date_asserted": {
-          "$ref": "#/definitions/date",
-          "description": "date the evidence was made public in yyyy-mm-dd format or N/A if not available"
-        },
-        "resource_score": {
-          "type": "object",
-          "oneOf": [
-            {
-              "$ref": "#/definitions/score_pvalue"
-            },
-            {
-              "$ref": "#/definitions/score_probability"
-            },
-            {
-              "$ref": "#/definitions/score_rank"
-            },
-            {
-              "$ref": "#/definitions/score_summed_total"
-            }
-          ]
-        },
-        "provenance_type": {
-          "type": "object",
-          "properties": {
-            "expert": {
-              "type": "object",
-              "properties": {
-                "statement": {
-                  "type": "string"
-                },
-                "author": {
-                  "type": "object",
-                  "properties": {
-                    "organization": {
-                      "type": "string"
-                    },
-                    "email": {
-                      "type": "string",
-                      "format": "email"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "status": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "status"
-              ]
-            },
-            "literature": {
-              "type": "object",
-              "properties": {
-                "references": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "$ref": "#/definitions/single_lit_reference"
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
-                }
-              },
-              "required": [
-                "references"
-              ]
-            },
-            "database": {
-              "type": "object",
-              "properties": {
-                "dbxref": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "description": "Please provide the original DB name"
-                    },
-                    "url": {
-                      "type": "string",
-                      "format": "uri",
-                      "description": "Please provide a pointer to the original resource: e.g. http://identifiers.org/orphanet/93298"
-                    },
-                    "version": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "version"
-                  ]
-                },
-                "id": {
-                  "type": "string"
-                },
-                "version": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "version"
-              ]
-            }
+          "niceName": {
+            "type": "string",
+            "enum": [
+              "Clinical Trials",
+              "DailyMed",
+              "FDA",
+              "ATC"
+            ]
           }
         }
       },
-      "required": [
-        "provenance_type",
-        "is_associated"
+      "uniqueItems": true
+    },
+    "cohortDescription": {
+      "type": "string",
+      "description": "Description of the studied cohort",
+      "examples": [
+        "Prostate adenocarcinoma data from SU2C-PCF Dream Team"
       ]
     },
-    "date": {
+    "cohortId": {
       "type": "string",
-      "description": "Any date provided has to follow the yyyy-mm-dd format",
-      "pattern": "[1-2][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+      "description": "Identifier of the studied cohort",
+      "examples": [
+        "CBIOP_WXS_PRAD_SU2C_2019"
+      ]
     },
-    "clinical_significance": {
+    "cohortShortName": {
+      "type": "string",
+      "description": "Short name of the studied cohort",
+      "examples": [
+        "PRAD_SU2C_MET"
+      ]
+    },
+    "cohortPhenotypes": {
       "type": "array",
+      "description": "Clinical features/phenotypes observed in studied individuals",
       "items": {
         "type": "string",
-        "enum": [
-          "affects",
-          "association",
-          "association not found",
-          "benign",
-          "conflicting data from submitters",
-          "conflicting interpretations of pathogenicity",
-          "drug response",
-          "likely benign",
-          "likely pathogenic",
-          "not provided",
-          "other",
-          "pathogenic",
-          "protective",
-          "risk factor",
-          "uncertain significance"
+        "examples": [
+          "Anterior segment dysgenesis 5"
         ]
-      }
+      },
+      "uniqueItems": true
     },
-    "clinvar_rating": {
-      "type": "object",
-      "properties": {
-        "star_rating": {
-          "type": "integer",
-          "description": "ClinVar star rating of the variant. Int. 0-4",
-          "maximum": 4,
-          "minimum": 0
-        },
-        "review_status": {
-          "type": "string",
-          "description": "ClinVar review_status of the variant.",
-          "enum": [
-            "no assertion provided",
-            "no assertion criteria provided",
-            "criteria provided, single submitter",
-            "criteria provided, conflicting interpretations",
-            "criteria provided, multiple submitters, no conflicts",
-            "reviewed by expert panel",
-            "practice guideline"
-          ]
+    "confidence": {
+      "type": "string",
+      "description": "Confidence qualifier on the reported evidence"
+    },
+    "confidenceIntervalLower": {
+      "type": "number",
+      "description": "Lower value of the confidence interval"
+    },
+    "confidenceIntervalUpper": {
+      "type": "number",
+      "description": "Upper value of the confidence interval"
+    },
+    "contrast": {
+      "type": "string",
+      "description": "Experiment contrast",
+      "examples": [
+        "glioblastoma vs normal"
+      ]
+    },
+    "datasourceId": {
+      "type": "string"
+    },
+    "datatypeId": {
+      "type": "string",
+      "enum": [
+        "affected_pathway",
+        "literature",
+        "rna_expression",
+        "genetic_literature",
+        "animal_model",
+        "somatic_mutation",
+        "known_drug",
+        "genetic_association"
+      ]
+    },
+    "diseaseCellLines": {
+      "type": "array",
+      "description": "Cancer cell lines used to generate evidence",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "diseaseFromSource": {
+      "type": "string",
+      "description": "Disease label from the original source",
+      "examples": [
+        "MYOPATHY, SPHEROID BODY"
+      ]
+    },
+    "diseaseFromSourceId": {
+      "type": "string",
+      "description": "Disease ID from the original source",
+      "examples": [
+        "OMIM:182920"
+      ]
+    },
+    "diseaseFromSourceMappedId": {
+      "type": "string",
+      "description": "Identifier of the disease in the EFO ontology",
+      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$)",
+      "examples": [
+        "EFO_0005537"
+      ]
+    },
+    "diseaseModelAssociatedHumanPhenotypes": {
+      "type": "array",
+      "description": "Human phenotypes equivalent to those observed in animal models",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^HP:\\d+$"
+          },
+          "label": {
+            "type": "string"
+          }
         }
       },
-      "required": [
-        "star_rating",
-        "review_status"
+      "uniqueItems": true
+    },
+    "diseaseModelAssociatedModelPhenotypes": {
+      "type": "array",
+      "description": "Phenotypes observed in genetically-modified animal models",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^MP:\\d+$",
+            "examples": [
+              "MP:0002060"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "examples": [
+              "abnormal skin morphology"
+            ]
+          }
+        }
+      },
+      "uniqueItems": true
+    },
+    "drugId": {
+      "type": "string",
+      "description": "Drug molecule ID",
+      "pattern": "^(CHEMBL)\\d+$",
+      "examples": [
+        "CHEMBL1431",
+        "CHEMBL803"
       ]
     },
-    "mode_of_inheritance": {
-      "description": "ClinVar mode of inheritance",
-      "oneOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
+    "literature": {
+      "type": "array",
+      "description": "PubMed reference identifiers",
+      "items": {
+        "type": "string",
+        "pattern": "\\d+$"
+      },
+      "uniqueItems": true
+    },
+    "log2FoldChangePercentileRank": {
+      "type": "integer",
+      "description": "Percentile of top differentially regulated genes (transcripts) within experiment"
+    },
+    "log2FoldChangeValue": {
+      "type": "number",
+      "description": "Log2 fold expression change in contrast experiment"
+    },
+    "mutatedSamples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "functionalConsequenceId": {
+            "type": "string",
+            "description": "Sequence ontology (SO) identifier of the functional consequence of the variant",
+            "pattern": "SO_\\d+",
+            "examples": [
+              "SO_0001628"
+            ]
           },
-          "minItems": 1,
-          "uniqueItems": true
+          "numberMutatedSamples": {
+            "type": "integer",
+            "description": "Number of cohort samples in which target is mutated with a specific mutation type",
+            "exclusiveMinimum": 0
+          },
+          "numberSamplesTested": {
+            "type": "integer",
+            "description": "Number of cohort samples tested",
+            "exclusiveMinimum": 0
+          },
+          "numberSamplesWithMutationType": {
+            "type": "integer",
+            "description": "Number of cohort samples in which target is mutated with a specific mutation type",
+            "exclusiveMinimum": 0
+          }
         }
+      },
+      "uniqueItems": true
+    },
+    "oddsRatio": {
+      "type": "number",
+      "description": "Odds ratio (e.g GWAS association)"
+    },
+    "pathwayId": {
+      "type": "string",
+      "description": "Pathway or gene set ID",
+      "pattern": "^(R-HSA-)\\d+$",
+      "examples": [
+        "R-HSA-4615885"
       ]
+    },
+    "pValueExponent": {
+      "type": "integer",
+      "description": "p-value (e.g. GWAS association) exponent",
+      "maximum": -8
+    },
+    "pValueMantissa": {
+      "type": "number",
+      "description": "p-value (e.g. GWAS association) exponent",
+      "minimum": 0.0
+    },
+    "pathwayName": {
+      "type": "string",
+      "description": "Pathway or gene set name",
+      "examples": [
+        "Chaperonin-mediated protein folding",
+        "Signaling by FGFR3"
+      ]
+    },
+    "publicationFirstAuthor": {
+      "type": "string",
+      "description": "First author of the publication",
+      "examples": [
+        "Davies G",
+        "Kanai M",
+        "Pirastu N",
+        "Astle WJ",
+        "Kichaev G"
+      ]
+    },
+    "publicationYear": {
+      "type": "integer",
+      "description": "Year of publication",
+      "pattern": "\\d{4}$"
+    },
+    "reactionId": {
+      "type": "string",
+      "description": "Pathway reaction ID",
+      "pattern": "^(R-HSA-)\\d+$",
+      "examples": [
+        "R-HSA-9660615"
+      ]
+    },
+    "resourceScore": {
+      "type": "number",
+      "description": "Score provided by datasource indicating strength of target-disease association",
+      "minimum": 0.0
+    },
+    "significantDriverMethods": {
+      "type": "array",
+      "description": "Methods to detect cancer driver genes producing significant results",
+      "items": {
+        "type": "string",
+        "examples": [
+          "mutpanning"
+        ],
+        "enum": [
+          "oncodriveclustl",
+          "combination",
+          "smregions",
+          "mutpanning",
+          "cbase",
+          "hotmaps",
+          "dndscv",
+          "oncodrivefml"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "studyCases": {
+      "type": "integer",
+      "description": "Number of cases in case-control study",
+      "exclusiveMinimum": 0
+    },
+    "studyId": {
+      "type": "string",
+      "description": "Identifier of the study"
+    },
+    "studyOverview": {
+      "type": "string",
+      "description": "Description of the study"
+    },
+    "studySampleSize": {
+      "type": "integer",
+      "description": "Sample size of study",
+      "exclusiveMinimum": 0
+    },
+    "targetFromSourceId": {
+      "type": "string",
+      "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
+      "examples": [
+        "BRCA1",
+        "ENSG00000012048",
+        "P38398"
+      ]
+    },
+    "targetInModel": {
+      "type": "string",
+      "description": "Target ID in animal model",
+      "pattern": "^(ENSMUSG)\\d+$"
+    },
+    "targetModulation": {
+      "type": "string",
+      "description": "Description of target modulation event"
+    },
+    "textMiningSentences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dEnd": {
+            "type": "integer",
+            "description": "Index position where disease name ends in sentence"
+          },
+          "dStart": {
+            "type": "integer",
+            "description": "Index position where disease name starts in sentence"
+          },
+          "section": {
+            "type": "string",
+            "description": "Section in which sentence occurs",
+            "enum": [
+              "title",
+              "table",
+              "other",
+              "figure",
+              "appendix",
+              "abstract"
+            ]
+          },
+          "tEnd": {
+            "type": "integer",
+            "description": "Index position where target name ends in sentence"
+          },
+          "text": {
+            "type": "string",
+            "description": "Sentence text"
+          },
+          "tStart": {
+            "type": "integer",
+            "description": "Index position where target name starts in sentence"
+          }
+        }
+      },
+      "uniqueItems": true
+    },
+    "variantFunctionalConsequenceId": {
+      "type": "string",
+      "description": "Sequence ontology (SO) identifier of the functional consequence of the variant",
+      "pattern": "SO_\\d+",
+      "examples": [
+        "SO_0001628"
+      ]
+    },
+    "variantId": {
+      "type": "string",
+      "description": "Identifier of the variant using CHROM_POS_REF_ALT notation",
+      "pattern": "^[0-9XY]{1,2}_\\d+_[ACTG]+_[ACTG]+$",
+      "examples": [
+        "20_41203988_T_C"
+      ]
+    },
+    "variantRsId": {
+      "type": "string",
+      "description": "Variant reference SNP cluster ID (Rsid)",
+      "pattern": "^rs[0-9]{1,}$",
+      "examples": [
+        "rs539139475"
+      ]
+    },
+    "variantAminoacidDescriptions": {
+      "type": "array",
+      "description": "Descriptions of variant consequences at protein level",
+      "items": {
+        "type": "string",
+        "examples": [
+          "glycine 598 replaced with L-valine",
+          "Deletion of residues 550 to 558"
+        ]
+      },
+      "uniqueItems": true
     }
   }
 }
