@@ -1247,7 +1247,7 @@
           },
           "niceName": {
             "type": "string",
-            "enum": [
+            "examples": [
               "Clinical Trials",
               "DailyMed",
               "FDA",
