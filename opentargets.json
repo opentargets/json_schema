@@ -51,9 +51,6 @@
         "clinicalStatus": {
           "$ref": "#/definitions/clinicalStatus"
         },
-        "clinicalUrls": {
-          "$ref": "#/definitions/clinicalUrls"
-        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
@@ -68,6 +65,9 @@
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "urls": {
+          "$ref": "#/definitions/urls"
         }
       },
       "required": [
@@ -104,6 +104,9 @@
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "urls": {
+          "$ref": "#/definitions/urls"
         }
       },
       "required": [
@@ -875,32 +878,6 @@
         "Active, not recruiting"
       ]
     },
-    "clinicalUrls": {
-      "type": "array",
-      "description": "Reference to linked clinical information (studies, package inserts, etc.)",
-      "items": {
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string",
-            "pattern": "https://|http://",
-            "examples": [
-              "https://clinicaltrials.gov/search?id=%22NCT01917656%22"
-            ]
-          },
-          "niceName": {
-            "type": "string",
-            "enum": [
-              "Clinical Trials",
-              "DailyMed",
-              "FDA",
-              "ATC"
-            ]
-          }
-        }
-      },
-      "uniqueItems": true
-    },
     "cohortDescription": {
       "type": "string",
       "description": "Description of the studied cohort",
@@ -1248,6 +1225,34 @@
           "tStart": {
             "type": "integer",
             "description": "Index position where target name starts in sentence"
+          }
+        }
+      },
+      "uniqueItems": true
+    },
+    "urls": {
+      "type": "array",
+      "description": "Reference to linked external resource (e.g. clinical trials, studies, package inserts, reports, etc.)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "pattern": "https://|http://",
+            "examples": [
+              "https://clinicaltrials.gov/search?id=%22NCT01917656%22",
+              "https://search.clinicalgenome.org/kb/gene-validity/d910a9d8-516e-443d-acba-8d61f7574792--2018-06-07T14:23:53"
+
+            ]
+          },
+          "niceName": {
+            "type": "string",
+            "examples": [
+              "Clinical Trials",
+              "DailyMed",
+              "FDA",
+              "ATC"
+            ]
           }
         }
       },
