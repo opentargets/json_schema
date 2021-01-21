@@ -171,8 +171,8 @@
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
-        "targetFromSourceId": {
-          "$ref": "#/definitions/targetFromSourceId"
+        "targetFromSource": {
+          "$ref": "#/definitions/targetFromSource"
         },
         "textMiningSentences": {
           "$ref": "#/definitions/textMiningSentences"
@@ -183,7 +183,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "targetFromSource"
       ],
       "additionalProperties": false
     },
@@ -593,6 +593,9 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetFromSource": {
+          "$ref": "#/definitions/targetFromSource"
         },
         "variantFunctionalConsequenceId": {
           "$ref": "#/definitions/variantFunctionalConsequenceId"
@@ -1178,6 +1181,13 @@
         "BRCA1",
         "ENSG00000012048",
         "P38398"
+      ]
+    },
+    "targetFromSource": {
+      "type": "string",
+      "description": "Target name/synonim or non HGNC symbol in resource of origin",
+      "examples": [
+        "3-mercaptopyruvate sulfurtransferase"
       ]
     },
     "targetInModel": {
