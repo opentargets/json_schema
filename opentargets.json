@@ -353,6 +353,9 @@
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "variantFunctionalConsequenceId":  {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
         }
       },
       "required": [
