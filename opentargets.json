@@ -320,9 +320,6 @@
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
-        },
-        "tissues": {
-          "$ref": "#/definitions/tissues"
         }
       },
       "required": [
@@ -1245,18 +1242,6 @@
             "description": "Index position where target name starts in sentence"
           }
         }
-      },
-      "uniqueItems": true
-    },
-    "tissues": {
-      "type": "array",
-      "description": "Uberon identifier related to the tissue",
-      "items": {
-        "type": "string",
-        "pattern": "UBERON_\\d+",
-        "examples": [
-          "UBERON_0002107"
-        ]
       },
       "uniqueItems": true
     },
