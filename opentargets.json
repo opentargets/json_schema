@@ -291,6 +291,9 @@
         "datasourceId": {
           "const": "expression_atlas"
         },
+        "biosamplesFromSource": {
+          "$ref": "#/definitions/biosamplesFromSource"
+        },
         "contrast": {
           "$ref": "#/definitions/contrast"
         },
@@ -1242,6 +1245,21 @@
             "description": "Index position where target name starts in sentence"
           }
         }
+      },
+      "uniqueItems": true
+    },
+    "biosamplesFromSource": {
+      "type": "array",
+      "description": "Identifier of the referenced biological material",
+      "items": {
+        "type": "string",
+        "pattern": "(UBERON_\\d+|BTO_\\d+|EFO_\\d+|CL_\\d+)",
+        "examples": [
+          "UBERON_0002107",
+          "BTO_0001202",
+          "CL_0000019",
+          "EFO_0000572"
+        ]
       },
       "uniqueItems": true
     },
