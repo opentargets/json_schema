@@ -66,6 +66,12 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
+        "studyStartDate": {
+          "$ref": "#/definitions/studyStartDate"
+        },
+        "studyStopReason": {
+          "$ref": "#/definitions/studyStopReason"
+        },
         "urls": {
           "$ref": "#/definitions/urls"
         }
@@ -284,6 +290,9 @@
       "properties": {
         "datasourceId": {
           "const": "expression_atlas"
+        },
+        "biosamplesFromSource": {
+          "$ref": "#/definitions/biosamplesFromSource"
         },
         "contrast": {
           "$ref": "#/definitions/contrast"
@@ -1177,6 +1186,15 @@
       "description": "Sample size of study",
       "exclusiveMinimum": 0
     },
+    "studyStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date of study in a YYYY-MM-DD format"
+    },
+    "studyStopReason": {
+      "type": "string",
+      "description": "Reason why a study has been stopped"
+    },
     "targetFromSourceId": {
       "type": "string",
       "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
@@ -1240,6 +1258,21 @@
             "description": "Index position where target name starts in sentence"
           }
         }
+      },
+      "uniqueItems": true
+    },
+    "biosamplesFromSource": {
+      "type": "array",
+      "description": "Identifier of the referenced biological material",
+      "items": {
+        "type": "string",
+        "pattern": "(UBERON_\\d+|BTO_\\d+|EFO_\\d+|CL_\\d+)",
+        "examples": [
+          "UBERON_0002107",
+          "BTO_0001202",
+          "CL_0000019",
+          "EFO_0000572"
+        ]
       },
       "uniqueItems": true
     },
