@@ -786,6 +786,9 @@
         "datasourceId": {
           "const": "uniprot_literature"
         },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
@@ -795,20 +798,17 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
         "literature": {
           "$ref": "#/definitions/literature"
-        },
-        "resourceScore": {
-          "$ref": "#/definitions/resourceScore"
-        },
-        "studyId": {
-          "$ref": "#/definitions/studyId"
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        "targetModulation": {
+          "$ref": "#/definitions/targetModulation"
         }
       },
       "required": [
