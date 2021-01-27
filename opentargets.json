@@ -696,6 +696,9 @@
         "reactionId": {
           "$ref": "#/definitions/reactionId"
         },
+        "reactionName": {
+          "$ref": "#/definitions/reactionName"
+        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
@@ -1203,6 +1206,13 @@
       "pattern": "^(R-HSA-)\\d+$",
       "examples": [
         "R-HSA-9660615"
+      ]
+    },
+    "reactionName": {
+      "type": "string",
+      "description": "Name corresponding to the reaction ID",
+      "examples": [
+        "Viral Protein Synthesis"
       ]
     },
     "resourceScore": {
