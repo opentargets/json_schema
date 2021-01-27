@@ -327,14 +327,26 @@
         "biosamplesFromSource": {
           "$ref": "#/definitions/biosamplesFromSource"
         },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
         "contrast": {
           "$ref": "#/definitions/contrast"
         },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
         },
         "log2FoldChangePercentileRank": {
           "$ref": "#/definitions/log2FoldChangePercentileRank"
@@ -353,9 +365,6 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
