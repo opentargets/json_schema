@@ -678,6 +678,12 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "functionalConsequenceId": {
+          "$ref": "#/definitions/functionalConsequenceId"
+        },
         "literature": {
           "$ref": "#/definitions/literature"
         },
@@ -698,9 +704,6 @@
         },
         "variantAminoacidDescriptions": {
           "$ref": "#/definitions/variantAminoacidDescriptions"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
