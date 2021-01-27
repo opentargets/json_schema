@@ -822,6 +822,51 @@
         "targetFromSourceId"
       ],
       "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "uniprot_variants"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "functionalConsequenceId": {
+          "$ref": "#/definitions/functionalConsequenceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetModulation": {
+          "$ref": "#/definitions/targetModulation"
+        },
+        "variantRsId": {
+          "$ref": "#/definitions/variantRsId"
+        },
+        "variantId": {
+          "$ref": "#/definitions/variantId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     }
   ],
   "definitions": {
