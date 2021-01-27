@@ -246,11 +246,17 @@
         "datasourceId": {
           "const": "eva_somatic"
         },
+        "alleleOrigins": {
+          "$ref": "#/definitions/alleleOrigins"
+        },
         "allelicRequirements": {
           "$ref": "#/definitions/allelicRequirements"
         },
         "clinicalSignificances": {
           "$ref": "#/definitions/clinicalSignificances"
+        },
+        "cohortPhenotypes": {
+          "$ref": "#/definitions/cohortPhenotypes"
         },
         "confidence": {
           "$ref": "#/definitions/confidence"
@@ -264,6 +270,9 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
         "literature": {
           "$ref": "#/definitions/literature"
         },
@@ -273,11 +282,14 @@
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
+        },
+        "variantId": {
+          "$ref": "#/definitions/variantId"
+        },
         "variantRsId": {
           "$ref": "#/definitions/variantRsId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
