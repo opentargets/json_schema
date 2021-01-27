@@ -63,17 +63,20 @@
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "drugId": {
           "$ref": "#/definitions/drugId"
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "studyStartDate": {
           "$ref": "#/definitions/studyStartDate"
