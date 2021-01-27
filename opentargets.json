@@ -9,11 +9,23 @@
         "datasourceId": {
           "const": "cancer_gene_census"
         },
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
+        "biosamplesFromSource": {
+          "$ref": "#/definitions/biosamplesFromSource"
+        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -29,9 +41,6 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
