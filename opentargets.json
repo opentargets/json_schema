@@ -198,6 +198,9 @@
         "datasourceId": {
           "const": "eva"
         },
+        "alleleOrigins": {
+          "$ref": "#/definitions/alleleOrigins"
+        },
         "allelicRequirements": {
           "$ref": "#/definitions/allelicRequirements"
         },
@@ -245,6 +248,9 @@
       "properties": {
         "datasourceId": {
           "const": "eva_somatic"
+        },
+        "alleleOrigins": {
+          "$ref": "#/definitions/alleleOrigins"
         },
         "allelicRequirements": {
           "$ref": "#/definitions/allelicRequirements"
@@ -819,6 +825,18 @@
     }
   ],
   "definitions": {
+    "alleleOrigins" : {
+      "type": "array",
+      "description": "Origin of the variant allele",
+      "items": {
+        "type": "string",
+        "enum": [
+          "somatic",
+          "germline"
+        ]
+      },
+      "uniqueItems": true
+    },
     "allelicRequirements": {
       "type": "array",
       "description": "Inheritance patterns",
