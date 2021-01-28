@@ -588,6 +588,9 @@
         "biologicalModelGeneticBackground": {
           "$ref": "#/definitions/biologicalModelGeneticBackground"
         },
+        "biologicalModelId": {
+          "$ref": "#/definitions/biologicalModelId"
+        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
@@ -945,6 +948,14 @@
       "examples": [
         "involves: 129X1/SvJ"
       ]
+    },
+    "biologicalModelId": {
+      "type": "string",
+      "description": "Identifier of the biological model (eg. in MGI).",
+      "examples": [
+        "MGI:5766745"
+      ],
+      "pattern": "^(MGI:)\\d+$"
     },
     "clinicalPhase": {
       "type": "integer",
