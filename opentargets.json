@@ -738,6 +738,9 @@
         "reactionId": {
           "$ref": "#/definitions/reactionId"
         },
+        "reactionName": {
+          "$ref": "#/definitions/reactionName"
+        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
@@ -861,9 +864,66 @@
         "targetFromSourceId"
       ],
       "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "uniprot_variants"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "functionalConsequenceId": {
+          "$ref": "#/definitions/functionalConsequenceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetModulation": {
+          "$ref": "#/definitions/targetModulation"
+        },
+        "variantRsId": {
+          "$ref": "#/definitions/variantRsId"
+        },
+        "variantId": {
+          "$ref": "#/definitions/variantId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
     }
   ],
   "definitions": {
+    "alleleOrigins" : {
+      "type": "array",
+      "description": "Origin of the variant allele",
+      "items": {
+        "type": "string",
+        "enum": [
+          "somatic",
+          "germline"
+        ]
+      },
+      "uniqueItems": true
+    },
     "allelicRequirements": {
       "type": "array",
       "description": "Inheritance patterns",
@@ -1185,6 +1245,13 @@
       "pattern": "^(R-HSA-)\\d+$",
       "examples": [
         "R-HSA-9660615"
+      ]
+    },
+    "reactionName": {
+      "type": "string",
+      "description": "Name corresponding to the reaction ID",
+      "examples": [
+        "Viral Protein Synthesis"
       ]
     },
     "resourceScore": {
