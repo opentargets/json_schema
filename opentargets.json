@@ -9,11 +9,23 @@
         "datasourceId": {
           "const": "cancer_gene_census"
         },
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
+        "biosamplesFromSource": {
+          "$ref": "#/definitions/biosamplesFromSource"
+        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -29,9 +41,6 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
@@ -54,17 +63,20 @@
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "drugId": {
           "$ref": "#/definitions/drugId"
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "studyStartDate": {
           "$ref": "#/definitions/studyStartDate"
@@ -198,11 +210,17 @@
         "datasourceId": {
           "const": "eva"
         },
+        "alleleOrigins": {
+          "$ref": "#/definitions/alleleOrigins"
+        },
         "allelicRequirements": {
           "$ref": "#/definitions/allelicRequirements"
         },
         "clinicalSignificances": {
           "$ref": "#/definitions/clinicalSignificances"
+        },
+        "cohortPhenotypes": {
+          "$ref": "#/definitions/cohortPhenotypes"
         },
         "confidence": {
           "$ref": "#/definitions/confidence"
@@ -215,6 +233,9 @@
         },
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -228,11 +249,11 @@
         "variantFunctionalConsequenceId": {
           "$ref": "#/definitions/variantFunctionalConsequenceId"
         },
+        "variantId": {
+          "$ref": "#/definitions/variantId"
+        },
         "variantRsId": {
           "$ref": "#/definitions/variantRsId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
@@ -246,11 +267,17 @@
         "datasourceId": {
           "const": "eva_somatic"
         },
+        "alleleOrigins": {
+          "$ref": "#/definitions/alleleOrigins"
+        },
         "allelicRequirements": {
           "$ref": "#/definitions/allelicRequirements"
         },
         "clinicalSignificances": {
           "$ref": "#/definitions/clinicalSignificances"
+        },
+        "cohortPhenotypes": {
+          "$ref": "#/definitions/cohortPhenotypes"
         },
         "confidence": {
           "$ref": "#/definitions/confidence"
@@ -264,6 +291,9 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
         "literature": {
           "$ref": "#/definitions/literature"
         },
@@ -273,11 +303,14 @@
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
+        },
+        "variantId": {
+          "$ref": "#/definitions/variantId"
+        },
         "variantRsId": {
           "$ref": "#/definitions/variantRsId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
@@ -294,14 +327,26 @@
         "biosamplesFromSource": {
           "$ref": "#/definitions/biosamplesFromSource"
         },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
         "contrast": {
           "$ref": "#/definitions/contrast"
         },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
         },
         "log2FoldChangePercentileRank": {
           "$ref": "#/definitions/log2FoldChangePercentileRank"
@@ -320,9 +365,6 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
@@ -678,6 +720,12 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "functionalConsequenceId": {
+          "$ref": "#/definitions/functionalConsequenceId"
+        },
         "literature": {
           "$ref": "#/definitions/literature"
         },
@@ -698,9 +746,6 @@
         },
         "variantAminoacidDescriptions": {
           "$ref": "#/definitions/variantAminoacidDescriptions"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
       },
       "required": [
@@ -786,6 +831,9 @@
         "datasourceId": {
           "const": "uniprot_literature"
         },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
@@ -795,20 +843,17 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
         "literature": {
           "$ref": "#/definitions/literature"
-        },
-        "resourceScore": {
-          "$ref": "#/definitions/resourceScore"
-        },
-        "studyId": {
-          "$ref": "#/definitions/studyId"
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        "targetModulation": {
+          "$ref": "#/definitions/targetModulation"
         }
       },
       "required": [
