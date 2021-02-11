@@ -687,11 +687,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "pathwayId": {
-          "$ref": "#/definitions/pathwayId"
-        },
-        "pathwayName": {
-          "$ref": "#/definitions/pathwayName"
+        "pathways": {
+          "$ref": "#/definitions/pathways"
         },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
@@ -732,11 +729,8 @@
         "literature": {
           "$ref": "#/definitions/literature"
         },
-        "pathwayId": {
-          "$ref": "#/definitions/pathwayId"
-        },
-        "pathwayName": {
-          "$ref": "#/definitions/pathwayName"
+        "pathways": {
+          "$ref": "#/definitions/pathways"
         },
         "reactionId": {
           "$ref": "#/definitions/reactionId"
@@ -774,11 +768,8 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
-        "pathwayId": {
-          "$ref": "#/definitions/pathwayId"
-        },
-        "pathwayName": {
-          "$ref": "#/definitions/pathwayName"
+        "pathways": {
+          "$ref": "#/definitions/pathways"
         },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
@@ -810,8 +801,8 @@
         "literature": {
           "$ref": "#/definitions/literature"
         },
-        "pathwayName": {
-          "$ref": "#/definitions/pathwayName"
+        "pathways": {
+          "$ref": "#/definitions/pathways"
         },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
@@ -1208,13 +1199,32 @@
       "type": "number",
       "description": "Odds ratio (e.g GWAS association)"
     },
-    "pathwayId": {
-      "type": "string",
-      "description": "Pathway or gene set ID",
-      "pattern": "^(R-HSA-)\\d+$",
-      "examples": [
-        "R-HSA-4615885"
-      ]
+    "pathways": {
+      "type": "array",
+      "description": "List of pathways",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Pathway or gene set ID",
+            "pattern": "^(R-HSA-)\\d+$",
+            "examples": [
+              "R-HSA-4615885"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Pathway or gene set name",
+            "examples": [
+              "Chaperonin-mediated protein folding",
+              "Signaling by FGFR3"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "uniqueItems": true
     },
     "pValueExponent": {
       "type": "integer",
@@ -1225,14 +1235,6 @@
       "type": "number",
       "description": "p-value (e.g. GWAS association) exponent",
       "minimum": 0.0
-    },
-    "pathwayName": {
-      "type": "string",
-      "description": "Pathway or gene set name",
-      "examples": [
-        "Chaperonin-mediated protein folding",
-        "Signaling by FGFR3"
-      ]
     },
     "publicationFirstAuthor": {
       "type": "string",
