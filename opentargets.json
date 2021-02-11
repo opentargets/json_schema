@@ -1207,7 +1207,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Pathway or gene set ID",
+            "description": "Reactome pathway identifier.",
             "pattern": "^(R-HSA-)\\d+$",
             "examples": [
               "R-HSA-4615885"
