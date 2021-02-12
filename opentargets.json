@@ -489,9 +489,6 @@
         "significantDriverMethods": {
           "$ref": "#/definitions/significantDriverMethods"
         },
-        "studyId": {
-          "$ref": "#/definitions/studyId"
-        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
