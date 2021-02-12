@@ -480,9 +480,6 @@
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
         },
-        "diseaseFromSourceId": {
-          "$ref": "#/definitions/diseaseFromSourceId"
-        },
         "mutatedSamples": {
           "$ref": "#/definitions/mutatedSamples"
         },
