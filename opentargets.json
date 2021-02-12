@@ -72,14 +72,17 @@
         "drugId": {
           "$ref": "#/definitions/drugId"
         },
-        "targetFromSourceId": {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
         "studyStartDate": {
           "$ref": "#/definitions/studyStartDate"
         },
         "studyStopReason": {
           "$ref": "#/definitions/studyStopReason"
+        },
+        "targetFromSource": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
         },
         "urls": {
           "$ref": "#/definitions/urls"
