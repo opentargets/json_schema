@@ -1172,7 +1172,7 @@
           },
           "numberMutatedSamples": {
             "type": "integer",
-            "description": "Number of cohort samples in which target is mutated with a specific mutation type",
+            "description": "Number of cohort samples in which target is mutated with a mutation of any type",
             "exclusiveMinimum": 0
           },
           "numberSamplesTested": {
