@@ -66,23 +66,23 @@
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
         },
-        "diseaseFromSourceId": {
-          "$ref": "#/definitions/diseaseFromSourceId"
-        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "drugId": {
           "$ref": "#/definitions/drugId"
         },
-        "targetFromSourceId": {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
         "studyStartDate": {
           "$ref": "#/definitions/studyStartDate"
         },
         "studyStopReason": {
           "$ref": "#/definitions/studyStopReason"
+        },
+        "targetFromSource": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
         },
         "urls": {
           "$ref": "#/definitions/urls"
@@ -480,9 +480,6 @@
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
         },
-        "diseaseFromSourceId": {
-          "$ref": "#/definitions/diseaseFromSourceId"
-        },
         "mutatedSamples": {
           "$ref": "#/definitions/mutatedSamples"
         },
@@ -491,9 +488,6 @@
         },
         "significantDriverMethods": {
           "$ref": "#/definitions/significantDriverMethods"
-        },
-        "studyId": {
-          "$ref": "#/definitions/studyId"
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
@@ -1178,7 +1172,7 @@
           },
           "numberMutatedSamples": {
             "type": "integer",
-            "description": "Number of cohort samples in which target is mutated with a specific mutation type",
+            "description": "Number of cohort samples in which target is mutated with a mutation of any type",
             "exclusiveMinimum": 0
           },
           "numberSamplesTested": {
