@@ -510,10 +510,10 @@
         "beta": {
           "$ref":  "#/definitions/beta"
         },
-        "oddsRationConfidenceIntervalLower": {
+        "oddsRatioConfidenceIntervalLower": {
           "$ref": "#/definitions/confidenceIntervalLower"
         },
-        "oddsRationConfidenceIntervalUpper": {
+        "oddsRatioConfidenceIntervalUpper": {
           "$ref": "#/definitions/confidenceIntervalUpper"
         },
         "betaConfidenceIntervalLower": {
