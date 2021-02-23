@@ -507,10 +507,19 @@
         "datasourceId": {
           "const": "ot_genetics_portal"
         },
-        "confidenceIntervalLower": {
+        "beta": {
+          "$ref":  "#/definitions/beta"
+        },
+        "oddsRatioConfidenceIntervalLower": {
           "$ref": "#/definitions/confidenceIntervalLower"
         },
-        "confidenceIntervalUpper": {
+        "oddsRatioConfidenceIntervalUpper": {
+          "$ref": "#/definitions/confidenceIntervalUpper"
+        },
+        "betaConfidenceIntervalLower": {
+          "$ref": "#/definitions/confidenceIntervalLower"
+        },
+        "betaConfidenceIntervalUpper": {
           "$ref": "#/definitions/confidenceIntervalUpper"
         },
         "datatypeId": {
@@ -717,8 +726,8 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
-        "functionalConsequenceId": {
-          "$ref": "#/definitions/functionalConsequenceId"
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -792,6 +801,9 @@
         "diseaseFromSourceId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },        
         "literature": {
           "$ref": "#/definitions/literature"
         },
@@ -873,8 +885,8 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
-        "functionalConsequenceId": {
-          "$ref": "#/definitions/functionalConsequenceId"
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -904,11 +916,7 @@
       "type": "array",
       "description": "Origin of the variant allele",
       "items": {
-        "type": "string",
-        "enum": [
-          "somatic",
-          "germline"
-        ]
+        "type": "string"
       },
       "uniqueItems": true
     },
@@ -919,6 +927,10 @@
         "type": "string"
       },
       "uniqueItems": true
+    },
+    "beta": {
+      "type": "number",
+      "description": "Effect size of numberic traits."
     },
     "biologicalModelAllelicComposition": {
       "type": "string",
