@@ -726,8 +726,8 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
-        "functionalConsequenceId": {
-          "$ref": "#/definitions/functionalConsequenceId"
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -885,8 +885,8 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
-        "functionalConsequenceId": {
-          "$ref": "#/definitions/functionalConsequenceId"
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
