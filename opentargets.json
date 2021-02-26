@@ -41,6 +41,9 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
+        },
+        "urls": {
+          "$ref": "#/definitions/urls"
         }
       },
       "required": [
