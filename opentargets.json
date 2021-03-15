@@ -1449,9 +1449,10 @@
     "variantId": {
       "type": "string",
       "description": "Identifier of the variant using CHROM_POS_REF_ALT notation",
-      "pattern": "^[0-9XY]{1,2}_\\d+_[ACTG]+_[ACTG]+$",
+      "pattern": "^([0-9XY]{1,2}|MT)_\\d+_[A-Z]+_[A-Z]+$",
       "examples": [
-        "20_41203988_T_C"
+        "20_41203988_T_C",
+        "MT_91234_C_W"
       ]
     },
     "variantRsId": {
