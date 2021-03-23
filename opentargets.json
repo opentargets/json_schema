@@ -183,7 +183,7 @@
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
         },
-        "diseaseFromSourceId": {
+        "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
         "literature": {
@@ -194,6 +194,9 @@
         },
         "targetFromSource": {
           "$ref": "#/definitions/targetFromSource"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
         },
         "textMiningSentences": {
           "$ref": "#/definitions/textMiningSentences"
@@ -1101,7 +1104,7 @@
     "diseaseFromSourceMappedId": {
       "type": "string",
       "description": "Identifier of the disease in the EFO ontology",
-      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$)",
+      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$)",
       "examples": [
         "EFO_0005537"
       ]
