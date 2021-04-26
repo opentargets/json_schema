@@ -624,6 +624,9 @@
         "targetInModel": {
           "$ref": "#/definitions/targetInModel"
         },
+        "targetInModelId": {
+          "$ref": "#/definitions/targetInModelId"
+        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
@@ -809,7 +812,7 @@
         },
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
-        },        
+        },
         "literature": {
           "$ref": "#/definitions/literature"
         },
@@ -1345,15 +1348,25 @@
     },
     "targetFromSource": {
       "type": "string",
-      "description": "Target name/synonim or non HGNC symbol in resource of origin",
+      "description": "Target name/synonym or non HGNC symbol in resource of origin",
       "examples": [
         "3-mercaptopyruvate sulfurtransferase"
       ]
     },
-    "targetInModel": {
+    "targetInModelId": {
       "type": "string",
       "description": "Target ID in animal model",
-      "pattern": "^(ENSMUSG)\\d+$"
+      "pattern": "^(ENSMUSG)\\d+$",
+      "examples": [
+        "ENSMUSG00000014773"
+      ]
+    },
+    "targetInModel": {
+      "type": "string",
+      "description": "Target name/synonym in animal model",
+      "examples": [
+        "Dll1"
+      ]
     },
     "targetModulation": {
       "type": "string",
