@@ -180,9 +180,6 @@
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
-        "diseaseFromSource": {
-          "$ref": "#/definitions/diseaseFromSource"
-        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
@@ -192,9 +189,6 @@
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
-        "targetFromSource": {
-          "$ref": "#/definitions/targetFromSource"
-        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
@@ -203,6 +197,9 @@
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "pmcid": {
+          "$ref": "#/definitions/pmcid"
         }
       },
       "required": [
@@ -1240,6 +1237,11 @@
         "additionalProperties": false
       },
       "uniqueItems": true
+    },
+    "pmcId": {
+      "type": "string",
+      "description": "PubMed Central identifier of full text publication.",
+      "pattern": "PMC\\d+"
     },
     "pValueExponent": {
       "type": "integer",
