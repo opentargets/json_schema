@@ -198,8 +198,8 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
-        "pmcid": {
-          "$ref": "#/definitions/pmcid"
+        "pmcIds": {
+          "$ref": "#/definitions/pmcIds"
         }
       },
       "required": [
@@ -1238,10 +1238,15 @@
       },
       "uniqueItems": true
     },
-    "pmcId": {
-      "type": "string",
-      "description": "PubMed Central identifier of full text publication.",
-      "pattern": "PMC\\d+"
+    "pmcIds": {
+      "type": "array",
+      "description": "List of PubMed Central identifiers of full text publication.",
+      "items": {
+        "type": "string",
+        "pattern": "PMC\\d+",
+        "description": "Literature identifer in PubMed Central"
+      },
+      "uniqueItems": true
     },
     "pValueExponent": {
       "type": "integer",
