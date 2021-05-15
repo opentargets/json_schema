@@ -204,7 +204,7 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSource"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
