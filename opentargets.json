@@ -180,9 +180,6 @@
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
-        "diseaseFromSource": {
-          "$ref": "#/definitions/diseaseFromSource"
-        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceId"
         },
@@ -192,9 +189,6 @@
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
-        "targetFromSource": {
-          "$ref": "#/definitions/targetFromSource"
-        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
@@ -203,11 +197,14 @@
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "pmcIds": {
+          "$ref": "#/definitions/pmcIds"
         }
       },
       "required": [
         "datasourceId",
-        "targetFromSource"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -1238,6 +1235,16 @@
           }
         },
         "additionalProperties": false
+      },
+      "uniqueItems": true
+    },
+    "pmcIds": {
+      "type": "array",
+      "description": "List of PubMed Central identifiers of full text publication.",
+      "items": {
+        "type": "string",
+        "pattern": "^PMC\\d+$",
+        "description": "Literature identifer in PubMed Central"
       },
       "uniqueItems": true
     },
