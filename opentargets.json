@@ -195,9 +195,6 @@
         "textMiningSentences": {
           "$ref": "#/definitions/textMiningSentences"
         },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
-        },
         "pmcIds": {
           "$ref": "#/definitions/pmcIds"
         }
