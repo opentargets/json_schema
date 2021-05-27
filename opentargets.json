@@ -972,20 +972,22 @@
           "pathogenic"
         ],
         "enum": [
-          "uncertain significance",
-          "pathogenic",
-          "likely benign",
-          "association not found",
-          "other",
-          "benign",
+          "affects",
           "association",
-          "risk factor",
+          "association not found",
+          "benign",
+          "confers sensitivity",
+          "conflicting data from submitters",
+          "conflicting interpretations of pathogenicity",
+          "drug response",
+          "likely benign",
           "likely pathogenic",
           "not provided",
-          "affects",
+          "other",
+          "pathogenic",
           "protective",
-          "drug response",
-          "conflicting interpretations of pathogenicity"
+          "risk factor",
+          "uncertain significance",
         ]
       },
       "uniqueItems": true
