@@ -505,6 +505,45 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "orphanet"
+        },
+        "alleleOrigins": {
+          "$ref": "#/definitions/alleleOrigins"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "datatypeId": {
+          "ref": "#/definitions/datatypeId"
+        },        
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "targetFromSource": {
+          "$ref": "#/definitions/targetFromSource"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "ot_genetics_portal"
         },
         "beta": {
