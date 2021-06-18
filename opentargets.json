@@ -576,6 +576,9 @@
         "oddsRatio": {
           "$ref": "#/definitions/oddsRatio"
         },
+        "projectId": {
+          "$ref": "#/definitions/projectId"
+        },
         "pValueExponent": {
           "$ref": "#/definitions/pValueExponent"
         },
@@ -1285,6 +1288,14 @@
         "description": "Literature identifer in PubMed Central"
       },
       "uniqueItems": true
+    },
+    "projectId":{
+      "type": "string",
+      "description": "The identifer of the project that generated the data.",
+      "examples": [
+        "FINNGEN",
+        "UKBB"
+      ]
     },
     "pValueExponent": {
       "type": "integer",
