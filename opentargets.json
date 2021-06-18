@@ -1291,7 +1291,7 @@
     },
     "projectId":{
       "type": "string",
-      "description": "Broader category of the actual study. The identifer of the project that generated the data.",
+      "description": "The identifer of the project that generated the data.",
       "examples": [
         "FINNGEN",
         "UKBB"
