@@ -651,6 +651,9 @@
         "diseaseModelAssociatedModelPhenotypes": {
           "$ref": "#/definitions/diseaseModelAssociatedModelPhenotypes"
         },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
