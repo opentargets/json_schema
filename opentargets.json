@@ -515,7 +515,7 @@
         },
         "datatypeId": {
           "ref": "#/definitions/datatypeId"
-        },        
+        },
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
         },
@@ -651,6 +651,9 @@
         "diseaseModelAssociatedModelPhenotypes": {
           "$ref": "#/definitions/diseaseModelAssociatedModelPhenotypes"
         },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
@@ -660,8 +663,11 @@
         "targetInModel": {
           "$ref": "#/definitions/targetInModel"
         },
-        "targetInModelId": {
-          "$ref": "#/definitions/targetInModelId"
+        "targetInModelEnsemblId": {
+          "$ref": "#/definitions/targetInModelEnsemblId"
+        },
+        "targetInModelMgiId": {
+          "$ref": "#/definitions/targetInModelMgiId"
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
@@ -1409,12 +1415,20 @@
         "3-mercaptopyruvate sulfurtransferase"
       ]
     },
-    "targetInModelId": {
+    "targetInModelEnsemblId": {
       "type": "string",
-      "description": "Target ID in animal model",
+      "description": "Target Ensembl ID in animal model",
       "pattern": "^(ENSMUSG)\\d+$",
       "examples": [
         "ENSMUSG00000014773"
+      ]
+    },
+    "targetInModelMgiId": {
+      "type": "string",
+      "description": "Target MGI ID in animal model",
+      "pattern": "^(MGI:)\\d+$",
+      "examples": [
+        "MGI:104659"
       ]
     },
     "targetInModel": {
