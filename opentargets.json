@@ -593,6 +593,57 @@
       "additionalProperties": false
     },
     {
+      "properties":{
+        "datasourceId": {
+          "const": "ot_crispr"
+        },
+        "cellLineBackground": {
+          "$ref": "#/definitions/cellLineBackground"
+        },
+        "cellType": {
+          "$ref": "#/definitions/cellType"
+        },
+        "contrast": {
+          "$ref": "#/definitions/contrast"
+        },
+        "crisprScreenLibrary": {
+          "$ref": "#/definitions/crisprScreenLibrary"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "direction": {
+          "$ref": "#/definitions/direction"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "geneticBackground": {
+          "$ref": "#/definitions/geneticBackground"
+        },
+        "projectId": {
+          "$ref": "#/definitions/projectId"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "studyOverview": {
+          "$ref": "#/definitions/studyOverview"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
       "properties": {
         "datasourceId": {
           "const": "ot_genetics_portal"
@@ -1056,6 +1107,21 @@
       ],
       "pattern": "^(MGI:)\\d+$"
     },
+    "cellLineBackground": {
+      "type": "string",
+      "description": "Background of the derived cell lines.",
+      "examples": [
+        "KOLF2-C1"
+      ]
+    },
+    "cellType": {
+      "type": "string",
+      "description": "The studied cell type. Preferably the cell line ontology label.",
+      "examples": [
+        "HaCaT keratinocytes",
+        "iPSC derived cortical neurons"
+      ]
+    },
     "biomarker": {
       "type": "string",
       "description": "Altered characteristic that influences the disease process.",
@@ -1168,6 +1234,13 @@
         "glioblastoma vs normal"
       ]
     },
+    "crisprScreenLibrary": {
+      "type": "string",
+      "description": "The applied screening library in the CRISPR/CAS9 project.",
+      "examples": [
+        "Kosuke v1.1 (Behan et al., 2018)"
+      ]
+    },
     "datasourceId": {
       "type": "string"
     },
@@ -1181,8 +1254,18 @@
         "animal_model",
         "somatic_mutation",
         "known_drug",
-        "genetic_association"
+        "genetic_association",
+        "ot_partner"
       ]
+    },
+    "direction": {
+      "type": "string",
+      "description": "Which end of the distribution the target was picked from.",
+      "examples": [
+        "upper tail",
+        "lower tail"
+      ]
+
     },
     "diseaseCellLines": {
       "type": "array",
@@ -1269,6 +1352,10 @@
         "CHEMBL1431",
         "CHEMBL803"
       ]
+    },
+    "geneticBackground": {
+      "type": "string",
+      "description": "Additional genetic background of the applied cell line in the CRISPR screen."
     },
     "drugResponse": {
       "type": "string",
@@ -1372,7 +1459,8 @@
       "description": "The identifer of the project that generated the data.",
       "examples": [
         "FINNGEN",
-        "UKBB"
+        "UKBB",
+        "OTAR033"
       ]
     },
     "pValueExponent": {
