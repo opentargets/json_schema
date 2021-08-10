@@ -55,6 +55,57 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "cancer_genome_interpreter"
+        },
+      "biomarker": {
+        "$ref": "#/definitions/biomarker"
+      },
+      "datatypeId": {
+        "$ref": "#/definitions/datatypeId"
+      },
+      "diseaseFromSource": {
+        "$ref": "#/definitions/diseaseFromSource"
+      },
+      "diseaseFromSourceMappedId": {
+        "$ref": "#/definitions/diseaseFromSourceMappedId"
+      },
+      "drugFromSource": {
+        "$ref": "#/definitions/drugFromSource"
+      },
+      "drugId": {
+        "$ref": "#/definitions/drugId"
+      },
+      "drugResponse": {
+        "$ref": "#/definitions/drugResponse"
+      },
+      "confidence": {
+        "$ref": "#/definitions/confidence"
+      },
+      "literature": {
+        "$ref": "#/definitions/literature"
+      },
+      "urls": {
+        "$ref": "#/definitions/urls"
+      },
+      "targetFromSourceId": {
+        "$ref": "#/definitions/targetFromSourceId"
+      },
+      "variantFunctionalConsequenceId": {
+        "$ref": "#/definitions/variantFunctionalConsequenceId"
+      },
+      "variantAminoacidDescriptions": {
+        "$ref": "#/definitions/variantAminoacidDescriptions"
+      }
+    },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "chembl"
         },
         "clinicalPhase": {
@@ -1062,7 +1113,6 @@
       "examples": [
         "KOLF2-C1"
       ]
-
     },
     "cellType": {
       "type": "string",
@@ -1071,7 +1121,13 @@
         "HaCaT keratinocytes",
         "iPSC derived cortical neurons"
       ]
-
+    },
+    "biomarker": {
+      "type": "string",
+      "description": "Altered characteristic that influences the disease process.",
+      "examples": [
+        "ABL1:E275K"
+      ]
     },
     "clinicalPhase": {
       "type": "integer",
@@ -1281,6 +1337,13 @@
       },
       "uniqueItems": true
     },
+    "drugFromSource": {
+      "type": "string",
+      "description": "Drug name/family in resource of origin.",
+      "examples": [
+        "Imatinib"
+      ]
+    },
     "drugId": {
       "type": "string",
       "description": "Drug molecule ID",
@@ -1293,6 +1356,13 @@
     "geneticBackground": {
       "type": "string",
       "description": "Additional genetic background of the applied cell line in the CRISPR screen."
+    },
+    "drugResponse": {
+      "type": "string",
+      "description": "Patterns of drug response in the EFO ontology.",
+      "examples": [
+        "GO_0042493"
+      ]
     },
     "literature": {
       "type": "array",
