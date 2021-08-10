@@ -1260,7 +1260,7 @@
     },
     "direction": {
       "type": "string",
-      "description": "Which end of the distribution the target was picked.",
+      "description": "Which end of the distribution the target was picked from.",
       "examples": [
         "upper tail",
         "lower tail"
