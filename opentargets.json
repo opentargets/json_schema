@@ -56,8 +56,7 @@
       "properties": {
         "datasourceId": {
           "const": "cancer_genome_interpreter"
-        }
-      },
+        },
       "biomarker": {
         "$ref": "#/definitions/biomarker"
       },
@@ -96,7 +95,8 @@
       },
       "variantAminoacidDescriptions": {
         "$ref": "#/definitions/variantAminoacidDescriptions"
-      },
+      }
+    },
       "required": [
         "datasourceId",
         "targetFromSourceId"
