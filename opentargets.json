@@ -1236,7 +1236,7 @@
     },
     "crisprScreenLibrary": {
       "type": "string",
-      "description": "The applied screening library in the CRISPR/CAS9 prject.",
+      "description": "The applied screening library in the CRISPR/CAS9 project.",
       "examples": [
         "Kosuke v1.1 (Behan et al., 2018)"
       ]
