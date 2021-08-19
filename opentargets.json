@@ -60,6 +60,9 @@
       "datatypeId": {
         "$ref": "#/definitions/datatypeId"
       },
+      "biomarkerName": {
+        "$ref": "#/definitions/biomarkerName"
+      },
       "biomarkers": {
         "$ref": "#/definitions/biomarkers"
       },
