@@ -1116,42 +1116,60 @@
         "iPSC derived cortical neurons"
       ]
     },
+    "biomarkerName": {
+      "type": "string",
+      "description": "Altered characteristics that influences the disease process.",
+      "examples": [
+        "BRAF (V600E,V600D,V600K,V600M,V600G,V600R)"
+      ]
+    },
     "biomarkers": {
-      "type": "array",
+      "type": "object",
       "description": "List of biomarkers.",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Altered characteristics that influences the disease process.",
-            "examples": [
-              "BRAF (V600E,V600D,V600K,V600M,V600G,V600R)"
-            ]
-          },
-          "individualMutation": {
-            "type": "string",
-            "examples": [
-              "BRAF:V600M"
-            ]
-          },
-          "variantFunctionalConsequenceIds": {
-            "type": "array",
-            "description": "Sequence ontology (SO) identifiers of the functional consequence of the variants",
-            "items": {
-              "$ref": "#/definitions/variantFunctionalConsequenceId"
+      "properties": {
+        "variant": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "BRAF:V600M"
+                ]
+              },
+              "id": {
+                "$ref": "#/definitions/variantId"
+              },
+              "variantFunctionalConsequenceId": {
+                "$ref": "#/definitions/variantFunctionalConsequenceId"
+              }
             }
           },
-          "variantId": {
-            "type": "string",
-            "description": "Identifier in CHROM_POS_REF_ALT notation of the disease-causing variant when a biomarker is present.",
-            "examples": [
-              "7_140453137_C_T"
-            ]
-          }
+          "uniqueItems": true
+        },
+        "geneExpression": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Gene Ontology (GO) identifiers of regulation or background expression processes.",
+                "pattern": "^GO_\\d+",
+                "examples": [
+                  "GO_0010467"
+                ]
+              },
+              "label": {
+                "type": "string",
+                "description": "Regulation or background expression processes. Preferably the Gene Ontology label."
+              }
+            }
+          },
+          "uniqueItems": true
         }
-      },
-      "uniqueItems": true
+      }
     },
     "clinicalPhase": {
       "type": "integer",
