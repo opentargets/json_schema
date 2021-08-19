@@ -57,11 +57,14 @@
         "datasourceId": {
           "const": "cancer_genome_interpreter"
         },
+      "datatypeId": {
+        "$ref": "#/definitions/datatypeId"
+      },
       "biomarkers": {
         "$ref": "#/definitions/biomarkers"
       },
-      "datatypeId": {
-        "$ref": "#/definitions/datatypeId"
+      "confidence": {
+        "$ref": "#/definitions/confidence"
       },
       "diseaseFromSource": {
         "$ref": "#/definitions/diseaseFromSource"
@@ -78,17 +81,14 @@
       "drugResponse": {
         "$ref": "#/definitions/drugResponse"
       },
-      "confidence": {
-        "$ref": "#/definitions/confidence"
-      },
       "literature": {
         "$ref": "#/definitions/literature"
       },
-      "urls": {
-        "$ref": "#/definitions/urls"
-      },
       "targetFromSourceId": {
         "$ref": "#/definitions/targetFromSourceId"
+      },
+      "urls": {
+        "$ref": "#/definitions/urls"
       }
       },
       "required": [
