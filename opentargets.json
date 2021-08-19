@@ -57,8 +57,8 @@
         "datasourceId": {
           "const": "cancer_genome_interpreter"
         },
-      "biomarker": {
-        "$ref": "#/definitions/biomarker"
+      "biomarkers": {
+        "$ref": "#/definitions/biomarkers"
       },
       "datatypeId": {
         "$ref": "#/definitions/datatypeId"
@@ -89,14 +89,8 @@
       },
       "targetFromSourceId": {
         "$ref": "#/definitions/targetFromSourceId"
-      },
-      "variantFunctionalConsequenceId": {
-        "$ref": "#/definitions/variantFunctionalConsequenceId"
-      },
-      "variantAminoacidDescriptions": {
-        "$ref": "#/definitions/variantAminoacidDescriptions"
       }
-    },
+      },
       "required": [
         "datasourceId",
         "targetFromSourceId"
@@ -1122,12 +1116,42 @@
         "iPSC derived cortical neurons"
       ]
     },
-    "biomarker": {
-      "type": "string",
-      "description": "Altered characteristic that influences the disease process.",
-      "examples": [
-        "ABL1:E275K"
-      ]
+    "biomarkers": {
+      "type": "array",
+      "description": "List of biomarkers.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Altered characteristics that influences the disease process.",
+            "examples": [
+              "BRAF (V600E,V600D,V600K,V600M,V600G,V600R)"
+            ]
+          },
+          "individualMutation": {
+            "type": "string",
+            "examples": [
+              "BRAF:V600M"
+            ]
+          },
+          "variantFunctionalConsequenceIds": {
+            "type": "array",
+            "description": "Sequence ontology (SO) identifiers of the functional consequence of the variants",
+            "items": {
+              "$ref": "#/definitions/variantFunctionalConsequenceId"
+            }
+          },
+          "variantId": {
+            "type": "string",
+            "description": "Identifier in CHROM_POS_REF_ALT notation of the disease-causing variant when a biomarker is present.",
+            "examples": [
+              "7_140453137_C_T"
+            ]
+          }
+        }
+      },
+      "uniqueItems": true
     },
     "clinicalPhase": {
       "type": "integer",
@@ -1696,7 +1720,7 @@
     },
     "variantId": {
       "type": "string",
-      "description": "Identifier of the variant using CHROM_POS_REF_ALT notation",
+      "description": "Identifier in CHROM_POS_REF_ALT notation of the disease-causing variant.",
       "pattern": "^([0-9XY]{1,2}|MT)_\\d+_[A-Z]+_[A-Z]+$",
       "examples": [
         "20_41203988_T_C",
