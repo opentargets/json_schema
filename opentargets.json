@@ -1163,10 +1163,6 @@
                 "examples": [
                   "GO_0010467"
                 ]
-              },
-              "label": {
-                "type": "string",
-                "description": "Regulation or background expression processes. Preferably the Gene Ontology label."
               }
             }
           },
