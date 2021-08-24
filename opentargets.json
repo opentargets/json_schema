@@ -1156,6 +1156,12 @@
           "items": {
             "type": "object",
             "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "ANXA1:over"
+                ]
+              },
               "id": {
                 "type": "string",
                 "description": "Gene Ontology (GO) identifiers of regulation or background expression processes.",
