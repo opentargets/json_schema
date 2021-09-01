@@ -57,11 +57,17 @@
         "datasourceId": {
           "const": "cancer_genome_interpreter"
         },
-      "biomarker": {
-        "$ref": "#/definitions/biomarker"
-      },
       "datatypeId": {
         "$ref": "#/definitions/datatypeId"
+      },
+      "biomarkerName": {
+        "$ref": "#/definitions/biomarkerName"
+      },
+      "biomarkers": {
+        "$ref": "#/definitions/biomarkers"
+      },
+      "confidence": {
+        "$ref": "#/definitions/confidence"
       },
       "diseaseFromSource": {
         "$ref": "#/definitions/diseaseFromSource"
@@ -78,25 +84,16 @@
       "drugResponse": {
         "$ref": "#/definitions/drugResponse"
       },
-      "confidence": {
-        "$ref": "#/definitions/confidence"
-      },
       "literature": {
         "$ref": "#/definitions/literature"
-      },
-      "urls": {
-        "$ref": "#/definitions/urls"
       },
       "targetFromSourceId": {
         "$ref": "#/definitions/targetFromSourceId"
       },
-      "variantFunctionalConsequenceId": {
-        "$ref": "#/definitions/variantFunctionalConsequenceId"
-      },
-      "variantAminoacidDescriptions": {
-        "$ref": "#/definitions/variantAminoacidDescriptions"
+      "urls": {
+        "$ref": "#/definitions/urls"
       }
-    },
+      },
       "required": [
         "datasourceId",
         "targetFromSourceId"
@@ -1122,12 +1119,63 @@
         "iPSC derived cortical neurons"
       ]
     },
-    "biomarker": {
+    "biomarkerName": {
       "type": "string",
-      "description": "Altered characteristic that influences the disease process.",
+      "description": "Altered characteristics that influences the disease process.",
       "examples": [
-        "ABL1:E275K"
+        "BRAF (V600E,V600D,V600K,V600M,V600G,V600R)"
       ]
+    },
+    "biomarkers": {
+      "type": "object",
+      "description": "List of biomarkers.",
+      "properties": {
+        "variant": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "examples": [
+                  "BRAF:V600M"
+                ]
+              },
+              "id": {
+                "$ref": "#/definitions/variantId"
+              },
+              "variantFunctionalConsequenceId": {
+                "$ref": "#/definitions/variantFunctionalConsequenceId"
+              }
+            }
+          },
+          "uniqueItems": true
+        },
+        "geneExpression": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Raw gene expression annotation from the source",
+                "examples": [
+                  "ANXA1:over"
+                ]
+              },
+              "id": {
+                "type": "string",
+                "description": "Gene Ontology (GO) identifiers of regulation or background expression processes.",
+                "pattern": "^GO_\\d+",
+                "examples": [
+                  "GO_0010467"
+                ]
+              }
+            }
+          },
+          "uniqueItems": true
+        }
+      }
     },
     "clinicalPhase": {
       "type": "integer",
@@ -1696,7 +1744,7 @@
     },
     "variantId": {
       "type": "string",
-      "description": "Identifier of the variant using CHROM_POS_REF_ALT notation",
+      "description": "Identifier in CHROM_POS_REF_ALT notation of the disease-causing variant.",
       "pattern": "^([0-9XY]{1,2}|MT)_\\d+_[A-Z]+_[A-Z]+$",
       "examples": [
         "20_41203988_T_C",
