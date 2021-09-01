@@ -1158,6 +1158,7 @@
             "properties": {
               "name": {
                 "type": "string",
+                "description": "Raw gene expression annotation from the source",
                 "examples": [
                   "ANXA1:over"
                 ]
