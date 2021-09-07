@@ -1147,7 +1147,8 @@
               "variantFunctionalConsequenceId": {
                 "$ref": "#/definitions/variantFunctionalConsequenceId"
               }
-            }
+            },
+            "additionalProperties": false
           },
           "uniqueItems": true
         },
@@ -1171,11 +1172,13 @@
                   "GO_0010467"
                 ]
               }
-            }
+            },
+            "additionalProperties": false
           },
           "uniqueItems": true
         }
-      }
+      },
+      "additionalProperties": false
     },
     "clinicalPhase": {
       "type": "integer",
@@ -1358,7 +1361,8 @@
           "label": {
             "type": "string"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "uniqueItems": true
     },
@@ -1381,7 +1385,8 @@
               "abnormal skin morphology"
             ]
           }
-        }
+        },
+        "additionalProperties": false
       },
       "uniqueItems": true
     },
@@ -1457,7 +1462,8 @@
             "description": "Number of cohort samples in which target is mutated with a specific mutation type",
             "exclusiveMinimum": 0
           }
-        }
+        },
+        "additionalProperties": false
       },
       "uniqueItems": true
     },
@@ -1687,7 +1693,8 @@
             "type": "integer",
             "description": "Index position where target name starts in sentence"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "uniqueItems": true
     },
@@ -1730,7 +1737,8 @@
               "ATC"
             ]
           }
-        }
+        },
+        "additionalProperties": false
       },
       "uniqueItems": true
     },
