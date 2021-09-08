@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenTargets-tep",
+  "description": "OpenTargets TEP (Target Enabling Package) objects",
+  "type": "object",
+  "properties": {
+    "targetFromSource" : {
+      "type": "string",
+      "description": "Target symbol/name as downloaded from the source",
+      "examples": [
+        "DHTKD1",
+        "Moesin"
+      ]
+    },
+    "tepUrl": {
+      "type": ["string", "null"],
+      "description": "Link pointing to the TEP page.",
+      "examples": [
+        "https://www.thesgc.org/tep/moesin"
+      ],
+      "pattern": "^https://|http://"
+    },
+    "threapeuticArea": {
+      "type": ["string", "null"],
+      "description": "Broad description of the therapeutic area relevant to the target. Might be more terms separated by comma.",
+      "examples": [
+        "Metabolic diseases",
+        "Sickle cell disease (SCD), Neurological"
+      ]
+    },
+    "description": {
+      "type": ["string", "null"],
+      "description": "Description of the target.",
+      "examples": [
+        "Fibrinogen-like globe domain of human Tenascin-C (hFBG-C)"
+      ]
+    }
+  },
+  "required": [
+    "targetFromSource",
+    "tepUrl",
+    "threapeuticArea",
+    "description"
+  ],
+  "additionalProperties": false
+}
