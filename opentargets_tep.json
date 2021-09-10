@@ -20,7 +20,7 @@
       ],
       "pattern": "^https://|http://"
     },
-    "threapeuticArea": {
+    "therapeuticArea": {
       "type": ["string", "null"],
       "description": "Broad description of the therapeutic area relevant to the target. Might be more terms separated by comma.",
       "examples": [
