@@ -4,7 +4,7 @@
   "description": "OpenTargets TEP (Target Enabling Package) objects",
   "type": "object",
   "properties": {
-    "targetFromSource" : {
+    "targetFromSourceId" : {
       "type": "string",
       "description": "Target symbol/name as downloaded from the source",
       "examples": [
