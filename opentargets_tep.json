@@ -12,7 +12,7 @@
         "Moesin"
       ]
     },
-    "tepUrl": {
+    "url": {
       "type": ["string", "null"],
       "description": "Link pointing to the TEP page.",
       "examples": [
