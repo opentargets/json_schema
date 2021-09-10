@@ -37,9 +37,9 @@
     }
   },
   "required": [
-    "targetFromSource",
-    "tepUrl",
-    "threapeuticArea",
+    "targetFromSourceId",
+    "url",
+    "therapeuticArea",
     "description"
   ],
   "additionalProperties": false
