@@ -6,7 +6,7 @@
   "properties": {
     "targetFromSourceId" : {
       "type": "string",
-      "description": "Target symbol/name as downloaded from the source",
+      "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
       "examples": [
         "DHTKD1",
         "Moesin"
