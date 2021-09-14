@@ -1,0 +1,98 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OpenTargets-chemical-probes",
+    "version": "1.0.0",
+    "description": "OpenTargets target safety liabilities objects curated from ToxCast",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "assay_component_desc": {
+            "$ref": "#/$defs/assay_component_desc"
+        },
+        "assay_component_endpoint_name": {
+            "$ref": "#/$defs/assay_component_endpoint_name"
+        },
+        "assay_format_type": {
+            "$ref": "#/$defs/assay_format_type"
+        },
+        "biological_process_target": {
+            "$ref": "#/$defs/biological_process_target"
+        },
+        "cell_format": {
+            "$ref": "#/$defs/cell_format"
+        },
+        "cell_short_name": {
+            "$ref": "#/$defs/cell_short_name"
+        },
+        "eventId": {
+            "$ref": "#/$defs/eventId"
+        },
+        "official_symbol": {
+            "$ref": "#/$defs/official_symbol"
+        },
+        "tissue": {
+            "$ref": "#/$defs/tissue"
+        }
+    },
+    "required": [
+        "biological_process_target",
+        "official_symbol"
+    ],
+    "$defs": {
+        "assay_component_desc": {
+            "type": ["string", "null"],
+            "description": "Description of the methodology of the assay."
+        },
+        "assay_component_endpoint_name": {
+            "type": "string",
+            "description": "Identifier containing the assay and a component readout.",
+            "examples": [
+                "ATG_MR_TRANS2_up"
+            ]
+        },
+        "assay_format_type": {
+            "type": ["string", "null"],
+            "description": "Conceptual biological and/or chemical features of the assay.",
+            "enum": ["cell-based", "biochemical"]
+        },
+        "biological_process_target": {
+            "type": "string",
+            "description": "Biological process investigated by the assay.",
+            "examples": [
+                "regulation of gene expression"
+            ]
+        },
+        "cell_format": {
+            "type": "string",
+            "description": "Cellular or subcellular format of the assay.",
+            "examples": [
+                "cell line"
+            ]
+        },
+        "cell_short_name": {
+            "type": ["string", "null"],
+            "description": "Name of the cell line or primary cell used.",
+            "examples": [
+                "HepG2"
+            ]
+        },
+        "eventId": {
+            "type": ["string", "null"],
+            "description": "Identifier of the biological process in the EFO ontology."
+        },
+        "official_symbol": {
+            "type": "string",
+            "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol).",
+            "examples": [
+                "ESR1"
+            ]
+        },
+        "tissue": {
+            "type": ["string", "null"],
+            "description": "Anatomical entity at an organ-level of the protein or cell used in the assay.",
+            "examples": [
+                "brain"
+            ]
+        }
+    }
+}
