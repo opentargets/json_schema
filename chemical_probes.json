@@ -16,6 +16,9 @@
             "drugId": {
                 "$ref": "#/$defs/drugId"
             },
+            "id": {
+                "$ref": "#/$defs/id"
+            },
             "inchiKey": {
                 "$ref": "#/$defs/inchiKey"
             },
@@ -46,7 +49,8 @@
             "urls": {
                 "$ref": "#/$defs/urls"
             }
-        }
+        },
+        "required": ["targetFromSourceId", ]
     },
     "$defs": {
         "control": {
@@ -64,6 +68,13 @@
             ],
             "pattern": "^(CHEMBL)\\d+$"
         },
+        "id": {
+            "type": "string",
+            "description": "The chemical probe identifier.",
+            "examples": [
+                "PD084163"
+            ]
+        },
         "inchiKey": {
             "type": "string",
             "description": "InChIKey representation of the chemical.",
@@ -77,14 +88,15 @@
         "mechanismOfAction": {
             "type": ["array", "null"],
             "description": "The different ways the chemical can modulate the target.",
+            "uniqueItems": true,
             "items": {
                 "type": "string"
-            },
-            "uniqueItems": true
+            }
         },
         "origin": {
             "type": "array",
             "description": "Origin of the association.",
+            "uniqueItems": true,
             "items": {
                 "type": "string",
                 "enum": ["calculated", "experimental"]
