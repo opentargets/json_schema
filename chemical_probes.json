@@ -50,7 +50,7 @@
                 "$ref": "#/$defs/urls"
             }
         },
-        "required": ["targetFromSourceId", ]
+        "required": ["id", "targetFromSourceId"]
     },
     "$defs": {
         "control": {
