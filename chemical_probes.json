@@ -1,0 +1,151 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OpenTargets-chemical-probes",
+    "version": "1.0.0",
+    "description": "OpenTargets chemical probes objects",
+    "type": "array",
+    "minItems": 1,
+    "uniqueItems": true,
+    "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "control": {
+                "$ref": "#/$defs/control"
+            },
+            "drugId": {
+                "$ref": "#/$defs/drugId"
+            },
+            "inchiKey": {
+                "$ref": "#/$defs/inchiKey"
+            },
+            "isHighQuality": {
+                "$ref": "#/$defs/isHighQuality"
+            },
+            "mechanismOfAction": {
+                "$ref": "#/$defs/mechanismOfAction"
+            },
+            "origin": {
+                "$ref": "#/$defs/origin"
+            },
+            "probesDrugsScore": {
+                "$ref": "#/$defs/probesDrugsScore"
+            },
+            "probeMinerScore": {
+                "$ref": "#/$defs/probeMinerScore"
+            },
+            "scoreInCells": {
+                "$ref": "#/$defs/scoreInCells"
+            },
+            "scoreInOrganisms": {
+                "$ref": "#/$defs/scoreInOrganisms"
+            },
+            "targetFromSourceId": {
+                "$ref": "#/$defs/targetFromSourceId"
+            },
+            "urls": {
+                "$ref": "#/$defs/urls"
+            }
+        }
+    },
+    "$defs": {
+        "control": {
+            "type": ["string", "null"],
+            "description": "Chemical analog of the chemical probe that is inactive against the intended target.",
+            "examples": [
+                "GSK943"
+            ]
+        },
+        "drugId": {
+            "type": ["string", "null"],
+            "description": "Drug molecule ID.",
+            "examples": [
+                "CHEMBL1431"
+            ],
+            "pattern": "^(CHEMBL)\\d+$"
+        },
+        "inchiKey": {
+            "type": "string",
+            "description": "InChIKey representation of the chemical.",
+            "examples": [
+                "XOPYFXBZMVTEJF-PDACKIITSA-N"
+            ]
+        },
+        "isHighQuality": {
+            "type": "boolean"
+        },
+        "mechanismOfAction": {
+            "type": ["array", "null"],
+            "description": "The different ways the chemical can modulate the target.",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "origin": {
+            "type": "array",
+            "description": "Origin of the association.",
+            "items": {
+                "type": "string",
+                "enum": ["calculated", "experimental"]
+            } 
+        },
+        "probesDrugsScore": {
+            "type": "number",
+            "description": "Score assigned by Probes&Drugs.",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "probeMinerScore": {
+            "type": "number",
+            "description": "Score assigned by Probe Miner.",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "scoreInCells": {
+            "type": "number",
+            "description": "Score assigned ChemicalProbes.org for its use in model cells.",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "scoreInOrganisms": {
+            "type": "number",
+            "description": "Score assigned ChemicalProbes.org for its use in model organisms.",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "targetFromSourceId": {
+            "type": "string",
+            "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
+            "examples": [
+              "BRCA1",
+              "ENSG00000012048",
+              "P38398"
+            ]
+        },
+        "urls": {
+            "type": "array",
+            "description": "Reference to linked external resource",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "url": {
+                  "type": ["string", "null"],
+                  "pattern": "https://|http://",
+                  "examples": [
+                      "http://probeminer.icr.ac.uk/#/"
+                  ]
+                },
+                "niceName": {
+                  "type": ["string", "null"],
+                  "examples": [
+                    "Probe Miner"
+                  ]
+                }
+              }
+            }
+        }
+    }
+}
