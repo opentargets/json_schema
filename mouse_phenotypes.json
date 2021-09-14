@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OpenTargets-chemical-probes",
+    "version": "1.0.0",
+    "description": "OpenTargets target mouse phenotypes objects",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "biologicalModels": {
+            "$ref": "#/$defs/biologicalModels"
+        },
+        "modelPhenotypeClasses": {
+            "$ref": "#/$defs/modelPhenotypeClasses"
+        },
+        "modelPhenotypeId": {
+            "$ref": "#/$defs/modelPhenotypeId"
+        },
+        "modelPhenotypeLabel": {
+            "$ref": "#/$defs/modelPhenotypeLabel"
+        },
+        "targetFromSourceId": {
+            "$ref": "#/$defs/targetFromSourceId"
+        },
+        "targetInModel": {
+            "$ref": "#/$defs/targetInModel"
+        },
+        "targetInModelEnsemblId": {
+            "$ref": "#/$defs/targetInModelEnsemblId"
+        },
+        "targetInModelMgiId": {
+            "$ref": "#/$defs/targetInModelMgiId"
+        }
+    },
+    "required": [
+        "targetFromSourceId",
+        "modelPhenotypeLabel",
+        "targetInModel"
+    ],
+    "$defs": {
+    }
+}
