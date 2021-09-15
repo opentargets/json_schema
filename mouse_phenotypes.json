@@ -75,7 +75,8 @@
                           "pattern": "^\\d+$"
                         }
                     }
-                }
+                },
+                "required": ["allelicComposition"]
             }
         },
         "modelPhenotypeClasses": {
@@ -100,7 +101,8 @@
                             "growth/size/body region phenotype"
                         ]
                     }
-                }
+                },
+                "required": ["label"]
             }
         },
         "modelPhenotypeId": {
