@@ -37,5 +37,117 @@
         "targetInModel"
     ],
     "$defs": {
+        "biologicalModels": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "allelicComposition":{
+                        "type": "string",
+                        "description": "Allelic composition of the model organism",
+                        "examples": [
+                            "Zbed6<tm1.2Sson>/Zbed6<tm1.2Sson>"
+                        ]
+                    },
+                    "geneticBackground": {
+                        "type": "string",
+                        "description": "Genetic background of the model organism",
+                        "examples": [
+                            "involves: BALB/c * C57BL/6"
+                        ]
+                    },
+                    "id": {
+                        "type": ["string", "null"],
+                        "description": "Identifier of the biological model (eg. in MGI).",
+                        "examples": [
+                            "MGI:6201426"
+                        ],
+                        "pattern": "^(MGI:)\\d+$"
+                    },
+                    "literature": {
+                        "type": "array",
+                        "description": "PubMed reference identifiers",
+                        "uniqueItems": true,
+                        "items": {
+                          "type": "string",
+                          "pattern": "^\\d+$"
+                        }
+                    }
+                }
+            }
+        },
+        "modelPhenotypeClasses": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Identifier of the phenotype observed in genetically-modified animal models in the MP ontology.",
+                        "examples": [
+                            "MP:0005378"
+                        ],
+                        "pattern": "^(MP:)\\d+$"
+                    },
+                    "label": {
+                        "type": "string",
+                        "description": "Label of the phenotype observed in genetically-modified animal models.",
+                        "examples": [
+                            "growth/size/body region phenotype"
+                        ]
+                    }
+                }
+            }
+        },
+        "modelPhenotypeId": {
+            "type": "string",
+            "description": "Identifier of the phenotype class observed in genetically-modified animal models in the MP ontology.",
+            "examples": [
+                "MP:0003178"
+            ],
+            "pattern": "^(MP:)\\d+$"
+        },
+        "modelPhenotypeLabel": {
+            "type": "string",
+            "description": "Label of the phenotype class observed in genetically-modified animal models in the MP ontology.",
+            "examples": [
+                "left pulmonary isomerism"
+            ]
+        },
+        "targetFromSourceId": {
+            "type": "string",
+            "description": "Ensembl gene ID in resource of origin.",
+            "examples": [
+              "ENSG00000012048"
+            ],
+            "pattern": "^(ENSG)\\d+$"
+        },
+        "targetInModel": {
+            "type": "string",
+            "description": "Target name/synonym in animal model.",
+            "examples": [
+                "1700007K13Rik"
+            ]
+        },
+        "targetInModelEnsemblId": {
+            "type": ["string", "null"],
+            "description": "Target Ensembl ID in animal model.",
+            "examples": [
+                "ENSMUSG00000026831"
+            ],
+            "pattern": "^(ENSMUSG)\\d+$"
+        },
+        "targetInModelMgiId": {
+            "type": "string",
+            "description": "Target MGI ID in animal model.",
+            "examples": [
+                "MGI:1916577"
+            ],
+            "pattern": "^(MGI:)\\d+$"
+        }
     }
 }

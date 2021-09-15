@@ -128,7 +128,7 @@
         },
         "targetFromSourceId": {
             "type": "string",
-            "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
+            "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol).",
             "examples": [
               "BRCA1",
               "ENSG00000012048",
@@ -137,7 +137,7 @@
         },
         "urls": {
             "type": "array",
-            "description": "Reference to linked external resource",
+            "description": "Reference to linked external resource.",
             "uniqueItems": true,
             "items": {
               "type": "object",
