@@ -3,55 +3,50 @@
     "title": "OpenTargets-chemical-probes",
     "version": "1.0.0",
     "description": "OpenTargets chemical probes objects",
-    "type": "array",
-    "minItems": 1,
-    "uniqueItems": true,
-    "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-            "control": {
-                "$ref": "#/$defs/control"
-            },
-            "drugId": {
-                "$ref": "#/$defs/drugId"
-            },
-            "id": {
-                "$ref": "#/$defs/id"
-            },
-            "inchiKey": {
-                "$ref": "#/$defs/inchiKey"
-            },
-            "isHighQuality": {
-                "$ref": "#/$defs/isHighQuality"
-            },
-            "mechanismOfAction": {
-                "$ref": "#/$defs/mechanismOfAction"
-            },
-            "origin": {
-                "$ref": "#/$defs/origin"
-            },
-            "probesDrugsScore": {
-                "$ref": "#/$defs/probesDrugsScore"
-            },
-            "probeMinerScore": {
-                "$ref": "#/$defs/probeMinerScore"
-            },
-            "scoreInCells": {
-                "$ref": "#/$defs/scoreInCells"
-            },
-            "scoreInOrganisms": {
-                "$ref": "#/$defs/scoreInOrganisms"
-            },
-            "targetFromSourceId": {
-                "$ref": "#/$defs/targetFromSourceId"
-            },
-            "urls": {
-                "$ref": "#/$defs/urls"
-            }
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "control": {
+            "$ref": "#/$defs/control"
         },
-        "required": ["id", "targetFromSourceId"]
+        "drugId": {
+            "$ref": "#/$defs/drugId"
+        },
+        "id": {
+            "$ref": "#/$defs/id"
+        },
+        "inchiKey": {
+            "$ref": "#/$defs/inchiKey"
+        },
+        "isHighQuality": {
+            "$ref": "#/$defs/isHighQuality"
+        },
+        "mechanismOfAction": {
+            "$ref": "#/$defs/mechanismOfAction"
+        },
+        "origin": {
+            "$ref": "#/$defs/origin"
+        },
+        "probesDrugsScore": {
+            "$ref": "#/$defs/probesDrugsScore"
+        },
+        "probeMinerScore": {
+            "$ref": "#/$defs/probeMinerScore"
+        },
+        "scoreInCells": {
+            "$ref": "#/$defs/scoreInCells"
+        },
+        "scoreInOrganisms": {
+            "$ref": "#/$defs/scoreInOrganisms"
+        },
+        "targetFromSourceId": {
+            "$ref": "#/$defs/targetFromSourceId"
+        },
+        "urls": {
+            "$ref": "#/$defs/urls"
+        }
     },
+    "required": ["id", "targetFromSourceId"],
     "$defs": {
         "control": {
             "type": ["string", "null"],
@@ -139,6 +134,7 @@
             "type": "array",
             "description": "Reference to linked external resource.",
             "uniqueItems": true,
+            "minItems": 1,
             "items": {
               "type": "object",
               "additionalProperties": false,
