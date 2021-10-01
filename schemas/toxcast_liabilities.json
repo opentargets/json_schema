@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "OpenTargets-chemical-probes",
+    "title": "OpenTargets-toxcast-liabilities",
     "version": "1.0.0",
     "description": "OpenTargets target safety liabilities objects curated from ToxCast",
     "type": "object",
