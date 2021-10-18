@@ -1149,10 +1149,11 @@
               "id": {
                 "$ref": "#/definitions/variantId"
               },
-              "variantFunctionalConsequenceId": {
+              "functionalConsequenceId": {
                 "$ref": "#/definitions/variantFunctionalConsequenceId"
               }
             },
+            "required": ["name"],
             "additionalProperties": false
           },
           "uniqueItems": true
@@ -1178,6 +1179,7 @@
                 ]
               }
             },
+            "required": ["name"],
             "additionalProperties": false
           },
           "uniqueItems": true
