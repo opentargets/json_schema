@@ -95,7 +95,12 @@
       }
       },
       "required": [
+        "biomarkerName",
+        "confidence",
         "datasourceId",
+        "diseaseFromSource",
+        "drugFromSource",
+        "drugResponse",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1144,10 +1149,11 @@
               "id": {
                 "$ref": "#/definitions/variantId"
               },
-              "variantFunctionalConsequenceId": {
+              "functionalConsequenceId": {
                 "$ref": "#/definitions/variantFunctionalConsequenceId"
               }
             },
+            "required": ["name"],
             "additionalProperties": false
           },
           "uniqueItems": true
@@ -1173,6 +1179,7 @@
                 ]
               }
             },
+            "required": ["name"],
             "additionalProperties": false
           },
           "uniqueItems": true
