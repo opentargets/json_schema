@@ -261,6 +261,63 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "encore"
+        },
+        "cellType" : {
+          "$ref": "#/definitions/cellType"
+        },
+        "datatypeId" : {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseCellLines" : {
+          "$ref": "#/definitions/diseaseCellLines"
+        },
+        "diseaseFromSource" : {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceMappedId" : {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "geneticInteractionFDR" : {
+          "$ref": "#/definitions/falseDiscoveryRate"
+        },
+        "geneticInteractionMethod" : {
+          "$ref": "#/definitions/geneticInteractionMethod"
+        },
+        "geneticInteractionPValue" : {
+          "$ref": "#/definitions/pValue"
+        },
+        "geneticInteractionScore" : {
+          "$ref": "#/definitions/geneticInteractionScore"
+        },
+        "interactingTargetFromSourceId" : {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "phenotypicConsequenceFDR" : {
+          "$ref": "#/definitions/falseDiscoveryRate"
+        },
+        "phenotypicConsequenceLogFoldChange" : {
+          "$ref": "#/definitions/log2FoldChangeValue"
+        },
+        "phenotypicConsequencePValue" : {
+          "$ref": "#/definitions/pValue"
+        },
+        "projectId" : {
+          "$ref": "#/definitions/projectId"
+        },
+        "targetFromSourceId" : {
+          "$ref": "#/definitions/targetFromSourceId"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "eva"
         },
         "alleleOrigins": {
@@ -1329,7 +1386,39 @@
       "type": "array",
       "description": "Cancer cell lines used to generate evidence",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "id" : {
+            "type": "string",
+            "description": "Cell type identifier in cell ontology or in cell model database",
+            "examples": [
+              "SIDM01076"
+            ]
+          },
+          "name" : {
+            "type": "string",
+            "description": "Name of the cell model",
+            "examples": [
+              "BC-1"
+            ]
+          },
+          "tissue" : {
+            "type": "string",
+            "description": "Name of the tissue from which the cells were sampled",
+            "examples": [
+              "pancreas"
+            ]
+          },
+          "tissueId" : {
+            "type": "string",
+            "description": "UBERON identifier of the anatomical unit the cells were sampled.",
+            "examples": [
+              "UBERON_0000059"
+            ],
+            "pattern": "UBERON_\\d+"
+          }
+        },
+        "additionalProperties": false
       },
       "uniqueItems": true
     },
@@ -1413,9 +1502,27 @@
         "CHEMBL803"
       ]
     },
+    "falseDiscoveryRate": {
+      "type": "number",
+      "description": "False discovery rate (FDR) captures the rate of type I error.",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
     "geneticBackground": {
       "type": "string",
       "description": "Additional genetic background of the applied cell line in the CRISPR screen."
+    },
+    "geneticInteractionMethod": {
+      "type": "string",
+      "description": "The applied method calculating the genetic interaction between targets.",
+      "examples": [
+        "gemini",
+        "bliss"
+      ]
+    },
+    "geneticInteractionScore": {
+      "type": "number",
+      "description": "The strength of the genetic interaction. Directionality is captured as well: antagonistics < 0 < cooperative."
     },
     "drugResponse": {
       "type": "string",
@@ -1523,6 +1630,12 @@
         "UKBB",
         "OTAR033"
       ]
+    },
+    "pValue": {
+      "type": "number",
+      "description": "p-value",
+      "maximum": 1.0,
+      "minimum": 0.0
     },
     "pValueExponent": {
       "type": "integer",
