@@ -1522,7 +1522,7 @@
     },
     "geneticInteractionScore": {
       "type": "number",
-      "description": "The strenght of the genetic interaction capturing directionality as well: antagonistics < 0 < cooperative."
+      "description": "The strength of the genetic interaction. Directionality is captured as well: antagonistics < 0 < cooperative."
     },
     "drugResponse": {
       "type": "string",
