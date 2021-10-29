@@ -147,8 +147,12 @@
         }
       },
       "required": [
+        "clinicalPhase",
         "datasourceId",
-        "targetFromSourceId"
+        "drugId",
+        "targetFromSource",
+        "targetFromSourceId",
+        "urls"
       ],
       "additionalProperties": false
     },
