@@ -797,7 +797,15 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "projectId",
+        "pValueExponent",
+        "pValueMantissa",
+        "resourceScore",
+        "studyId",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId",
+        "variantId"
       ],
       "additionalProperties": false
     },
