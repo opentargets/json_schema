@@ -445,8 +445,16 @@
         }
       },
       "required": [
+        "alleleOrigins",
+        "clinicalSignificances",
+        "cohortPhenotypes",
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "studyId",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId",
+        "variantId"
       ],
       "additionalProperties": false
     },
