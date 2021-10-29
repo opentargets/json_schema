@@ -184,7 +184,11 @@
         }
       },
       "required": [
+        "allelicRequirements",
+        "confidence",
+        "diseaseFromSource",
         "datasourceId",
+        "studyId",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1141,6 +1145,7 @@
       "items": {
         "type": "string"
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "beta": {
