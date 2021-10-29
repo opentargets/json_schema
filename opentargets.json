@@ -868,8 +868,16 @@
         }
       },
       "required": [
+        "biologicalModelAllelicComposition",
+        "biologicalModelGeneticBackground",
+        "biologicalModelId",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "diseaseModelAssociatedModelPhenotypes",
+        "resourceScore",
+        "targetFromSourceId",
+        "targetInModel",
+        "targetInModelMgiId"
       ],
       "additionalProperties": false
     },
@@ -1525,8 +1533,10 @@
             ]
           }
         },
+        "minItems": 1,
         "additionalProperties": false
       },
+      "required": ["id"],
       "uniqueItems": true
     },
     "drugFromSource": {
