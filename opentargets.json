@@ -48,6 +48,8 @@
       },
       "required": [
         "datasourceId",
+        "mutatedSamples",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
