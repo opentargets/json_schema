@@ -261,7 +261,10 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSourceMappedId",
+        "resourceScore",
+        "targetFromSourceId",
+        "textMiningSentences"
       ],
       "additionalProperties": false
     },
@@ -1822,6 +1825,14 @@
             "description": "Index position where target name starts in sentence"
           }
         },
+        "required": [
+          "dEnd",
+          "dStart",
+          "section",
+          "tEnd",
+          "text",
+          "tStart"
+        ],
         "additionalProperties": false
       },
       "uniqueItems": true
