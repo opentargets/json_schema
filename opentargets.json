@@ -492,7 +492,14 @@
         }
       },
       "required": [
+        "confidence",
+        "contrast",
         "datasourceId",
+        "log2FoldChangePercentileRank",
+        "log2FoldChangeValue",
+        "resourceScore",
+        "studyId",
+        "studyOverview",
         "targetFromSourceId"
       ],
       "additionalProperties": false
