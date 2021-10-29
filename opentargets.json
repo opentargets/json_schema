@@ -917,7 +917,13 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "oddsRatio",
+        "resourceScore",
+        "studyCases",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId",
+        "variantRsId"
       ],
       "additionalProperties": false
     },
