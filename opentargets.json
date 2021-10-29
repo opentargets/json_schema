@@ -620,7 +620,12 @@
         }
       },
       "required": [
+        "cohortDescription",
+        "cohortId",
+        "cohortShortName",
         "datasourceId",
+        "diseaseFromSource",
+        "mutatedSamples",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1568,12 +1573,7 @@
         "type": "object",
         "properties": {
           "functionalConsequenceId": {
-            "type": "string",
-            "description": "Sequence ontology (SO) identifier of the functional consequence of the variant",
-            "pattern": "SO_\\d+",
-            "examples": [
-              "SO_0001628"
-            ]
+            "$ref": "#/definitions/variantFunctionalConsequenceId"
           },
           "numberMutatedSamples": {
             "type": "integer",
