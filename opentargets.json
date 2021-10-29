@@ -530,7 +530,10 @@
         }
       },
       "required": [
+        "confidence",
         "datasourceId",
+        "diseaseFromSource",
+        "studyId",
         "targetFromSourceId"
       ],
       "additionalProperties": false
