@@ -1188,8 +1188,12 @@
         }
       },
       "required": [
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "literature",
+        "targetFromSourceId",
+        "targetModulation"
       ],
       "additionalProperties": false
     }
