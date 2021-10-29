@@ -1048,6 +1048,9 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "pathways",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
