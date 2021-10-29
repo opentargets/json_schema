@@ -578,7 +578,11 @@
         }
       },
       "required": [
+        "cohortPhenotypes",
         "datasourceId",
+        "diseaseFromSource",
+        "studyId",
+        "studyOverview",
         "targetFromSourceId"
       ],
       "additionalProperties": false
