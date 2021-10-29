@@ -41,9 +41,6 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "urls": {
-          "$ref": "#/definitions/urls"
         }
       },
       "required": [
@@ -195,7 +192,8 @@
         "diseaseFromSource",
         "datasourceId",
         "studyId",
-        "targetFromSourceId"
+        "targetFromSourceId",
+        "urls"
       ],
       "additionalProperties": false
     },
