@@ -1158,8 +1158,12 @@
         }
       },
       "required": [
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "literature",
+        "targetFromSourceId",
+        "targetModulation"
       ],
       "additionalProperties": false
     },
@@ -1208,7 +1212,9 @@
         "diseaseFromSource",
         "literature",
         "targetFromSourceId",
-        "targetModulation"
+        "targetModulation",
+        "variantFunctionalConsequenceId",
+        "variantRsId"
       ],
       "additionalProperties": false
     }
