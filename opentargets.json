@@ -221,6 +221,9 @@
       },
       "required": [
         "datasourceId",
+        "diseaseCellLines",
+        "diseaseFromSource",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
