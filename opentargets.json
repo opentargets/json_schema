@@ -1017,6 +1017,8 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "pathways",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1543,10 +1545,10 @@
             ]
           }
         },
-        "minItems": 1,
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": ["id"]
       },
-      "required": ["id"],
+      "minItems": 1,
       "uniqueItems": true
     },
     "drugFromSource": {
@@ -1669,6 +1671,7 @@
         "required": ["id"],
         "additionalProperties": false
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "pmcIds": {
