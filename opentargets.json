@@ -1090,6 +1090,11 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "literature",
+        "pathways",
+        "resourceScore",
+        "studyOverview",
         "targetFromSourceId"
       ],
       "additionalProperties": false
