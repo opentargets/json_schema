@@ -381,8 +381,15 @@
         }
       },
       "required": [
+        "clinicalSignificances",
+        "cohortPhenotypes",
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "literature",
+        "studyId",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId"
       ],
       "additionalProperties": false
     },
@@ -1353,6 +1360,7 @@
           "uncertain significance"
         ]
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "clinicalStatus": {
