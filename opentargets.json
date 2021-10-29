@@ -664,7 +664,10 @@
         }
       },
       "required": [
+        "alleleOrigins",
+        "confidence",
         "datasourceId",
+        "diseaseFromSource",
         "targetFromSourceId"
       ],
       "additionalProperties": false
