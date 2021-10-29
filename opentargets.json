@@ -946,6 +946,9 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "pathways",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1633,6 +1636,7 @@
             ]
           }
         },
+        "required": ["id"],
         "additionalProperties": false
       },
       "uniqueItems": true
