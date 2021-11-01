@@ -1701,7 +1701,6 @@
             ]
           }
         },
-        "required": ["id"],
         "additionalProperties": false
       },
       "minItems": 1,
