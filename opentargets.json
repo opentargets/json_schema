@@ -606,7 +606,6 @@
       "required": [
         "cohortPhenotypes",
         "datasourceId",
-        "diseaseFromSource",
         "studyId",
         "studyOverview",
         "targetFromSourceId"
@@ -896,7 +895,6 @@
       "required": [
         "biologicalModelAllelicComposition",
         "biologicalModelGeneticBackground",
-        "biologicalModelId",
         "datasourceId",
         "diseaseFromSource",
         "diseaseModelAssociatedModelPhenotypes",
