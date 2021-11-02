@@ -897,7 +897,6 @@
         "biologicalModelGeneticBackground",
         "datasourceId",
         "diseaseFromSource",
-        "diseaseModelAssociatedModelPhenotypes",
         "resourceScore",
         "targetFromSourceId",
         "targetInModel",
