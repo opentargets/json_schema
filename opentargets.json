@@ -1886,13 +1886,18 @@
           "section": {
             "type": "string",
             "description": "Section in which sentence occurs",
-            "examples": [
+            "enum": [
               "title",
-              "table",
-              "other",
+              "abstract",
+              "intro",
+              "case",
               "figure",
+              "table",
+              "discuss",
+              "concl",
+              "results",
               "appendix",
-              "abstract"
+              "other"
             ]
           },
           "tEnd": {
