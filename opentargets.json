@@ -1714,6 +1714,7 @@
         "pattern": "^PMC\\d+$",
         "description": "Literature identifer in PubMed Central"
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "projectId":{
