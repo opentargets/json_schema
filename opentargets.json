@@ -41,13 +41,12 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "urls": {
-          "$ref": "#/definitions/urls"
         }
       },
       "required": [
         "datasourceId",
+        "mutatedSamples",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -145,8 +144,12 @@
         }
       },
       "required": [
+        "clinicalPhase",
         "datasourceId",
-        "targetFromSourceId"
+        "drugId",
+        "targetFromSource",
+        "targetFromSourceId",
+        "urls"
       ],
       "additionalProperties": false
     },
@@ -184,8 +187,13 @@
         }
       },
       "required": [
+        "allelicRequirements",
+        "confidence",
+        "diseaseFromSource",
         "datasourceId",
-        "targetFromSourceId"
+        "studyId",
+        "targetFromSourceId",
+        "urls"
       ],
       "additionalProperties": false
     },
@@ -221,6 +229,9 @@
       },
       "required": [
         "datasourceId",
+        "diseaseCellLines",
+        "diseaseFromSource",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -254,7 +265,10 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSourceMappedId",
+        "resourceScore",
+        "targetFromSourceId",
+        "textMiningSentences"
       ],
       "additionalProperties": false
     },
@@ -367,8 +381,15 @@
         }
       },
       "required": [
+        "clinicalSignificances",
+        "cohortPhenotypes",
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "literature",
+        "studyId",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId"
       ],
       "additionalProperties": false
     },
@@ -424,8 +445,16 @@
         }
       },
       "required": [
+        "alleleOrigins",
+        "clinicalSignificances",
+        "cohortPhenotypes",
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "studyId",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId",
+        "variantId"
       ],
       "additionalProperties": false
     },
@@ -478,7 +507,14 @@
         }
       },
       "required": [
+        "confidence",
+        "contrast",
         "datasourceId",
+        "log2FoldChangePercentileRank",
+        "log2FoldChangeValue",
+        "resourceScore",
+        "studyId",
+        "studyOverview",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -520,7 +556,10 @@
         }
       },
       "required": [
+        "confidence",
         "datasourceId",
+        "diseaseFromSource",
+        "studyId",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -565,7 +604,10 @@
         }
       },
       "required": [
+        "cohortPhenotypes",
         "datasourceId",
+        "studyId",
+        "studyOverview",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -607,7 +649,12 @@
         }
       },
       "required": [
+        "cohortDescription",
+        "cohortId",
+        "cohortShortName",
         "datasourceId",
+        "diseaseFromSource",
+        "mutatedSamples",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -646,7 +693,10 @@
         }
       },
       "required": [
+        "alleleOrigins",
+        "confidence",
         "datasourceId",
+        "diseaseFromSource",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -779,7 +829,15 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "projectId",
+        "pValueExponent",
+        "pValueMantissa",
+        "resourceScore",
+        "studyId",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId",
+        "variantId"
       ],
       "additionalProperties": false
     },
@@ -835,8 +893,14 @@
         }
       },
       "required": [
+        "biologicalModelAllelicComposition",
+        "biologicalModelGeneticBackground",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "resourceScore",
+        "targetFromSourceId",
+        "targetInModel",
+        "targetInModelMgiId"
       ],
       "additionalProperties": false
     },
@@ -884,7 +948,13 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "oddsRatio",
+        "resourceScore",
+        "studyCases",
+        "targetFromSourceId",
+        "variantFunctionalConsequenceId",
+        "variantRsId"
       ],
       "additionalProperties": false
     },
@@ -917,6 +987,9 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "pathways",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -965,6 +1038,8 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "pathways",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -998,6 +1073,9 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "pathways",
+        "resourceScore",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1037,6 +1115,11 @@
       },
       "required": [
         "datasourceId",
+        "diseaseFromSource",
+        "literature",
+        "pathways",
+        "resourceScore",
+        "studyOverview",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1072,8 +1155,12 @@
         }
       },
       "required": [
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "literature",
+        "targetFromSourceId",
+        "targetModulation"
       ],
       "additionalProperties": false
     },
@@ -1117,8 +1204,14 @@
         }
       },
       "required": [
+        "confidence",
         "datasourceId",
-        "targetFromSourceId"
+        "diseaseFromSource",
+        "literature",
+        "targetFromSourceId",
+        "targetModulation",
+        "variantFunctionalConsequenceId",
+        "variantRsId"
       ],
       "additionalProperties": false
     }
@@ -1138,6 +1231,7 @@
       "items": {
         "type": "string"
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "beta": {
@@ -1277,6 +1371,7 @@
           "uncertain significance"
         ]
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "clinicalStatus": {
@@ -1439,7 +1534,7 @@
     "diseaseFromSourceMappedId": {
       "type": "string",
       "description": "Identifier of the disease in the EFO ontology",
-      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$)",
+      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$|^PATO_\\d+$|^CHEBI_\\d+$)",
       "examples": [
         "EFO_0005537"
       ]
@@ -1482,8 +1577,10 @@
             ]
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": ["id"]
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "drugFromSource": {
@@ -1554,12 +1651,7 @@
         "type": "object",
         "properties": {
           "functionalConsequenceId": {
-            "type": "string",
-            "description": "Sequence ontology (SO) identifier of the functional consequence of the variant",
-            "pattern": "SO_\\d+",
-            "examples": [
-              "SO_0001628"
-            ]
+            "$ref": "#/definitions/variantFunctionalConsequenceId"
           },
           "numberMutatedSamples": {
             "type": "integer",
@@ -1608,8 +1700,10 @@
             ]
           }
         },
+        "required": ["name"],
         "additionalProperties": false
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "pmcIds": {
@@ -1620,6 +1714,7 @@
         "pattern": "^PMC\\d+$",
         "description": "Literature identifer in PubMed Central"
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "projectId":{
@@ -1794,11 +1889,16 @@
             "description": "Section in which sentence occurs",
             "enum": [
               "title",
-              "table",
-              "other",
+              "abstract",
+              "intro",
+              "case",
               "figure",
+              "table",
+              "discuss",
+              "concl",
+              "results",
               "appendix",
-              "abstract"
+              "other"
             ]
           },
           "tEnd": {
@@ -1814,6 +1914,14 @@
             "description": "Index position where target name starts in sentence"
           }
         },
+        "required": [
+          "dEnd",
+          "dStart",
+          "section",
+          "tEnd",
+          "text",
+          "tStart"
+        ],
         "additionalProperties": false
       },
       "uniqueItems": true
