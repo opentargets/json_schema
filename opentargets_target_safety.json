@@ -1,0 +1,148 @@
+{
+    "title": "OpenTargets-target-safety",
+    "description": "OpenTargets Target Safety Liabilities model.",
+    "version": "1.0.0",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Target ID (accepted sources include Ensembl gene ID, Uniprot ID).",
+        "examples": "ENSG00000133019",
+        "type": "string"
+      },
+      "targetFromSourceId": {
+        "description": "Gene symbol in resource of origin.",
+        "examples": "ESR1",
+        "type": "string"
+      },
+      "event": {
+        "description": "Identifier of the biological process in the EFO ontology.",
+        "examples": "arrhythmia",
+        "type": "string"
+      },
+      "eventId": {
+        "description": "Identifier of the safety event in the EFO ontology.",
+        "examples": "EFO_0004269",
+        "type": "string"
+      },
+      "biosample": {
+        "$ref": "#/definitions/Biosample"
+      },
+      "effects": {
+        "$ref": "#/definitions/Effects"
+      },
+      "datasource": {
+        "description": "Source of safety event.",
+        "type": "string",
+        "enum": [
+            "Force et al. (2011)",
+            "Lamore et al. (2017)",
+            "Lynch et al. (2017)",
+            "Bowes et al. (2012)",
+            "Urban et al. (2012)",
+            "ToxCast"
+        ]
+      },
+      "literature": {
+        "description": "PubMed reference identifier.",
+        "pattern": "\\d+$",
+        "type": "string"
+      },
+      "study": {
+        "$ref": "#/definitions/Study"
+      },
+      "url": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "event",
+      "datasource"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+      "Biosample": {
+        "description": "Anatomical structures referenced in resource.",
+        "type": "object",
+        "properties": {
+          "cellFormat": {
+            "description": "Cellular or subcellular format of the assay.",
+            "examples": "cell line",
+            "type": "string"
+          },
+          "cellLabel": {
+            "description": "Name of the cell line or primary cell in source.",
+            "examples": "T47D",
+            "type": "string"
+          },
+          "tissueId": {
+            "description": "Identifier of the tissue in the UBERON ontology.",
+            "examples": "UBERON_0004535",
+            "type": "string"
+          },
+          "tissueLabel": {
+            "description": "Anatomical entity at an organ-level of the protein or cell used in the assay.",
+            "examples": "cardiovascular system",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Effect": {
+        "description": "Effect on target modulation.",
+        "type": "object",
+        "properties": {
+          "direction": {
+            "description": "Direction of the effect.",
+            "type": "string",
+            "enum": [
+                "inhibition",
+                "activation"
+            ]
+          },
+          "dosing": {
+            "description": "Required dose to achieve the response.",
+            "type": "string",
+            "enum": [
+                "general",
+                "developmental toxicity",
+                "chronic",
+                "acute"
+            ]
+          }
+        },
+        "required": [
+          "direction",
+          "dosing"
+        ],
+        "additionalProperties": false
+      },
+      "Effects": {
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Effect"
+        }
+      },
+      "Study": {
+        "description": "Characteristics of the study.",
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "Description of the study.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the study.",
+            "examples": "ACEA_ER_80hr",
+            "type": "string"
+          },
+          "type": {
+            "description": "Conceptual biological and/or chemical features of the study.",
+            "examples": "cell-based",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
