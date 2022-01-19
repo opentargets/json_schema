@@ -386,7 +386,6 @@
         "confidence",
         "datasourceId",
         "diseaseFromSource",
-        "literature",
         "studyId",
         "targetFromSourceId",
         "variantFunctionalConsequenceId"
