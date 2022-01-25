@@ -133,6 +133,9 @@
         "studyStopReason": {
           "$ref": "#/definitions/studyStopReason"
         },
+        "studyStopReasonCategories": {
+          "$ref": "#/definitions/studyStopReasonCategories"
+        },
         "targetFromSource": {
           "$ref": "#/definitions/targetFromSourceId"
         },
@@ -1826,6 +1829,33 @@
       "type": "string",
       "description": "Reason why a study has been stopped",
       "pattern": "^[^\\ ].*[^\\ ]$"
+    },
+    "studyStopReasonCategories": {
+      "type": "array",
+      "description": "Assigned category to the reason why a study has been stopped.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Insufficient_Enrollment",
+          "Business_Administrative",
+          "Negative",
+          "Logistics_Resources",
+          "Study_Design",
+          "Invalid_Reason",
+          "Study_Staff_Moved",
+          "Covid19",
+          "Another_Study",
+          "No_Context",
+          "Safety_Sideeffects",
+          "Regulatory",
+          "Interim_Analysis",
+          "Success",
+          "Endpoint_Met",
+          "Ethical_Reason",
+          "Insufficient_Data"
+        ]
+      },
+      "uniqueItems": true
     },
     "targetFromSourceId": {
       "type": "string",
