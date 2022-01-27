@@ -1836,23 +1836,23 @@
       "items": {
         "type": "string",
         "enum": [
-          "Insufficient_Enrollment",
-          "Business_Administrative",
+          "Insufficient enrollment",
+          "Business or administrative",
           "Negative",
-          "Logistics_Resources",
-          "Study_Design",
-          "Invalid_Reason",
-          "Study_Staff_Moved",
-          "Covid19",
-          "Another_Study",
-          "No_Context",
-          "Safety_Sideeffects",
+          "Logistics or resources",
+          "Study design",
+          "Invalid reason",
+          "Study staff moved",
+          "COVID-19",
+          "Another study",
+          "No context",
+          "Safety or side effects",
           "Regulatory",
-          "Interim_Analysis",
+          "Interim analysis",
           "Success",
-          "Endpoint_Met",
-          "Ethical_Reason",
-          "Insufficient_Data"
+          "Met endpoint",
+          "Ethical reason",
+          "Insufficient data"
         ]
       },
       "uniqueItems": true
