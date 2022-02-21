@@ -909,60 +909,6 @@
     {
       "properties": {
         "datasourceId": {
-          "const": "phewas_catalog"
-        },
-        "datatypeId": {
-          "$ref": "#/definitions/datatypeId"
-        },
-        "diseaseFromSource": {
-          "$ref": "#/definitions/diseaseFromSource"
-        },
-        "diseaseFromSourceId": {
-          "$ref": "#/definitions/diseaseFromSourceId"
-        },
-        "oddsRatio": {
-          "$ref": "#/definitions/oddsRatio"
-        },
-        "resourceScore": {
-          "$ref": "#/definitions/resourceScore"
-        },
-        "studyCases": {
-          "$ref": "#/definitions/studyCases"
-        },
-        "targetFromSourceId": {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
-        "targetFromSource": {
-          "$ref": "#/definitions/targetFromSource"
-        },
-        "variantFunctionalConsequenceId": {
-          "$ref": "#/definitions/variantFunctionalConsequenceId"
-        },
-        "variantId": {
-          "$ref": "#/definitions/variantId"
-        },
-        "variantRsId": {
-          "$ref": "#/definitions/variantRsId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
-        }
-      },
-      "required": [
-        "datasourceId",
-        "diseaseFromSource",
-        "oddsRatio",
-        "resourceScore",
-        "studyCases",
-        "targetFromSourceId",
-        "variantFunctionalConsequenceId",
-        "variantRsId"
-      ],
-      "additionalProperties": false
-    },
-    {
-      "properties": {
-        "datasourceId": {
           "const": "progeny"
         },
         "datatypeId": {
@@ -1800,11 +1746,6 @@
         ]
       },
       "uniqueItems": true
-    },
-    "studyCases": {
-      "type": "integer",
-      "description": "Number of cases in case-control study",
-      "exclusiveMinimum": 0
     },
     "studyId": {
       "type": "string",
