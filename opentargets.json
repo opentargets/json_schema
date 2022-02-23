@@ -723,14 +723,20 @@
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
-        "direction": {
-          "$ref": "#/definitions/direction"
+        "statisticalTestTail": {
+          "$ref": "#/definitions/statisticalTestTail"
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "geneticBackground": {
           "$ref": "#/definitions/geneticBackground"
+        },
+        "log2FoldChangeValue": {
+          "$ref": "#/definitions/log2FoldChangeValue"
+        },
+        "projectDescription": {
+          "$ref": "#/definitions/projectDescription"
         },
         "projectId": {
           "$ref": "#/definitions/projectId"
@@ -750,6 +756,12 @@
       },
       "required": [
         "datasourceId",
+        "targetFromSourceId",
+        "projectId",
+        "projectDescription",
+        "resourceScore",
+        "studyOverview",
+        "studyId",
         "targetFromSourceId"
       ],
       "additionalProperties": false
@@ -1416,15 +1428,6 @@
         "ot_partner"
       ]
     },
-    "direction": {
-      "type": "string",
-      "description": "Which end of the distribution the target was picked from.",
-      "examples": [
-        "upper tail",
-        "lower tail"
-      ]
-
-    },
     "diseaseCellLines": {
       "type": "array",
       "description": "Cancer cell lines used to generate evidence",
@@ -1674,6 +1677,10 @@
         "OTAR033"
       ]
     },
+    "projectDescription": {
+      "type": "string",
+      "description": "Description of the project that generated the data.",
+    },
     "pValue": {
       "type": "number",
       "description": "p-value",
@@ -1746,6 +1753,14 @@
         ]
       },
       "uniqueItems": true
+    },
+    "statisticalTestTail": {
+      "type": "string",
+      "description": "Which end of the distribution the target was picked from.",
+      "examples": [
+        "upper tail",
+        "lower tail"
+      ]
     },
     "studyId": {
       "type": "string",
