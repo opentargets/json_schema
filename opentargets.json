@@ -242,6 +242,75 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "encore"
+        },
+        "biomarkerList": {
+          "ref": "#/definitions/biomarkerList"
+        },
+        "datatypeId": {
+          "ref": "#/definitions/datatypeId"
+        },
+        "diseaseCellLines": {
+          "ref": "#/definitions/diseaseCellLines"
+        },
+        "diseaseFromSource": {
+          "ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceMappedId": {
+          "ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "geneticInteractionFDR": {
+          "ref": "#/definitions/geneticInteractionFDR"
+        },
+        "geneticInteractionMethod": {
+          "ref": "#/definitions/geneticInteractionMethod"
+        },
+        "geneticInteractionPValue": {
+          "ref": "#/definitions/geneticInteractionPValue"
+        },
+        "geneticInteractionScore": {
+          "ref": "#/definitions/geneticInteractionScore"
+        },
+        "interactingTargetFromSourceId": {
+          "ref": "#/definitions/interactingTargetFromSourceId"
+        },
+        "interactingTargetRole": {
+          "ref": "#/definitions/interactingTargetFromRole"
+        },
+        "phenotypicConsequenceFDR": {
+          "ref": "#/definitions/phenotypicConsequenceFDR"
+        },
+        "phenotypicConsequenceLogFoldChange": {
+          "ref": "#/definitions/phenotypicConsequenceLogFoldChange"
+        },
+        "phenotypicConsequencePValue": {
+          "ref": "#/definitions/phenotypicConsequencePValue"
+        },
+        "projectDescription": {
+          "ref": "#/definitions/projectDescription"
+        },
+        "projectId": {
+          "ref": "#/definitions/projectId"
+        },
+        "targetFromSourceId": {
+          "ref": "#/definitions/targetFromSourceId"
+        },
+        "targetRole": {
+          "ref": "#/definitions/targetRole"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "datatypeId",
+        "diseaseFromSourceMappedId",
+        "targetFromSourceId",
+        "geneticInteractionScore"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "europepmc"
         },
         "datatypeId": {
@@ -1650,6 +1719,10 @@
       "type": "string",
       "description": "Additional genetic background of the applied cell line in the CRISPR screen."
     },
+    "geneticInteractionFDR": {
+      "type": "number",
+      "description": "False discovery rate of the genetic interaiton test"
+    },
     "geneticInteractionMethod": {
       "type": "string",
       "description": "The applied method calculating the genetic interaction between targets.",
@@ -1658,9 +1731,25 @@
         "bliss"
       ]
     },
+    "geneticInteractionPValue": {
+      "type": "number",
+      "description": "P-value of the genetic interaction test."
+    },
     "geneticInteractionScore": {
       "type": "number",
       "description": "The strength of the genetic interaction. Directionality is captured as well: antagonistics < 0 < cooperative."
+    },
+    "interactingTargetFromSourceId": {
+      "type": "string",
+      "description": "Target id of the interaction partner."
+    },
+    "interactingTargetRole": {
+      "type": "string",
+      "description": "Role of the partner in the genetic interaction test",
+      "examples": [
+        "Anchor",
+        "Library"
+      ]
     },
     "drugResponse": {
       "type": "string",
@@ -1746,6 +1835,18 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "phenotypicConsequenceFDR": {
+      "type": "number",
+      "description": "False discovery rate of the genetic test"
+    },
+    "phenotypicConsequenceLogFoldChange": {
+      "type": "number",
+      "description": "Log 2 fold change of the cell survival."
+    },
+    "phenotypicConsequencePValue": {
+      "type": "number",
+      "description": "P-value of the the cell survival test."
     },
     "pmcIds": {
       "type": "array",
@@ -1945,6 +2046,14 @@
     "targetModulation": {
       "type": "string",
       "description": "Description of target modulation event"
+    },
+    "targetRole": {
+      "type": "string",
+      "description": "Role of the target in the genetic interaction test.",
+      "examples": [
+        "library",
+        "Anchor"
+      ]
     },
     "textMiningSentences": {
       "type": "array",
