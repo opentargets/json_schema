@@ -2006,12 +2006,13 @@
     },
     "targetFromSourceId": {
       "type": "string",
-      "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
+      "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted.",
       "examples": [
         "BRCA1",
         "ENSG00000012048",
         "P38398"
-      ]
+      ],
+      "pattern": "^[A-Z0-9]$"
     },
     "targetFromSource": {
       "type": "string",
