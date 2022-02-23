@@ -769,6 +769,62 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "ot_crispr_validation"
+        },
+        "biomarkerList": {
+          "ref": "#/definitions/biomarkerList"
+        },
+        "confidence": {
+          "ref": "#/definitions/confidence"
+        },
+        "contrast": {
+          "ref": "#/definitions/contrast"
+        },
+        "datatypeId": {
+          "ref": "#/definitions/datatypeId"
+        },
+        "diseaseCellLines": {
+          "ref": "#/definitions/diseaseCellLines"
+        },
+        "diseaseFromSource": {
+          "ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceMappedId": {
+          "ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "expectedConfidence": {
+          "ref": "#/definitions/expectedConfidence"
+        },
+        "projectDescription": {
+          "ref": "#/definitions/projectDescription"
+        },
+        "projectId": {
+          "ref": "#/definitions/projectId"
+        },
+        "resourceScore": {
+          "ref": "#/definitions/resourceScore"
+        },
+        "statisticalTestTail": {
+          "ref": "#/definitions/statisticalTestTail"
+        },
+        "studyOverview": {
+          "ref": "#/definitions/studyOverview"
+        },
+        "targetFromSourceId": {
+          "ref": "#/definitions/targetFromSourceId"
+        },
+        "validationHypotheses": {
+          "ref": "#/definitions/validationHypotheses"
+        }
+      },
+      "required": [
+        
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "ot_genetics_portal"
         },
         "beta": {
@@ -1242,6 +1298,34 @@
         "BRAF (V600E,V600D,V600K,V600M,V600G,V600R)"
       ]
     },
+    "biomarkerList": {
+      "type": "array",
+      "description": "List of biomarkers associated with the biological model.",
+      "items":{
+        "type": "object",
+        "description": "One biomarker for the model",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Short name of the biomarker.",
+            "examples": [
+              "MSI"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the biomarker",
+            "examples": [
+              "Microsatellite instable"
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": true
+      }
+    },
     "biomarkers": {
       "type": "object",
       "description": "List of biomarkers.",
@@ -1548,6 +1632,12 @@
       "examples": [
         "CHEMBL1431",
         "CHEMBL803"
+      ]
+    },
+    "expectedConfidence": {
+      "type": "string",
+      "examples": [
+        "significant"
       ]
     },
     "falseDiscoveryRate": {
@@ -1954,6 +2044,48 @@
         "additionalProperties": false
       },
       "uniqueItems": true
+    },
+    "validationHypotheses": {
+      "type": "array",
+      "description": "List of tested hypotheses and the outcome of the test.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the tested hypothesis",
+            "examples": [
+              "APC-wt"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the tested hypothesis.",
+            "examples": [
+              "APC mutation status: wild type"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the validation in context of the original experiment.",
+            "examples": [
+              "expected but not observed"
+            ],
+            "enum": [
+              "expected but not observed",
+              "not expected and not observed",
+              "observed and expected",
+              "observed but not expected"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "status"
+        ],
+        "additionalProperties": false
+      }
     },
     "variantFunctionalConsequenceId": {
       "type": "string",
