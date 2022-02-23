@@ -259,6 +259,9 @@
         "diseaseFromSourceMappedId": {
           "ref": "#/definitions/diseaseFromSourceMappedId"
         },
+        "geneInteractionType": {
+          "ref": "#/definitions/geneInteractionType"
+        },
         "geneticInteractionFDR": {
           "ref": "#/definitions/geneticInteractionFDR"
         },
@@ -341,63 +344,6 @@
         "resourceScore",
         "targetFromSourceId",
         "textMiningSentences"
-      ],
-      "additionalProperties": false
-    },
-    {
-      "properties": {
-        "datasourceId": {
-          "const": "encore"
-        },
-        "cellType" : {
-          "$ref": "#/definitions/cellType"
-        },
-        "datatypeId" : {
-          "$ref": "#/definitions/datatypeId"
-        },
-        "diseaseCellLines" : {
-          "$ref": "#/definitions/diseaseCellLines"
-        },
-        "diseaseFromSource" : {
-          "$ref": "#/definitions/diseaseFromSource"
-        },
-        "diseaseFromSourceMappedId" : {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
-        },
-        "geneticInteractionFDR" : {
-          "$ref": "#/definitions/falseDiscoveryRate"
-        },
-        "geneticInteractionMethod" : {
-          "$ref": "#/definitions/geneticInteractionMethod"
-        },
-        "geneticInteractionPValue" : {
-          "$ref": "#/definitions/pValue"
-        },
-        "geneticInteractionScore" : {
-          "$ref": "#/definitions/geneticInteractionScore"
-        },
-        "interactingTargetFromSourceId" : {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
-        "phenotypicConsequenceFDR" : {
-          "$ref": "#/definitions/falseDiscoveryRate"
-        },
-        "phenotypicConsequenceLogFoldChange" : {
-          "$ref": "#/definitions/log2FoldChangeValue"
-        },
-        "phenotypicConsequencePValue" : {
-          "$ref": "#/definitions/pValue"
-        },
-        "projectId" : {
-          "$ref": "#/definitions/projectId"
-        },
-        "targetFromSourceId" : {
-          "$ref": "#/definitions/targetFromSourceId"
-        }
-      },
-      "required": [
-        "datasourceId",
-        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -830,8 +776,7 @@
         "projectDescription",
         "resourceScore",
         "studyOverview",
-        "studyId",
-        "targetFromSourceId"
+        "studyId"
       ],
       "additionalProperties": false
     },
@@ -1715,6 +1660,13 @@
       "minimum": 0.0,
       "maximum": 1.0
     },
+    "geneInteractionType": {
+      "type": "string",
+      "description": "Description of the interaction between the two genes",
+      "examples": [
+        "cooperative"
+      ]
+    },
     "geneticBackground": {
       "type": "string",
       "description": "Additional genetic background of the applied cell line in the CRISPR screen."
@@ -1870,7 +1822,7 @@
     },
     "projectDescription": {
       "type": "string",
-      "description": "Description of the project that generated the data.",
+      "description": "Description of the project that generated the data."
     },
     "pValue": {
       "type": "number",
@@ -2012,14 +1964,15 @@
         "ENSG00000012048",
         "P38398"
       ],
-      "pattern": "^[A-Z0-9]$"
+      "pattern": "^[A-Z0-9]+$"
     },
     "targetFromSource": {
       "type": "string",
       "description": "Target name/synonym or non HGNC symbol in resource of origin",
       "examples": [
         "3-mercaptopyruvate sulfurtransferase"
-      ]
+      ],
+      "pattern": "^[A-Z0-9]+$"
     },
     "targetInModelEnsemblId": {
       "type": "string",
