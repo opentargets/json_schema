@@ -1971,8 +1971,7 @@
       "description": "Target name/synonym or non HGNC symbol in resource of origin",
       "examples": [
         "3-mercaptopyruvate sulfurtransferase"
-      ],
-      "pattern": "^[A-Z0-9]+$"
+      ]
     },
     "targetInModelEnsemblId": {
       "type": "string",
