@@ -248,7 +248,7 @@
           "$ref": "#/definitions/datatypeId"
         },
         "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceId"
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
