@@ -1662,7 +1662,7 @@
     },
     "geneInteractionType": {
       "type": "string",
-      "description": "Description of the interaction between the two genes",
+      "description": "Description of the interaction between the two genes.",
       "examples": [
         "cooperative"
       ]
@@ -1673,7 +1673,7 @@
     },
     "geneticInteractionFDR": {
       "type": "number",
-      "description": "False discovery rate of the genetic interaiton test"
+      "description": "False discovery rate of the genetic interaction test."
     },
     "geneticInteractionMethod": {
       "type": "string",
