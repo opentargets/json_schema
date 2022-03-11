@@ -245,61 +245,61 @@
           "const": "encore"
         },
         "biomarkerList": {
-          "ref": "#/definitions/biomarkerList"
+          "$ref": "#/definitions/biomarkerList"
         },
         "datatypeId": {
-          "ref": "#/definitions/datatypeId"
+          "$ref": "#/definitions/datatypeId"
         },
         "diseaseCellLines": {
-          "ref": "#/definitions/diseaseCellLines"
+          "$ref": "#/definitions/diseaseCellLines"
         },
         "diseaseFromSource": {
-          "ref": "#/definitions/diseaseFromSource"
+          "$ref": "#/definitions/diseaseFromSource"
         },
         "diseaseFromSourceMappedId": {
-          "ref": "#/definitions/diseaseFromSourceMappedId"
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "geneInteractionType": {
-          "ref": "#/definitions/geneInteractionType"
+          "$ref": "#/definitions/geneInteractionType"
         },
         "geneticInteractionFDR": {
-          "ref": "#/definitions/geneticInteractionFDR"
+          "$ref": "#/definitions/geneticInteractionFDR"
         },
         "geneticInteractionMethod": {
-          "ref": "#/definitions/geneticInteractionMethod"
+          "$ref": "#/definitions/geneticInteractionMethod"
         },
         "geneticInteractionPValue": {
-          "ref": "#/definitions/geneticInteractionPValue"
+          "$ref": "#/definitions/geneticInteractionPValue"
         },
         "geneticInteractionScore": {
-          "ref": "#/definitions/geneticInteractionScore"
+          "$ref": "#/definitions/geneticInteractionScore"
         },
         "interactingTargetFromSourceId": {
-          "ref": "#/definitions/interactingTargetFromSourceId"
+          "$ref": "#/definitions/interactingTargetFromSourceId"
         },
         "interactingTargetRole": {
-          "ref": "#/definitions/interactingTargetFromRole"
+          "$ref": "#/definitions/targetRole"
         },
         "phenotypicConsequenceFDR": {
-          "ref": "#/definitions/phenotypicConsequenceFDR"
+          "$ref": "#/definitions/phenotypicConsequenceFDR"
         },
         "phenotypicConsequenceLogFoldChange": {
-          "ref": "#/definitions/phenotypicConsequenceLogFoldChange"
+          "$ref": "#/definitions/phenotypicConsequenceLogFoldChange"
         },
         "phenotypicConsequencePValue": {
-          "ref": "#/definitions/phenotypicConsequencePValue"
+          "$ref": "#/definitions/phenotypicConsequencePValue"
         },
         "projectDescription": {
-          "ref": "#/definitions/projectDescription"
+          "$ref": "#/definitions/projectDescription"
         },
         "projectId": {
-          "ref": "#/definitions/projectId"
+          "$ref": "#/definitions/projectId"
         },
         "targetFromSourceId": {
-          "ref": "#/definitions/targetFromSourceId"
+          "$ref": "#/definitions/targetFromSourceId"
         },
         "targetRole": {
-          "ref": "#/definitions/targetRole"
+          "$ref": "#/definitions/targetRole"
         }
       },
       "required": [
@@ -688,7 +688,7 @@
           "$ref": "#/definitions/confidence"
         },
         "datatypeId": {
-          "ref": "#/definitions/datatypeId"
+          "$ref": "#/definitions/datatypeId"
         },
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
@@ -786,53 +786,56 @@
           "const": "ot_crispr_validation"
         },
         "biomarkerList": {
-          "ref": "#/definitions/biomarkerList"
+          "$ref": "#/definitions/biomarkerList"
         },
         "confidence": {
-          "ref": "#/definitions/confidence"
+          "$ref": "#/definitions/confidence"
         },
         "contrast": {
-          "ref": "#/definitions/contrast"
+          "$ref": "#/definitions/contrast"
         },
         "datatypeId": {
-          "ref": "#/definitions/datatypeId"
+          "$ref": "#/definitions/datatypeId"
         },
         "diseaseCellLines": {
-          "ref": "#/definitions/diseaseCellLines"
+          "$ref": "#/definitions/diseaseCellLines"
         },
         "diseaseFromSource": {
-          "ref": "#/definitions/diseaseFromSource"
+          "$ref": "#/definitions/diseaseFromSource"
         },
         "diseaseFromSourceMappedId": {
-          "ref": "#/definitions/diseaseFromSourceMappedId"
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "expectedConfidence": {
-          "ref": "#/definitions/expectedConfidence"
+          "$ref": "#/definitions/expectedConfidence"
         },
         "projectDescription": {
-          "ref": "#/definitions/projectDescription"
+          "$ref": "#/definitions/projectDescription"
         },
         "projectId": {
-          "ref": "#/definitions/projectId"
+          "$ref": "#/definitions/projectId"
         },
         "resourceScore": {
-          "ref": "#/definitions/resourceScore"
+          "$ref": "#/definitions/resourceScore"
         },
         "statisticalTestTail": {
-          "ref": "#/definitions/statisticalTestTail"
+          "$ref": "#/definitions/statisticalTestTail"
         },
         "studyOverview": {
-          "ref": "#/definitions/studyOverview"
+          "$ref": "#/definitions/studyOverview"
         },
         "targetFromSourceId": {
-          "ref": "#/definitions/targetFromSourceId"
+          "$ref": "#/definitions/targetFromSourceId"
         },
         "validationHypotheses": {
-          "ref": "#/definitions/validationHypotheses"
+          "$ref": "#/definitions/validationHypotheses"
         }
       },
       "required": [
-        
+        "datasourceId",
+        "datatypeId",
+        "targetFromSourceId",
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -1663,8 +1666,9 @@
     "geneInteractionType": {
       "type": "string",
       "description": "Description of the interaction between the two genes.",
-      "examples": [
-        "cooperative"
+      "enum": [
+        "cooperative",
+        "additive"
       ]
     },
     "geneticBackground": {
@@ -1678,7 +1682,7 @@
     "geneticInteractionMethod": {
       "type": "string",
       "description": "The applied method calculating the genetic interaction between targets.",
-      "examples": [
+      "enum": [
         "gemini",
         "bliss"
       ]
@@ -1694,14 +1698,6 @@
     "interactingTargetFromSourceId": {
       "type": "string",
       "description": "Target id of the interaction partner."
-    },
-    "interactingTargetRole": {
-      "type": "string",
-      "description": "Role of the partner in the genetic interaction test",
-      "examples": [
-        "Anchor",
-        "Library"
-      ]
     },
     "drugResponse": {
       "type": "string",
@@ -1900,7 +1896,7 @@
     "statisticalTestTail": {
       "type": "string",
       "description": "Which end of the distribution the target was picked from.",
-      "examples": [
+      "enum": [
         "upper tail",
         "lower tail"
       ]
@@ -2002,10 +1998,11 @@
     },
     "targetRole": {
       "type": "string",
-      "description": "Role of the target in the genetic interaction test.",
-      "examples": [
+      "description": "Role of a target in the genetic interaction test.",
+      "enum": [
         "library",
-        "Anchor"
+        "anchor",
+        "gicontrols"
       ]
     },
     "textMiningSentences": {
