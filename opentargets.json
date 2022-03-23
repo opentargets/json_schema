@@ -275,7 +275,7 @@
           "$ref": "#/definitions/geneticInteractionScore"
         },
         "interactingTargetFromSourceId": {
-          "$ref": "#/definitions/interactingTargetFromSourceId"
+          "$ref": "#/definitions/targetFromSourceId"
         },
         "interactingTargetRole": {
           "$ref": "#/definitions/targetRole"
@@ -807,7 +807,7 @@
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "expectedConfidence": {
-          "$ref": "#/definitions/expectedConfidence"
+          "$ref": "#/definitions/confidence"
         },
         "projectDescription": {
           "$ref": "#/definitions/projectDescription"
@@ -1340,7 +1340,7 @@
         "required": [
           "name"
         ],
-        "additionalProperties": true
+        "additionalProperties": false
       }
     },
     "biomarkers": {
@@ -1651,12 +1651,6 @@
         "CHEMBL803"
       ]
     },
-    "expectedConfidence": {
-      "type": "string",
-      "examples": [
-        "significant"
-      ]
-    },
     "falseDiscoveryRate": {
       "type": "number",
       "description": "False discovery rate (FDR) captures the rate of type I error.",
@@ -1694,10 +1688,6 @@
     "geneticInteractionScore": {
       "type": "number",
       "description": "The strength of the genetic interaction. Directionality is captured as well: antagonistics < 0 < cooperative."
-    },
-    "interactingTargetFromSourceId": {
-      "type": "string",
-      "description": "Target id of the interaction partner."
     },
     "drugResponse": {
       "type": "string",
@@ -1895,7 +1885,7 @@
     },
     "statisticalTestTail": {
       "type": "string",
-      "description": "Which end of the distribution the target was picked from.",
+      "description": "End of the distribution the target was picked from.",
       "enum": [
         "upper tail",
         "lower tail"
