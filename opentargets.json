@@ -569,6 +569,98 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "gene_burden"
+        },
+        "ancestry": {
+          "$ref": "#/definitions/ancestry"
+        },
+        "ancestryId": {
+          "$ref": "#/definitions/ancestryId"
+        },
+        "beta": {
+          "$ref": "#/definitions/beta"
+        },
+        "betaConfidenceIntervalLower": {
+          "$ref": "#/definitions/betaConfidenceIntervalLower"
+        },
+        "betaConfidenceIntervalUpper": {
+          "$ref": "#/definitions/betaConfidenceIntervalUpper"
+        },
+        "cohortId": {
+          "$ref": "#/definitions/cohortId"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "oddsRatio": {
+          "$ref": "#/definitions/oddsRatio"
+        },
+        "oddsRatioConfidenceIntervalLower": {
+          "$ref": "#/definitions/oddsRatioConfidenceIntervalLower"
+        },
+        "oddsRatioConfidenceIntervalUpper": {
+          "$ref": "#/definitions/oddsRatioConfidenceIntervalUpper"
+        },
+        "projectId": {
+          "$ref": "#/definitions/projectId"
+        },
+        "pValueMantissa": {
+          "$ref": "#/definitions/pValueMantissa"
+        },
+        "pValueExponent": {
+          "$ref": "#/definitions/pValueExponent"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "statisticalMethod": {
+          "$ref": "#/definitions/statisticalMethod"
+        },
+        "statisticalMethodOverview": {
+          "$ref": "#/definitions/statisticalMethodOverview"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "studyCases": {
+          "$ref": "#/definitions/studyCases"
+        },
+        "studySampleSize": {
+          "$ref": "#/definitions/studySampleSize"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "urls": {
+          "$ref": "#/definitions/urls"
+        }
+      },
+      "required": [
+        "cohortId",
+        "datasourceId",
+        "diseaseFromSource",
+        "projectId",
+        "resourceScore",
+        "statisticalMethod",
+        "statisticalMethodOverview",
+        "studyCases",
+        "studySampleSize",
+        "targetFromSourceId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "genomics_england"
         },
         "allelicRequirements": {
@@ -1219,7 +1311,21 @@
     }
   ],
   "definitions": {
-    "alleleOrigins" : {
+    "ancestry": {
+      "type": "string",
+      "description": "Genetic origin of a population.",
+      "examples": [
+        "EUR",
+        "EAS"
+      ]
+    },
+    "ancestryId": {
+      "type": "string",
+      "description": "Identifier of the ancestry in the HANCESTRO ontology",
+      "examples": ["HANCESTRO_006"],
+      "pattern": "HANCESTRO_\\d+"
+    },
+    "alleleOrigins": {
       "type": "array",
       "description": "Origin of the variant allele",
       "items": {
@@ -1406,7 +1512,8 @@
       "type": "string",
       "description": "Identifier of the studied cohort",
       "examples": [
-        "CBIOP_WXS_PRAD_SU2C_2019"
+        "CBIOP_WXS_PRAD_SU2C_2019",
+        "UK Biobank"
       ]
     },
     "cohortShortName": {
@@ -1801,6 +1908,18 @@
       },
       "uniqueItems": true
     },
+    "statisticalMethod": {
+      "type": "string",
+      "description": "The statistical method used to calculate the association.",
+      "examples": [
+        "ADD-WGR-FIRTH_M3.0001",
+        "ptv5pcnt"
+      ]
+    },
+    "statisticalMethodOverview": {
+      "type": "string",
+      "description": "Overview of the statistical method used to calculate the association."
+    },
     "studyCases": {
       "type": "integer",
       "description": "Number of cases in case-control study",
@@ -1808,7 +1927,10 @@
     },
     "studyId": {
       "type": "string",
-      "description": "Identifier of the study"
+      "description": "Identifier of the study",
+      "examples": [
+        "GCST90083260"
+      ]
     },
     "studyOverview": {
       "type": "string",
