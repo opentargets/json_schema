@@ -1526,7 +1526,8 @@
         "somatic_mutation",
         "known_drug",
         "genetic_association",
-        "ot_partner"
+        "ot_partner",
+        "ot_validation_lab"
       ]
     },
     "diseaseCellLines": {
