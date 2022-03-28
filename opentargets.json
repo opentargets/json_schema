@@ -605,7 +605,7 @@
           "$ref": "#/definitions/oddsRatio"
         },
         "oddsRatioConfidenceIntervalLower": {
-          "$ref": "#/definitions/oddsRatioConfidenceIntervalLower"
+          "$ref": "#/definitions/confidenceIntervalLower"
         },
         "oddsRatioConfidenceIntervalUpper": {
           "$ref": "#/definitions/oddsRatioConfidenceIntervalUpper"
