@@ -608,7 +608,7 @@
           "$ref": "#/definitions/confidenceIntervalLower"
         },
         "oddsRatioConfidenceIntervalUpper": {
-          "$ref": "#/definitions/oddsRatioConfidenceIntervalUpper"
+          "$ref": "#/definitions/confidenceIntervalUpper"
         },
         "projectId": {
           "$ref": "#/definitions/projectId"
