@@ -1536,7 +1536,7 @@
     "diseaseFromSourceMappedId": {
       "type": "string",
       "description": "Identifier of the disease in the EFO ontology",
-      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$|^PATO_\\d+$|^CHEBI_\\d+$)",
+      "pattern": "(^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$|^PATO_\\d+$|^CHEBI_\\d+$|^OBI_\\d+$|^OGMS_\\d+$)",
       "examples": [
         "EFO_0005537"
       ]
