@@ -581,10 +581,10 @@
           "$ref": "#/definitions/beta"
         },
         "betaConfidenceIntervalLower": {
-          "$ref": "#/definitions/betaConfidenceIntervalLower"
+          "$ref": "#/definitions/confidenceIntervalLower"
         },
         "betaConfidenceIntervalUpper": {
-          "$ref": "#/definitions/betaConfidenceIntervalUpper"
+          "$ref": "#/definitions/confidenceIntervalUpper"
         },
         "cohortId": {
           "$ref": "#/definitions/cohortId"
