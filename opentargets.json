@@ -1876,13 +1876,6 @@
       },
       "uniqueItems": true
     },
-    "statisticalMethod": {
-      "type": "string",
-      "description": "The statistical method used to analyse data.",
-      "examples": [
-        "BLISS"
-      ]
-    },
     "statisticalTestTail": {
       "type": "string",
       "description": "End of the distribution the target was picked from.",
