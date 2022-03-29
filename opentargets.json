@@ -265,8 +265,8 @@
         "geneticInteractionFDR": {
           "$ref": "#/definitions/geneticInteractionFDR"
         },
-        "geneticInteractionMethod": {
-          "$ref": "#/definitions/geneticInteractionMethod"
+        "statisticalMethod": {
+          "$ref": "#/definitions/statisticalMethod"
         },
         "geneticInteractionPValue": {
           "$ref": "#/definitions/geneticInteractionPValue"
@@ -1674,14 +1674,6 @@
       "type": "number",
       "description": "False discovery rate of the genetic interaction test."
     },
-    "geneticInteractionMethod": {
-      "type": "string",
-      "description": "The applied method calculating the genetic interaction between targets.",
-      "enum": [
-        "gemini",
-        "bliss"
-      ]
-    },
     "geneticInteractionPValue": {
       "type": "number",
       "description": "P-value of the genetic interaction test."
@@ -1883,6 +1875,13 @@
         ]
       },
       "uniqueItems": true
+    },
+    "statisticalMethod": {
+      "type": "string",
+      "description": "The statistical method used to analyse data.",
+      "examples": [
+        "BLISS"
+      ]
     },
     "statisticalTestTail": {
       "type": "string",
