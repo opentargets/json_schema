@@ -242,13 +242,85 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "encore"
+        },
+        "biomarkerList": {
+          "$ref": "#/definitions/biomarkerList"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseCellLines": {
+          "$ref": "#/definitions/diseaseCellLines"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "geneInteractionType": {
+          "$ref": "#/definitions/geneInteractionType"
+        },
+        "geneticInteractionFDR": {
+          "$ref": "#/definitions/geneticInteractionFDR"
+        },
+        "statisticalMethod": {
+          "$ref": "#/definitions/statisticalMethod"
+        },
+        "geneticInteractionPValue": {
+          "$ref": "#/definitions/geneticInteractionPValue"
+        },
+        "geneticInteractionScore": {
+          "$ref": "#/definitions/geneticInteractionScore"
+        },
+        "interactingTargetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "interactingTargetRole": {
+          "$ref": "#/definitions/targetRole"
+        },
+        "phenotypicConsequenceFDR": {
+          "$ref": "#/definitions/phenotypicConsequenceFDR"
+        },
+        "phenotypicConsequenceLogFoldChange": {
+          "$ref": "#/definitions/phenotypicConsequenceLogFoldChange"
+        },
+        "phenotypicConsequencePValue": {
+          "$ref": "#/definitions/phenotypicConsequencePValue"
+        },
+        "projectDescription": {
+          "$ref": "#/definitions/projectDescription"
+        },
+        "projectId": {
+          "$ref": "#/definitions/projectId"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "targetRole": {
+          "$ref": "#/definitions/targetRole"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "datatypeId",
+        "diseaseFromSourceMappedId",
+        "targetFromSourceId",
+        "geneticInteractionScore"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "europepmc"
         },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
         "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
+          "$ref": "#/definitions/diseaseFromSourceId"
         },
         "literature": {
           "$ref": "#/definitions/literature"
@@ -272,63 +344,6 @@
         "resourceScore",
         "targetFromSourceId",
         "textMiningSentences"
-      ],
-      "additionalProperties": false
-    },
-    {
-      "properties": {
-        "datasourceId": {
-          "const": "encore"
-        },
-        "cellType" : {
-          "$ref": "#/definitions/cellType"
-        },
-        "datatypeId" : {
-          "$ref": "#/definitions/datatypeId"
-        },
-        "diseaseCellLines" : {
-          "$ref": "#/definitions/diseaseCellLines"
-        },
-        "diseaseFromSource" : {
-          "$ref": "#/definitions/diseaseFromSource"
-        },
-        "diseaseFromSourceMappedId" : {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
-        },
-        "geneticInteractionFDR" : {
-          "$ref": "#/definitions/falseDiscoveryRate"
-        },
-        "geneticInteractionMethod" : {
-          "$ref": "#/definitions/geneticInteractionMethod"
-        },
-        "geneticInteractionPValue" : {
-          "$ref": "#/definitions/pValue"
-        },
-        "geneticInteractionScore" : {
-          "$ref": "#/definitions/geneticInteractionScore"
-        },
-        "interactingTargetFromSourceId" : {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
-        "phenotypicConsequenceFDR" : {
-          "$ref": "#/definitions/falseDiscoveryRate"
-        },
-        "phenotypicConsequenceLogFoldChange" : {
-          "$ref": "#/definitions/log2FoldChangeValue"
-        },
-        "phenotypicConsequencePValue" : {
-          "$ref": "#/definitions/pValue"
-        },
-        "projectId" : {
-          "$ref": "#/definitions/projectId"
-        },
-        "targetFromSourceId" : {
-          "$ref": "#/definitions/targetFromSourceId"
-        }
-      },
-      "required": [
-        "datasourceId",
-        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -765,7 +780,7 @@
           "$ref": "#/definitions/confidence"
         },
         "datatypeId": {
-          "ref": "#/definitions/datatypeId"
+          "$ref": "#/definitions/datatypeId"
         },
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
@@ -815,14 +830,20 @@
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
-        "direction": {
-          "$ref": "#/definitions/direction"
+        "statisticalTestTail": {
+          "$ref": "#/definitions/statisticalTestTail"
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
         "geneticBackground": {
           "$ref": "#/definitions/geneticBackground"
+        },
+        "log2FoldChangeValue": {
+          "$ref": "#/definitions/log2FoldChangeValue"
+        },
+        "projectDescription": {
+          "$ref": "#/definitions/projectDescription"
         },
         "projectId": {
           "$ref": "#/definitions/projectId"
@@ -842,7 +863,71 @@
       },
       "required": [
         "datasourceId",
-        "targetFromSourceId"
+        "targetFromSourceId",
+        "projectId",
+        "projectDescription",
+        "resourceScore",
+        "studyOverview",
+        "studyId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
+          "const": "ot_crispr_validation"
+        },
+        "biomarkerList": {
+          "$ref": "#/definitions/biomarkerList"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "contrast": {
+          "$ref": "#/definitions/contrast"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "diseaseCellLines": {
+          "$ref": "#/definitions/diseaseCellLines"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "expectedConfidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "projectDescription": {
+          "$ref": "#/definitions/projectDescription"
+        },
+        "projectId": {
+          "$ref": "#/definitions/projectId"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "statisticalTestTail": {
+          "$ref": "#/definitions/statisticalTestTail"
+        },
+        "studyOverview": {
+          "$ref": "#/definitions/studyOverview"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "validationHypotheses": {
+          "$ref": "#/definitions/validationHypotheses"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "datatypeId",
+        "targetFromSourceId",
+        "diseaseFromSourceMappedId"
       ],
       "additionalProperties": false
     },
@@ -995,60 +1080,6 @@
         "targetFromSourceId",
         "targetInModel",
         "targetInModelMgiId"
-      ],
-      "additionalProperties": false
-    },
-    {
-      "properties": {
-        "datasourceId": {
-          "const": "phewas_catalog"
-        },
-        "datatypeId": {
-          "$ref": "#/definitions/datatypeId"
-        },
-        "diseaseFromSource": {
-          "$ref": "#/definitions/diseaseFromSource"
-        },
-        "diseaseFromSourceId": {
-          "$ref": "#/definitions/diseaseFromSourceId"
-        },
-        "oddsRatio": {
-          "$ref": "#/definitions/oddsRatio"
-        },
-        "resourceScore": {
-          "$ref": "#/definitions/resourceScore"
-        },
-        "studyCases": {
-          "$ref": "#/definitions/studyCases"
-        },
-        "targetFromSourceId": {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
-        "targetFromSource": {
-          "$ref": "#/definitions/targetFromSource"
-        },
-        "variantFunctionalConsequenceId": {
-          "$ref": "#/definitions/variantFunctionalConsequenceId"
-        },
-        "variantId": {
-          "$ref": "#/definitions/variantId"
-        },
-        "variantRsId": {
-          "$ref": "#/definitions/variantRsId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
-        }
-      },
-      "required": [
-        "datasourceId",
-        "diseaseFromSource",
-        "oddsRatio",
-        "resourceScore",
-        "studyCases",
-        "targetFromSourceId",
-        "variantFunctionalConsequenceId",
-        "variantRsId"
       ],
       "additionalProperties": false
     },
@@ -1390,6 +1421,34 @@
         "BRAF (V600E,V600D,V600K,V600M,V600G,V600R)"
       ]
     },
+    "biomarkerList": {
+      "type": "array",
+      "description": "List of biomarkers associated with the biological model.",
+      "items":{
+        "type": "object",
+        "description": "One biomarker for the model",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Short name of the biomarker.",
+            "examples": [
+              "MSI"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the biomarker",
+            "examples": [
+              "Microsatellite instable"
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
     "biomarkers": {
       "type": "object",
       "description": "List of biomarkers.",
@@ -1574,17 +1633,9 @@
         "somatic_mutation",
         "known_drug",
         "genetic_association",
-        "ot_partner"
+        "ot_partner",
+        "ot_validation_lab"
       ]
-    },
-    "direction": {
-      "type": "string",
-      "description": "Which end of the distribution the target was picked from.",
-      "examples": [
-        "upper tail",
-        "lower tail"
-      ]
-
     },
     "diseaseCellLines": {
       "type": "array",
@@ -1714,17 +1765,25 @@
       "minimum": 0.0,
       "maximum": 1.0
     },
+    "geneInteractionType": {
+      "type": "string",
+      "description": "Description of the interaction between the two genes.",
+      "enum": [
+        "cooperative",
+        "additive"
+      ]
+    },
     "geneticBackground": {
       "type": "string",
       "description": "Additional genetic background of the applied cell line in the CRISPR screen."
     },
-    "geneticInteractionMethod": {
-      "type": "string",
-      "description": "The applied method calculating the genetic interaction between targets.",
-      "examples": [
-        "gemini",
-        "bliss"
-      ]
+    "geneticInteractionFDR": {
+      "type": "number",
+      "description": "False discovery rate of the genetic interaction test."
+    },
+    "geneticInteractionPValue": {
+      "type": "number",
+      "description": "P-value of the genetic interaction test."
     },
     "geneticInteractionScore": {
       "type": "number",
@@ -1815,6 +1874,18 @@
       "minItems": 1,
       "uniqueItems": true
     },
+    "phenotypicConsequenceFDR": {
+      "type": "number",
+      "description": "False discovery rate of the genetic test"
+    },
+    "phenotypicConsequenceLogFoldChange": {
+      "type": "number",
+      "description": "Log 2 fold change of the cell survival."
+    },
+    "phenotypicConsequencePValue": {
+      "type": "number",
+      "description": "P-value of the the cell survival test."
+    },
     "pmcIds": {
       "type": "array",
       "description": "List of PubMed Central identifiers of full text publication.",
@@ -1834,6 +1905,10 @@
         "UKBB",
         "OTAR033"
       ]
+    },
+    "projectDescription": {
+      "type": "string",
+      "description": "Description of the project that generated the data."
     },
     "pValue": {
       "type": "number",
@@ -1908,6 +1983,14 @@
       },
       "uniqueItems": true
     },
+    "statisticalTestTail": {
+      "type": "string",
+      "description": "End of the distribution the target was picked from.",
+      "enum": [
+        "upper tail",
+        "lower tail"
+      ]
+    },
     "statisticalMethod": {
       "type": "string",
       "description": "The statistical method used to calculate the association.",
@@ -1981,12 +2064,13 @@
     },
     "targetFromSourceId": {
       "type": "string",
-      "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
+      "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol), only capital letters are accepted.",
       "examples": [
         "BRCA1",
         "ENSG00000012048",
         "P38398"
-      ]
+      ],
+      "pattern": "^[A-Z0-9]+$"
     },
     "targetFromSource": {
       "type": "string",
@@ -2021,6 +2105,15 @@
     "targetModulation": {
       "type": "string",
       "description": "Description of target modulation event"
+    },
+    "targetRole": {
+      "type": "string",
+      "description": "Role of a target in the genetic interaction test.",
+      "enum": [
+        "library",
+        "anchor",
+        "gicontrols"
+      ]
     },
     "textMiningSentences": {
       "type": "array",
@@ -2120,6 +2213,48 @@
         "additionalProperties": false
       },
       "uniqueItems": true
+    },
+    "validationHypotheses": {
+      "type": "array",
+      "description": "List of tested hypotheses and the outcome of the test.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the tested hypothesis",
+            "examples": [
+              "APC-wt"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the tested hypothesis.",
+            "examples": [
+              "APC mutation status: wild type"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the validation in context of the original experiment.",
+            "examples": [
+              "expected but not observed"
+            ],
+            "enum": [
+              "expected but not observed",
+              "not expected and not observed",
+              "observed and expected",
+              "observed but not expected"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "status"
+        ],
+        "additionalProperties": false
+      }
     },
     "variantFunctionalConsequenceId": {
       "type": "string",
