@@ -666,10 +666,14 @@
         }
       },
       "required": [
+        "ancestry",
+        "ancestryId",
         "cohortId",
         "datasourceId",
         "diseaseFromSource",
+        "literature",
         "projectId",
+        "pValueMantissa",
         "resourceScore",
         "statisticalMethod",
         "statisticalMethodOverview",
