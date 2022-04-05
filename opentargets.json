@@ -1029,7 +1029,7 @@
     {
       "properties": {
         "datasourceId": {
-          "const": "phenodigm"
+          "const": "impc"
         },
         "biologicalModelAllelicComposition": {
           "$ref": "#/definitions/biologicalModelAllelicComposition"
