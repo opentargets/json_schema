@@ -477,7 +477,6 @@
         "studyId",
         "targetFromSourceId",
         "variantFunctionalConsequenceId",
-        "variantId"
       ],
       "additionalProperties": false
     },
