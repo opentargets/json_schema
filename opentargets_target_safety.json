@@ -6,22 +6,31 @@
     "properties": {
       "id": {
         "description": "Target ID (accepted sources include Ensembl gene ID, Uniprot ID).",
-        "examples": "ENSG00000133019",
+        "examples": 
+        [
+          "ENSG00000133019"
+        ],
         "type": "string"
       },
       "targetFromSourceId": {
         "description": "Gene symbol in resource of origin.",
-        "examples": "ESR1",
+        "examples": [
+          "ESR1"
+        ],
         "type": "string"
       },
       "event": {
         "description": "Identifier of the biological process in the EFO ontology.",
-        "examples": "arrhythmia",
+        "examples": [
+          "arrhythmia"
+        ],
         "type": "string"
       },
       "eventId": {
         "description": "Identifier of the safety event in the EFO ontology.",
-        "examples": "EFO_0004269",
+        "examples": [
+          "EFO_0004269"
+        ],
         "type": "string"
       },
       "biosample": {
@@ -66,22 +75,30 @@
         "properties": {
           "cellFormat": {
             "description": "Cellular or subcellular format of the assay.",
-            "examples": "cell line",
+            "examples": [
+              "cell line"
+            ],
             "type": "string"
           },
           "cellLabel": {
             "description": "Name of the cell line or primary cell in source.",
-            "examples": "T47D",
+            "examples": [
+              "T47D"
+            ],
             "type": "string"
           },
           "tissueId": {
             "description": "Identifier of the tissue in the UBERON ontology.",
-            "examples": "UBERON_0004535",
+            "examples": [
+              "UBERON_0004535"
+            ],
             "type": "string"
           },
           "tissueLabel": {
             "description": "Anatomical entity at an organ-level of the protein or cell used in the assay.",
-            "examples": "cardiovascular system",
+            "examples": [
+              "cardiovascular system"
+            ],
             "type": "string"
           }
         },
@@ -133,12 +150,16 @@
           },
           "name": {
             "description": "Name of the study.",
-            "examples": "ACEA_ER_80hr",
+            "examples": [
+              "ACEA_ER_80hr"
+            ],
             "type": "string"
           },
           "type": {
             "description": "Conceptual biological and/or chemical features of the study.",
-            "examples": "cell-based",
+            "examples": [
+              "cell-based"
+            ],
             "type": "string"
           }
         },
