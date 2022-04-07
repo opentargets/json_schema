@@ -477,7 +477,6 @@
         "studyId",
         "targetFromSourceId",
         "variantFunctionalConsequenceId",
-        "variantId"
       ],
       "additionalProperties": false
     },
@@ -660,9 +659,6 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
-        },
-        "urls": {
-          "$ref": "#/definitions/urls"
         }
       },
       "required": [
@@ -2277,7 +2273,6 @@
     "variantHgvsId": {
       "type": "string",
       "description": "Identifier in HGVS notation of the disease-causing variant.",
-      "pattern": "^[^?()]*$",
       "examples": [
         "NC_000011.10:g.17605796C>T",
         "LRG_214t1:c.889-1633_7395-667del"
