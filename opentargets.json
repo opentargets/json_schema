@@ -476,7 +476,7 @@
         "diseaseFromSource",
         "studyId",
         "targetFromSourceId",
-        "variantFunctionalConsequenceId",
+        "variantFunctionalConsequenceId"
       ],
       "additionalProperties": false
     },
