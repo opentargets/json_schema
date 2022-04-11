@@ -654,8 +654,8 @@
         "studyCases": {
           "$ref": "#/definitions/studyCases"
         },
-        "studyCasesWithQV": {
-          "$ref": "#/definitions/studyCasesWithQV"
+        "studyCasesWithQualifyingVariants": {
+          "$ref": "#/definitions/studyCasesWithQualifyingVariants"
         },
         "studySampleSize": {
           "$ref": "#/definitions/studySampleSize"
@@ -677,7 +677,7 @@
         "statisticalMethod",
         "statisticalMethodOverview",
         "studyCases",
-        "studyCasesWithQV",
+        "studyCasesWithQualifyingVariants",
         "studySampleSize",
         "targetFromSourceId"
       ],
@@ -2018,7 +2018,7 @@
       "description": "Number of cases in case-control study.",
       "exclusiveMinimum": 0
     },
-    "studyCasesWithQV": {
+    "studyCasesWithQualifyingVariants": {
       "type": "integer",
       "description": "Number of cases in case-control study that carry at least one allele of the qualifying variant."
     },
