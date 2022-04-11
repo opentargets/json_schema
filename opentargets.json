@@ -2084,7 +2084,7 @@
         "ENSG00000012048",
         "P38398"
       ],
-      "pattern": "^[a-zA-Z0-9-]+$"
+      "pattern": "^[a-zA-Z0-9-.]+$"
     },
     "targetFromSource": {
       "type": "string",
