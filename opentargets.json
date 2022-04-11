@@ -654,6 +654,9 @@
         "studyCases": {
           "$ref": "#/definitions/studyCases"
         },
+        "studyCasesWithQualifyingVariants": {
+          "$ref": "#/definitions/studyCasesWithQualifyingVariants"
+        },
         "studySampleSize": {
           "$ref": "#/definitions/studySampleSize"
         },
@@ -674,6 +677,7 @@
         "statisticalMethod",
         "statisticalMethodOverview",
         "studyCases",
+        "studyCasesWithQualifyingVariants",
         "studySampleSize",
         "targetFromSourceId"
       ],
@@ -2011,8 +2015,12 @@
     },
     "studyCases": {
       "type": "integer",
-      "description": "Number of cases in case-control study",
+      "description": "Number of cases in case-control study.",
       "exclusiveMinimum": 0
+    },
+    "studyCasesWithQualifyingVariants": {
+      "type": "integer",
+      "description": "Number of cases in case-control study that carry at least one allele of the qualifying variant."
     },
     "studyId": {
       "type": "string",
@@ -2076,7 +2084,7 @@
         "ENSG00000012048",
         "P38398"
       ],
-      "pattern": "^[A-Z0-9]+$"
+      "pattern": "^[a-zA-Z0-9-.]+$"
     },
     "targetFromSource": {
       "type": "string",
