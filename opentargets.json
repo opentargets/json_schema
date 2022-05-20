@@ -295,11 +295,20 @@
         "projectId": {
           "$ref": "#/definitions/projectId"
         },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
+        },
+        "releaseVersion": {
+          "$ref": "#/definitions/releaseVersion"
+        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
         "targetRole": {
           "$ref": "#/definitions/targetRole"
+        },
+        "warningMessage": {
+          "$ref": "#/definitions/warningMessage"
         }
       },
       "required": [
@@ -858,6 +867,12 @@
         "projectId": {
           "$ref": "#/definitions/projectId"
         },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
+        },
+        "releaseVersion": {
+          "$ref": "#/definitions/releaseVersion"
+        },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
@@ -916,6 +931,12 @@
         },
         "projectId": {
           "$ref": "#/definitions/projectId"
+        },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
+        },
+        "releaseVersion": {
+          "$ref": "#/definitions/releaseVersion"
         },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
@@ -1967,6 +1988,16 @@
         "Viral Protein Synthesis"
       ]
     },
+    "releaseDate": {
+      "type": "string",
+      "description": "Date of the release of the data in a 'YYYY-MM-DD' format",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "releaseVersion": {
+      "type": "string",
+      "description": "Version of the release of the data",
+      "pattern": "^OTAR\\d+-\\d+$"
+    },
     "resourceScore": {
       "type": "number",
       "description": "Score provided by datasource indicating strength of target-disease association",
@@ -2314,6 +2345,10 @@
         ]
       },
       "uniqueItems": true
+    },
+    "warningMessage":{
+      "type": "string",
+      "description": "Free text description of any concerns or warnings about the data.",
     }
   }
 }
