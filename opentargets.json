@@ -2348,7 +2348,7 @@
     },
     "warningMessage":{
       "type": "string",
-      "description": "Free text description of any concerns or warnings about the data.",
+      "description": "Free text description of any concerns or warnings about the data."
     }
   }
 }
