@@ -1,0 +1,115 @@
+{
+    "title": "OpenTargets-chemical-probes",
+    "description": "OpenTargets Target Safety Liabilities model.",
+    "type": "object",
+    "properties": {
+      "targetFromSourceId": {
+        "description": "Gene symbol in resource of origin.",
+        "examples": "ESR1",
+        "type": "string"
+      },
+      "id": {
+        "description": "Probe ID as reported in Probes&Drugs.",
+        "examples": "IOX1",
+        "type": "string"
+      },
+      "control": {
+        "description": "Inactive analogue of the probe.",
+        "examples": "PF-04875474",
+        "type": "string"
+      },
+      "drugId": {
+        "description": "Drug molecule ID.",
+        "examples": "CHEMBL1651534",
+        "type": "string"
+      },
+      "inchiKey": {
+        "description": "ID that identifies the probe.",
+        "examples": "JGRPKOGHYBAVMW-UHFFFAOYSA-N",
+        "type": "string"
+      },
+      "urls": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/url"
+        }
+      },
+      "probesDrugsScore": {
+        "description": "P&D probe-likeness score.",
+        "exclusiveMinimum": 0,
+        "maximum": 100,
+        "type": "integer"
+      },
+      "probeMinerScore": {
+        "description": "Probe Miner probe-likeness score.",
+        "exclusiveMinimum": 0,
+        "maximum": 100,
+        "type": "integer"
+      },
+      "scoreInCells": {
+        "description": "ChemicalProbes.org score for probe-likeness to be used in model cells.",
+        "exclusiveMinimum": 0,
+        "maximum": 100,
+        "type": "integer"
+      },
+      "scoreInOrganisms": {
+        "description": "ChemicalProbes.org score for probe-likeness to be used in model organisms.",
+        "exclusiveMinimum": 0,
+        "maximum": 100,
+        "type": "integer"
+      },
+      "mechanismOfAction": {
+        "description": "Mechanism of action of the probe.",
+        "examples": [
+          "blocker"
+        ],
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "isHighQuality": {
+        "description": "True if selected as high quality by P&D.",
+        "type": "boolean"
+      },
+      "origin": {
+        "description": "Origin of the probe.",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "experimental",
+            "calculated"
+        ],
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "required": [
+      "targetFromSourceId",
+      "id",
+      "inchiKey",
+      "urls",
+      "isHighQuality",
+      "origin"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+      "url": {
+        "type": "object",
+        "properties": {
+          "niceName": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "niceName"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
