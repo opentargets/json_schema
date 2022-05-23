@@ -1,6 +1,6 @@
 {
     "title": "OpenTargets-chemical-probes",
-    "description": "OpenTargets Target Safety Liabilities model.",
+    "description": "OpenTargets Chemical Probes model.",
     "type": "object",
     "properties": {
       "targetFromSourceId": {
