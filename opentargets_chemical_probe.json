@@ -5,27 +5,27 @@
     "properties": {
       "targetFromSourceId": {
         "description": "Gene symbol in resource of origin.",
-        "examples": "ESR1",
+        "examples": ["ESR1"],
         "type": "string"
       },
       "id": {
         "description": "Probe ID as reported in Probes&Drugs.",
-        "examples": "IOX1",
+        "examples": ["IOX1"],
         "type": "string"
       },
       "control": {
         "description": "Inactive analogue of the probe.",
-        "examples": "PF-04875474",
+        "examples": ["PF-04875474"],
         "type": "string"
       },
       "drugId": {
         "description": "Drug molecule ID.",
-        "examples": "CHEMBL1651534",
+        "examples": ["CHEMBL1651534"],
         "type": "string"
       },
       "inchiKey": {
         "description": "ID that identifies the probe.",
-        "examples": "JGRPKOGHYBAVMW-UHFFFAOYSA-N",
+        "examples": ["JGRPKOGHYBAVMW-UHFFFAOYSA-N"],
         "type": "string"
       },
       "urls": {
