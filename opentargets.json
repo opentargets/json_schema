@@ -295,11 +295,20 @@
         "projectId": {
           "$ref": "#/definitions/projectId"
         },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
+        },
+        "releaseVersion": {
+          "$ref": "#/definitions/releaseVersion"
+        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
         "targetRole": {
           "$ref": "#/definitions/targetRole"
+        },
+        "warningMessage": {
+          "$ref": "#/definitions/warningMessage"
         }
       },
       "required": [
@@ -858,6 +867,12 @@
         "projectId": {
           "$ref": "#/definitions/projectId"
         },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
+        },
+        "releaseVersion": {
+          "$ref": "#/definitions/releaseVersion"
+        },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
@@ -916,6 +931,12 @@
         },
         "projectId": {
           "$ref": "#/definitions/projectId"
+        },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
+        },
+        "releaseVersion": {
+          "$ref": "#/definitions/releaseVersion"
         },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
@@ -1967,6 +1988,16 @@
         "Viral Protein Synthesis"
       ]
     },
+    "releaseDate": {
+      "type": "string",
+      "description": "Date of the release of the data in a 'YYYY-MM-DD' format",
+      "pattern": "(((19|20)([2468][048]|[13579][26]|0[48])|2000)[-]02[-]29|((19|20)[0-9]{2}[-](0[469]|11)[-](0[1-9]|[12][0-9]|30)|(19|20)[0-9]{2}[-](0[13578]|1[02])[-](0[1-9]|[12][0-9]|3[01])|(19|20)[0-9]{2}[-]02[-](0[1-9]|1[0-9]|2[0-8])))"
+    },
+    "releaseVersion": {
+      "type": "string",
+      "description": "Version of the release of the data",
+      "pattern": "^OTAR\\d+-\\d+$"
+    },
     "resourceScore": {
       "type": "number",
       "description": "Score provided by datasource indicating strength of target-disease association",
@@ -2314,6 +2345,10 @@
         ]
       },
       "uniqueItems": true
+    },
+    "warningMessage":{
+      "type": "string",
+      "description": "Free text description of any concerns or warnings about the data."
     }
   }
 }
