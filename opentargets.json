@@ -600,6 +600,9 @@
         "datasourceId": {
           "const": "gene_burden"
         },
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
         "ancestry": {
           "$ref": "#/definitions/ancestry"
         },
