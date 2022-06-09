@@ -677,11 +677,7 @@
         }
       },
       "required": [
-        "ancestry",
-        "ancestryId",
-        "cohortId",
         "datasourceId",
-        "diseaseFromSource",
         "literature",
         "projectId",
         "pValueMantissa",
@@ -689,7 +685,6 @@
         "statisticalMethod",
         "statisticalMethodOverview",
         "studyCases",
-        "studyCasesWithQualifyingVariants",
         "studySampleSize",
         "targetFromSourceId"
       ],
