@@ -600,6 +600,9 @@
         "datasourceId": {
           "const": "gene_burden"
         },
+        "allelicRequirements": {
+          "$ref": "#/definitions/allelicRequirements"
+        },
         "ancestry": {
           "$ref": "#/definitions/ancestry"
         },
@@ -674,11 +677,7 @@
         }
       },
       "required": [
-        "ancestry",
-        "ancestryId",
-        "cohortId",
         "datasourceId",
-        "diseaseFromSource",
         "literature",
         "projectId",
         "pValueMantissa",
@@ -686,7 +685,6 @@
         "statisticalMethod",
         "statisticalMethodOverview",
         "studyCases",
-        "studyCasesWithQualifyingVariants",
         "studySampleSize",
         "targetFromSourceId"
       ],
