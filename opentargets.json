@@ -679,7 +679,6 @@
       "required": [
         "datasourceId",
         "literature",
-        "projectId",
         "pValueMantissa",
         "resourceScore",
         "statisticalMethod",
