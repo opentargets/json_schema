@@ -1948,8 +1948,7 @@
     },
     "pValueExponent": {
       "type": "integer",
-      "description": "p-value (e.g. GWAS association) exponent",
-      "maximum": -8
+      "description": "p-value (e.g. GWAS association) exponent"
     },
     "pValueMantissa": {
       "type": "number",
