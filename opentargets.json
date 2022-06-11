@@ -815,6 +815,9 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
+        },
+        "variantFunctionalConsequenceId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
         }
       },
       "required": [
