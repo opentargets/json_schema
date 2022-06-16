@@ -627,6 +627,9 @@
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
         },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
