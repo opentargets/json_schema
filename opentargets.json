@@ -2007,12 +2007,15 @@
       "minimum": 0.0
     },
     "sex": {
-      "type": "string",
+      "type": "array",
       "description": "Sex of the population included in the analysis",
-      "enum": [
-        "men",
-        "women"
-      ]
+      "items": {
+        "type": "string",
+        "enum": [
+          "men",
+          "women"
+        ]
+      }
     }
     ,
     "significantDriverMethods": {
