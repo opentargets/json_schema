@@ -23,11 +23,6 @@
         "examples": ["CHEMBL1651534"],
         "type": "string"
       },
-      "inchiKey": {
-        "description": "ID that identifies the probe.",
-        "examples": ["JGRPKOGHYBAVMW-UHFFFAOYSA-N"],
-        "type": "string"
-      },
       "urls": {
         "type": "array",
         "items": {
@@ -89,7 +84,6 @@
     "required": [
       "targetFromSourceId",
       "id",
-      "inchiKey",
       "urls",
       "isHighQuality",
       "origin"

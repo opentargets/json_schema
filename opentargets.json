@@ -334,6 +334,9 @@
         "literature": {
           "$ref": "#/definitions/literature"
         },
+        "publicationYear": {
+          "$ref": "#/definitions/publicationYear"
+        },
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
@@ -350,6 +353,7 @@
       "required": [
         "datasourceId",
         "diseaseFromSourceMappedId",
+        "publicationYear",
         "resourceScore",
         "targetFromSourceId",
         "textMiningSentences"
@@ -627,6 +631,9 @@
         "diseaseFromSource": {
           "$ref": "#/definitions/diseaseFromSource"
         },
+        "diseaseFromSourceId": {
+          "$ref": "#/definitions/diseaseFromSourceId"
+        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
@@ -681,7 +688,6 @@
       },
       "required": [
         "datasourceId",
-        "literature",
         "pValueMantissa",
         "resourceScore",
         "statisticalMethod",
@@ -1562,14 +1568,17 @@
           "conflicting data from submitters",
           "conflicting interpretations of pathogenicity",
           "drug response",
+          "established risk allele",
           "likely benign",
           "likely risk allele",
           "likely pathogenic",
+          "low penetrance",
           "not provided",
           "other",
           "pathogenic",
           "protective",
           "risk factor",
+          "uncertain risk allele",
           "uncertain significance"
         ]
       },
