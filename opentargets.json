@@ -661,6 +661,9 @@
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
+        "sex": {
+          "$ref": "#/definitions/sex"
+        },
         "statisticalMethod": {
           "$ref": "#/definitions/statisticalMethod"
         },
@@ -2012,6 +2015,18 @@
       "description": "Score provided by datasource indicating strength of target-disease association",
       "minimum": 0.0
     },
+    "sex": {
+      "type": "array",
+      "description": "Sex of the population included in the analysis",
+      "items": {
+        "type": "string",
+        "enum": [
+          "men",
+          "women"
+        ]
+      }
+    }
+    ,
     "significantDriverMethods": {
       "type": "array",
       "description": "Methods to detect cancer driver genes producing significant results",
