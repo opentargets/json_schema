@@ -1845,7 +1845,7 @@
       "description": "PubMed reference identifiers",
       "items": {
         "type": "string",
-        "pattern": "\\d+$"
+        "pattern": "(PPR)?\\d+"
       },
       "uniqueItems": true
     },
