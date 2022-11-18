@@ -1842,7 +1842,7 @@
     },
     "literature": {
       "type": "array",
-      "description": "PubMed reference identifiers",
+      "description": "PubMed or preprint reference identifiers",
       "items": {
         "type": "string",
         "pattern": "(PPR)?\\d+"
