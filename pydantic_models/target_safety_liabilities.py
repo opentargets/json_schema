@@ -19,6 +19,9 @@ class Biosample(BaseModel):
         extra = Extra.forbid
         anystr_strip_whitespace = True
 
+class Biosamples(BaseModel):
+    __root__: List[Biosample] = Field(unique_items=True)
+
 class Effect(BaseModel):
     """
     Effect on target modulation.
@@ -45,6 +48,9 @@ class Study(BaseModel):
         extra = Extra.forbid
         anystr_strip_whitespace = True
 
+class Studies(BaseModel):
+    __root__: List[Study] = Field(unique_items=True)
+
 class TargetSafety(BaseModel):
     """
     OpenTargets Target Safety Liabilities model.
@@ -54,11 +60,11 @@ class TargetSafety(BaseModel):
     targetFromSourceId: Optional[str] = Field(description='Gene symbol in resource of origin.', examples='ESR1')
     event: str = Field(description='Identifier of the biological process in the EFO ontology.', examples='arrhythmia')
     eventId: Optional[str] = Field(description='Identifier of the safety event in the EFO ontology.', examples='EFO_0004269')
-    biosample: Optional[Biosample]
+    biosample: Optional[Biosamples]
     effects: Optional[Effects]
     datasource: str = Field(description='Source of safety event.')
     literature: Optional[str] = Field(description='PubMed reference identifier.', regex='\d+$')
-    study: Optional[Study]
+    study: Optional[Studies]
     url: Optional[str]
 
     class Config:
@@ -68,7 +74,7 @@ class TargetSafety(BaseModel):
 
 ### Example validation
 
-ex = '{"id":"ENSG00000082556","event":"interaction with dopaminergic transmission and hallucination","datasource":"Urban et al. (2012)","url":"https://doi.org/10.1002/9781118098141.ch2","biosample":{"tissueLabel":"nervous system","tissueId":"UBERON_0001016"},"effects":[{"direction":"activation","dosing":"general"}]}'
+ex = '{"id":"ENSG00000082556","event":"interaction with dopaminergic transmission and hallucination","datasource":"Urban et al. (2012)","url":"https://doi.org/10.1002/9781118098141.ch2","biosample":[{"tissueLabel":"nervous system","tissueId":"UBERON_0001016"}],"effects":[{"direction":"activation","dosing":"general"}]}'
 
 def validator(item):
     try:
