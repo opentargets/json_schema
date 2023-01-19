@@ -28,7 +28,7 @@ class Effect(BaseModel):
     """
 
     direction: str = Field(description='Direction of the effect.')
-    dosing: str = Field(description='Required dose to achieve the response.')
+    dosing: Optional[str] = Field(description='Required dose to achieve the response.')
     class Config:
         extra = Extra.forbid
         anystr_strip_whitespace = True

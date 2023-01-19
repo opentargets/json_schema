@@ -115,8 +115,7 @@
         }
       },
       "required": [
-        "direction",
-        "dosing"
+        "direction"
       ],
       "additionalProperties": false
     },
