@@ -1036,6 +1036,9 @@
         "variantFunctionalConsequenceId": {
           "$ref": "#/definitions/variantFunctionalConsequenceId"
         },
+        "variantFunctionalConsequenceFromQtlId": {
+          "$ref": "#/definitions/variantFunctionalConsequenceId"
+        },
         "variantId": {
           "$ref": "#/definitions/variantId"
         },
