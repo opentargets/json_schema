@@ -62,6 +62,7 @@ class TargetSafety(BaseModel):
     eventId: Optional[str] = Field(description='Identifier of the safety event in the EFO ontology.', examples='EFO_0004269')
     biosamples: Optional[Biosamples]
     effects: Optional[Effects]
+    isHumanApplicable: Optional[bool] = Field(description='Flag that reports whether a target is relevant in the reported adverse outcome pathway.')
     datasource: str = Field(description='Source of safety event.')
     literature: Optional[str] = Field(description='PubMed reference identifier.', regex='\d+$')
     studies: Optional[Studies]
