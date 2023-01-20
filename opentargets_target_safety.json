@@ -1,169 +1,208 @@
 {
-    "title": "OpenTargets-target-safety",
-    "description": "OpenTargets Target Safety Liabilities model.",
-    "version": "1.0.0",
-    "type": "object",
-    "properties": {
-      "id": {
-        "description": "Target ID (accepted sources include Ensembl gene ID, Uniprot ID).",
-        "examples": 
-        [
-          "ENSG00000133019"
-        ],
-        "type": "string"
-      },
-      "targetFromSourceId": {
-        "description": "Gene symbol in resource of origin.",
-        "examples": [
-          "ESR1"
-        ],
-        "type": "string"
-      },
-      "event": {
-        "description": "Identifier of the biological process in the EFO ontology.",
-        "examples": [
-          "arrhythmia"
-        ],
-        "type": "string"
-      },
-      "eventId": {
-        "description": "Identifier of the safety event in the EFO ontology.",
-        "examples": [
-          "EFO_0004269"
-        ],
-        "type": "string"
-      },
-      "biosample": {
-        "$ref": "#/definitions/Biosample"
-      },
-      "effects": {
-        "$ref": "#/definitions/Effects"
-      },
-      "datasource": {
-        "description": "Source of safety event.",
-        "type": "string",
-        "enum": [
+  "title": "OpenTargets-target-safety",
+  "description": "OpenTargets Target Safety Liabilities model.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "title": "Id",
+      "description": "Target ID (accepted sources include Ensembl gene ID, Uniprot ID).",
+      "examples": [
+        "ENSG00000133019"
+      ],
+      "type": "string"
+    },
+    "targetFromSourceId": {
+      "title": "Targetfromsourceid",
+      "description": "Gene symbol in resource of origin.",
+      "examples": [
+        "ESR1"
+      ],
+      "type": "string"
+    },
+    "event": {
+      "title": "Event",
+      "description": "Identifier of the biological process in the EFO ontology.",
+      "examples": [
+        "arrhythmia"
+      ],
+      "type": "string"
+    },
+    "eventId": {
+      "title": "Eventid",
+      "description": "Identifier of the safety event in the EFO ontology.",
+      "examples": [
+        "EFO_0004269"
+      ],
+      "type": "string"
+    },
+    "biosamples": {
+      "$ref": "#/definitions/Biosamples"
+    },
+    "effects": {
+      "$ref": "#/definitions/Effects"
+    },
+    "isHumanApplicable": {
+      "title": "Ishumanapplicable",
+      "description": "Flag that reports whether a target is relevant in the reported adverse outcome pathway.",
+      "type": "boolean"
+    },
+    "datasource": {
+      "title": "Datasource",
+      "description": "Source of safety event.",
+      "type": "string",
+      "enum": [
             "Force et al. (2011)",
             "Lamore et al. (2017)",
             "Lynch et al. (2017)",
             "Bowes et al. (2012)",
             "Urban et al. (2012)",
-            "ToxCast"
-        ]
-      },
-      "literature": {
-        "description": "PubMed reference identifier.",
-        "pattern": "\\d+$",
-        "type": "string"
-      },
-      "study": {
-        "$ref": "#/definitions/Study"
-      },
-      "url": {
-        "type": "string"
-      }
+            "ToxCast",
+            "AOP-Wiki"
+      ]
     },
-    "required": [
-      "event",
-      "datasource"
-    ],
-    "additionalProperties": false,
-    "definitions": {
-      "Biosample": {
-        "description": "Anatomical structures referenced in resource.",
-        "type": "object",
-        "properties": {
-          "cellFormat": {
-            "description": "Cellular or subcellular format of the assay.",
-            "examples": [
-              "cell line"
-            ],
-            "type": "string"
-          },
-          "cellLabel": {
-            "description": "Name of the cell line or primary cell in source.",
-            "examples": [
-              "T47D"
-            ],
-            "type": "string"
-          },
-          "tissueId": {
-            "description": "Identifier of the tissue in the UBERON ontology.",
-            "examples": [
-              "UBERON_0004535"
-            ],
-            "type": "string"
-          },
-          "tissueLabel": {
-            "description": "Anatomical entity at an organ-level of the protein or cell used in the assay.",
-            "examples": [
-              "cardiovascular system"
-            ],
-            "type": "string"
-          }
+    "literature": {
+      "title": "Literature",
+      "description": "PubMed reference identifier.",
+      "pattern": "\\d+$",
+      "type": "string"
+    },
+    "studies": {
+      "$ref": "#/definitions/Studies"
+    },
+    "url": {
+      "title": "Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "event",
+    "datasource"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "Biosample": {
+      "title": "Biosample",
+      "description": "Anatomical structures referenced in resource.",
+      "type": "object",
+      "properties": {
+        "cellFormat": {
+          "title": "Cellformat",
+          "description": "Cellular or subcellular format of the assay.",
+          "examples": [
+            "cell line"
+          ],
+          "type": "string"
         },
-        "additionalProperties": false
-      },
-      "Effect": {
-        "description": "Effect on target modulation.",
-        "type": "object",
-        "properties": {
-          "direction": {
-            "description": "Direction of the effect.",
-            "type": "string",
-            "enum": [
-                "inhibition",
-                "activation"
-            ]
-          },
-          "dosing": {
-            "description": "Required dose to achieve the response.",
-            "type": "string",
-            "enum": [
-                "general",
-                "developmental toxicity",
-                "chronic",
-                "acute"
-            ]
-          }
+        "cellLabel": {
+          "title": "Celllabel",
+          "description": "Name of the cell line or primary cell in source.",
+          "examples": [
+            "T47D"
+          ],
+          "type": "string"
         },
-        "required": [
-          "direction",
-          "dosing"
-        ],
-        "additionalProperties": false
-      },
-      "Effects": {
-        "uniqueItems": true,
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/Effect"
+        "tissueId": {
+          "title": "Tissueid",
+          "description": "Identifier of the tissue in the UBERON ontology.",
+          "examples": [
+            "UBERON_0004535"
+          ],
+          "type": "string"
+        },
+        "tissueLabel": {
+          "title": "Tissuelabel",
+          "description": "Anatomical entity at an organ-level of the protein or cell used in the assay.",
+          "examples": [
+            "cardiovascular system"
+          ],
+          "type": "string"
         }
       },
-      "Study": {
-        "description": "Characteristics of the study.",
-        "type": "object",
-        "properties": {
-          "description": {
-            "description": "Description of the study.",
-            "type": "string"
-          },
-          "name": {
-            "description": "Name of the study.",
-            "examples": [
-              "ACEA_ER_80hr"
-            ],
-            "type": "string"
-          },
-          "type": {
-            "description": "Conceptual biological and/or chemical features of the study.",
-            "examples": [
-              "cell-based"
-            ],
-            "type": "string"
-          }
+      "additionalProperties": false
+    },
+    "Biosamples": {
+      "title": "Biosamples",
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Biosample"
+      }
+    },
+    "Effect": {
+      "title": "Effect",
+      "description": "Effect on target modulation.",
+      "type": "object",
+      "properties": {
+        "direction": {
+          "title": "Direction",
+          "description": "Direction of the effect.",
+          "type": "string",
+          "enum": [
+            "inhibition",
+            "activation"
+          ]
         },
-        "additionalProperties": false
+        "dosing": {
+          "title": "Dosing",
+          "description": "Required dose to achieve the response.",
+          "type": "string",
+          "enum": [
+            "general",
+            "developmental toxicity",
+            "chronic",
+            "acute"
+          ]
+        }
+      },
+      "required": [
+        "direction"
+      ],
+      "additionalProperties": false
+    },
+    "Effects": {
+      "title": "Effects",
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Effect"
+      }
+    },
+    "Study": {
+      "title": "Study",
+      "description": "Characteristics of the study.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the study.",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "description": "Name of the study.",
+          "examples": [
+            "ACEA_ER_80hr"
+          ],
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "description": "Conceptual biological and/or chemical features of the study.",
+          "examples": [
+            "cell-based"
+          ],
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Studies": {
+      "title": "Studies",
+      "uniqueItems": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Study"
       }
     }
   }
+}
