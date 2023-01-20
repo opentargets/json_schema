@@ -27,7 +27,7 @@
       "examples": "EFO_0004269",
       "type": "string"
     },
-    "biosample": {
+    "biosamples": {
       "$ref": "#/definitions/Biosamples"
     },
     "effects": {
@@ -44,7 +44,7 @@
       "pattern": "\\d+$",
       "type": "string"
     },
-    "study": {
+    "studies": {
       "$ref": "#/definitions/Studies"
     },
     "url": {
