@@ -43,7 +43,7 @@ class Study(BaseModel):
 
     description: Optional[str] = Field(description='Description of the study.')
     name: Optional[str] = Field(description='Name of the study.', examples='ACEA_ER_80hr')
-    type: Optional[str] = Field(description='Conceptual biological and/or chemical features of the study.', examples='cell-based')        
+    type: Optional[str] = Field(description='Conceptual biological and/or chemical features of the study.', examples='cell-based')
     class Config:
         extra = Extra.forbid
         anystr_strip_whitespace = True
@@ -86,6 +86,6 @@ def validator(item):
         return False
 
     return True
-    
+
 print(validator(ex))
 print(TargetSafety.schema_json(indent=2))

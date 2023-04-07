@@ -49,6 +49,6 @@ def validator(item):
         return False
 
     return True
-    
+
 print(validator(ex))
 print(ChemicalProbes.schema_json(indent=2))

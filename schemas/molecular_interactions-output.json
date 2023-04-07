@@ -1,119 +1,128 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "OpenTargets-interactions-output",
-    "version": "1.0.0",
-    "description": "OpenTargets molecular interaction objects outputted from the ETL",
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
-        "count": {
-            "$ref": "#/$defs/count"
-        },
-        "intA": {
-            "$ref": "#/$defs/interactor"
-        },
-        "intABiologicalRole": {
-            "$ref": "#/$defs/interactorBiologicalRole"
-        },
-        "intB": {
-            "$ref": "#/$defs/interactor"
-        },
-        "intBBiologicalRole": {
-            "$ref": "#/$defs/interactorBiologicalRole"
-        },
-        "scoring": {
-            "$ref": "#/$defs/scoring"
-        },
-        "sourceDatabase": {
-            "$ref": "#/$defs/sourceDatabase"
-        },
-        "speciesA": {
-            "$ref": "#/$defs/species"
-        },
-        "speciesB": {
-            "$ref": "#/$defs/species"
-        },
-        "targetA": {
-            "$ref": "#/$defs/target"
-        },
-        "targetB": {
-            "$ref": "#/$defs/target"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenTargets-interactions-output",
+  "version": "1.0.0",
+  "description": "OpenTargets molecular interaction objects outputted from the ETL",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "count": {
+      "$ref": "#/$defs/count"
     },
-    "required": [
-        "intA",
-        "intB",
-        "sourceDatabase"
-    ],
-    "$defs": {
-        "count": {
-            "type": "number",
-            "description": "Number of evidence supporting the interaction."
-        },
-        "interactor": {
-            "type": "string",
-            "description": "Identifier of the interactor in the given database.",
-            "examples": [
-                "ENSP00000005226",
-                "P26371",
-                "Q9BYR3",
-                "O00303"
-            ]
-        },
-        "interactorBiologicalRole": {
-            "type": "string",
-            "description": "Biological role of the interactor in the given interaction.",
-            "examples": [
-                "enzyme target"
-            ]
-        },
-        "scoring": {
-            "type": ["number", "null"],
-            "description": "Source specific score/weight of the interaction, combined for all evidences."
-        },
-        "sourceDatabase": {
-            "type": "string",
-            "description": "Name of the datasource.",
-            "enum": [
-                "intact",
-                "signor",
-                "string",
-                "reactome"
-            ]
-        },
-        "species": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-                "mnemonic": {
-                    "type": "string",
-                    "description": "Common name of the organism.",
-                    "examples": [
-                        "human",
-                        "Sendai virus"
-                    ]
-                },
-                "scientific_name": {
-                    "type": ["string", "null"],
-                    "description": "Scientific name of the organism.",
-                    "examples": [
-                        "Homo sapiens",
-                        "Bovine herpesvirus 4"
-                    ]
-                },
-                "taxon_id": {
-                    "type": "number",
-                    "description": "NCBI taxon identifier of the organism."
-                }
-            },
-            "required": [
-                "scientific_name",
-                "taxon_id"
-            ]        
-        },
-        "target": {
-            "type": ["string", "null"],
-            "description": "Target ID in resource of origin."
-        }
+    "intA": {
+      "$ref": "#/$defs/interactor"
+    },
+    "intABiologicalRole": {
+      "$ref": "#/$defs/interactorBiologicalRole"
+    },
+    "intB": {
+      "$ref": "#/$defs/interactor"
+    },
+    "intBBiologicalRole": {
+      "$ref": "#/$defs/interactorBiologicalRole"
+    },
+    "scoring": {
+      "$ref": "#/$defs/scoring"
+    },
+    "sourceDatabase": {
+      "$ref": "#/$defs/sourceDatabase"
+    },
+    "speciesA": {
+      "$ref": "#/$defs/species"
+    },
+    "speciesB": {
+      "$ref": "#/$defs/species"
+    },
+    "targetA": {
+      "$ref": "#/$defs/target"
+    },
+    "targetB": {
+      "$ref": "#/$defs/target"
     }
+  },
+  "required": [
+    "intA",
+    "intB",
+    "sourceDatabase"
+  ],
+  "$defs": {
+    "count": {
+      "type": "number",
+      "description": "Number of evidence supporting the interaction."
+    },
+    "interactor": {
+      "type": "string",
+      "description": "Identifier of the interactor in the given database.",
+      "examples": [
+        "ENSP00000005226",
+        "P26371",
+        "Q9BYR3",
+        "O00303"
+      ]
+    },
+    "interactorBiologicalRole": {
+      "type": "string",
+      "description": "Biological role of the interactor in the given interaction.",
+      "examples": [
+        "enzyme target"
+      ]
+    },
+    "scoring": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Source specific score/weight of the interaction, combined for all evidences."
+    },
+    "sourceDatabase": {
+      "type": "string",
+      "description": "Name of the datasource.",
+      "enum": [
+        "intact",
+        "signor",
+        "string",
+        "reactome"
+      ]
+    },
+    "species": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mnemonic": {
+          "type": "string",
+          "description": "Common name of the organism.",
+          "examples": [
+            "human",
+            "Sendai virus"
+          ]
+        },
+        "scientific_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Scientific name of the organism.",
+          "examples": [
+            "Homo sapiens",
+            "Bovine herpesvirus 4"
+          ]
+        },
+        "taxon_id": {
+          "type": "number",
+          "description": "NCBI taxon identifier of the organism."
+        }
+      },
+      "required": [
+        "scientific_name",
+        "taxon_id"
+      ]
+    },
+    "target": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Target ID in resource of origin."
+    }
+  }
 }

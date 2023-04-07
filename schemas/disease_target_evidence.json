@@ -56,42 +56,42 @@
         "datasourceId": {
           "const": "cancer_biomarkers"
         },
-      "datatypeId": {
-        "$ref": "#/definitions/datatypeId"
-      },
-      "biomarkerName": {
-        "$ref": "#/definitions/biomarkerName"
-      },
-      "biomarkers": {
-        "$ref": "#/definitions/biomarkers"
-      },
-      "confidence": {
-        "$ref": "#/definitions/confidence"
-      },
-      "diseaseFromSource": {
-        "$ref": "#/definitions/diseaseFromSource"
-      },
-      "diseaseFromSourceMappedId": {
-        "$ref": "#/definitions/diseaseFromSourceMappedId"
-      },
-      "drugFromSource": {
-        "$ref": "#/definitions/drugFromSource"
-      },
-      "drugId": {
-        "$ref": "#/definitions/drugId"
-      },
-      "drugResponse": {
-        "$ref": "#/definitions/drugResponse"
-      },
-      "literature": {
-        "$ref": "#/definitions/literature"
-      },
-      "targetFromSourceId": {
-        "$ref": "#/definitions/targetFromSourceId"
-      },
-      "urls": {
-        "$ref": "#/definitions/urls"
-      }
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "biomarkerName": {
+          "$ref": "#/definitions/biomarkerName"
+        },
+        "biomarkers": {
+          "$ref": "#/definitions/biomarkers"
+        },
+        "confidence": {
+          "$ref": "#/definitions/confidence"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "drugFromSource": {
+          "$ref": "#/definitions/drugFromSource"
+        },
+        "drugId": {
+          "$ref": "#/definitions/drugId"
+        },
+        "drugResponse": {
+          "$ref": "#/definitions/drugResponse"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "urls": {
+          "$ref": "#/definitions/urls"
+        }
       },
       "required": [
         "biomarkerName",
@@ -586,7 +586,7 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
-        "variantFunctionalConsequenceId":  {
+        "variantFunctionalConsequenceId": {
           "$ref": "#/definitions/variantFunctionalConsequenceId"
         }
       },
@@ -838,7 +838,7 @@
       "additionalProperties": false
     },
     {
-      "properties":{
+      "properties": {
         "datasourceId": {
           "const": "ot_crispr"
         },
@@ -975,7 +975,7 @@
           "const": "ot_genetics_portal"
         },
         "beta": {
-          "$ref":  "#/definitions/beta"
+          "$ref": "#/definitions/beta"
         },
         "oddsRatioConfidenceIntervalLower": {
           "$ref": "#/definitions/confidenceIntervalLower"
@@ -1394,7 +1394,9 @@
     "ancestryId": {
       "type": "string",
       "description": "Identifier of the ancestry in the HANCESTRO ontology",
-      "examples": ["HANCESTRO_006"],
+      "examples": [
+        "HANCESTRO_006"
+      ],
       "pattern": "HANCESTRO_\\d+"
     },
     "alleleOrigins": {
@@ -1465,7 +1467,7 @@
     "biomarkerList": {
       "type": "array",
       "description": "List of biomarkers associated with the biological model.",
-      "items":{
+      "items": {
         "type": "object",
         "description": "One biomarker for the model",
         "properties": {
@@ -1512,7 +1514,9 @@
                 "$ref": "#/definitions/variantFunctionalConsequenceId"
               }
             },
-            "required": ["name"],
+            "required": [
+              "name"
+            ],
             "additionalProperties": false
           },
           "uniqueItems": true
@@ -1538,7 +1542,9 @@
                 ]
               }
             },
-            "required": ["name"],
+            "required": [
+              "name"
+            ],
             "additionalProperties": false
           },
           "uniqueItems": true
@@ -1688,28 +1694,28 @@
       "items": {
         "type": "object",
         "properties": {
-          "id" : {
+          "id": {
             "type": "string",
             "description": "Cell type identifier in cell ontology or in cell model database",
             "examples": [
               "SIDM01076"
             ]
           },
-          "name" : {
+          "name": {
             "type": "string",
             "description": "Name of the cell model",
             "examples": [
               "BC-1"
             ]
           },
-          "tissue" : {
+          "tissue": {
             "type": "string",
             "description": "Name of the tissue from which the cells were sampled",
             "examples": [
               "pancreas"
             ]
           },
-          "tissueId" : {
+          "tissueId": {
             "type": "string",
             "description": "UBERON identifier of the anatomical unit the cells were sampled.",
             "examples": [
@@ -1783,7 +1789,9 @@
           }
         },
         "additionalProperties": false,
-        "required": ["id"]
+        "required": [
+          "id"
+        ]
       },
       "minItems": 1,
       "uniqueItems": true
@@ -1913,7 +1921,9 @@
             ]
           }
         },
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "additionalProperties": false
       },
       "minItems": 1,
@@ -1942,7 +1952,7 @@
       "minItems": 1,
       "uniqueItems": true
     },
-    "projectId":{
+    "projectId": {
       "type": "string",
       "description": "The identifer of the project that generated the data.",
       "examples": [
@@ -2026,8 +2036,7 @@
           "women"
         ]
       }
-    }
-    ,
+    },
     "significantDriverMethods": {
       "type": "array",
       "description": "Methods to detect cancer driver genes producing significant results",
@@ -2267,7 +2276,6 @@
             "examples": [
               "https://clinicaltrials.gov/search?id=%22NCT01917656%22",
               "https://search.clinicalgenome.org/kb/gene-validity/d910a9d8-516e-443d-acba-8d61f7574792--2018-06-07T14:23:53"
-
             ]
           },
           "niceName": {
@@ -2371,7 +2379,7 @@
       },
       "uniqueItems": true
     },
-    "warningMessage":{
+    "warningMessage": {
       "type": "string",
       "description": "Free text description of any concerns or warnings about the data."
     }

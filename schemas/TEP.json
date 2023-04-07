@@ -4,7 +4,7 @@
   "description": "OpenTargets TEP (Target Enabling Package) objects",
   "type": "object",
   "properties": {
-    "targetFromSourceId" : {
+    "targetFromSourceId": {
       "type": "string",
       "description": "Target ID in resource of origin (accepted sources include Ensembl gene ID, Uniprot ID, gene symbol)",
       "examples": [
@@ -13,7 +13,10 @@
       ]
     },
     "url": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Link pointing to the TEP page.",
       "examples": [
         "https://www.thesgc.org/tep/moesin"
@@ -21,7 +24,10 @@
       "pattern": "^https://|http://"
     },
     "therapeuticArea": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Broad description of the therapeutic area relevant to the target. Might be more terms separated by comma.",
       "examples": [
         "Metabolic diseases",
@@ -29,7 +35,10 @@
       ]
     },
     "description": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Description of the target.",
       "examples": [
         "Fibrinogen-like globe domain of human Tenascin-C (hFBG-C)"
