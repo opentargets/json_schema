@@ -1,3 +1,5 @@
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/opentargets/json_schema/master.svg)](https://results.pre-commit.ci/latest/github/opentargets/json_schema/master)
+
 # Schemas of the OpenTargets Platform data models
 
 This repository contains schema definitions of some of the data models the OpenTargets Platform deals with.
