@@ -1,0 +1,7 @@
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: 0.22.0
+  hooks:
+    - id: check-metaschema
+      name: "Validating schema definition against draft schemas"
+      files: ^schemas/.*json$
+      types: [json]

@@ -900,7 +900,6 @@
         "projectId",
         "projectDescription",
         "resourceScore",
-        "studyOverview",
         "studyId"
       ],
       "additionalProperties": false
