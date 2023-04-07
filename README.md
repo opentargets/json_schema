@@ -4,6 +4,7 @@ This repository contains schema definitions of some of the data models the OpenT
 Either as an input or generates as an output.
 
 **Folders**:
+
 - `/schemas/` - List of schemas in JSON format.
 - `/pydantic_models/` - Definitions of the data models using Python's [Pydantic](https://docs.pydantic.dev/) tool.
 
