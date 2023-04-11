@@ -51,13 +51,13 @@
       "description": "Source of safety event.",
       "type": "string",
       "enum": [
-            "Force et al. (2011)",
-            "Lamore et al. (2017)",
-            "Lynch et al. (2017)",
-            "Bowes et al. (2012)",
-            "Urban et al. (2012)",
-            "ToxCast",
-            "AOP-Wiki"
+        "Force et al. (2011)",
+        "Lamore et al. (2017)",
+        "Lynch et al. (2017)",
+        "Bowes et al. (2012)",
+        "Urban et al. (2012)",
+        "ToxCast",
+        "AOP-Wiki"
       ]
     },
     "literature": {
