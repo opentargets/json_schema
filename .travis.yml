@@ -5,6 +5,8 @@ install:
   - python3 -m venv env
   - source env/bin/activate
   - pip install git+https://github.com/python-jsonschema/check-jsonschema.git@0.20.0#egg=check-jsonschema
+  # Reverting urllib: (https://github.com/psf/requests/issues/6432)
+  - pip install urllib3==1.26.15
   - wget -O draft7.json http://json-schema.org/draft-07/schema
 script:
   - for f in $(ls schemas/*json); do check-jsonschema --schemafile draft7.json  $f ;done
