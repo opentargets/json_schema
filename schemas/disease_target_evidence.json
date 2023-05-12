@@ -1616,10 +1616,10 @@
       "additionalProperties": false
     },
     "clinicalPhase": {
-      "type": "integer",
+      "type": "number",
       "description": "Phase of the clinical trial",
-      "minimum": 0,
-      "maximum": 4
+      "minimum": 0.5,
+      "maximum": 4.0
     },
     "clinicalSignificances": {
       "type": "array",
