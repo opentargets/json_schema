@@ -285,6 +285,9 @@
         },
         "studyId": {
           "$ref": "#/definitions/studyId"
+        },
+        "geneticBackground": {
+          "$ref": "#/definitions/geneticBackground"
         }
       },
       "required": [
