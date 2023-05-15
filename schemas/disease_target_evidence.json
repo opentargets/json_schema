@@ -242,6 +242,69 @@
     {
       "properties": {
         "datasourceId": {
+          "const": "crispr_screen"
+        },
+        "datatypeId": {
+          "$ref": "#/definitions/datatypeId"
+        },
+        "cellType": {
+          "$ref": "#/definitions/cellType"
+        },
+        "diseaseFromSource": {
+          "$ref": "#/definitions/diseaseFromSource"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
+        "resourceScore": {
+          "$ref": "#/definitions/resourceScore"
+        },
+        "targetFromSourceId": {
+          "$ref": "#/definitions/targetFromSourceId"
+        },
+        "diseaseFromSourceMappedId": {
+          "$ref": "#/definitions/diseaseFromSourceMappedId"
+        },
+        "projectId": {
+          "$ref": "#/definitions/projectId"
+        },
+        "crisprScreenLibrary": {
+          "$ref": "#/definitions/crisprScreenLibrary"
+        },
+        "studyOverview": {
+          "$ref": "#/definitions/studyOverview"
+        },
+        "contrast": {
+          "$ref": "#/definitions/contrast"
+        },
+        "statisticalTestTail": {
+          "$ref": "#/definitions/statisticalTestTail"
+        },
+        "log2FoldChangeValue": {
+          "$ref": "#/definitions/log2FoldChangeValue"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
+        },
+        "geneticBackground": {
+          "$ref": "#/definitions/geneticBackground"
+        }
+      },
+      "required": [
+        "datasourceId",
+        "datatypeId",
+        "cellType",
+        "diseaseFromSourceMappedId",
+        "resourceScore",
+        "targetFromSourceId",
+        "contrast",
+        "studyId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "datasourceId": {
           "const": "encore"
         },
         "biomarkerList": {
