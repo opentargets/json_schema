@@ -1,0 +1,150 @@
+{
+  "title": "OpenTargets-gene-essentiality",
+  "description": "Gene essentiality object.",
+  "type": "object",
+  "properties": {
+    "targetSymbol": {
+      "title": "Targetsymbol",
+      "description": "Gene symbol.",
+      "type": "string"
+    },
+    "isEssential": {
+      "title": "Isessential",
+      "description": "Boolean flag indicating if the target is considered essential or not by DepMap analysis.",
+      "type": "boolean"
+    },
+    "depMapEssentiality": {
+      "$ref": "#/definitions/DepMapEssentialities"
+    }
+  },
+  "required": [
+    "targetSymbol",
+    "isEssential",
+    "depMapEssentiality"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "MutationType": {
+      "title": "MutationType",
+      "description": "Mutation class of a target in the essentiality object.",
+      "enum": [
+        "damaging",
+        "hotspot"
+      ],
+      "type": "string"
+    },
+    "Screen": {
+      "title": "Screen",
+      "type": "object",
+      "properties": {
+        "depmapId": {
+          "title": "Depmapid",
+          "description": "Screen identifier on DepMap.",
+          "examples": [
+            "ACH-001029"
+          ],
+          "type": "string"
+        },
+        "cellLineName": {
+          "title": "Celllinename",
+          "description": "Screened cell-line name.",
+          "examples": [
+            "CHLA-10"
+          ],
+          "type": "string"
+        },
+        "diseaseFromSource": {
+          "title": "Diseasefromsource",
+          "description": "Disease represented by the applied cell-line.",
+          "examples": [
+            "Ewing Sarcoma"
+          ],
+          "type": "string"
+        },
+        "diseaseCellLineId": {
+          "title": "Diseasecelllineid",
+          "description": "Sanger cell passport identifier.",
+          "pattern": "SIDM\\d+",
+          "examples": [
+            "SIDM01125"
+          ],
+          "type": "string"
+        },
+        "mutation": {
+          "description": "Type of the mutation class of the target.",
+          "examples": [
+            "hotspot"
+          ],
+          "allOf": [
+            {
+              "$ref": "#/definitions/MutationType"
+            }
+          ]
+        },
+        "geneEffect": {
+          "title": "Geneeffect",
+          "description": "Calculated DEMETER2 essentiality effect.",
+          "type": "number"
+        },
+        "expression": {
+          "title": "Expression",
+          "description": "Expression level of this gene in the screened cell line (log2(TPM+1)).",
+          "type": "number"
+        }
+      },
+      "required": [
+        "depmapId",
+        "cellLineName",
+        "geneEffect"
+      ],
+      "additionalProperties": false
+    },
+    "Screens": {
+      "title": "Screens",
+      "unique": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Screen"
+      }
+    },
+    "DepMapEssentiality": {
+      "title": "DepMapEssentiality",
+      "type": "object",
+      "properties": {
+        "tissueId": {
+          "title": "Tissueid",
+          "description": "Uberon tissue identifier.",
+          "pattern": "UBERON_\\d+",
+          "examples": [
+            "UBERON_0004535"
+          ],
+          "type": "string"
+        },
+        "tissueName": {
+          "title": "Tissuename",
+          "description": "Tissue name",
+          "examples": [
+            "liver"
+          ],
+          "type": "string"
+        },
+        "screens": {
+          "$ref": "#/definitions/Screens"
+        }
+      },
+      "required": [
+        "tissueName",
+        "screens"
+      ],
+      "additionalProperties": false
+    },
+    "DepMapEssentialities": {
+      "title": "DepMapEssentialities",
+      "unique": true,
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/DepMapEssentiality"
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import json
 from typing import List, Optional
 
-from pydantic import BaseModel, Extra, Field
+from pydantic import BaseModel, Extra, Field, ValidationError
 from pydantic.schema import schema
 
 
@@ -81,7 +81,7 @@ def validator(item):
     try:
         TargetSafety(**json.loads(item))
 
-    except pydantic.ValidationError as exc:
+    except ValidationError as exc:
         print(f"ERROR: Invalid schema: {exc}")
         return False
 
