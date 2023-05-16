@@ -16,10 +16,10 @@ class Screen(BaseModel):
     depmapId: str = Field(description="Screen identifier on DepMap.", examples=['ACH-001029'])
     cellLineName: str = Field(description="Screened cell-line name.", examples=['CHLA-10'])
     diseaseFromSource: Optional[str] = Field(description="Disease represented by the applied cell-line.", examples=['Ewing Sarcoma'])
-    diseaseCellLineId: Optional[str] = Field(description="Disease represented by the applied cell-line.", examples=['SIDM01125'], regex=r'SIDM\d+')
+    diseaseCellLineId: Optional[str] = Field(description="Sanger cell passport identifier.", examples=['SIDM01125'], regex=r'SIDM\d+')
     mutation: Optional[MutationType] = Field(description='Type of the mutation class of the target.', examples=['hotspot'])
-    geneEffect: float = Field(description='Calculated essentiality effect.')
-    expression: Optional[float] = Field(description='Expression level of this gene in the screened cell line.')
+    geneEffect: float = Field(description='Calculated DEMETER2 essentiality effect.')
+    expression: Optional[float] = Field(description='Expression level of this gene in the screened cell line (log2(TPM+1)).')
 
     class Config:
         extra = Extra.forbid
@@ -29,7 +29,7 @@ class Screens(BaseModel):
 
 class DepMapEssentiality(BaseModel):
     tissueId: Optional[str] = Field(description="Uberon tissue identifier.", examples=['UBERON_0004535'], regex=r'UBERON_\d+')
-    tissueName: str = Field(description='Tissue name', examamples='liver')
+    tissueName: str = Field(description='Tissue name', examples='liver')
     screens: Screens
 
     class Config:
