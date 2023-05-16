@@ -63,7 +63,7 @@
         },
         "diseaseCellLineId": {
           "title": "Diseasecelllineid",
-          "description": "Disease represented by the applied cell-line.",
+          "description": "Sanger cell passport identifier.",
           "pattern": "SIDM\\d+",
           "examples": [
             "SIDM01125"
@@ -83,12 +83,12 @@
         },
         "geneEffect": {
           "title": "Geneeffect",
-          "description": "Calculated essentiality effect.",
+          "description": "Calculated DEMETER2 essentiality effect.",
           "type": "number"
         },
         "expression": {
           "title": "Expression",
-          "description": "Expression level of this gene in the screened cell line.",
+          "description": "Expression level of this gene in the screened cell line (log2(TPM+1)).",
           "type": "number"
         }
       },
@@ -123,7 +123,9 @@
         "tissueName": {
           "title": "Tissuename",
           "description": "Tissue name",
-          "examamples": "liver",
+          "examples": [
+            "liver"
+          ],
           "type": "string"
         },
         "screens": {

@@ -29,7 +29,7 @@ class Screens(BaseModel):
 
 class DepMapEssentiality(BaseModel):
     tissueId: Optional[str] = Field(description="Uberon tissue identifier.", examples=['UBERON_0004535'], regex=r'UBERON_\d+')
-    tissueName: str = Field(description='Tissue name', examples='liver')
+    tissueName: str = Field(description='Tissue name', examples=['liver'])
     screens: Screens
 
     class Config:
