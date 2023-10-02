@@ -24,7 +24,7 @@
           "bodyPartLevel",
           "bodyPartId",
           "bodyPartName",
-          "fpkm"
+          "tpm"
         ],
         "properties": {
           "bodyPartLevel": {
@@ -36,9 +36,9 @@
           "bodyPartName": {
             "$ref": "#/definitions/bodyPartName"
           },
-          "fpkm": {
+          "tpm": {
             "type": "number",
-            "description": "Expression value expressed in FPKM units",
+            "description": "Expression value expressed in TPM units",
             "examples": [
               6.0,
               5.0,
