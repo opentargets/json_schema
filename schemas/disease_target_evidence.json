@@ -2205,7 +2205,8 @@
           "Success",
           "Met endpoint",
           "Ethical reason",
-          "Insufficient data"
+          "Insufficient data",
+          "Uncategorised"
         ]
       },
       "uniqueItems": true

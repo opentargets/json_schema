@@ -138,8 +138,8 @@
           "description": "Direction of the effect.",
           "type": "string",
           "enum": [
-            "inhibition",
-            "activation"
+            "Inhibition/Decrease/Downregulation",
+            "Activation/Increase/Upregulation"
           ]
         },
         "dosing": {
