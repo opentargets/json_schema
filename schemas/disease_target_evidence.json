@@ -475,6 +475,9 @@
         },
         "variantRsId": {
           "$ref": "#/definitions/variantRsId"
+        },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
         }
       },
       "required": [
@@ -541,6 +544,9 @@
         },
         "variantRsId": {
           "$ref": "#/definitions/variantRsId"
+        },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
         }
       },
       "required": [
