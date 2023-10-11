@@ -2,13 +2,24 @@
 """Generating json schema via pydantic models."""
 
 from enum import Enum
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel, Extra, Field
 
 
+class phenotypeCategory(str, Enum):
+    """Accepted phenotype categories describing pharmacogenomic effect."""
+
+    toxicity = "toxicity"
+    efficacy = "efficacy"
+    dosage = "dosage"
+    metabolism = ("metabolism/pk",)
+    pd = "pd"
+    other = "other"
+
+
 class EvidenceLevel(str, Enum):
-    """Mutation class of a target in the essentiality object."""
+    """Evidence levels class describing the confidence in the assocations."""
 
     _1a = "1A"
     _1b = "1B"
@@ -39,7 +50,7 @@ class Pharmacogenomics(BaseModel):
     literature: List[str] = Field(
         description="List of PMIDs of supporting publications.",
     )
-    genotypeId: str = Field(
+    genotypeId: Optional[str] = Field(
         description="VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
         examples=["19_38499645_GGAG_G,GGAG"],
         regex=r"^[1-9XY]{1,2}_\d+_[GATC]+_[GATC]+,[GATC]+$",
@@ -49,12 +60,12 @@ class Pharmacogenomics(BaseModel):
         examples=["rs12354"],
         regex=r"^rs\d+$",
     )
-    variantFunctionalConsequenceId: str = Field(
+    variantFunctionalConsequenceId: Optional[str] = Field(
         description="Sequence Ontology term, from VEP.",
         examples=["SO_0001822"],
         regex=r"^SO_\d+$",
     )
-    targetFromSourceId: str = Field(
+    targetFromSourceId: Optional[str] = Field(
         description="Ensembl gene identifier.",
         examples=["ENSG00000196218"],
         regex=r"^ENSG\d+$",
@@ -69,7 +80,7 @@ class Pharmacogenomics(BaseModel):
         ],
     )
     drugFromSource: str = Field(description="Drug name", examples=["succinylcholine"])
-    drugId: str = Field(
+    drugId: Optional[str] = Field(
         description="CHEBI ID of drug, mapped through OLS",
         examples=["CHEBI_45652"],
         regex=r"^CHEBI_\d+$",
@@ -80,7 +91,7 @@ class Pharmacogenomics(BaseModel):
     phenotypeText: str = Field(
         description="Phenotype name.", examples=["Malignant Hyperthermia"]
     )
-    phenotypeFromSourceId: str = Field(
+    phenotypeFromSourceId: Optional[str] = Field(
         description="EFO ID of phenotype, mapped through ZOOMA / OXO.",
         examples=["Orphanet_423"],
         regex=r"^NCIT_C\d+$|^Orphanet_\d+$|^GO_\d+$|^HP_\d+$|^EFO_\d+$|^MONDO_\d+$|^DOID_\d+$|^MP_\d+$|^OTAR_\d+$|^PATO_\d+$|^CHEBI_\d+$|^OBI_\d+$|^OGMS_\d+$",
