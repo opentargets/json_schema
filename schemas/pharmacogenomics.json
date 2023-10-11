@@ -158,8 +158,7 @@
     "genotype",
     "genotypeAnnotationText",
     "drugFromSource",
-    "pgxCategory",
-    "phenotypeText"
+    "pgxCategory"
   ],
   "additionalProperties": false,
   "definitions": {

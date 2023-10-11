@@ -88,7 +88,7 @@ class Pharmacogenomics(BaseModel):
     pgxCategory: phenotypeCategory = Field(
         description="Pharmacogenomics phenotype category.", examples=["toxicity"]
     )
-    phenotypeText: str = Field(
+    phenotypeText: Optional[str] = Field(
         description="Phenotype name.", examples=["Malignant Hyperthermia"]
     )
     phenotypeFromSourceId: Optional[str] = Field(
