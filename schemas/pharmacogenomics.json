@@ -123,15 +123,12 @@
       "type": "string"
     },
     "pgxCategory": {
+      "title": "Pgxcategory",
       "description": "Pharmacogenomics phenotype category.",
       "examples": [
         "toxicity"
       ],
-      "allOf": [
-        {
-          "$ref": "#/definitions/phenotypeCategory"
-        }
-      ]
+      "type": "string"
     },
     "phenotypeText": {
       "title": "Phenotypetext",
@@ -174,19 +171,6 @@
         "2B",
         "3",
         "4"
-      ],
-      "type": "string"
-    },
-    "phenotypeCategory": {
-      "title": "phenotypeCategory",
-      "description": "Accepted phenotype categories describing pharmacogenomic effect.",
-      "enum": [
-        "toxicity",
-        "efficacy",
-        "dosage",
-        "metabolism/pk",
-        "pd",
-        "other"
       ],
       "type": "string"
     }
