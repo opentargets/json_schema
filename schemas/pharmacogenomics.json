@@ -52,7 +52,7 @@
     "genotypeId": {
       "title": "Genotypeid",
       "description": "VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
-      "pattern": "^[0-9XY]{1,2}_\\d+_[GATC]+_[GATC]+[GATC,]+$",
+      "pattern": "^[0-9YX]{1,2}_\\d+_[GATC]+_([GATC]+,)?[GATC]+$",
       "examples": [
         "19_38499645_GGAG_G,GGAG",
         "20_54156202_T_C,T",

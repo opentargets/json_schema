@@ -57,7 +57,7 @@ class Pharmacogenomics(BaseModel):
             "20_54156202_T_C,T",
             "X_12885540_A_A"
         ],
-        regex=r"^[0-9XY]{1,2}_\d+_[GATC]+_[GATC]+[GATC,]+$",
+        regex=r"^[0-9YX]{1,2}_\d+_[GATC]+_([GATC]+,)?[GATC]+$",
     )
     variantRsId: str = Field(
         description="RS identifier of the variant.",
@@ -111,6 +111,7 @@ class Pharmacogenomics(BaseModel):
 def main() -> None:
     with open("pharmacogenomics.json", "wt") as f:
         f.write(Pharmacogenomics.schema_json(indent=2))
+        f.write('\n')
 
 
 if __name__ == "__main__":
