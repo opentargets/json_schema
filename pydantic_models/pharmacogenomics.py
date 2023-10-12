@@ -52,8 +52,12 @@ class Pharmacogenomics(BaseModel):
     )
     genotypeId: Optional[str] = Field(
         description="VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
-        examples=["19_38499645_GGAG_G,GGAG"],
-        regex=r"^[1-9XY]{1,2}_\d+_[GATC]+_[GATC]+,[GATC]+$",
+        examples=[
+            "19_38499645_GGAG_G,GGAG",
+            "20_54156202_T_C,T",
+            "X_12885540_A_A"
+        ],
+        regex=r"^[0-9XY]{1,2}_\d+_[GATC]+_[GATC]+[GATC,]+$",
     )
     variantRsId: str = Field(
         description="RS identifier of the variant.",
