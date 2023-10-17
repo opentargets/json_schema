@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Generating json schema via pydantic models."""
+"""Generating a JSON schema via Pydantic models."""
 
 from enum import Enum
 from typing import List, Optional
@@ -75,7 +75,7 @@ class Pharmacogenomics(BaseModel):
         regex=r"^ENSG\d+$",
     )
     genotype: str = Field(
-        description="Genotype string", examples=["(CA)16/(CA)17", "TA", "del/GAG"]
+        description="Genotype string.", examples=["(CA)16/(CA)17", "TA", "del/GAG"]
     )
     genotypeAnnotationText: str = Field(
         description="Full annotation string for genotype.",
@@ -83,9 +83,9 @@ class Pharmacogenomics(BaseModel):
             "Patients with the rs121918596 del/GAG genotype may develop malignant hyperthermia when treated with volatile anesthetics [...]"
         ],
     )
-    drugFromSource: str = Field(description="Drug name", examples=["succinylcholine"])
+    drugFromSource: str = Field(description="Drug name.", examples=["succinylcholine"])
     drugId: Optional[str] = Field(
-        description="CHEBI ID of drug, mapped through OLS",
+        description="CHEBI ID of drug, mapped through OLS.",
         examples=["CHEBI_45652"],
         regex=r"^CHEBI_\d+$",
     )
