@@ -1,0 +1,178 @@
+{
+  "title": "OpenTargets-Pharmacogenomics",
+  "description": "Pharmacogenomics schema object.",
+  "type": "object",
+  "properties": {
+    "datasourceId": {
+      "title": "Datasourceid",
+      "default": "pharmgkb",
+      "type": "string"
+    },
+    "datasourceVersion": {
+      "title": "Datasourceversion",
+      "description": "Date of data dump generation.",
+      "pattern": "[12]\\d{3}-[01][0-9]-[0123][0-9]",
+      "examples": [
+        "2023-08-05"
+      ],
+      "type": "string"
+    },
+    "datatypeId": {
+      "title": "Datatypeid",
+      "default": "clinical_annotation",
+      "type": "string"
+    },
+    "studyId": {
+      "title": "Studyid",
+      "description": "Clinical Annotation ID in the PharmKGB dataset.",
+      "examples": [
+        "1449309937"
+      ],
+      "type": "string"
+    },
+    "evidenceLevel": {
+      "description": "Level of evidence. More info: https://www.pharmgkb.org/page/clinAnnLevels.",
+      "examples": [
+        "1A"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/EvidenceLevel"
+        }
+      ]
+    },
+    "literature": {
+      "title": "Literature",
+      "description": "List of PMIDs of supporting publications.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "genotypeId": {
+      "title": "Genotypeid",
+      "description": "VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
+      "pattern": "^[0-9YX]{1,2}_\\d+_[GATC]+_([GATC]+,)?[GATC]+$",
+      "examples": [
+        "19_38499645_GGAG_G,GGAG",
+        "20_54156202_T_C,T",
+        "X_12885540_A_A"
+      ],
+      "type": "string"
+    },
+    "variantRsId": {
+      "title": "Variantrsid",
+      "description": "RS identifier of the variant.",
+      "pattern": "^rs\\d+$",
+      "examples": [
+        "rs12354"
+      ],
+      "type": "string"
+    },
+    "variantFunctionalConsequenceId": {
+      "title": "Variantfunctionalconsequenceid",
+      "description": "Sequence Ontology term, from VEP.",
+      "pattern": "^SO_\\d+$",
+      "examples": [
+        "SO_0001822"
+      ],
+      "type": "string"
+    },
+    "targetFromSourceId": {
+      "title": "Targetfromsourceid",
+      "description": "Ensembl gene identifier.",
+      "pattern": "^ENSG\\d+$",
+      "examples": [
+        "ENSG00000196218"
+      ],
+      "type": "string"
+    },
+    "genotype": {
+      "title": "Genotype",
+      "description": "Genotype string",
+      "examples": [
+        "(CA)16/(CA)17",
+        "TA",
+        "del/GAG"
+      ],
+      "type": "string"
+    },
+    "genotypeAnnotationText": {
+      "title": "Genotypeannotationtext",
+      "description": "Full annotation string for genotype.",
+      "examples": [
+        "Patients with the rs121918596 del/GAG genotype may develop malignant hyperthermia when treated with volatile anesthetics [...]"
+      ],
+      "type": "string"
+    },
+    "drugFromSource": {
+      "title": "Drugfromsource",
+      "description": "Drug name",
+      "examples": [
+        "succinylcholine"
+      ],
+      "type": "string"
+    },
+    "drugId": {
+      "title": "Drugid",
+      "description": "CHEBI ID of drug, mapped through OLS",
+      "pattern": "^CHEBI_\\d+$",
+      "examples": [
+        "CHEBI_45652"
+      ],
+      "type": "string"
+    },
+    "pgxCategory": {
+      "title": "Pgxcategory",
+      "description": "Pharmacogenomics phenotype category.",
+      "examples": [
+        "toxicity"
+      ],
+      "type": "string"
+    },
+    "phenotypeText": {
+      "title": "Phenotypetext",
+      "description": "Phenotype name.",
+      "examples": [
+        "Malignant Hyperthermia"
+      ],
+      "type": "string"
+    },
+    "phenotypeFromSourceId": {
+      "title": "Phenotypefromsourceid",
+      "description": "EFO ID of phenotype, mapped through ZOOMA / OXO.",
+      "pattern": "^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$|^PATO_\\d+$|^CHEBI_\\d+$|^OBI_\\d+$|^OGMS_\\d+$",
+      "examples": [
+        "Orphanet_423"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "datasourceVersion",
+    "studyId",
+    "evidenceLevel",
+    "literature",
+    "variantRsId",
+    "genotype",
+    "genotypeAnnotationText",
+    "drugFromSource",
+    "pgxCategory"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "EvidenceLevel": {
+      "title": "EvidenceLevel",
+      "description": "Evidence levels class describing the confidence in the assocations.",
+      "enum": [
+        "1A",
+        "1B",
+        "2A",
+        "2B",
+        "3",
+        "4"
+      ],
+      "type": "string"
+    }
+  }
+}
