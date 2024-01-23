@@ -49,6 +49,14 @@
         "type": "string"
       }
     },
+    "haplotypeId": {
+      "title": "Haplotypeid",
+      "description": "Combination of genetic variants that constitute a particular allele of a gene.",
+      "examples": [
+        "CYP2C9*3"
+      ],
+      "type": "string"
+    },
     "genotypeId": {
       "title": "Genotypeid",
       "description": "VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
@@ -89,7 +97,7 @@
     },
     "genotype": {
       "title": "Genotype",
-      "description": "Genotype string",
+      "description": "Genotype string.",
       "examples": [
         "(CA)16/(CA)17",
         "TA",
@@ -107,7 +115,7 @@
     },
     "drugFromSource": {
       "title": "Drugfromsource",
-      "description": "Drug name",
+      "description": "Drug name.",
       "examples": [
         "succinylcholine"
       ],
@@ -115,7 +123,7 @@
     },
     "drugId": {
       "title": "Drugid",
-      "description": "CHEBI ID of drug, mapped through OLS",
+      "description": "CHEBI ID of drug, mapped through OLS.",
       "pattern": "^CHEBI_\\d+$",
       "examples": [
         "CHEBI_45652"
