@@ -100,7 +100,11 @@ class Pharmacogenomics(BaseModel):
         examples=["CHEBI_45652"],
         regex=r"^CHEBI_\d+$",
     )
-    # pgxCategory: phenotypeCategory = Field(
+    drugId: Optional[str] = Field(
+        description="CHEMBL ID of the drug, extracted from the name or ChEBI.",
+        examples=["CHEBI_45652"],
+        regex=r"^CHEBI_\d+$",
+    )
     pgxCategory: str = Field(
         description="Pharmacogenomics phenotype category.", examples=["toxicity"]
     )
