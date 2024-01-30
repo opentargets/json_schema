@@ -54,6 +54,10 @@ class Pharmacogenomics(BaseModel):
         description="Combination of genetic variants that constitute a particular allele of a gene.",
         examples=["CYP2C9*3"],
     )
+    haplotypeFromSourceId: Optional[str] = Field(
+        description="Haplotype ID in the PharmKGB dataset.",
+        examples=["PA165816542"],
+    )
     genotypeId: Optional[str] = Field(
         description="VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
         examples=[
