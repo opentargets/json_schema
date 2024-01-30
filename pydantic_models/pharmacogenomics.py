@@ -87,6 +87,9 @@ class Pharmacogenomics(BaseModel):
             "Patients with the rs121918596 del/GAG genotype may develop malignant hyperthermia when treated with volatile anesthetics [...]"
         ],
     )
+    directionality: Optional[str] = Field(
+        description="Allele directionality of the effect.", examples=["decreased function"],
+    )
     drugFromSource: str = Field(description="Drug name.", examples=["succinylcholine"])
     drugFromSourceId: Optional[str] = Field(
         description="CHEBI ID of drug, mapped through OLS.",
