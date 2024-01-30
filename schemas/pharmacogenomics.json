@@ -57,6 +57,14 @@
       ],
       "type": "string"
     },
+    "haplotypeFromSourceId": {
+      "title": "Haplotypefromsourceid",
+      "description": "Haplotype ID in the PharmKGB dataset.",
+      "examples": [
+        "PA165816542"
+      ],
+      "type": "string"
+    },
     "genotypeId": {
       "title": "Genotypeid",
       "description": "VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
@@ -113,6 +121,14 @@
       ],
       "type": "string"
     },
+    "directionality": {
+      "title": "Directionality",
+      "description": "Allele directionality of the effect.",
+      "examples": [
+        "decreased function"
+      ],
+      "type": "string"
+    },
     "drugFromSource": {
       "title": "Drugfromsource",
       "description": "Drug name.",
@@ -121,9 +137,18 @@
       ],
       "type": "string"
     },
+    "drugFromSourceId": {
+      "title": "Drugfromsourceid",
+      "description": "CHEBI ID of drug, mapped through OLS.",
+      "pattern": "^CHEBI_\\d+$",
+      "examples": [
+        "CHEBI_45652"
+      ],
+      "type": "string"
+    },
     "drugId": {
       "title": "Drugid",
-      "description": "CHEBI ID of drug, mapped through OLS.",
+      "description": "CHEMBL ID of the drug, extracted from the name or ChEBI.",
       "pattern": "^CHEBI_\\d+$",
       "examples": [
         "CHEBI_45652"
@@ -161,7 +186,6 @@
     "studyId",
     "evidenceLevel",
     "literature",
-    "variantRsId",
     "genotype",
     "genotypeAnnotationText",
     "drugFromSource",
