@@ -63,7 +63,7 @@ class Pharmacogenomics(BaseModel):
         ],
         regex=r"^[0-9YX]{1,2}_\d+_[GATC]+_([GATC]+,)?[GATC]+$",
     )
-    variantRsId: str = Field(
+    variantRsId: Optional[str] = Field(
         description="RS identifier of the variant.",
         examples=["rs12354"],
         regex=r"^rs\d+$",
@@ -88,7 +88,7 @@ class Pharmacogenomics(BaseModel):
         ],
     )
     drugFromSource: str = Field(description="Drug name.", examples=["succinylcholine"])
-    drugId: Optional[str] = Field(
+    drugFromSourceId: Optional[str] = Field(
         description="CHEBI ID of drug, mapped through OLS.",
         examples=["CHEBI_45652"],
         regex=r"^CHEBI_\d+$",
