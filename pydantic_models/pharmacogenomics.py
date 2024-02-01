@@ -54,6 +54,10 @@ class Pharmacogenomics(BaseModel):
         description="Combination of genetic variants that constitute a particular allele of a gene.",
         examples=["CYP2C9*3"],
     )
+    haplotypeFromSourceId: Optional[str] = Field(
+        description="Haplotype ID in the PharmKGB dataset.",
+        examples=["PA165816542"],
+    )
     genotypeId: Optional[str] = Field(
         description="VCF-style (chr_pos_ref_allele1,allele2) identifier of genotype; computed as described here: https://github.com/apriltuesday/opentargets-pharmgkb/tree/issue-18#variant-coordinate-computation.",
         examples=[
@@ -63,7 +67,7 @@ class Pharmacogenomics(BaseModel):
         ],
         regex=r"^[0-9YX]{1,2}_\d+_[GATC]+_([GATC]+,)?[GATC]+$",
     )
-    variantRsId: str = Field(
+    variantRsId: Optional[str] = Field(
         description="RS identifier of the variant.",
         examples=["rs12354"],
         regex=r"^rs\d+$",
@@ -87,13 +91,20 @@ class Pharmacogenomics(BaseModel):
             "Patients with the rs121918596 del/GAG genotype may develop malignant hyperthermia when treated with volatile anesthetics [...]"
         ],
     )
+    directionality: Optional[str] = Field(
+        description="Allele directionality of the effect.", examples=["decreased function"],
+    )
     drugFromSource: str = Field(description="Drug name.", examples=["succinylcholine"])
-    drugId: Optional[str] = Field(
+    drugFromSourceId: Optional[str] = Field(
         description="CHEBI ID of drug, mapped through OLS.",
         examples=["CHEBI_45652"],
         regex=r"^CHEBI_\d+$",
     )
-    # pgxCategory: phenotypeCategory = Field(
+    drugId: Optional[str] = Field(
+        description="CHEMBL ID of the drug, extracted from the name or ChEBI.",
+        examples=["CHEBI_45652"],
+        regex=r"^CHEBI_\d+$",
+    )
     pgxCategory: str = Field(
         description="Pharmacogenomics phenotype category.", examples=["toxicity"]
     )
