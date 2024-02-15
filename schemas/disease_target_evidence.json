@@ -226,6 +226,9 @@
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
+        "targetFromSource": {
+          "$ref": "#/definitions/targetFromSource"
+        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
