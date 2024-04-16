@@ -41,11 +41,6 @@
     "effects": {
       "$ref": "#/definitions/Effects"
     },
-    "isHumanApplicable": {
-      "title": "Ishumanapplicable",
-      "description": "Flag that reports whether a target is relevant in the reported adverse outcome pathway.",
-      "type": "boolean"
-    },
     "datasource": {
       "title": "Datasource",
       "description": "Source of safety event.",
