@@ -119,7 +119,7 @@ class Pharmacogenomics(BaseModel):
 
 
 def main() -> None:
-    with open("schemas/pharmacogenomics_2.json", "wt") as f:
+    with open("schemas/pharmacogenomics.json", "wt") as f:
         f.write(Pharmacogenomics.schema_json(indent=2))
         f.write('\n')
 
