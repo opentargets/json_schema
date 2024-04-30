@@ -129,22 +129,18 @@
       ],
       "type": "string"
     },
-    "drugFromSource": {
-      "title": "Drugfromsource",
-      "description": "Drug name.",
+    "drugsFromSource": {
+      "title": "Drugsfromsource",
+      "description": "Drug names. May be multiple in case of a drug combination.",
       "examples": [
-        "succinylcholine"
+        [
+          "succinylcholine"
+        ]
       ],
-      "type": "string"
-    },
-    "drugFromSourceId": {
-      "title": "Drugfromsourceid",
-      "description": "CHEBI ID of drug, mapped through OLS.",
-      "pattern": "^CHEBI_\\d+$",
-      "examples": [
-        "CHEBI_45652"
-      ],
-      "type": "string"
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "drugId": {
       "title": "Drugid",
@@ -188,7 +184,7 @@
     "literature",
     "genotype",
     "genotypeAnnotationText",
-    "drugFromSource",
+    "drugsFromSource",
     "pgxCategory"
   ],
   "additionalProperties": false,

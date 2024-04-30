@@ -94,12 +94,7 @@ class Pharmacogenomics(BaseModel):
     directionality: Optional[str] = Field(
         description="Allele directionality of the effect.", examples=["decreased function"],
     )
-    drugFromSource: str = Field(description="Drug name.", examples=["succinylcholine"])
-    drugFromSourceId: Optional[str] = Field(
-        description="CHEBI ID of drug, mapped through OLS.",
-        examples=["CHEBI_45652"],
-        regex=r"^CHEBI_\d+$",
-    )
+    drugsFromSource: List[str] = Field(description="Drug names. May be multiple in case of a drug combination.", examples=[["succinylcholine"]])
     drugId: Optional[str] = Field(
         description="CHEMBL ID of the drug, extracted from the name or ChEBI.",
         examples=["CHEBI_45652"],
@@ -124,7 +119,7 @@ class Pharmacogenomics(BaseModel):
 
 
 def main() -> None:
-    with open("schemas/pharmacogenomics.json", "wt") as f:
+    with open("schemas/pharmacogenomics_2.json", "wt") as f:
         f.write(Pharmacogenomics.schema_json(indent=2))
         f.write('\n')
 
