@@ -1507,13 +1507,14 @@
             "type": "string",
             "description": "Indicating if the assay was positive or negative for the target",
             "enum": [
-              true, false
+              true,
+              false
             ]
           }
         },
         "required": [
-          "name", 
-          "description", 
+          "name",
+          "description",
           "isHit"
         ],
         "additionalProperties": false
