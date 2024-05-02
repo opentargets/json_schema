@@ -1513,8 +1513,8 @@
           }
         },
         "required": [
-          "shortName", 
-          "description", 
+          "shortName",
+          "description",
           "isHit"
         ],
         "additionalProperties": false
