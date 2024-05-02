@@ -1507,7 +1507,8 @@
             "type": "boolean",
             "description": "Indicating if the assay was positive or negative for the target",
             "enum": [
-              true, false
+              true,
+              false
             ]
           }
         },
