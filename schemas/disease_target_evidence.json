@@ -1509,14 +1509,15 @@
             "enum": [
               true, false
             ]
-        }
+          }
+        },
+        "required": [
+          "name", 
+          "description", 
+          "isHit"
+        ],
+        "additionalProperties": false
       },
-      "required": [
-        "name", 
-        "description", 
-        "isHit"
-      ],
-      "additionalProperties": false,
       "uniqueItems": true
     },
     "assessment": {
