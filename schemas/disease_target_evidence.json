@@ -1512,8 +1512,8 @@
         }
       },
       "required": [
-        "name", 
-        "description", 
+        "name",
+        "description",
         "isHit"
       ],
       "additionalProperties": false,
