@@ -984,12 +984,6 @@
         "biomarkerList": {
           "$ref": "#/definitions/biomarkerList"
         },
-        "confidence": {
-          "$ref": "#/definitions/confidence"
-        },
-        "contrast": {
-          "$ref": "#/definitions/contrast"
-        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
@@ -1001,12 +995,6 @@
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
-        },
-        "expectedConfidence": {
-          "$ref": "#/definitions/confidence"
-        },
-        "projectDescription": {
-          "$ref": "#/definitions/projectDescription"
         },
         "projectId": {
           "$ref": "#/definitions/projectId"
@@ -1020,17 +1008,23 @@
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
-        "statisticalTestTail": {
-          "$ref": "#/definitions/statisticalTestTail"
-        },
         "studyOverview": {
           "$ref": "#/definitions/studyOverview"
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
-        "validationHypotheses": {
-          "$ref": "#/definitions/validationHypotheses"
+        "primaryProjectId": {
+          "$ref": "#/definitions/projectId"
+        },
+        "primaryProjectHit": {
+          "type": "boolean"
+        },
+        "assays": {
+          "$ref": "#/definitions/assays"
+        },
+        "assessment": {
+          "$ref": "#/definitions/assessment"
         }
       },
       "required": [
@@ -1487,6 +1481,50 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "assays": {
+      "type": "array",
+      "description": "Assays used in the study",
+      "items": {
+        "type": "object",
+        "description": "Description and result of one assay",
+        "properties": {
+          "shortName": {
+            "type": "string",
+            "description": "Short name of the assay.",
+            "examples": [
+              "CellTiter-Glo"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the assay",
+            "examples": [
+              "Homogeneous method of quantifying the presence of ATP, an indicator of metabolically active cells, and using this as a proxy to determine the number of viable cells."
+            ]
+          },
+          "isHit": {
+            "type": "string",
+            "description": "Indicating if the assay was positive or negative for the target",
+            "enum": [
+              true, false
+            ]
+        }
+      },
+      "required": [
+        "name", 
+        "description", 
+        "isHit"
+      ],
+      "additionalProperties": false,
+      "uniqueItems": true
+    },
+    "assessment": {
+      "type": "string",
+      "description": "Assessment of a study. In the context of Validation Lab, this is the assessment of the validation gene in a given cellular context.",
+      "examples": [
+        "Validated"
+      ]
     },
     "beta": {
       "type": "number",
@@ -2364,48 +2402,6 @@
         "additionalProperties": false
       },
       "uniqueItems": true
-    },
-    "validationHypotheses": {
-      "type": "array",
-      "description": "List of tested hypotheses and the outcome of the test.",
-      "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name of the tested hypothesis",
-            "examples": [
-              "APC-wt"
-            ]
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the tested hypothesis.",
-            "examples": [
-              "APC mutation status: wild type"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "description": "Status of the validation in context of the original experiment.",
-            "examples": [
-              "expected but not observed"
-            ],
-            "enum": [
-              "expected but not observed",
-              "not expected and not observed",
-              "observed and expected",
-              "observed but not expected"
-            ]
-          }
-        },
-        "required": [
-          "name",
-          "description",
-          "status"
-        ],
-        "additionalProperties": false
-      }
     },
     "variantFunctionalConsequenceId": {
       "type": "string",
