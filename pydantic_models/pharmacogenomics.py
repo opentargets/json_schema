@@ -7,7 +7,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Extra, Field
 
 
-class phenotypeCategory(str, Enum):
+class PhenotypeCategory(str, Enum):
     """Accepted phenotype categories describing pharmacogenomic effect."""
 
     toxicity = "toxicity"
@@ -16,6 +16,17 @@ class phenotypeCategory(str, Enum):
     metabolism = ("metabolism/pk",)
     pd = "pd"
     other = "other"
+
+class Drug(BaseModel):
+    """A drug object."""
+    drugsFromSource: str = Field(
+        description="Drug name as mentioned at source.", examples=["succinylcholine"]
+    )
+    drugId: Optional[str] = Field(
+        description="CHEMBL ID of the drug..",
+        examples=["CHEBI_45652"],
+        regex=r"^CHEBI_\d+$",
+    )
 
 
 class EvidenceLevel(str, Enum):
@@ -94,12 +105,7 @@ class Pharmacogenomics(BaseModel):
     directionality: Optional[str] = Field(
         description="Allele directionality of the effect.", examples=["decreased function"],
     )
-    drugsFromSource: List[str] = Field(description="Drug names. May be multiple in case of a drug combination.", examples=[["succinylcholine"]])
-    drugId: Optional[str] = Field(
-        description="CHEMBL ID of the drug, extracted from the name or ChEBI.",
-        examples=["CHEBI_45652"],
-        regex=r"^CHEBI_\d+$",
-    )
+    drugs: List[Drug]
     pgxCategory: str = Field(
         description="Pharmacogenomics phenotype category.", examples=["toxicity"]
     )

@@ -129,27 +129,12 @@
       ],
       "type": "string"
     },
-    "drugsFromSource": {
-      "title": "Drugsfromsource",
-      "description": "Drug names. May be multiple in case of a drug combination.",
-      "examples": [
-        [
-          "succinylcholine"
-        ]
-      ],
+    "drugs": {
+      "title": "Drugs",
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "#/definitions/Drug"
       }
-    },
-    "drugId": {
-      "title": "Drugid",
-      "description": "CHEMBL ID of the drug, extracted from the name or ChEBI.",
-      "pattern": "^CHEBI_\\d+$",
-      "examples": [
-        "CHEBI_45652"
-      ],
-      "type": "string"
     },
     "pgxCategory": {
       "title": "Pgxcategory",
@@ -184,7 +169,7 @@
     "literature",
     "genotype",
     "genotypeAnnotationText",
-    "drugsFromSource",
+    "drugs",
     "pgxCategory"
   ],
   "additionalProperties": false,
@@ -201,6 +186,33 @@
         "4"
       ],
       "type": "string"
+    },
+    "Drug": {
+      "title": "Drug",
+      "description": "A drug object.",
+      "type": "object",
+      "properties": {
+        "drugsFromSource": {
+          "title": "Drugsfromsource",
+          "description": "Drug name as mentioned at source.",
+          "examples": [
+            "succinylcholine"
+          ],
+          "type": "string"
+        },
+        "drugId": {
+          "title": "Drugid",
+          "description": "CHEMBL ID of the drug..",
+          "pattern": "^CHEBI_\\d+$",
+          "examples": [
+            "CHEBI_45652"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "drugsFromSource"
+      ]
     }
   }
 }
