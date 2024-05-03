@@ -202,10 +202,10 @@
         },
         "drugId": {
           "title": "Drugid",
-          "description": "CHEMBL ID of the drug..",
-          "pattern": "^CHEBI_\\d+$",
+          "description": "CHEMBL ID of the drug.",
+          "pattern": "^CHEMBL_\\d+$",
           "examples": [
-            "CHEBI_45652"
+            "CHEMBL703"
           ],
           "type": "string"
         }

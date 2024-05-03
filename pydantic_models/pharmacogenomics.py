@@ -23,9 +23,9 @@ class Drug(BaseModel):
         description="Drug name as mentioned at source.", examples=["succinylcholine"]
     )
     drugId: Optional[str] = Field(
-        description="CHEMBL ID of the drug..",
-        examples=["CHEBI_45652"],
-        regex=r"^CHEBI_\d+$",
+        description="CHEMBL ID of the drug.",
+        examples=["CHEMBL703"],
+        regex=r"^CHEMBL_\d+$",
     )
 
 
