@@ -192,8 +192,8 @@
       "description": "A drug object.",
       "type": "object",
       "properties": {
-        "drugsFromSource": {
-          "title": "Drugsfromsource",
+        "drugFromSource": {
+          "title": "Drugfromsource",
           "description": "Drug name as mentioned at source.",
           "examples": [
             "succinylcholine"
@@ -211,7 +211,7 @@
         }
       },
       "required": [
-        "drugsFromSource"
+        "drugFromSource"
       ]
     }
   }
