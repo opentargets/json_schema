@@ -19,7 +19,7 @@ class PhenotypeCategory(str, Enum):
 
 class Drug(BaseModel):
     """A drug object."""
-    drugsFromSource: str = Field(
+    drugFromSource: str = Field(
         description="Drug name as mentioned at source.", examples=["succinylcholine"]
     )
     drugId: Optional[str] = Field(
