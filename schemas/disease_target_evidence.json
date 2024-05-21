@@ -2133,8 +2133,7 @@
     },
     "releaseVersion": {
       "type": "string",
-      "description": "Version of the release of the data",
-      "pattern": "^OTAR\\d+-\\d+$"
+      "description": "Version of the release of the data"
     },
     "resourceScore": {
       "type": "number",
