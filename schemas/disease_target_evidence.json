@@ -733,6 +733,9 @@
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
+        "releaseVersion": {
+          "$ref": "#/definitions/releaseVersion"
+        },
         "sex": {
           "$ref": "#/definitions/sex"
         },
@@ -741,9 +744,6 @@
         },
         "statisticalMethodOverview": {
           "$ref": "#/definitions/statisticalMethodOverview"
-        },
-        "studyId": {
-          "$ref": "#/definitions/studyId"
         },
         "studyCases": {
           "$ref": "#/definitions/studyCases"
@@ -756,6 +756,9 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
+        },
+        "urls": {
+          "$ref": "#/definitions/urls"
         }
       },
       "required": [
