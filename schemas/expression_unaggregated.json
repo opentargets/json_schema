@@ -1,0 +1,61 @@
+{
+  "title": "OpenTargets-gene-expression-unaggregated",
+  "description": "Schema for unaggregated expression data.",
+  "type": "object",
+  "properties": {
+    "geneProductId": {
+      "title": "Geneproductid",
+      "description": "Identifier of measured gene product, protein or transcript.",
+      "examples": [
+        "ENSG00000157764",
+        "Q9HC10"
+      ],
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "description": "Unit of the expression value.",
+      "examples": [
+        "tpms"
+      ],
+      "type": "string"
+    },
+    "expression": {
+      "title": "Expression",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ExpressionUnAggregated"
+      }
+    }
+  },
+  "required": [
+    "geneProductId",
+    "unit",
+    "expression"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "ExpressionUnAggregated": {
+      "title": "ExpressionUnAggregated",
+      "description": "Expression object for unaggregated data.",
+      "type": "object",
+      "properties": {
+        "assayId": {
+          "title": "Assayid",
+          "description": "Identifier for the assay.",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "description": "Expression value in the assay.",
+          "type": "number"
+        }
+      },
+      "required": [
+        "assayId",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

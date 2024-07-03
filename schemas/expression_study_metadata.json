@@ -1,0 +1,119 @@
+{
+  "title": "StudyMetadataSchema",
+  "description": "Schema for expression metadata.",
+  "type": "object",
+  "properties": {
+    "experimentId": {
+      "title": "Experimentid",
+      "description": "Identifier for the experiment.",
+      "type": "string"
+    },
+    "experimentType": {
+      "title": "Experimenttype",
+      "description": "Type of the experiment.",
+      "type": "string"
+    },
+    "species": {
+      "title": "Species",
+      "description": "Species name.",
+      "examples": [
+        "Sorghum bicolor"
+      ],
+      "type": "string"
+    },
+    "speciesOntURI": {
+      "title": "Speciesonturi",
+      "description": "Species ontology URI.",
+      "examples": [
+        "http://purl.obolibrary.org/obo/NCBITaxon_4558"
+      ],
+      "type": "string"
+    },
+    "pubmedIds": {
+      "title": "Pubmedids",
+      "description": "List of pubmed identifiers.",
+      "examples": [
+        "28186631"
+      ],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provider": {
+      "title": "Provider",
+      "description": "Provider of the data.",
+      "type": "string"
+    },
+    "experimentalDesigns": {
+      "title": "Experimentaldesigns",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ExperimentalDesign"
+      }
+    }
+  },
+  "required": [
+    "experimentId",
+    "experimentType",
+    "species",
+    "speciesOntURI",
+    "pubmedIds",
+    "provider",
+    "experimentalDesigns"
+  ],
+  "definitions": {
+    "ExperimentalDesign": {
+      "title": "ExperimentalDesign",
+      "description": "Experimental design object.",
+      "type": "object",
+      "properties": {
+        "assayGroupId": {
+          "title": "Assaygroupid",
+          "description": "Identifier for the assay group.",
+          "type": "string"
+        },
+        "assayId": {
+          "title": "Assayid",
+          "description": "Identifier for the assay.",
+          "type": "string"
+        },
+        "assayGroup": {
+          "title": "Assaygroup",
+          "description": "Group of the assay.",
+          "type": "string"
+        },
+        "age": {
+          "title": "Age",
+          "description": "Age of the organism.",
+          "type": "string"
+        },
+        "cultivar": {
+          "title": "Cultivar",
+          "description": "Cultivar name.",
+          "type": "string"
+        },
+        "genotype": {
+          "title": "Genotype",
+          "description": "Genotype of the organism.",
+          "type": "string"
+        },
+        "organismPart": {
+          "title": "Organismpart",
+          "description": "Part of the organism.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assayGroupId",
+        "assayId",
+        "assayGroup",
+        "age",
+        "cultivar",
+        "genotype",
+        "organismPart"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
