@@ -1026,8 +1026,8 @@
         "assays": {
           "$ref": "#/definitions/assays"
         },
-        "assessment": {
-          "$ref": "#/definitions/assessment"
+        "assessments": {
+          "$ref": "#/definitions/assessments"
         }
       },
       "required": [
@@ -1524,12 +1524,16 @@
       },
       "uniqueItems": true
     },
-    "assessment": {
-      "type": "string",
-      "description": "Assessment of a study. In the context of Validation Lab, this is the assessment of the validation gene in a given cellular context.",
-      "examples": [
-        "Validated"
-      ]
+    "assessments": {
+      "type": "array",
+      "description": "List of assessments of a study.",
+      "items": {
+        "type": "string",
+        "description": "Assessment of a study. In the context of Validation Lab, this is the assessment of the validation gene in a given cellular context.",
+        "examples": [
+          "Validated"
+        ]
+      }
     },
     "beta": {
       "type": "number",
