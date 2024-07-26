@@ -1026,8 +1026,8 @@
         "assays": {
           "$ref": "#/definitions/assays"
         },
-        "assessment": {
-          "$ref": "#/definitions/assessment"
+        "assessments": {
+          "$ref": "#/definitions/assessments"
         }
       },
       "required": [
@@ -1524,7 +1524,7 @@
       },
       "uniqueItems": true
     },
-    "assessment": {
+    "assessments": {
       "type": "array",
       "description": "List of assessments of a study.",
       "items": {
