@@ -76,6 +76,17 @@
       ],
       "type": "string"
     },
+    "variantId": {
+      "title": "Variantid",
+      "description": "Identifier in chr_pos_ref_alt notation of the disease-causing variant",
+      "pattern": "^[0-9YX]{1,2}_\\d+_[GATC]+_[GATC]+$",
+      "examples": [
+        "19_38499645_GGAG_G",
+        "20_54156202_T_C",
+        "X_12885540_A_A"
+      ],
+      "type": "string"
+    },
     "variantRsId": {
       "title": "Variantrsid",
       "description": "RS identifier of the variant.",
