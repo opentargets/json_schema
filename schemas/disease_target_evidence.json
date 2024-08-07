@@ -115,6 +115,9 @@
         "clinicalStatus": {
           "$ref": "#/definitions/clinicalStatus"
         },
+        "cohortPhenotypes": {
+          "$ref": "#/definitions/cohortPhenotypes"
+        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
@@ -126,6 +129,9 @@
         },
         "drugId": {
           "$ref": "#/definitions/drugId"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
         },
         "studyStartDate": {
           "$ref": "#/definitions/studyStartDate"
