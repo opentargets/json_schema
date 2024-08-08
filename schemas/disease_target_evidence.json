@@ -115,6 +115,9 @@
         "clinicalStatus": {
           "$ref": "#/definitions/clinicalStatus"
         },
+        "cohortPhenotypes": {
+          "$ref": "#/definitions/cohortPhenotypes"
+        },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
         },
@@ -126,6 +129,9 @@
         },
         "drugId": {
           "$ref": "#/definitions/drugId"
+        },
+        "studyId": {
+          "$ref": "#/definitions/studyId"
         },
         "studyStartDate": {
           "$ref": "#/definitions/studyStartDate"
@@ -1026,8 +1032,8 @@
         "assays": {
           "$ref": "#/definitions/assays"
         },
-        "assessment": {
-          "$ref": "#/definitions/assessment"
+        "assessments": {
+          "$ref": "#/definitions/assessments"
         }
       },
       "required": [
@@ -1524,12 +1530,16 @@
       },
       "uniqueItems": true
     },
-    "assessment": {
-      "type": "string",
-      "description": "Assessment of a study. In the context of Validation Lab, this is the assessment of the validation gene in a given cellular context.",
-      "examples": [
-        "Validated"
-      ]
+    "assessments": {
+      "type": "array",
+      "description": "List of assessments of a study.",
+      "items": {
+        "type": "string",
+        "description": "Assessment of a study. In the context of Validation Lab, this is the assessment of the validation gene in a given cellular context.",
+        "examples": [
+          "Validated"
+        ]
+      }
     },
     "beta": {
       "type": "number",
@@ -1611,7 +1621,7 @@
       "type": "object",
       "description": "List of biomarkers.",
       "properties": {
-        "variant": {
+        "geneticVariation": {
           "type": "array",
           "items": {
             "type": "object",
