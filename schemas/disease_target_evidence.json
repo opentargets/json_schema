@@ -1954,7 +1954,8 @@
       "description": "Description of the interaction between the two genes.",
       "enum": [
         "cooperative",
-        "additive"
+        "additive",
+        "antagonistic"
       ]
     },
     "geneticBackground": {
