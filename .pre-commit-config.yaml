@@ -14,7 +14,7 @@ repos:
           - --no-sort-keys
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.4
+    rev: 0.31.0
     hooks:
       - id: check-metaschema
         name: "Validating schema definition against draft schemas"
