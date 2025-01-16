@@ -2243,7 +2243,7 @@
     "studyStopReason": {
       "type": "string",
       "description": "Reason why a study has been stopped",
-      "pattern": "^[^\\ ].*[^\\ ]$"
+      "pattern": "^[^\\s].*[^\\s]$" 
     },
     "studyStopReasonCategories": {
       "type": "array",
