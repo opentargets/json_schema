@@ -1,0 +1,85 @@
+{
+  "title": "OpenTargets-gene-expression-aggregated",
+  "description": "Schema for aggregated expression data.",
+  "type": "object",
+  "properties": {
+    "geneProductId": {
+      "title": "Geneproductid",
+      "description": "Identifier of measured gene product, protein or transcript.",
+      "examples": [
+        "ENSG00000157764",
+        "Q9HC10"
+      ],
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "description": "Unit of the expression value.",
+      "examples": [
+        "tpms"
+      ],
+      "type": "string"
+    },
+    "expression": {
+      "title": "Expression",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ExpressionAggregated"
+      }
+    }
+  },
+  "required": [
+    "geneProductId",
+    "unit",
+    "expression"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "ExpressionAggregated": {
+      "title": "ExpressionAggregated",
+      "description": "Expression object for aggregated data.",
+      "type": "object",
+      "properties": {
+        "assayGroupId": {
+          "title": "Assaygroupid",
+          "description": "Identifier for the assay group.",
+          "type": "string"
+        },
+        "min": {
+          "title": "Min",
+          "description": "Minimum value in the assay group.",
+          "type": "number"
+        },
+        "q1": {
+          "title": "Q1",
+          "description": "First quantile of values in the assay group.",
+          "type": "number"
+        },
+        "q2": {
+          "title": "Q2",
+          "description": "Median of values in the assay group.",
+          "type": "number"
+        },
+        "q3": {
+          "title": "Q3",
+          "description": "third quantile of values in the assay group.",
+          "type": "number"
+        },
+        "max": {
+          "title": "Max",
+          "description": "Maximum expression value in the assay group.",
+          "type": "number"
+        }
+      },
+      "required": [
+        "assayGroupId",
+        "min",
+        "q1",
+        "q2",
+        "q3",
+        "max"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
