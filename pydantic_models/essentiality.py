@@ -28,7 +28,7 @@ class Screens(BaseModel):
     __root__: List[Screen] = Field(unique=True)
 
 class DepMapEssentiality(BaseModel):
-    tissueId: Optional[str] = Field(description="Uberon tissue identifier.", examples=['UBERON_0004535'], regex=r'UBERON_\d+')
+    tissueId: Optional[str] = Field(description="Tissue identifier.", examples=['UBERON_0004535', 'CL_0000057'], regex=r'(^UBERON_\\d+$|^CL_\\d+$)')
     tissueName: str = Field(description='Tissue name', examples=['liver'])
     screens: Screens
 

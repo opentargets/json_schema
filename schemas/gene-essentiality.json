@@ -113,10 +113,11 @@
       "properties": {
         "tissueId": {
           "title": "Tissueid",
-          "description": "Uberon tissue identifier.",
-          "pattern": "UBERON_\\d+",
+          "description": "Tissue identifier.",
+          "pattern": "(^UBERON_\\d+$|^CL_\\d+$)",
           "examples": [
-            "UBERON_0004535"
+            "UBERON_0004535",
+            "CL_0000057"
           ],
           "type": "string"
         },
