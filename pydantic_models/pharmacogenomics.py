@@ -28,6 +28,36 @@ class Drug(BaseModel):
         regex=r"^CHEMBL_\d+$",
     )
 
+class VariantAnnotation(BaseModel):
+    """PharmGKB's variant annotation that supports a clinical annotation."""
+
+    literature: int = Field(
+        description="PMID of the supporting publication.", examples=[17016522]
+    )
+    effectDescription: str = Field(
+        description="Summary of the impact of the allele on the drug response.",
+    )
+    effectType: str = Field(
+        description="Type of effect.", examples=["phenotype"]
+    )
+    baseAlleleOrGenotype: str = Field(
+        description="Allele or genotype in the base case.", examples=["C"]
+    )
+    comparisonAlleleOrGenotype: str = Field(
+        description="Allele or genotype in the comparison case.", examples=["T"]
+    )
+    directionality: str = Field(
+        description="Allele directionality of the effect.", examples=["increased"]
+    )
+    effect: str = Field(
+        description="Allele observed effect.", examples=["likelihood of"]
+    )
+    entity: str = Field(
+        description="Entity affected by the effect.", examples=["malignant hyperthermia"]
+    )
+
+
+
 
 class EvidenceLevel(str, Enum):
     """Evidence levels class describing the confidence in the assocations."""
@@ -126,6 +156,7 @@ class Pharmacogenomics(BaseModel):
         examples=["Orphanet_423"],
         regex=r"^NCIT_C\d+$|^Orphanet_\d+$|^GO_\d+$|^HP_\d+$|^EFO_\d+$|^MONDO_\d+$|^DOID_\d+$|^MP_\d+$|^OTAR_\d+$|^PATO_\d+$|^CHEBI_\d+$|^OBI_\d+$|^OGMS_\d+$",
     )
+    variantAnnotation: Optional[VariantAnnotation]
 
     class Config:
         title = "OpenTargets-Pharmacogenomics"
