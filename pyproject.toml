@@ -16,3 +16,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["json_schema"]
+
+[dependency-groups]
+dev = [
+    "check-jsonschema>=0.33.0",
+]
