@@ -166,11 +166,14 @@
     "phenotypeFromSourceId": {
       "title": "Phenotypefromsourceid",
       "description": "EFO ID of phenotype, mapped through ZOOMA / OXO.",
-      "pattern": "^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^OBA_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$|^PATO_\\d+$|^CHEBI_\\d+$|^OBI_\\d+$|^OGMS_\\d+$",
+      "pattern": "^NCIT_C\\d+$|^Orphanet_\\d+$|^GO_\\d+$|^HP_\\d+$|^EFO_\\d+$|^MONDO_\\d+$|^DOID_\\d+$|^MP_\\d+$|^OTAR_\\d+$|^PATO_\\d+$|^CHEBI_\\d+$|^OBI_\\d+$|^OGMS_\\d+$",
       "examples": [
         "Orphanet_423"
       ],
       "type": "string"
+    },
+    "variantAnnotation": {
+      "$ref": "#/definitions/VariantAnnotation"
     }
   },
   "required": [
@@ -223,6 +226,84 @@
       },
       "required": [
         "drugFromSource"
+      ]
+    },
+    "VariantAnnotation": {
+      "title": "VariantAnnotation",
+      "description": "PharmGKB's variant annotation that supports a clinical annotation.",
+      "type": "object",
+      "properties": {
+        "literature": {
+          "title": "Literature",
+          "description": "PMID of the supporting publication.",
+          "examples": [
+            17016522
+          ],
+          "type": "integer"
+        },
+        "effectDescription": {
+          "title": "Effectdescription",
+          "description": "Summary of the impact of the allele on the drug response.",
+          "type": "string"
+        },
+        "effectType": {
+          "title": "Effecttype",
+          "description": "Type of effect.",
+          "examples": [
+            "phenotype"
+          ],
+          "type": "string"
+        },
+        "baseAlleleOrGenotype": {
+          "title": "Basealleleorgenotype",
+          "description": "Allele or genotype in the base case.",
+          "examples": [
+            "C"
+          ],
+          "type": "string"
+        },
+        "comparisonAlleleOrGenotype": {
+          "title": "Comparisonalleleorgenotype",
+          "description": "Allele or genotype in the comparison case.",
+          "examples": [
+            "T"
+          ],
+          "type": "string"
+        },
+        "directionality": {
+          "title": "Directionality",
+          "description": "Allele directionality of the effect.",
+          "examples": [
+            "increased"
+          ],
+          "type": "string"
+        },
+        "effect": {
+          "title": "Effect",
+          "description": "Allele observed effect.",
+          "examples": [
+            "likelihood of"
+          ],
+          "type": "string"
+        },
+        "entity": {
+          "title": "Entity",
+          "description": "Entity affected by the effect.",
+          "examples": [
+            "malignant hyperthermia"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "literature",
+        "effectDescription",
+        "effectType",
+        "baseAlleleOrGenotype",
+        "comparisonAlleleOrGenotype",
+        "directionality",
+        "effect",
+        "entity"
       ]
     }
   }
