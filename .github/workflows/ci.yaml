@@ -19,6 +19,7 @@
           - name: Install dependencies
             run: |
                 curl -LsSf https://astral.sh/uv/install.sh | sh
+                uv sync
                 uv pip install .
                 uv run pip install git+https://github.com/python-jsonschema/check-jsonschema.git@0.23.0#egg=check-jsonschema
                 uv run pip install urllib3==1.26.15
