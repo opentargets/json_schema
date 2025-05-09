@@ -20,10 +20,7 @@
             run: |
                 curl -LsSf https://astral.sh/uv/install.sh | sh
                 uv sync
-                uv pip install .
-                uv run pip install git+https://github.com/python-jsonschema/check-jsonschema.git@0.23.0#egg=check-jsonschema
-                uv run pip install urllib3==1.26.15
-                uv run wget -O draft7.json http://json-schema.org/draft-07/schema
+                wget -O draft7.json http://json-schema.org/draft-07/schema
           - name: Run tests
             run: |
               for f in schemas/*json; do echo Validating ${f}; uv run check-jsonschema --schemafile draft7.json  $f ;done
