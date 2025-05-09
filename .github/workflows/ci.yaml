@@ -1,7 +1,10 @@
 ---
-    name: CI
+    name: Test JSON Schemas
 
     "on":
+      push:
+        branches:
+          - master
       pull_request:
 
     jobs:
