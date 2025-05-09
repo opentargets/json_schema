@@ -1,4 +1,5 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/opentargets/json_schema/master.svg)](https://results.pre-commit.ci/latest/github/opentargets/json_schema/master)
+[![Test status](https://github.com/opentargets/json_schema/actions/workflows/ci.yaml/badge.svg)](https://github.com/opentargets/json_schema/actions/workflows/ci.yaml)
 
 # Schemas of the OpenTargets Platform data models
 
