@@ -55,9 +55,6 @@ class VariantAnnotation(BaseModel):
     entity: str = Field(
         description="Entity affected by the effect.", examples=["malignant hyperthermia"]
     )
-        
-    
-
 
 class EvidenceLevel(str, Enum):
     """Evidence levels class describing the confidence in the assocations."""
