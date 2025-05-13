@@ -173,7 +173,11 @@
       "type": "string"
     },
     "variantAnnotation": {
-      "$ref": "#/definitions/VariantAnnotation"
+      "title": "Variantannotation",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/VariantAnnotation"
+      }
     }
   },
   "required": [
@@ -239,7 +243,7 @@
           "examples": [
             17016522
           ],
-          "type": "integer"
+          "type": "string"
         },
         "effectDescription": {
           "title": "Effectdescription",
@@ -294,17 +298,7 @@
           ],
           "type": "string"
         }
-      },
-      "required": [
-        "literature",
-        "effectDescription",
-        "effectType",
-        "baseAlleleOrGenotype",
-        "comparisonAlleleOrGenotype",
-        "directionality",
-        "effect",
-        "entity"
-      ]
+      }
     }
   }
 }
