@@ -191,6 +191,9 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
+        "releaseDate": {
+          "$ref": "#/definitions/releaseDate"
+        },
         "urls": {
           "$ref": "#/definitions/urls"
         }
