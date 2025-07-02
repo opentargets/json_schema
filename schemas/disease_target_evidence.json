@@ -1314,6 +1314,9 @@
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
+        "literature": {
+           "$ref": "#/definitions/literature"
+        },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         }
