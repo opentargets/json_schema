@@ -8,7 +8,7 @@
       "description": "Ensembl gene ID for the gene product.",
       "examples": [
         "ENSG00000157764",
-        "ENSG00000139618",
+        "ENSG00000139618"
       ],
       "type": "string"
     },
@@ -53,10 +53,11 @@
     "unit": {
       "title": "Unit",
       "description": "Unit of the expression value.",
+      "enum": ["TPM", "logCP10K", "PPB"],
       "examples": [
-        "tpms",
-        "logcp10k",
-        "ppb"
+        "TPM",
+        "logCP10K",
+        "PPB"
       ],
       "type": "string"
     },
@@ -115,24 +116,26 @@
       "type": "integer"
     },
     "genders": {
-      "title" : "Genders",
-      "description: "Ordered string of the genders of the samples used to calculate the expression values.",
-      "examples: [
-        "M,F,M,M,M",
-        "F,F,M"
-      ],
-      "type": "string"
+      "type": "array",
+      "description": "List of genders for each sample.",
+      "items": { "enum": ["M", "F", "NB", "U"] },
+      "examples": [
+        ["M","F","M","M","M"],
+        ["F","F","M"]
+      ]
     },
     "ages": {
-      "title": "Ages",
-      "description": "Ordered string of the ages of the samples used to calculate the expression values, e.g. '20-30,30-40'.",
+      "type": "array",
+      "description": "List of age ranges for each sample.",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9]+-[0-9]+$"
+      },
       "examples": [
-        "20-30,30-40",
-        "40-50,50-60"
-      ],
-      "type": "string"
-    }
-  },
+        ["20-30","30-40"],
+        ["40-50","50-60"]
+      ]
+    },
   "required": [
     "geneProductId",
     "datasourceId",
@@ -148,6 +151,12 @@
       "required": ["celltypeBiosampleId", "celltypeBiosampleFromSource"]
     }
   ],
+  "if": {
+    "properties": { "datatypeId": { "const": "scrna-seq" } }
+  },
+  "then": {
+    "required": ["nCells"]
+  },
   "additionalProperties": false,
   "definitions": {
     "ExpressionAggregated": {
