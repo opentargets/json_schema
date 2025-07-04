@@ -53,7 +53,11 @@
     "unit": {
       "title": "Unit",
       "description": "Unit of the expression value.",
-      "enum": ["TPM", "logCP10K", "PPB"],
+      "enum": [
+        "TPM",
+        "logCP10K",
+        "PPB"
+      ],
       "examples": [
         "TPM",
         "logCP10K",
@@ -118,10 +122,27 @@
     "genders": {
       "type": "array",
       "description": "List of genders for each sample.",
-      "items": { "enum": ["M", "F", "NB", "U"] },
+      "items": {
+        "enum": [
+          "M",
+          "F",
+          "NB",
+          "U"
+        ]
+      },
       "examples": [
-        ["M","F","M","M","M"],
-        ["F","F","M"]
+        [
+          "M",
+          "F",
+          "M",
+          "M",
+          "M"
+        ],
+        [
+          "F",
+          "F",
+          "M"
+        ]
       ]
     },
     "ages": {
@@ -132,78 +153,96 @@
         "pattern": "^[0-9]+-[0-9]+$"
       },
       "examples": [
-        ["20-30","30-40"],
-        ["40-50","50-60"]
+        [
+          "20-30",
+          "30-40"
+        ],
+        [
+          "40-50",
+          "50-60"
+        ]
       ]
     },
-  "required": [
-    "geneProductId",
-    "datasourceId",
-    "datatypeId",
-    "unit",
-    "expression"
-  ],
-  "oneOf": [
-    {
-      "required": ["tissueBiosampleId", "tissueBiosampleFromSource"]
-    },
-    {
-      "required": ["celltypeBiosampleId", "celltypeBiosampleFromSource"]
-    }
-  ],
-  "if": {
-    "properties": { "datatypeId": { "const": "scrna-seq" } }
-  },
-  "then": {
-    "required": ["nCells"]
-  },
-  "additionalProperties": false,
-  "definitions": {
-    "ExpressionAggregated": {
-      "title": "ExpressionAggregated",
-      "description": "Expression object for aggregated data.",
-      "type": "object",
-      "properties": {
-        "assayGroupId": {
-          "title": "Assaygroupid",
-          "description": "Identifier for the assay group.",
-          "type": "string"
-        },
-        "min": {
-          "title": "Min",
-          "description": "Minimum value in the assay group.",
-          "type": "number"
-        },
-        "q1": {
-          "title": "Q1",
-          "description": "First quantile of values in the assay group.",
-          "type": "number"
-        },
-        "q2": {
-          "title": "Q2",
-          "description": "Median of values in the assay group.",
-          "type": "number"
-        },
-        "q3": {
-          "title": "Q3",
-          "description": "third quantile of values in the assay group.",
-          "type": "number"
-        },
-        "max": {
-          "title": "Max",
-          "description": "Maximum expression value in the assay group.",
-          "type": "number"
-        }
+    "required": [
+      "geneProductId",
+      "datasourceId",
+      "datatypeId",
+      "unit",
+      "expression"
+    ],
+    "oneOf": [
+      {
+        "required": [
+          "tissueBiosampleId",
+          "tissueBiosampleFromSource"
+        ]
       },
+      {
+        "required": [
+          "celltypeBiosampleId",
+          "celltypeBiosampleFromSource"
+        ]
+      }
+    ],
+    "if": {
+      "properties": {
+        "datatypeId": {
+          "const": "scrna-seq"
+        }
+      }
+    },
+    "then": {
       "required": [
-        "assayGroupId",
-        "min",
-        "q1",
-        "q2",
-        "q3",
-        "max"
-      ],
-      "additionalProperties": false
+        "nCells"
+      ]
+    },
+    "additionalProperties": false,
+    "definitions": {
+      "ExpressionAggregated": {
+        "title": "ExpressionAggregated",
+        "description": "Expression object for aggregated data.",
+        "type": "object",
+        "properties": {
+          "assayGroupId": {
+            "title": "Assaygroupid",
+            "description": "Identifier for the assay group.",
+            "type": "string"
+          },
+          "min": {
+            "title": "Min",
+            "description": "Minimum value in the assay group.",
+            "type": "number"
+          },
+          "q1": {
+            "title": "Q1",
+            "description": "First quantile of values in the assay group.",
+            "type": "number"
+          },
+          "q2": {
+            "title": "Q2",
+            "description": "Median of values in the assay group.",
+            "type": "number"
+          },
+          "q3": {
+            "title": "Q3",
+            "description": "third quantile of values in the assay group.",
+            "type": "number"
+          },
+          "max": {
+            "title": "Max",
+            "description": "Maximum expression value in the assay group.",
+            "type": "number"
+          }
+        },
+        "required": [
+          "assayGroupId",
+          "min",
+          "q1",
+          "q2",
+          "q3",
+          "max"
+        ],
+        "additionalProperties": false
       }
     }
   }
