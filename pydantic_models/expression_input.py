@@ -145,7 +145,7 @@ def main():
     with open('expression_study_metadata.json', 'wt') as f:
         f.write(StudyMetadataSchema.schema_json(indent=2))
 
-    
+
 
 if __name__ == '__main__':
     main()
