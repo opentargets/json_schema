@@ -861,6 +861,9 @@
         "resourceScore": {
           "$ref": "#/definitions/resourceScore"
         },
+        "literature": {
+          "$ref": "#/definitions/literature"
+        },
         "significantDriverMethods": {
           "$ref": "#/definitions/significantDriverMethods"
         },
@@ -1056,98 +1059,6 @@
     {
       "properties": {
         "datasourceId": {
-          "const": "ot_genetics_portal"
-        },
-        "beta": {
-          "$ref": "#/definitions/beta"
-        },
-        "oddsRatioConfidenceIntervalLower": {
-          "$ref": "#/definitions/confidenceIntervalLower"
-        },
-        "oddsRatioConfidenceIntervalUpper": {
-          "$ref": "#/definitions/confidenceIntervalUpper"
-        },
-        "betaConfidenceIntervalLower": {
-          "$ref": "#/definitions/confidenceIntervalLower"
-        },
-        "betaConfidenceIntervalUpper": {
-          "$ref": "#/definitions/confidenceIntervalUpper"
-        },
-        "datatypeId": {
-          "$ref": "#/definitions/datatypeId"
-        },
-        "diseaseFromSource": {
-          "$ref": "#/definitions/diseaseFromSource"
-        },
-        "diseaseFromSourceId": {
-          "$ref": "#/definitions/diseaseFromSourceId"
-        },
-        "literature": {
-          "$ref": "#/definitions/literature"
-        },
-        "oddsRatio": {
-          "$ref": "#/definitions/oddsRatio"
-        },
-        "projectId": {
-          "$ref": "#/definitions/projectId"
-        },
-        "pValueExponent": {
-          "$ref": "#/definitions/pValueExponent"
-        },
-        "pValueMantissa": {
-          "$ref": "#/definitions/pValueMantissa"
-        },
-        "publicationFirstAuthor": {
-          "$ref": "#/definitions/publicationFirstAuthor"
-        },
-        "publicationYear": {
-          "$ref": "#/definitions/publicationYear"
-        },
-        "resourceScore": {
-          "$ref": "#/definitions/resourceScore"
-        },
-        "studyId": {
-          "$ref": "#/definitions/studyId"
-        },
-        "studySampleSize": {
-          "$ref": "#/definitions/studySampleSize"
-        },
-        "targetFromSourceId": {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
-        "variantFunctionalConsequenceId": {
-          "$ref": "#/definitions/variantFunctionalConsequenceId"
-        },
-        "variantFunctionalConsequenceFromQtlId": {
-          "$ref": "#/definitions/variantFunctionalConsequenceId"
-        },
-        "variantId": {
-          "$ref": "#/definitions/variantId"
-        },
-        "variantRsId": {
-          "$ref": "#/definitions/variantRsId"
-        },
-        "diseaseFromSourceMappedId": {
-          "$ref": "#/definitions/diseaseFromSourceMappedId"
-        }
-      },
-      "required": [
-        "datasourceId",
-        "diseaseFromSource",
-        "projectId",
-        "pValueExponent",
-        "pValueMantissa",
-        "resourceScore",
-        "studyId",
-        "targetFromSourceId",
-        "variantFunctionalConsequenceId",
-        "variantId"
-      ],
-      "additionalProperties": false
-    },
-    {
-      "properties": {
-        "datasourceId": {
           "const": "impc"
         },
         "biologicalModelAllelicComposition": {
@@ -1230,6 +1141,9 @@
         },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
+        },
+        "literature": {
+          "$ref": "#/definitions/literature"
         },
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
