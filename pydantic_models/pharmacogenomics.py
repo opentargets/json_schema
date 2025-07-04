@@ -78,6 +78,15 @@ class Pharmacogenomics(BaseModel):
         ],
         regex=r"^[0-9YX]{1,2}_\d+_[GATC]+_([GATC]+,)?[GATC]+$",
     )
+    variantId: Optional[str] = Field(
+        description="Identifier in chr_pos_ref_alt notation of the disease-causing variant",
+        examples=[
+            "19_38499645_GGAG_G",
+            "20_54156202_T_C",
+            "X_12885540_A_A"
+        ],
+        regex=r"^[0-9YX]{1,2}_\d+_[GATC]+_[GATC]+$",
+    )
     variantRsId: Optional[str] = Field(
         description="RS identifier of the variant.",
         examples=["rs12354"],
