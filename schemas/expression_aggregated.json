@@ -73,7 +73,7 @@
       "description": "Identifier of the target gene product from the data source, if different from geneProductId e.g. Gene symbol or Uniprot ID.",
       "examples": [
         "TP53",
-        "sp|P16422|EPCAM_HUMAN",
+        "sp|P16422|EPCAM_HUMAN"
       ],
       "type": "string"
     },
@@ -204,6 +204,7 @@
         "max"
       ],
       "additionalProperties": false
+      }
     }
   }
 }
