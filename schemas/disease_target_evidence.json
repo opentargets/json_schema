@@ -479,6 +479,9 @@
         "variantHgvsId": {
           "$ref": "#/definitions/variantHgvsId"
         },
+        "variantFromSourceId": {
+          "$ref": "#/definitions/variantFromSourceId"
+        },
         "variantId": {
           "$ref": "#/definitions/variantId"
         },
@@ -547,6 +550,9 @@
         },
         "variantHgvsId": {
           "$ref": "#/definitions/variantHgvsId"
+        },
+        "variantFromSourceId": {
+          "$ref": "#/definitions/variantFromSourceId"
         },
         "variantId": {
           "$ref": "#/definitions/variantId"
@@ -1699,6 +1705,7 @@
           "confers sensitivity",
           "conflicting data from submitters",
           "conflicting interpretations of pathogenicity",
+          "conflicting classifications of pathogenicity",
           "drug response",
           "established risk allele",
           "likely benign",
@@ -1948,7 +1955,8 @@
       "description": "Description of the interaction between the two genes.",
       "enum": [
         "cooperative",
-        "additive"
+        "additive",
+        "antagonistic"
       ]
     },
     "geneticBackground": {
@@ -2236,7 +2244,7 @@
     "studyStopReason": {
       "type": "string",
       "description": "Reason why a study has been stopped",
-      "pattern": "^[^\\ ].*[^\\ ]$"
+      "pattern": "^[^\\s].*[^\\s]$"
     },
     "studyStopReasonCategories": {
       "type": "array",
@@ -2431,6 +2439,14 @@
       "examples": [
         "NC_000011.10:g.17605796C>T",
         "LRG_214t1:c.889-1633_7395-667del"
+      ]
+    },
+    "variantFromSourceId": {
+      "type": "string",
+      "description": "Identifier of the disease-causing variant at source.",
+      "examples": [
+        "NC_000011.10:g.17605796C>T",
+        "VCV000018397"
       ]
     },
     "variantId": {
