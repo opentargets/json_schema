@@ -36,8 +36,8 @@
       "title": "Tissuebiosampleid",
       "description": "Identifier of the tissue or biosample from which the expression data was derived.",
       "examples": [
-        "UBERON:0002048",  // Lung
-        "UBERON:0000955"   // Brain
+        "UBERON:0002048",
+        "UBERON:0000955"
       ],
       "type": "string"
     },
@@ -45,8 +45,8 @@
       "title": "Celltypebiosampleid",
       "description": "Identifier of the cell type from which the expression data was derived.",
       "examples": [
-        "CL:0000540",  // Neuron
-        "CL:0000084"   // T cell
+        "CL:0000540",
+        "CL:0000084"
       ],
       "type": "string"
     },
