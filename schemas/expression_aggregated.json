@@ -5,10 +5,48 @@
   "properties": {
     "geneProductId": {
       "title": "Geneproductid",
-      "description": "Identifier of measured gene product, protein or transcript.",
+      "description": "Ensembl gene ID for the gene product.",
       "examples": [
         "ENSG00000157764",
-        "Q9HC10"
+        "ENSG00000139618",
+      ],
+      "type": "string"
+    },
+    "datasourceId": {
+      "title": "Datasourceid",
+      "description": "Identifier of the data source providing the expression data.",
+      "examples": [
+        "tabula_sapiens",
+        "gtex",
+        "PRIDE"
+      ],
+      "type": "string"
+    },
+    "datatypeId": {
+      "title": "Datatypeid",
+      "description": "Identifier of the data type, e.g. RNA-seq, microarray.",
+      "examples": [
+        "rna-seq",
+        "scrna-seq",
+        "mass-spectrometry-proteomics"
+      ],
+      "type": "string"
+    },
+    "tissueBiosampleId": {
+      "title": "Tissuebiosampleid",
+      "description": "Identifier of the tissue or biosample from which the expression data was derived.",
+      "examples": [
+        "UBERON:0002048",  // Lung
+        "UBERON:0000955"   // Brain
+      ],
+      "type": "string"
+    },
+    "celltypeBiosampleId": {
+      "title": "Celltypebiosampleid",
+      "description": "Identifier of the cell type from which the expression data was derived.",
+      "examples": [
+        "CL:0000540",  // Neuron
+        "CL:0000084"   // T cell
       ],
       "type": "string"
     },
@@ -16,7 +54,9 @@
       "title": "Unit",
       "description": "Unit of the expression value.",
       "examples": [
-        "tpms"
+        "tpms",
+        "logcp10k",
+        "ppb"
       ],
       "type": "string"
     },
@@ -26,12 +66,87 @@
       "items": {
         "$ref": "#/definitions/ExpressionAggregated"
       }
+    },
+    "targetFromSource": {
+      "title": "Targetfromsource",
+      "description": "Identifier of the target gene product from the data source, if different from geneProductId e.g. Gene symbol or Uniprot ID.",
+      "examples": [
+        "TP53",
+        "sp|P16422|EPCAM_HUMAN",
+      ],
+      "type": "string"
+    },
+    "tissueBiosampleFromSource": {
+      "title": "Tissuebiosamplefromsource",
+      "description": "Identifier of the tissue or biosample from the data source, , as defined by the source data. Can also be a comma separated list of tissue names aggregated in single-cell data.",
+      "examples": [
+        "lung",
+        "brain",
+        "aorta,heart,vena_cava"
+      ],
+      "type": "string"
+    },
+    "celltypeBiosampleFromSource": {
+      "title": "Celltypebiosamplefromsource",
+      "description": "Identifier of the cell type from the data source, as defined by the source data. Can also be a comma separated list of cell type names aggregated in single-cell data.",
+      "examples": [
+        "neuron",
+        "t_cell",
+        "b_cell_activated,b_cell_memory,b_cell_naive"
+      ],
+      "type": "string"
+    },
+    "nSamples": {
+      "title": "NSamples",
+      "description": "Number of samples used to calculate the expression values.",
+      "examples": [
+        100,
+        250
+      ],
+      "type": "integer"
+    },
+    "nCells": {
+      "title": "NCells",
+      "description": "Number of cells used to calculate the expression values, applicable for single-cell data only.",
+      "examples": [
+        5000,
+        10000
+      ],
+      "type": "integer"
+    },
+    "genders": {
+      "title" : "Genders",
+      "description: "Ordered string of the genders of the samples used to calculate the expression values.",
+      "examples: [
+        "M,F,M,M,M",
+        "F,F,M"
+      ],
+      "type": "string"
+    },
+    "ages": {
+      "title": "Ages",
+      "description": "Ordered string of the ages of the samples used to calculate the expression values, e.g. '20-30,30-40'.",
+      "examples": [
+        "20-30,30-40",
+        "40-50,50-60"
+      ],
+      "type": "string"
     }
   },
   "required": [
     "geneProductId",
+    "datasourceId",
+    "datatypeId",
     "unit",
     "expression"
+  ],
+  "oneOf": [
+    {
+      "required": ["tissueBiosampleId", "tissueBiosampleFromSource"]
+    },
+    {
+      "required": ["celltypeBiosampleId", "celltypeBiosampleFromSource"]
+    }
   ],
   "additionalProperties": false,
   "definitions": {
