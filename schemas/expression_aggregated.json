@@ -1,0 +1,249 @@
+{
+  "title": "OpenTargets-gene-expression-aggregated",
+  "description": "Schema for aggregated expression data.",
+  "type": "object",
+  "properties": {
+    "targetId": {
+      "title": "targetId",
+      "description": "Ensembl gene ID for the gene product.",
+      "examples": [
+        "ENSG00000157764",
+        "ENSG00000139618"
+      ],
+      "type": "string"
+    },
+    "datasourceId": {
+      "title": "Datasourceid",
+      "description": "Identifier of the data source providing the expression data.",
+      "examples": [
+        "tabula_sapiens",
+        "gtex",
+        "PRIDE"
+      ],
+      "type": "string"
+    },
+    "datatypeId": {
+      "title": "Datatypeid",
+      "description": "Identifier of the data type, e.g. RNA-seq, microarray.",
+      "examples": [
+        "rna-seq",
+        "scrna-seq",
+        "mass-spectrometry-proteomics"
+      ],
+      "type": "string"
+    },
+    "tissueBiosampleId": {
+      "title": "Tissuebiosampleid",
+      "description": "Identifier of the tissue or biosample from which the expression data was derived.",
+      "examples": [
+        "UBERON:0002048",
+        "UBERON:0000955"
+      ],
+      "type": "string"
+    },
+    "celltypeBiosampleId": {
+      "title": "Celltypebiosampleid",
+      "description": "Identifier of the cell type from which the expression data was derived.",
+      "examples": [
+        "CL:0000540",
+        "CL:0000084"
+      ],
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "description": "Unit of the expression value.",
+      "enum": [
+        "TPM",
+        "logCP10K",
+        "PPB"
+      ],
+      "examples": [
+        "TPM",
+        "logCP10K",
+        "PPB"
+      ],
+      "type": "string"
+    },
+    "expression": {
+      "title": "Expression",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ExpressionAggregated"
+      }
+    },
+    "targetFromSource": {
+      "title": "Targetfromsource",
+      "description": "Identifier of the target gene product from the data source, if different from geneProductId e.g. Gene symbol or Uniprot ID.",
+      "examples": [
+        "TP53",
+        "sp|P16422|EPCAM_HUMAN"
+      ],
+      "type": "string"
+    },
+    "tissueBiosampleFromSource": {
+      "title": "Tissuebiosamplefromsource",
+      "description": "Identifier of the tissue or biosample from the data source, , as defined by the source data. Can also be a comma separated list of tissue names aggregated in single-cell data.",
+      "examples": [
+        "lung",
+        "brain",
+        "aorta,heart,vena_cava"
+      ],
+      "type": "string"
+    },
+    "celltypeBiosampleFromSource": {
+      "title": "Celltypebiosamplefromsource",
+      "description": "Identifier of the cell type from the data source, as defined by the source data. Can also be a comma separated list of cell type names aggregated in single-cell data.",
+      "examples": [
+        "neuron",
+        "t_cell",
+        "b_cell_activated,b_cell_memory,b_cell_naive"
+      ],
+      "type": "string"
+    },
+    "nSamples": {
+      "title": "NSamples",
+      "description": "Number of samples used to calculate the expression values.",
+      "examples": [
+        100,
+        250
+      ],
+      "type": "integer"
+    },
+    "nCells": {
+      "title": "NCells",
+      "description": "Number of cells used to calculate the expression values, applicable for single-cell data only.",
+      "examples": [
+        5000,
+        10000
+      ],
+      "type": "integer"
+    },
+    "genders": {
+      "type": "array",
+      "description": "List of genders for each sample.",
+      "items": {
+        "enum": [
+          "M",
+          "F",
+          "NB",
+          "U"
+        ]
+      },
+      "examples": [
+        [
+          "M",
+          "F",
+          "M",
+          "M",
+          "M"
+        ],
+        [
+          "F",
+          "F",
+          "M"
+        ]
+      ]
+    },
+    "ages": {
+      "type": "array",
+      "description": "List of age ranges for each sample.",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9]+-[0-9]+$"
+      },
+      "examples": [
+        [
+          "20-30",
+          "30-40"
+        ],
+        [
+          "40-50",
+          "50-60"
+        ]
+      ]
+    }
+  },
+  "required": [
+    "geneProductId",
+    "datasourceId",
+    "datatypeId",
+    "unit",
+    "expression"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "tissueBiosampleId",
+        "tissueBiosampleFromSource"
+      ]
+    },
+    {
+      "required": [
+        "celltypeBiosampleId",
+        "celltypeBiosampleFromSource"
+      ]
+    }
+  ],
+  "if": {
+    "properties": {
+      "datatypeId": {
+        "const": "scrna-seq"
+      }
+    }
+  },
+  "then": {
+    "required": [
+      "nCells"
+    ]
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "ExpressionAggregated": {
+      "title": "ExpressionAggregated",
+      "description": "Expression object for aggregated data.",
+      "type": "object",
+      "properties": {
+        "assayGroupId": {
+          "title": "Assaygroupid",
+          "description": "Identifier for the assay group.",
+          "type": "string"
+        },
+        "min": {
+          "title": "Min",
+          "description": "Minimum value in the assay group.",
+          "type": "number"
+        },
+        "q1": {
+          "title": "Q1",
+          "description": "First quantile of values in the assay group.",
+          "type": "number"
+        },
+        "q2": {
+          "title": "Q2",
+          "description": "Median of values in the assay group.",
+          "type": "number"
+        },
+        "q3": {
+          "title": "Q3",
+          "description": "third quantile of values in the assay group.",
+          "type": "number"
+        },
+        "max": {
+          "title": "Max",
+          "description": "Maximum expression value in the assay group.",
+          "type": "number"
+        }
+      },
+      "required": [
+        "assayGroupId",
+        "min",
+        "q1",
+        "q2",
+        "q3",
+        "max"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
