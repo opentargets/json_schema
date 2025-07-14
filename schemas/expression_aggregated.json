@@ -56,12 +56,12 @@
       "enum": [
         "TPM",
         "logCP10K",
-        "PPB"
+        "PPB (iBAQ)"
       ],
       "examples": [
         "TPM",
         "logCP10K",
-        "PPB"
+        "PPB (iBAQ)"
       ],
       "type": "string"
     },
