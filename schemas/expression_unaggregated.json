@@ -1,61 +1,201 @@
 {
-  "title": "OpenTargets-gene-expression-unaggregated",
-  "description": "Schema for unaggregated expression data.",
-  "type": "object",
-  "properties": {
-    "geneProductId": {
-      "title": "Geneproductid",
-      "description": "Identifier of measured gene product, protein or transcript.",
-      "examples": [
-        "ENSG00000157764",
-        "Q9HC10"
-      ],
-      "type": "string"
-    },
-    "unit": {
-      "title": "Unit",
-      "description": "Unit of the expression value.",
-      "examples": [
-        "tpms"
-      ],
-      "type": "string"
-    },
-    "expression": {
-      "title": "Expression",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ExpressionUnAggregated"
-      }
-    }
-  },
-  "required": [
-    "geneProductId",
-    "unit",
-    "expression"
-  ],
-  "additionalProperties": false,
-  "definitions": {
-    "ExpressionUnAggregated": {
-      "title": "ExpressionUnAggregated",
-      "description": "Expression object for unaggregated data.",
-      "type": "object",
+  "$defs": {
+    "UnaggregatedExpression": {
+      "additionalProperties": false,
+      "description": "Expression object for unaggregated bulk data or pseudo-bulked single-cell data.",
       "properties": {
-        "assayId": {
-          "title": "Assayid",
-          "description": "Identifier for the assay.",
+        "expression": {
+          "description": "Expression value for this single sample.",
+          "example": 12.34,
+          "title": "expression",
+          "type": "number"
+        },
+        "sampleId": {
+          "description": "Identifier for the individual sample or bulk assay.",
+          "example": "SAMPLE123",
+          "title": "sampleId",
           "type": "string"
         },
-        "value": {
-          "title": "Value",
-          "description": "Expression value in the assay.",
-          "type": "number"
+        "cellCount": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Number of cells that contributed to the pseudobulk expression value (only required if datatypeId is scrna\u2011seq).",
+          "example": 1000,
+          "title": "cellCount"
+        },
+        "sex": {
+          "anyOf": [
+            {
+              "enum": [
+                "M",
+                "F",
+                "NB",
+                "U"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sex of the sample donor.",
+          "example": "M",
+          "title": "sex"
+        },
+        "age": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9]+-[0-9]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Age range of the sample donor.",
+          "example": "20-30",
+          "title": "age"
         }
       },
       "required": [
-        "assayId",
-        "value"
+        "expression",
+        "sampleId"
       ],
-      "additionalProperties": false
+      "title": "UnaggregatedExpression",
+      "type": "object"
     }
-  }
+  },
+  "additionalProperties": false,
+  "description": "Schema for unaggregated expression data.",
+  "properties": {
+    "targetId": {
+      "description": "Ensembl gene ID for the gene product.",
+      "example": "ENSG00000157764",
+      "title": "targetId",
+      "type": "string"
+    },
+    "datasourceId": {
+      "description": "Identifier of the data source providing the expression data.",
+      "example": "tabula_sapiens",
+      "title": "datasourceId",
+      "type": "string"
+    },
+    "datatypeId": {
+      "description": "Identifier of the data type technology, e.g. RNA\u2011seq, microarray.",
+      "enum": [
+        "rna-seq",
+        "scrna-seq",
+        "mass-spectrometry-proteomics"
+      ],
+      "example": "scrna-seq",
+      "title": "datatypeId",
+      "type": "string"
+    },
+    "unit": {
+      "description": "Unit of the expression value.",
+      "enum": [
+        "TPM",
+        "logCP10K",
+        "PPB (iBAQ)"
+      ],
+      "example": "TPM",
+      "title": "unit",
+      "type": "string"
+    },
+    "tissueBiosampleId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "UBERON ID for the tissue or biosample.",
+      "example": "UBERON:0002048",
+      "title": "tissueBiosampleId"
+    },
+    "celltypeBiosampleId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "CL ID for the cell type.",
+      "example": "CL:0000540",
+      "title": "celltypeBiosampleId"
+    },
+    "tissueBiosampleFromSource": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Name(s) of the tissue or biosample as defined by the source. Comma\u2010separated if multiple.",
+      "example": "aorta,vena cava",
+      "title": "tissueBiosampleFromSource"
+    },
+    "celltypeBiosampleFromSource": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Name(s) of the cell type as defined by the source. Comma\u2010separated if multiple.",
+      "example": "neuron",
+      "title": "celltypeBiosampleFromSource"
+    },
+    "targetFromSource": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Gene symbol, UniProt ID, or other identifier for the target as provided by the data source.",
+      "example": "TP53",
+      "title": "targetFromSource"
+    },
+    "expression": {
+      "items": {
+        "$ref": "#/$defs/UnaggregatedExpression"
+      },
+      "title": "Expression",
+      "type": "array"
+    }
+  },
+  "required": [
+    "targetId",
+    "datasourceId",
+    "datatypeId",
+    "unit",
+    "expression"
+  ],
+  "title": "OpenTargets-gene-expression-unaggregated",
+  "type": "object"
 }
