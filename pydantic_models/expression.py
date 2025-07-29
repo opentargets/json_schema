@@ -39,6 +39,12 @@ class UnaggregatedExpression(BaseModel):
         description="Age range of the sample donor.",
         example="20-30",
     )
+    ethnicity: Optional[str] = Field(
+        None,
+        title="ethnicity",
+        description="Reported ethnicity of the sample donor.",
+        example="Hispanic",
+    )
 
     class Config:
         extra = Extra.forbid

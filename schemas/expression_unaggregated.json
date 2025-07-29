@@ -64,6 +64,20 @@
           "description": "Age range of the sample donor.",
           "example": "20-30",
           "title": "age"
+        },
+        "ethnicity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Reported ethnicity of the sample donor.",
+          "example": "Hispanic",
+          "title": "ethnicity"
         }
       },
       "required": [
