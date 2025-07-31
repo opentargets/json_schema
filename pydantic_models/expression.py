@@ -50,6 +50,31 @@ class UnaggregatedExpression(BaseModel):
         extra = Extra.forbid
         anystr_strip_whitespace = True
 
+class ExpressionAggregated(BaseModel):
+    """Expression object for aggregated data."""
+    assayGroupId: str = Field(
+        description="Identifier for the assay group.",
+    )
+    min: float = Field(
+        description='Minimum value in the assay group.',
+    )
+    q1: float = Field(
+        description='First quantile of values in the assay group.',
+    )
+    q2: float = Field(
+        description='Median of values in the assay group.',
+    )
+    q3: float = Field(
+        description='third quantile of values in the assay group.',
+    )
+    max: float = Field(
+        description='Maximum expression value in the assay group.',
+    )
+
+    class Config:
+        extra = Extra.forbid
+        anystr_strip_whitespace = True
+
 
 class ExpressionUnaggregatedSchema(BaseModel):
     """Schema for unaggregated expression data."""
@@ -118,7 +143,7 @@ class ExpressionUnaggregatedSchema(BaseModel):
         ),
         example="TP53",
     )
-    expression: List[UnaggregatedExpression]
+    unaggregatedExpression: List[UnaggregatedExpression]
 
     @model_validator(mode="after")
     def check_tissue_or_celltype(cls, model):
