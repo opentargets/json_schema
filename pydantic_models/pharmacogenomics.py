@@ -55,6 +55,9 @@ class VariantAnnotation(BaseModel):
     entity: Optional[str] = Field(
         description="Entity affected by the effect.", examples=["malignant hyperthermia"]
     )
+    id: Optional[str] = Field(
+        description="PharmGKB identification of the annotation of the variant effect", examples=["827552123"]
+    )
 
 class EvidenceLevel(str, Enum):
     """Evidence levels class describing the confidence in the assocations."""

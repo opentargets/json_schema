@@ -3,8 +3,8 @@
   "description": "Schema for aggregated expression data.",
   "type": "object",
   "properties": {
-    "geneProductId": {
-      "title": "Geneproductid",
+    "targetId": {
+      "title": "targetId",
       "description": "Ensembl gene ID for the gene product.",
       "examples": [
         "ENSG00000157764",
@@ -53,11 +53,15 @@
     "unit": {
       "title": "Unit",
       "description": "Unit of the expression value.",
-      "enum": ["TPM", "logCP10K", "PPB"],
+      "enum": [
+        "TPM",
+        "mean logCP10K",
+        "PPB (iBAQ)"
+      ],
       "examples": [
         "TPM",
         "mean logCP10K",
-        "PPB"
+        "PPB (iBAQ)"
       ],
       "type": "string"
     },
@@ -118,10 +122,27 @@
     "genders": {
       "type": "array",
       "description": "List of genders for each sample.",
-      "items": { "enum": ["M", "F", "NB", "U"] },
+      "items": {
+        "enum": [
+          "M",
+          "F",
+          "NB",
+          "U"
+        ]
+      },
       "examples": [
-        ["M","F","M","M","M"],
-        ["F","F","M"]
+        [
+          "M",
+          "F",
+          "M",
+          "M",
+          "M"
+        ],
+        [
+          "F",
+          "F",
+          "M"
+        ]
       ]
     },
     "ages": {
@@ -132,10 +153,17 @@
         "pattern": "^[0-9]+-[0-9]+$"
       },
       "examples": [
-        ["20-30","30-40"],
-        ["40-50","50-60"]
+        [
+          "20-30",
+          "30-40"
+        ],
+        [
+          "40-50",
+          "50-60"
+        ]
       ]
-    },
+    }
+  },
   "required": [
     "geneProductId",
     "datasourceId",
@@ -145,17 +173,29 @@
   ],
   "oneOf": [
     {
-      "required": ["tissueBiosampleId", "tissueBiosampleFromSource"]
+      "required": [
+        "tissueBiosampleId",
+        "tissueBiosampleFromSource"
+      ]
     },
     {
-      "required": ["celltypeBiosampleId", "celltypeBiosampleFromSource"]
+      "required": [
+        "celltypeBiosampleId",
+        "celltypeBiosampleFromSource"
+      ]
     }
   ],
   "if": {
-    "properties": { "datatypeId": { "const": "scrna-seq" } }
+    "properties": {
+      "datatypeId": {
+        "const": "scrna-seq"
+      }
+    }
   },
   "then": {
-    "required": ["nCells"]
+    "required": [
+      "nCells"
+    ]
   },
   "additionalProperties": false,
   "definitions": {
@@ -204,7 +244,6 @@
         "max"
       ],
       "additionalProperties": false
-      }
     }
   }
 }
