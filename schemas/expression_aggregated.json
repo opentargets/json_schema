@@ -1,249 +1,148 @@
 {
-  "title": "OpenTargets-gene-expression-aggregated",
-  "description": "Schema for aggregated expression data.",
-  "type": "object",
+  "additionalProperties": false,
+  "description": "Expression object for aggregated data.",
   "properties": {
     "targetId": {
-      "title": "targetId",
       "description": "Ensembl gene ID for the gene product.",
-      "examples": [
-        "ENSG00000157764",
-        "ENSG00000139618"
-      ],
+      "example": "ENSG00000157764",
+      "title": "targetId",
       "type": "string"
     },
     "datasourceId": {
-      "title": "Datasourceid",
       "description": "Identifier of the data source providing the expression data.",
-      "examples": [
-        "tabula_sapiens",
-        "GTEx",
-        "PRIDE"
-      ],
+      "example": "tabula_sapiens",
+      "title": "datasourceId",
       "type": "string"
     },
     "datatypeId": {
-      "title": "Datatypeid",
-      "description": "Identifier of the data type, e.g. RNA-seq, microarray.",
-      "examples": [
+      "description": "Identifier of the data type technology, e.g. RNA-seq, microarray.",
+      "enum": [
         "rna-seq",
         "scrna-seq",
-        "mass-spectrometry-proteomics"
+        "mass-spectrometry proteomics"
       ],
-      "type": "string"
-    },
-    "tissueBiosampleId": {
-      "title": "Tissuebiosampleid",
-      "description": "Identifier of the tissue or biosample from which the expression data was derived.",
-      "examples": [
-        "UBERON:0002048",
-        "UBERON:0000955"
-      ],
-      "type": "string"
-    },
-    "celltypeBiosampleId": {
-      "title": "Celltypebiosampleid",
-      "description": "Identifier of the cell type from which the expression data was derived.",
-      "examples": [
-        "CL:0000540",
-        "CL:0000084"
-      ],
+      "example": "scrna-seq",
+      "title": "datatypeId",
       "type": "string"
     },
     "unit": {
-      "title": "Unit",
       "description": "Unit of the expression value.",
       "enum": [
         "TPM",
-        "mean logCP10K",
+        "logCP10K",
         "PPB (iBAQ)"
       ],
-      "examples": [
-        "TPM",
-        "mean logCP10K",
-        "PPB (iBAQ)"
-      ],
+      "example": "TPM",
+      "title": "unit",
       "type": "string"
     },
-    "expression": {
-      "title": "Expression",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ExpressionAggregated"
-      }
-    },
-    "targetFromSource": {
-      "title": "Targetfromsource",
-      "description": "Identifier of the target gene product from the data source, if different from geneProductId e.g. Gene symbol or Uniprot ID.",
-      "examples": [
-        "TP53",
-        "sp|P16422|EPCAM_HUMAN"
+    "tissueBiosampleId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
       ],
-      "type": "string"
+      "default": null,
+      "description": "UBERON ID for the tissue or biosample.",
+      "example": "UBERON:0002048",
+      "title": "tissueBiosampleId"
+    },
+    "celltypeBiosampleId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "CL ID for the cell type.",
+      "example": "CL:0000540",
+      "title": "celltypeBiosampleId"
     },
     "tissueBiosampleFromSource": {
-      "title": "Tissuebiosamplefromsource",
-      "description": "Identifier of the tissue or biosample from the data source, , as defined by the source data. Can also be a comma separated list of tissue names aggregated in single-cell data.",
-      "examples": [
-        "lung",
-        "brain",
-        "aorta,heart,vena_cava"
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
       ],
-      "type": "string"
+      "default": null,
+      "description": "Name(s) of the tissue or biosample as defined by the source. Comma-separated if multiple.",
+      "example": "aorta,vena cava",
+      "title": "tissueBiosampleFromSource"
     },
     "celltypeBiosampleFromSource": {
-      "title": "Celltypebiosamplefromsource",
-      "description": "Identifier of the cell type from the data source, as defined by the source data. Can also be a comma separated list of cell type names aggregated in single-cell data.",
-      "examples": [
-        "neuron",
-        "t_cell",
-        "b_cell_activated,b_cell_memory,b_cell_naive"
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
       ],
-      "type": "string"
+      "default": null,
+      "description": "Name(s) of the cell type as defined by the source. Comma-separated if multiple.",
+      "example": "neuron",
+      "title": "celltypeBiosampleFromSource"
     },
-    "nSamples": {
-      "title": "NSamples",
-      "description": "Number of samples used to calculate the expression values.",
-      "examples": [
-        100,
-        250
+    "targetFromSource": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
       ],
-      "type": "integer"
+      "default": null,
+      "description": "Gene symbol, UniProt ID, or other identifier for the target as provided by the data source.",
+      "example": "TP53",
+      "title": "targetFromSource"
     },
-    "nCells": {
-      "title": "NCells",
-      "description": "Number of cells used to calculate the expression values, applicable for single-cell data only.",
-      "examples": [
-        5000,
-        10000
-      ],
-      "type": "integer"
+    "min": {
+      "description": "Minimum value in the assay group.",
+      "title": "Min",
+      "type": "number"
     },
-    "genders": {
-      "type": "array",
-      "description": "List of genders for each sample.",
-      "items": {
-        "enum": [
-          "M",
-          "F",
-          "NB",
-          "U"
-        ]
-      },
-      "examples": [
-        [
-          "M",
-          "F",
-          "M",
-          "M",
-          "M"
-        ],
-        [
-          "F",
-          "F",
-          "M"
-        ]
-      ]
+    "q1": {
+      "description": "First quantile of values in the assay group.",
+      "title": "Q1",
+      "type": "number"
     },
-    "ages": {
-      "type": "array",
-      "description": "List of age ranges for each sample.",
-      "items": {
-        "type": "string",
-        "pattern": "^[0-9]+-[0-9]+$"
-      },
-      "examples": [
-        [
-          "20-30",
-          "30-40"
-        ],
-        [
-          "40-50",
-          "50-60"
-        ]
-      ]
+    "q2": {
+      "description": "Median of values in the assay group.",
+      "title": "Q2",
+      "type": "number"
+    },
+    "q3": {
+      "description": "Third quantile of values in the assay group.",
+      "title": "Q3",
+      "type": "number"
+    },
+    "max": {
+      "description": "Maximum expression value in the assay group.",
+      "title": "Max",
+      "type": "number"
     }
   },
   "required": [
-    "geneProductId",
+    "targetId",
     "datasourceId",
     "datatypeId",
     "unit",
-    "expression"
+    "min",
+    "q1",
+    "q2",
+    "q3",
+    "max"
   ],
-  "oneOf": [
-    {
-      "required": [
-        "tissueBiosampleId",
-        "tissueBiosampleFromSource"
-      ]
-    },
-    {
-      "required": [
-        "celltypeBiosampleId",
-        "celltypeBiosampleFromSource"
-      ]
-    }
-  ],
-  "if": {
-    "properties": {
-      "datatypeId": {
-        "const": "scrna-seq"
-      }
-    }
-  },
-  "then": {
-    "required": [
-      "nCells"
-    ]
-  },
-  "additionalProperties": false,
-  "definitions": {
-    "ExpressionAggregated": {
-      "title": "ExpressionAggregated",
-      "description": "Expression object for aggregated data.",
-      "type": "object",
-      "properties": {
-        "assayGroupId": {
-          "title": "Assaygroupid",
-          "description": "Identifier for the assay group.",
-          "type": "string"
-        },
-        "min": {
-          "title": "Min",
-          "description": "Minimum value in the assay group.",
-          "type": "number"
-        },
-        "q1": {
-          "title": "Q1",
-          "description": "First quantile of values in the assay group.",
-          "type": "number"
-        },
-        "q2": {
-          "title": "Q2",
-          "description": "Median of values in the assay group.",
-          "type": "number"
-        },
-        "q3": {
-          "title": "Q3",
-          "description": "third quantile of values in the assay group.",
-          "type": "number"
-        },
-        "max": {
-          "title": "Max",
-          "description": "Maximum expression value in the assay group.",
-          "type": "number"
-        }
-      },
-      "required": [
-        "assayGroupId",
-        "min",
-        "q1",
-        "q2",
-        "q3",
-        "max"
-      ],
-      "additionalProperties": false
-    }
-  }
+  "title": "OpenTargets-gene-expression-aggregated",
+  "type": "object"
 }

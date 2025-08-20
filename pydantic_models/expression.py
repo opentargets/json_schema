@@ -8,7 +8,7 @@ import json
 
 # --- Shared types -------------------------------------------------------------
 
-DatatypeId = Literal["rna-seq", "scrna-seq", "mass-spectrometry-proteomics"]
+DatatypeId = Literal["rna-seq", "scrna-seq", "mass-spectrometry proteomics"]
 Unit = Literal["TPM", "logCP10K", "PPB (iBAQ)"]
 Sex = Literal["M", "F", "NB", "U"]
 

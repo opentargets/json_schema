@@ -1,95 +1,6 @@
 {
-  "$defs": {
-    "UnaggregatedExpression": {
-      "additionalProperties": false,
-      "description": "Expression object for unaggregated bulk data or pseudo-bulked single-cell data.",
-      "properties": {
-        "expression": {
-          "description": "Expression value for this single sample.",
-          "example": 12.34,
-          "title": "expression",
-          "type": "number"
-        },
-        "sampleId": {
-          "description": "Identifier for the individual sample or bulk assay.",
-          "example": "SAMPLE123",
-          "title": "sampleId",
-          "type": "string"
-        },
-        "cellCount": {
-          "anyOf": [
-            {
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Number of cells that contributed to the pseudobulk expression value (only required if datatypeId is scrna\u2011seq).",
-          "example": 1000,
-          "title": "cellCount"
-        },
-        "sex": {
-          "anyOf": [
-            {
-              "enum": [
-                "M",
-                "F",
-                "NB",
-                "U"
-              ],
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Sex of the sample donor.",
-          "example": "M",
-          "title": "sex"
-        },
-        "age": {
-          "anyOf": [
-            {
-              "pattern": "^[0-9]+-[0-9]+$",
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Age range of the sample donor.",
-          "example": "20-30",
-          "title": "age"
-        },
-        "ethnicity": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Reported ethnicity of the sample donor.",
-          "example": "Hispanic",
-          "title": "ethnicity"
-        }
-      },
-      "required": [
-        "expression",
-        "sampleId"
-      ],
-      "title": "UnaggregatedExpression",
-      "type": "object"
-    }
-  },
   "additionalProperties": false,
-  "description": "Schema for unaggregated expression data.",
+  "description": "Schema for unaggregated (per-sample) expression data.",
   "properties": {
     "targetId": {
       "description": "Ensembl gene ID for the gene product.",
@@ -104,11 +15,11 @@
       "type": "string"
     },
     "datatypeId": {
-      "description": "Identifier of the data type technology, e.g. RNA\u2011seq, microarray.",
+      "description": "Identifier of the data type technology, e.g. RNA-seq, microarray.",
       "enum": [
         "rna-seq",
         "scrna-seq",
-        "mass-spectrometry-proteomics"
+        "mass-spectrometry proteomics"
       ],
       "example": "scrna-seq",
       "title": "datatypeId",
@@ -163,7 +74,7 @@
         }
       ],
       "default": null,
-      "description": "Name(s) of the tissue or biosample as defined by the source. Comma\u2010separated if multiple.",
+      "description": "Name(s) of the tissue or biosample as defined by the source. Comma-separated if multiple.",
       "example": "aorta,vena cava",
       "title": "tissueBiosampleFromSource"
     },
@@ -177,7 +88,7 @@
         }
       ],
       "default": null,
-      "description": "Name(s) of the cell type as defined by the source. Comma\u2010separated if multiple.",
+      "description": "Name(s) of the cell type as defined by the source. Comma-separated if multiple.",
       "example": "neuron",
       "title": "celltypeBiosampleFromSource"
     },
@@ -196,11 +107,78 @@
       "title": "targetFromSource"
     },
     "expression": {
-      "items": {
-        "$ref": "#/$defs/UnaggregatedExpression"
-      },
-      "title": "Expression",
-      "type": "array"
+      "description": "Expression value for this single sample.",
+      "example": 12.34,
+      "title": "expression",
+      "type": "number"
+    },
+    "donorId": {
+      "description": "Identifier for the individual sample or bulk assay.",
+      "example": "SAMPLE123",
+      "title": "donorId",
+      "type": "string"
+    },
+    "cellCount": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Number of cells that contributed to the pseudobulk expression value (required if datatypeId is scrna-seq).",
+      "example": 1000,
+      "title": "cellCount"
+    },
+    "sex": {
+      "anyOf": [
+        {
+          "enum": [
+            "M",
+            "F",
+            "NB",
+            "U"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Sex of the sample donor.",
+      "example": "M",
+      "title": "sex"
+    },
+    "age": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Age of the sample donor.",
+      "example": "20-29",
+      "title": "age"
+    },
+    "ethnicity": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Reported ethnicity of the sample donor.",
+      "example": "Hispanic",
+      "title": "ethnicity"
     }
   },
   "required": [
@@ -208,7 +186,8 @@
     "datasourceId",
     "datatypeId",
     "unit",
-    "expression"
+    "expression",
+    "donorId"
   ],
   "title": "OpenTargets-gene-expression-unaggregated",
   "type": "object"
