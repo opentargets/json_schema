@@ -8,9 +8,9 @@ import json
 
 # --- Shared types -------------------------------------------------------------
 
-DatatypeId = Literal["rna-seq", "scrna-seq", "mass-spectrometry proteomics"]
-Unit = Literal["TPM", "logCP10K", "PPB (iBAQ)"]
-Sex = Literal["M", "F", "NB", "U"]
+DatatypeId = Literal["bulk rna-seq", "scrna-seq", "mass-spectrometry proteomics"]
+Unit = Literal["TPM", "mean logCP10K", "PPB (iBAQ)"]
+# Sex = Literal["M", "F", "NB", "U"]
 
 
 # --- Base model with common fields, validator, and config ---------------------
@@ -49,13 +49,13 @@ class ExpressionBase(BaseModel):
         None,
         title="tissueBiosampleId",
         description="UBERON ID for the tissue or biosample.",
-        example="UBERON:0002048",
+        example="UBERON_0002048",
     )
     celltypeBiosampleId: Optional[str] = Field(
         None,
         title="celltypeBiosampleId",
         description="CL ID for the cell type.",
-        example="CL:0000540",
+        example="CL_0000540",
     )
 
     # Source-defined names (free text or comma-separated)
@@ -80,7 +80,7 @@ class ExpressionBase(BaseModel):
 
     targetFromSource: Optional[str] = Field(
         None,
-        title="targetFromSource",
+        title="targetFromSourceId",
         description=(
             "Gene symbol, UniProt ID, or other identifier for the target "
             "as provided by the data source."
@@ -148,7 +148,7 @@ class ExpressionUnaggregatedSchema(ExpressionBase):
         ),
         example=1000,
     )
-    sex: Optional[Sex] = Field(
+    sex: Optional[str] = Field(
         None,
         title="sex",
         description="Sex of the sample donor.",
