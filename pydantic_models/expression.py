@@ -115,7 +115,7 @@ class ExpressionAggregatedSchema(ExpressionBase):
 
     min: float = Field(description="Minimum value in the assay group.")
     q1: float = Field(description="First quantile of values in the assay group.")
-    q2: float = Field(description="Median of values in the assay group.")
+    median: float = Field(description="Median of values in the assay group.")
     q3: float = Field(description="Third quantile of values in the assay group.")
     max: float = Field(description="Maximum expression value in the assay group.")
 

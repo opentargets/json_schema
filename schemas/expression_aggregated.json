@@ -116,9 +116,9 @@
       "title": "Q1",
       "type": "number"
     },
-    "q2": {
+    "median": {
       "description": "Median of values in the assay group.",
-      "title": "Q2",
+      "title": "Median",
       "type": "number"
     },
     "q3": {
@@ -139,7 +139,7 @@
     "unit",
     "min",
     "q1",
-    "q2",
+    "median",
     "q3",
     "max"
   ],
