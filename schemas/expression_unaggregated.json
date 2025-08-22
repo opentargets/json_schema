@@ -17,7 +17,7 @@
     "datatypeId": {
       "description": "Identifier of the data type technology, e.g. RNA-seq, microarray.",
       "enum": [
-        "rna-seq",
+        "bulk rna-seq",
         "scrna-seq",
         "mass-spectrometry proteomics"
       ],
@@ -29,7 +29,7 @@
       "description": "Unit of the expression value.",
       "enum": [
         "TPM",
-        "logCP10K",
+        "mean logCP10K",
         "PPB (iBAQ)"
       ],
       "example": "TPM",
@@ -47,7 +47,7 @@
       ],
       "default": null,
       "description": "UBERON ID for the tissue or biosample.",
-      "example": "UBERON:0002048",
+      "example": "UBERON_0002048",
       "title": "tissueBiosampleId"
     },
     "celltypeBiosampleId": {
@@ -61,7 +61,7 @@
       ],
       "default": null,
       "description": "CL ID for the cell type.",
-      "example": "CL:0000540",
+      "example": "CL_0000540",
       "title": "celltypeBiosampleId"
     },
     "tissueBiosampleFromSource": {
@@ -104,7 +104,7 @@
       "default": null,
       "description": "Gene symbol, UniProt ID, or other identifier for the target as provided by the data source.",
       "example": "TP53",
-      "title": "targetFromSource"
+      "title": "targetFromSourceId"
     },
     "expression": {
       "description": "Expression value for this single sample.",
@@ -135,12 +135,6 @@
     "sex": {
       "anyOf": [
         {
-          "enum": [
-            "M",
-            "F",
-            "NB",
-            "U"
-          ],
           "type": "string"
         },
         {
