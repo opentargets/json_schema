@@ -133,7 +133,6 @@
       "title": "cellCount"
     },
     "sex": {
-<<<<<<< Updated upstream
       "anyOf": [
         {
           "type": "string"
@@ -142,8 +141,6 @@
           "type": "null"
         }
       ],
-=======
->>>>>>> Stashed changes
       "default": null,
       "description": "Sex of the sample donor.",
       "example": "M",

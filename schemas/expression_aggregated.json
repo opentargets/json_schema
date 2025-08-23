@@ -92,7 +92,7 @@
       "example": "neuron",
       "title": "celltypeBiosampleFromSource"
     },
-    "targetFromSource": {
+    "targetFromSourceId": {
       "anyOf": [
         {
           "type": "string"

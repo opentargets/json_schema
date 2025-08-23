@@ -78,7 +78,7 @@ class ExpressionBase(BaseModel):
         example="neuron",
     )
 
-    targetFromSource: Optional[str] = Field(
+    targetFromSourceId: Optional[str] = Field(
         None,
         title="targetFromSourceId",
         description=(
