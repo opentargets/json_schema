@@ -1638,7 +1638,8 @@
           "protective",
           "risk factor",
           "uncertain risk allele",
-          "uncertain significance"
+          "uncertain significance",
+          "evidence only"
         ]
       },
       "minItems": 1,
