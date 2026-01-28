@@ -154,7 +154,7 @@ class Pharmacogenomics(BaseModel):
     phenotypeFromSourceId: Optional[str] = Field(
         description="EFO ID of phenotype, mapped through ZOOMA / OXO.",
         examples=["Orphanet_423"],
-        regex=r"^NCIT_C\d+$|^Orphanet_\d+$|^GO_\d+$|^HP_\d+$|^EFO_\d+$|^MONDO_\d+$|^DOID_\d+$|^MP_\d+$|^OTAR_\d+$|^PATO_\d+$|^CHEBI_\d+$|^OBI_\d+$|^OGMS_\d+$",
+        regex=r"(^NCIT_|^Orphanet_|^GO_|^HP_|^EFO_|^MONDO_|^DOID_|^MP_|^OTAR_|^PATO_|^OBI_|^OBA_|^OGMS_|^GSSO_|^UBERON_)",
     )
     variantAnnotation: Optional[List[VariantAnnotation]]
 
