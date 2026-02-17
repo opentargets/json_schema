@@ -107,16 +107,13 @@
     {
       "properties": {
         "datasourceId": {
-          "const": "chembl"
+          "const": "clinical_precedence"
         },
-        "clinicalPhase": {
-          "$ref": "#/definitions/clinicalPhase"
+        "clinicalReportId": {
+          "$ref": "#/definitions/clinicalReportId"
         },
-        "clinicalStatus": {
-          "$ref": "#/definitions/clinicalStatus"
-        },
-        "cohortPhenotypes": {
-          "$ref": "#/definitions/cohortPhenotypes"
+        "clinicalStage": {
+          "$ref": "#/definitions/clinicalStage"
         },
         "datatypeId": {
           "$ref": "#/definitions/datatypeId"
@@ -127,38 +124,33 @@
         "diseaseFromSourceMappedId": {
           "$ref": "#/definitions/diseaseFromSourceMappedId"
         },
+        "drugFromSource": {
+          "$ref": "#/definitions/drugFromSource"
+        },
         "drugId": {
           "$ref": "#/definitions/drugId"
         },
-        "studyId": {
-          "$ref": "#/definitions/studyId"
+        "literature": {
+          "$ref": "#/definitions/literature"
         },
         "studyStartDate": {
           "$ref": "#/definitions/studyStartDate"
         },
-        "studyStopReason": {
-          "$ref": "#/definitions/studyStopReason"
-        },
-        "studyStopReasonCategories": {
-          "$ref": "#/definitions/studyStopReasonCategories"
-        },
-        "targetFromSource": {
-          "$ref": "#/definitions/targetFromSourceId"
-        },
         "targetFromSourceId": {
           "$ref": "#/definitions/targetFromSourceId"
         },
-        "urls": {
-          "$ref": "#/definitions/urls"
+        "trialStopReasonCategories": {
+          "$ref": "#/definitions/trialStopReasonCategories"
+        },
+        "trialWhyStopped": {
+          "$ref": "#/definitions/trialWhyStopped"
         }
       },
       "required": [
-        "clinicalPhase",
+        "clinicalStage",
         "datasourceId",
         "drugId",
-        "targetFromSource",
-        "targetFromSourceId",
-        "urls"
+        "targetFromSourceId"
       ],
       "additionalProperties": false
     },
@@ -1603,11 +1595,31 @@
       },
       "additionalProperties": false
     },
-    "clinicalPhase": {
-      "type": "number",
-      "description": "Phase of the clinical trial",
-      "minimum": 0.5,
-      "maximum": 4.0
+    "clinicalReportId": {
+      "type": "string",
+      "description": "Identifier of the clinical report",
+      "examples": [
+        "NCT01917656"
+      ]
+    },
+    "clinicalStage": {
+      "type": "string",
+      "description": "Clinical stage of the drug-disease pair",
+      "enum": [
+        "APPROVED",
+        "PHASE_4",
+        "WITHDRAWN",
+        "PREAPPROVAL",
+        "PHASE_3",
+        "PHASE_2_3",
+        "PHASE_2",
+        "PHASE_1_2",
+        "PHASE_1",
+        "EARLY_PHASE_1",
+        "IND",
+        "PRECLINICAL",
+        "UNKNOWN"
+      ]
     },
     "clinicalSignificances": {
       "type": "array",
@@ -1645,24 +1657,38 @@
       "minItems": 1,
       "uniqueItems": true
     },
-    "clinicalStatus": {
+    "trialWhyStopped": {
       "type": "string",
-      "description": "Current stage of a clinical study",
-      "examples": [
-        "Enrolling by invitation"
-      ],
-      "enum": [
-        "Suspended",
-        "Unknown status",
-        "Completed",
-        "Enrolling by invitation",
-        "Not yet recruiting",
-        "Recruiting",
-        "Terminated",
-        "N/A",
-        "Withdrawn",
-        "Active, not recruiting"
-      ]
+      "description": "Reason why the trial was stopped, as reported",
+      "pattern": "^[^\\s].*[^\\s]$"
+    },
+    "trialStopReasonCategories": {
+      "type": "array",
+      "description": "Categorised reason(s) why the trial was stopped.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Insufficient_Enrollment",
+          "Business_Administrative",
+          "Negative",
+          "Logistics_Resources",
+          "Study_Design",
+          "Invalid_Reason",
+          "Study_Staff_Moved",
+          "Covid19",
+          "Another_Study",
+          "No_Context",
+          "Safety_Sideeffects",
+          "Regulatory",
+          "Interim_Analysis",
+          "Success",
+          "Endpoint_Met",
+          "Ethical_Reason",
+          "Insufficient_Data",
+          "Uncategorised"
+        ]
+      },
+      "uniqueItems": true
     },
     "cohortDescription": {
       "type": "string",
@@ -1735,6 +1761,7 @@
         "genetic_literature",
         "animal_model",
         "somatic_mutation",
+        "clinical",
         "known_drug",
         "genetic_association",
         "ot_partner",
@@ -2161,39 +2188,6 @@
       "format": "date",
       "description": "Start date of study in a YYYY-MM-DD format",
       "pattern": "(((19|20)([2468][048]|[13579][26]|0[48])|2000)[-]02[-]29|((19|20)[0-9]{2}[-](0[469]|11)[-](0[1-9]|[12][0-9]|30)|(19|20)[0-9]{2}[-](0[13578]|1[02])[-](0[1-9]|[12][0-9]|3[01])|(19|20)[0-9]{2}[-]02[-](0[1-9]|1[0-9]|2[0-8])))"
-    },
-    "studyStopReason": {
-      "type": "string",
-      "description": "Reason why a study has been stopped",
-      "pattern": "^[^\\s].*[^\\s]$"
-    },
-    "studyStopReasonCategories": {
-      "type": "array",
-      "description": "Predicted reason(s) why the study has been stopped based on studyStopReason.",
-      "items": {
-        "type": "string",
-        "enum": [
-          "Insufficient enrollment",
-          "Business or administrative",
-          "Negative",
-          "Logistics or resources",
-          "Study design",
-          "Invalid reason",
-          "Study staff moved",
-          "COVID-19",
-          "Another study",
-          "No context",
-          "Safety or side effects",
-          "Regulatory",
-          "Interim analysis",
-          "Success",
-          "Met endpoint",
-          "Ethical reason",
-          "Insufficient data",
-          "Uncategorised"
-        ]
-      },
-      "uniqueItems": true
     },
     "targetFromSourceId": {
       "type": "string",
