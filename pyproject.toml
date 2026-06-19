@@ -7,7 +7,7 @@ license = "Apache-2.0"
 readme = "README.md"
 requires-python = ">=3.10.4"
 dependencies = [
-    "pydantic==1.10.7",
+    "pydantic==1.10.24",
 ]
 
 [build-system]
